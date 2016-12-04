@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} HOME PAGE {% endblock %}
+{% block slide %}
+{#    {% include 'macros/slide_product.html' with model_product='test' x='hello'%}#}
+    <div class="header_slide">
+        <div class="header_bottom_left">
+            <div class="categories">
+                <ul>
+                    <h3>Danh mục môn học</h3>
+                    <li><a href="#">Cở sở tri thức</a></li>
+                    <li><a href="#">Kỹ thuật lập trình</a></li>
+                    <li><a href="#">Ứng dụng thuật toán</a></li>
+                    <li><a href="#">Tin học đại cương</a></li>
+                    <li><a href="#">Lập trình hướng đối tượng</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_bottom_right">
+            <div class="slider">
+                <div id="slider">
+                    <div id="mover">
+{#                        {% set check = 1 %}#}
+{#                        {% for product in h_products %}#}
+{#                            {% if check == 1 %}#}
+{#                                {{ slide_product(product,check) }}#}
+{#                                {% set check = 0%}#}
+{#                            {% else %}#}
+{##}
+{#                                {{ slide_product(product,check) }}#}
+{#                            {% endif %}#}
+{#                        {% endfor %}#}
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    {% endblock %}
+
+{% block content %}
+
+{% endblock %}

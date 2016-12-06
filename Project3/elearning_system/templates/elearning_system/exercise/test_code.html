@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'code_editor_base.html' %}
 {% load static %}
 {% block title %} HOME PAGE {% endblock %}
@@ -152,5 +153,128 @@
 
             </div>
         </div>
+=======
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %} HOME PAGE {% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div id="sidebar" class="span3">
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+                    <li class="subMenu open"><a> CATEGORY</a>
+                        <ul>
+                            <li><a class="active" href="products.html"><i class="icon-chevron-right"></i>Lập trình hướng
+                                đối tượng
+                            </a></li>
+                            <li><a href="products.html"><i class="icon-chevron-right"></i>Kỹ thuật lập trình</a></li>
+                            <li><a href="products.html"><i class="icon-chevron-right"></i>Tin học đại cương</a></li>
+                            <li><a href="products.html"><i class="icon-chevron-right"></i>Java</a></li>
+                        </ul>
+                    </li>
+{#                    <li class="subMenu"><a> CLOTHES [840] </a>#}
+{#                        <ul style="display:none">#}
+{#                            <li><a href="products.html"><i class="icon-chevron-right"></i>Women's Clothing (45)</a></li>#}
+{#                            <li><a href="products.html"><i class="icon-chevron-right"></i>Women's Shoes (8)</a></li>#}
+{#                            <li><a href="products.html"><i class="icon-chevron-right"></i>Women's Hand Bags (5)</a></li>#}
+{#                            <li><a href="products.html"><i class="icon-chevron-right"></i>Men's Clothings (45)</a></li>#}
+{#                            <li><a href="products.html"><i class="icon-chevron-right"></i>Men's Shoes (6)</a></li>#}
+{#                            <li><a href="products.html"><i class="icon-chevron-right"></i>Kids Clothing (5)</a></li>#}
+{#                            <li><a href="products.html"><i class="icon-chevron-right"></i>Kids Shoes (3)</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li><a href="products.html">HEALTH & BEAUTY [18]</a></li>#}
+{#                    <li><a href="products.html">SPORTS & LEISURE [58]</a></li>#}
+{#                    <li><a href="products.html">BOOKS & ENTERTAINMENTS [14]</a></li>#}
+                </ul>
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span8">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a><span class="divider">/</span></li>
+                    <li class="active">Lập trình hướng đối tượng</li>
+                </ul>
+                <h3> Exercise
+                    <small class="pull-right"> 100 exercise are available</small>
+                </h3>
+                <hr class="soft"/>
+                <form class="form-horizontal span6">
+                    <div class="control-group">
+                        <label class="control-label alignL">Sort By </label>
+                        <select>
+                            <option>Priduct name A - Z</option>
+                            <option>Priduct name Z - A</option>
+                            <option>Priduct Stoke</option>
+                            <option>Price Lowest first</option>
+                        </select>
+                    </div>
+                </form>
+
+                <br class="clr"/>
+                <div class="list_exercise_content">
+                    <div class="row">
+                        <div class="span8">
+                            <h3>Exercise 1</h3>
+                            <hr class="soft"/>
+                            <p>
+                                Nowadays the lingerie industry is one of the most successful...
+                            </p>
+                            <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
+                            <br class="clr"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span8">
+                            <h3>Exercise 2</h3>
+                            <hr class="soft"/>
+                            <p>
+                                Nowadays the lingerie industry is one of the most successful...
+                            </p>
+                            <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
+                            <br class="clr"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span8">
+                            <h3>Exercise 3</h3>
+                            <hr class="soft"/>
+                            <p>
+                                Nowadays the lingerie industry is one of the most successful...
+                            </p>
+                            <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
+                            <br class="clr"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span8">
+                            <h3>Exercise 4</h3>
+                            <hr class="soft"/>
+                            <p>
+                                Nowadays the lingerie industry is one of the most successful...
+                            </p>
+                            <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
+                            <br class="clr"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <ul>
+                        <li><a href="#">&lsaquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="#">&rsaquo;</a></li>
+                    </ul>
+                </div>
+                <br class="clr"/>
+            </div>
+        </div>
+
+    </div>
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
     </div>
 {% endblock %}

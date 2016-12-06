@@ -29,6 +29,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
+      <file leaf-file-name="manageTopic.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/manageTopic.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageTopic.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/admin/manageTopic.js">
+=======
+<<<<<<< HEAD
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
 =======
@@ -47,15 +61,23 @@
       <file leaf-file-name="base1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base1.html">
 >>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning_system/admin/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+=======
 <<<<<<< HEAD
       <file leaf-file-name="test_code.html" pinned="false" current-in-tab="true">
 =======
@@ -73,6 +95,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
               <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
               <folding>
                 <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
               </folding>
@@ -81,6 +104,23 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+=======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -96,6 +136,7 @@
             <state relative-caret-position="75">
               <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
               <folding />
             </state>
           </provider>
@@ -109,10 +150,15 @@
       <list>
         <option value="Python Script" />
 <<<<<<< HEAD
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+=======
+<<<<<<< HEAD
         <option value="CSS File" />
 =======
         <option value="HTML File" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       </list>
     </option>
   </component>
@@ -126,11 +172,19 @@
         <option value="$PROJECT_DIR$/Project3/settings.py" />
         <option value="$PROJECT_DIR$/elearning_system/user/urls.py" />
         <option value="$PROJECT_DIR$/elearning_system/models/user.py" />
-        <option value="$PROJECT_DIR$/elearning_system/urls.py" />
         <option value="$PROJECT_DIR$/Project3/urls.py" />
         <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html" />
         <option value="$PROJECT_DIR$/elearning_system/exercise/urls.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/elearning_system/urls.py" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/topic_Form.html" />
+        <option value="$PROJECT_DIR$/elearning_system/admin/views.py" />
+        <option value="$PROJECT_DIR$/elearning_system/admin/urls.py" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/manageTopic.html" />
+        <option value="$PROJECT_DIR$/templates/base_admin.html" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/admin/manageTopic.js" />
+=======
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/jquery.numberedtextarea.css" />
         <option value="$PROJECT_DIR$/templates/code_editor_base.html" />
@@ -143,6 +197,7 @@
         <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html" />
         <option value="$PROJECT_DIR$/elearning_system/exercise/views.py" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       </list>
     </option>
   </component>
@@ -153,20 +208,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="1366" />
+    <option name="width" value="1301" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -184,9 +231,12 @@
     <panes>
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
       <pane id="Scope" />
       <pane id="Scratches" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,12 +244,6 @@
               <option name="myItemId" value="Project3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -247,11 +291,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="static" />
+=======
 <<<<<<< HEAD
               <option name="myItemId" value="user" />
 =======
 <<<<<<< HEAD
               <option name="myItemId" value="templates" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -274,7 +340,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -282,11 +348,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="admin" />
+=======
 <<<<<<< HEAD
               <option name="myItemId" value="user" />
 =======
               <option name="myItemId" value="exercise" />
 >>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,6 +405,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="admin" />
+=======
               <option name="myItemId" value="moderator" />
 =======
               <option name="myItemId" value="base" />
@@ -387,6 +460,7 @@
 =======
               <option name="myItemId" value="base" />
 >>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -400,6 +474,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+=======
               <option name="myItemId" value="elearning_system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -419,6 +495,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
               <option name="myItemId" value="Project3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -434,6 +511,10 @@
         </subPane>
       </pane>
 <<<<<<< HEAD
+      <pane id="Scratches" />
+=======
+<<<<<<< HEAD
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <pane id="Scope" />
       <pane id="Scratches" />
 =======
@@ -447,10 +528,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
 <<<<<<< HEAD
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+=======
+<<<<<<< HEAD
     <property name="list.type.of.created.stylesheet" value="CSS" />
 =======
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -458,8 +544,14 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
 <<<<<<< HEAD
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/images" />
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js" />
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css" />
+=======
+<<<<<<< HEAD
       <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base/js" />
       <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css" />
       <recent name="$PROJECT_DIR$/elearning_system" />
@@ -491,6 +583,12 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -582,7 +680,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -743,9 +841,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
+<<<<<<< HEAD
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2804781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34080717" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3529412" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+=======
 <<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28030303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -762,6 +869,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3529412" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -771,9 +879,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -795,6 +906,8 @@
           <url>file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html</url>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+<<<<<<< HEAD
+=======
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/elearning_system/exercise/views.py</url>
@@ -806,12 +919,15 @@
           <line>5</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       </breakpoints>
       <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -849,76 +965,101 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
     <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
+<<<<<<< HEAD
+          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+=======
           <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
+<<<<<<< HEAD
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+=======
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project3/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project3/settings.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project3/urls.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project3/settings.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="45">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+=======
         <state relative-caret-position="495">
           <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
           <folding />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
@@ -926,11 +1067,15 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="75">
+<<<<<<< HEAD
+          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+=======
           <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
 =======
         <state relative-caret-position="45">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
@@ -938,34 +1083,63 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
 <<<<<<< HEAD
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+=======
+<<<<<<< HEAD
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
 =======
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="285">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
         <state relative-caret-position="90">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/models.py">
+    <entry file="file://$PROJECT_DIR$/Project3/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project3/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/exercise/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -980,15 +1154,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="45">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+=======
         <state relative-caret-position="60">
           <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
           <folding />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
@@ -997,7 +1184,18 @@
     <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
+<<<<<<< HEAD
+          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
           <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
         </state>
       </provider>
     </entry>
@@ -1006,6 +1204,9 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="90">
+<<<<<<< HEAD
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+=======
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
 =======
         <state relative-caret-position="0">
@@ -1019,11 +1220,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/user/forms.py">
+=======
 >>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/core-scripting.rnc">
       <provider selected="true" editor-type-id="text-editor">
@@ -1039,6 +1251,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="30" selection-end-column="91" />
@@ -1049,6 +1262,16 @@
     <entry file="file://$PROJECT_DIR$/elearning_system/user/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+=======
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1058,18 +1281,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="70" />
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/jquery-jvectormap-1.2.2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/AdminLTE.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/_all-skins.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery-2.2.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/fastclick.min.js">
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/css/bootstrap-responsive.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1139,13 +1415,54 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/jquery.lightbox-0.5.js">
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/app.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery.sparkline.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery-jvectormap-1.2.2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery-jvectormap-world-mill-en.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery.slimscroll.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/css/font-awesome-ie7.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1401,18 +1718,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/urls.py">
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/jquery-3.1.1.min.js">
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/topic_Form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/jquery.numberedtextarea.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1436,10 +1780,17 @@
 =======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="42" />
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1450,10 +1801,17 @@
           <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
 >>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1472,19 +1830,33 @@
           <caret line="8" column="10958" selection-start-line="8" selection-start-column="10958" selection-end-line="8" selection-end-column="10958" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
 >>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
 <<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+=======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/admin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1500,6 +1872,7 @@
 =======
         <state relative-caret-position="120">
           <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding>
             <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
           </folding>
@@ -1508,25 +1881,43 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/templates/base_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="181" column="27" lean-forward="false" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="27" />
+=======
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/bootstrap-filestyle.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/templates/code_editor_base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205">
           <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/admin/manageTopic.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="120">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+=======
         <state relative-caret-position="259">
           <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
           <folding>
@@ -1545,14 +1936,22 @@
         <state relative-caret-position="75">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
 >>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/manageTopic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+=======
     <entry file="file://$PROJECT_DIR$/templates/base1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+>>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
           <folding />
         </state>
       </provider>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="228afe2f-419d-4000-9551-0482f9aa0440" name="Default" comment="" />
+    <list default="true" id="228afe2f-419d-4000-9551-0482f9aa0440" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Github/OLP-Horizon/openstack_dashboard/dashboards/service_management/container_service/database/service.sqlite" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/Documents/horizon/.gitignore" afterPath="$USER_HOME$/Documents/horizon/.gitignore" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/Github/OLP-Horizon/openstack_dashboard/dashboards/service_management/container_service/service/views.py" afterPath="$USER_HOME$/Github/OLP-Horizon/openstack_dashboard/dashboards/service_management/container_service/service/views.py" />
+    </list>
     <ignored path="Project3.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -24,63 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
+      <file leaf-file-name="base1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/user/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/exercise/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="70" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solve_exercise.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+            <state relative-caret-position="705">
+              <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -89,38 +41,20 @@
       <file leaf-file-name="test_code.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="70" />
-              <folding />
+            <state relative-caret-position="120">
+              <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
+              <folding>
+                <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project3/urls.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="79" column="54" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+            <state relative-caret-position="75">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -132,6 +66,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -147,11 +82,14 @@
         <option value="$PROJECT_DIR$/elearning_system/models/user.py" />
         <option value="$PROJECT_DIR$/elearning_system/urls.py" />
         <option value="$PROJECT_DIR$/Project3/urls.py" />
-        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html" />
         <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html" />
-        <option value="$PROJECT_DIR$/elearning_system/exercise/views.py" />
         <option value="$PROJECT_DIR$/elearning_system/exercise/urls.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/themes/bootshop/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/templates/base1.html" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html" />
+        <option value="$PROJECT_DIR$/elearning_system/exercise/views.py" />
       </list>
     </option>
   </component>
@@ -191,6 +129,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -252,75 +191,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="exercise" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exercise" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,11 +205,18 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/themes" />
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/themes/images" />
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system" />
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/elearning_system" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.Project3">
@@ -439,16 +322,10 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <module name="OLP-Horizon" />
+      <module name="Project3" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -616,17 +493,17 @@
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27121213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2530303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34080717" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3529412" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3529412" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3993808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -652,17 +529,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html</url>
-          <line>9</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/elearning_system/exercise/views.py</url>
-          <line>9</line>
+          <line>11</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/elearning_system/exercise/views.py</url>
-          <line>4</line>
+          <line>5</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -671,39 +547,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,65 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,65 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,19 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,10 +696,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/forms.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -994,6 +730,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bootstrap/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1002,52 +753,387 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/core-scripting.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="129">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="70" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/images/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="79" column="54" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+        <state relative-caret-position="195">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="30" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
+    <entry file="file://$PROJECT_DIR$/elearning_system/user/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/css/bootstrap-responsive.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/img/glyphicons-halflings.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/img/glyphicons-halflings-white.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/less.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/bootshop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/google-code-prettify/prettify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/jquery.lightbox-0.5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/css/font-awesome-ie7.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1339814222000" expanded="true" signature="352:419" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="458:525" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="565:632" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="674:741" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="780:847" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="885:952" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="996:1063" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1101:1168" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1206:1273" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1315:1382" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1418:1485" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1526:1593" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1629:1696" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1736:1803" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1844:1911" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="1953:2020" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2057:2124" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2164:2231" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2268:2335" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2374:2441" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2479:2546" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2584:2651" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2689:2756" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2794:2861" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="2907:2974" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3016:3083" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3123:3190" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3229:3296" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3341:3408" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3448:3515" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3556:3623" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3665:3732" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3770:3837" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3875:3942" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="3986:4053" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4097:4164" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4209:4276" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4319:4386" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4426:4493" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4534:4601" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4638:4705" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4743:4810" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4848:4915" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="4957:5024" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5063:5130" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5170:5237" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5275:5342" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5380:5447" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5487:5554" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5599:5666" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5710:5777" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5821:5888" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="5934:6001" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6046:6113" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6160:6227" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6265:6332" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6377:6444" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6490:6557" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6605:6672" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6713:6780" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6820:6887" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="6931:6998" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7038:7105" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7143:7210" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7248:7315" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7354:7421" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7460:7527" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7565:7632" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7679:7746" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7793:7860" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="7902:7969" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8007:8074" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8113:8180" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8218:8285" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8326:8393" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8439:8506" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8552:8619" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8658:8725" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8771:8838" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8885:8952" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="8995:9062" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9106:9173" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9218:9285" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9326:9393" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9440:9507" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9550:9617" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9661:9728" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9775:9842" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9885:9952" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="9996:10063" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10107:10174" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10219:10286" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10328:10395" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10439:10506" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10549:10616" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10661:10728" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10774:10841" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10879:10946" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="10985:11052" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11094:11161" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11211:11278" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11316:11383" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11421:11488" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11526:11593" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11635:11702" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11745:11812" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11858:11925" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="11964:12031" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12073:12140" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12180:12247" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12288:12355" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12395:12462" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12506:12573" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12619:12686" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12727:12794" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12841:12908" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="12954:13021" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13066:13133" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13182:13249" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13300:13367" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13410:13477" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13523:13590" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13637:13704" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13750:13817" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13854:13921" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="13959:14026" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14068:14135" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14178:14245" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14290:14357" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14400:14467" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14512:14579" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14620:14687" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14734:14801" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14842:14909" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="14956:15023" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15063:15130" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15170:15237" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15282:15349" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15393:15460" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15499:15566" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15605:15672" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15717:15784" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15832:15899" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="15943:16010" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16051:16118" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16160:16227" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16267:16334" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16374:16441" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16486:16553" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16590:16657" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16694:16761" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16803:16870" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="16908:16975" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17020:17087" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17131:17198" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17241:17308" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17349:17416" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17459:17526" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17577:17644" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17696:17763" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17812:17879" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="17930:17997" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18036:18103" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18143:18210" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18249:18316" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18356:18423" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18466:18533" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18577:18644" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18683:18750" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18788:18855" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="18894:18961" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19001:19068" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19105:19172" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19210:19277" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19321:19388" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19426:19493" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19537:19604" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19645:19712" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19753:19820" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19861:19928" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="19975:20042" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20085:20152" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20191:20258" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20297:20364" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20403:20470" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20513:20580" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20628:20695" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20745:20812" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20857:20924" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="20963:21030" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21074:21141" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21183:21250" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21294:21361" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21406:21473" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21514:21581" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21619:21686" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21729:21796" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21837:21904" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="21950:22017" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22059:22126" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22164:22231" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22270:22337" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22380:22447" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22492:22559" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22605:22672" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22710:22777" ph="{...}" />
+            <marker date="1339814222000" expanded="true" signature="22818:22885" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/google-code-prettify/prettify.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="8" column="10958" selection-start-line="8" selection-start-column="10958" selection-end-line="8" selection-end-column="10958" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="70" />
-          <folding />
+        <state relative-caret-position="120">
+          <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
+          <folding>
+            <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
           <folding />
         </state>
       </provider>

@@ -19,7 +19,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="{% static 'elearning_system/base/css/easy-responsive-tabs.css' %}" rel="stylesheet" type="text/css" media="all"/>
 <link rel="stylesheet" href="{% static 'elearning_system/base/css/global.css' %}">
 <script src="{% static 'elearning_system/base/js/slides.min.jquery.js' %}"></script>
+{% block style_sheet %}{% endblock %}
 <script type="text/javascript" src="{% static 'elearning_system/base/js/startstop-slider.js' %}"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 {% block javascript %}{% endblock %}
 </head>
 <body>

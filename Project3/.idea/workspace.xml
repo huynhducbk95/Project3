@@ -28,17 +28,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="test_code.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
+              <folding>
+                <element signature="e#1162#3971#0#HTML" expanded="false" />
+                <element signature="e#4173#5509#0#HTML" expanded="false" />
+                <element signature="e#7189#7211#0#HTML" expanded="true" />
+              </folding>
+=======
+      <file leaf-file-name="base1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base1.html">
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="test_code.html" pinned="false" current-in-tab="true">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="code_editor_base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/code_editor_base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-205">
+              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+              <folding />
+=======
+      <file leaf-file-name="test_code.html" pinned="false" current-in-tab="false">
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
         <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
@@ -46,17 +76,43 @@
               <folding>
                 <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
               </folding>
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="code_editor.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/code_editor.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+=======
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+<<<<<<< HEAD
+        <option value="CSS File" />
+=======
         <option value="HTML File" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
       </list>
     </option>
   </component>
@@ -75,11 +131,18 @@
         <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html" />
         <option value="$PROJECT_DIR$/elearning_system/exercise/urls.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/jquery.numberedtextarea.css" />
+        <option value="$PROJECT_DIR$/templates/code_editor_base.html" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/code_editor.css" />
+=======
         <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/themes/bootshop/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/templates/base1.html" />
         <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html" />
         <option value="$PROJECT_DIR$/elearning_system/exercise/views.py" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
       </list>
     </option>
   </component>
@@ -119,8 +182,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
       <pane id="Scope" />
       <pane id="Scratches" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -181,7 +247,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="user" />
+=======
+<<<<<<< HEAD
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -207,7 +282,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="user" />
+=======
+              <option name="myItemId" value="exercise" />
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -225,7 +304,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="templates" />
+=======
+              <option name="myItemId" value="static" />
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -233,6 +316,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="exercise" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -252,6 +336,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="moderator" />
+=======
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,6 +360,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -280,6 +372,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project3" />
+=======
+              <option name="myItemId" value="static" />
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -287,7 +382,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="migrations" />
+=======
+              <option name="myItemId" value="base" />
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,6 +404,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemId" value="exercise" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -329,6 +433,11 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="Scratches" />
+=======
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,18 +446,30 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+<<<<<<< HEAD
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+=======
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base1" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base/js" />
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css" />
+      <recent name="$PROJECT_DIR$/elearning_system" />
+=======
       <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/themes" />
       <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/themes/images" />
       <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/templates" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
     </key>
   </component>
   <component name="RunManager" selected="Django server.Project3">
@@ -625,12 +746,21 @@
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28030303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34080717" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2530303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34080717" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3529412" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -659,10 +789,13 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+<<<<<<< HEAD
+=======
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html</url>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/elearning_system/exercise/views.py</url>
           <line>11</line>
@@ -674,7 +807,7 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -683,6 +816,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+<<<<<<< HEAD
+=======
         </state>
       </provider>
     </entry>
@@ -739,6 +874,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         </state>
       </provider>
     </entry>
@@ -788,15 +924,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="75">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+=======
         <state relative-caret-position="45">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
+<<<<<<< HEAD
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+=======
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         </state>
       </provider>
     </entry>
@@ -847,13 +992,39 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
     <entry file="file://$PROJECT_DIR$/static/bootstrap/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="90">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/core-scripting.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -927,9 +1098,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="75">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         </state>
       </provider>
     </entry>
@@ -943,9 +1119,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="90">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         </state>
       </provider>
     </entry>
@@ -1199,33 +1380,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/google-code-prettify/prettify.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="8" column="10958" selection-start-line="8" selection-start-column="10958" selection-end-line="8" selection-end-column="10958" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="75">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding />
+          <caret line="6" column="70" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1239,8 +1399,152 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/jquery-3.1.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/jquery.numberedtextarea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/jquery.numberedtextarea.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="246">
+          <caret line="8" column="10958" selection-start-line="8" selection-start-column="10958" selection-end-line="8" selection-end-column="10958" />
+=======
+        <state relative-caret-position="705">
+          <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="8" column="10958" selection-start-line="8" selection-start-column="10958" selection-end-line="8" selection-end-column="10958" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="187">
+          <caret line="262" column="10" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="10" />
+          <folding />
+=======
+        <state relative-caret-position="120">
+          <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
+          <folding>
+            <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
+          </folding>
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
+>>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/bootstrap-filestyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/code_editor_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
+          <folding>
+            <element signature="e#1162#3971#0#HTML" expanded="false" />
+            <element signature="e#4173#5509#0#HTML" expanded="false" />
+            <element signature="e#7189#7211#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/code_editor.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+=======
         <state relative-caret-position="75">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
           <folding />
         </state>
       </provider>

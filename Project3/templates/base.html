@@ -10,6 +10,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 {% load static %}
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<<<<<<< HEAD
+{#<link href="{% static 'elearning_system/base/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>#}
+{#<link href="{% static 'elearning_system/base/css/slider.css' %}" rel="stylesheet" type="text/css" media="all"/>#}
+{#<script type="text/javascript" src="{% static 'elearning_system/base/js/jquery-1.7.2.min.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'elearning_system/base/js/move-top.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'elearning_system/base/js/easing.js' %}"></script>#}
+{#<script src="{% static 'elearning_system/base/js/easyResponsiveTabs.js' %}" type="text/javascript"></script>#}
+{#<link href="{% static 'elearning_system/base/css/easy-responsive-tabs.css' %}" rel="stylesheet" type="text/css" media="all"/>#}
+{#<link rel="stylesheet" href="{% static 'elearning_system/base/css/global.css' %}">#}
+{#<script src="{% static 'elearning_system/base/js/slides.min.jquery.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'elearning_system/base/js/startstop-slider.js' %}"></script>#}
+{% block style_sheet %}{% endblock %}
+=======
 <link href="{% static 'elearning_system/base/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
 <link href="{% static 'elearning_system/base/css/slider.css' %}" rel="stylesheet" type="text/css" media="all"/>
 <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery-1.7.2.min.js' %}"></script>
@@ -29,6 +42,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+>>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
 {% block javascript %}{% endblock %}
 </head>
 <body>
@@ -51,34 +65,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="logo">
 				<a href="#"><img src="{% static 'elearning_system/base/images/logo.png' %}" alt="" /></a>
 			</div>
-			  <script type="text/javascript">
-			function DropDown(el) {
-				this.dd = el;
-				this.initEvents();
-			}
-			DropDown.prototype = {
-				initEvents : function() {
-					var obj = this;
-
-					obj.dd.on('click', function(event){
-						$(this).toggleClass('active');
-						event.stopPropagation();
-					});
-				}
-			}
-
-			$(function() {
-
-				var dd = new DropDown( $('#dd') );
-
-				$(document).click(function() {
-					// all dropdowns
-					$('.wrapper-dropdown-2').removeClass('active');
-				});
-
-			});
-
-		</script>
+{#			  <script type="text/javascript">#}
+{#			function DropDown(el) {#}
+{#				this.dd = el;#}
+{#				this.initEvents();#}
+{#			}#}
+{#			DropDown.prototype = {#}
+{#				initEvents : function() {#}
+{#					var obj = this;#}
+{##}
+{#					obj.dd.on('click', function(event){#}
+{#						$(this).toggleClass('active');#}
+{#						event.stopPropagation();#}
+{#					});#}
+{#				}#}
+{#			}#}
+{##}
+{#			$(function() {#}
+{##}
+{#				var dd = new DropDown( $('#dd') );#}
+{##}
+{#				$(document).click(function() {#}
+{#					// all dropdowns#}
+{#					$('.wrapper-dropdown-2').removeClass('active');#}
+{#				});#}
+{##}
+{#			});#}
+{##}
+{#		</script>#}
 	 <div class="clear"></div>
   </div>
 	<div class="header_bottom">
@@ -163,10 +177,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   </div>
     </div>
    <script type="text/javascript">
-		$(document).ready(function() {
-			$().UItoTop({ easingType: 'easeOutQuart' });
-
-		});
+{#		$(document).ready(function() {#}
+{#			$().UItoTop({ easingType: 'easeOutQuart' });#}
+{##}
+{#		});#}
 	</script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
 

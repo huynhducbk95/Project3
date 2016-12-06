@@ -7,7 +7,7 @@ def index(request):
 
 def list_ex_of_topic(request):
     print('x')
-    return render(request, 'elearning_system/user/list_ex_of_topic.html', {'title': 'registry'})
+    return render(request, 'base.html', {'title': 'registry'})
 
 def contact(request):
     print('x')

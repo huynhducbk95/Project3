@@ -43,15 +43,15 @@
                 <span class="icon-bar"></span>
             </a>
             <div class="navbar-inner">
-                <a class="brand" href="index.html"><img src="{% static 'elearning_system/base1/themes/images/logo.png' %}" alt="Bootsshop" height=140px width=200px/></a>
+                <a class="brand" href="/user"><img src="{% static 'elearning_system/base1/themes/images/logo.png' %}" alt="Bootsshop" height=140px width=200px/></a>
                 <form class="form-inline navbar-search" method="post" action="products.html">
                     <input type="text" class="form-control" placeholder="Search for..." >
                     <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
                 </form>
                 <ul id="topMenu" class="nav pull-right">
-                    <li class=""><a href="special_offer.html">Ranking</a></li>
-                    <li class=""><a href="normal.html">TestCode</a></li>
-                    <li class=""><a href="contact.html">Contact</a></li>
+                    <li class=""><a href="/user/list_ex">Ranking</a></li>
+                    <li class=""><a href="/exercise/test_code">TestCode</a></li>
+                    <li class=""><a href="/user/contact">Contact</a></li>
                     <li class="">
                         <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span
                                 class="btn btn-large btn-success">Login</span></a>
@@ -85,6 +85,7 @@
         </div>
     </div>
 </div>
+{% block slide %}{% endblock %}
 <!-- Header End====================================================================== -->
 <div id="mainBody">
     {% block main %}{% endblock %}

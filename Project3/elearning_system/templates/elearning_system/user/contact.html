@@ -1,0 +1,76 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/user/css/contact.css' %}" rel="stylesheet" type="text/css" media="all"/>
+{% endblock %}
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <div class="well well-sm">
+                    <form>
+                        <div class="row">
+                            <div class="span3">
+                                <div class="form-group form1">
+                                    <label for="name">
+                                        Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name"
+                                           required="required"/>
+                                </div>
+                                <div class="form-group form1">
+                                    <label for="email">
+                                        Email Address</label>
+                                    <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                               required="required"/></div>
+                                </div>
+                                <div class="form-group form1">
+                                    <label for="email">
+                                        Subject</label>
+                                    <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter subject"
+                                               required="required"/></div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Message</label>
+                                    <textarea name="message" id="message_contact" class="form-control" rows="9" cols="25"
+                                              required="required"
+                                              placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="span7">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                    Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="span4">
+                <form>
+                    <legend><span class="glyphicon glyphicon-globe"></span> Our Company</legend>
+                    <address>
+                        <strong>Twitter, Inc.</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                        <abbr title="Phone">
+                            P:</abbr>
+                        (123) 456-7890
+                    </address>
+                    <address>
+                        <strong>Full Name</strong><br>
+                        <a href="mailto:#">first.last@example.com</a>
+                    </address>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

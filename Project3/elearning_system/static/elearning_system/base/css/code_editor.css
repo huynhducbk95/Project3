@@ -26,3 +26,12 @@
 #code-file-input{
     width: 100px;
 }
+.select-language-input{
+    width: 150px;
+}
+.select-language-input label{
+    width:70px;
+}
+#code-language{
+    width: 70px;
+}

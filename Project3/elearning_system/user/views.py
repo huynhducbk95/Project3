@@ -96,4 +96,5 @@ def search(request):
     if (request.method == "GET"):
         search = request.GET.get('search', None)
         result['search'] = search
+
     return render(request, 'elearning_system/user/search.html', result)

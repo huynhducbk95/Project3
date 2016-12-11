@@ -1,0 +1,10 @@
+.borderless td{
+    border: 0;
+}
+
+#selectTopic {
+    height: 30px;
+    width: 450px;
+    margin-top: 5px;
+    margin-left: 10px;
+}

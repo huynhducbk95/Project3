@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$USER_HOME$/Documents/horizon" vcs="Git" />
     <mapping directory="$USER_HOME$/Github/OLP-Horizon" vcs="Git" />
+    <mapping directory="$USER_HOME$/thực tập/booking-client" vcs="Git" />
   </component>
 </project>

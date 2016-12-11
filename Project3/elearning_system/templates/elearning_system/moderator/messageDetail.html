@@ -1,0 +1,32 @@
+{% extends 'base_moderator.html' %}
+{% block title %} Detail Error Message {% endblock %}
+
+{#{% load static %}#}
+{#{% block css_admin %}#}
+{#    <link  type="text/css" href="{% static 'elearning_system/moderator/css/messageDetail.css' %}" rel="stylesheet"/>#}
+{#{% endblock %}#}
+
+{% block content-header %} Chi tiết tin nhắn báo lỗi {% endblock %}
+
+{% block main_admin %}
+    <div id="messageDetail_header">
+        <p><b>Tên bài: </b><span>Tìm số hoàn hảo</span></p>
+        <p><b>Tiêu đề: </b><span>Lỗi logic bài tập 1</span></p>
+    </div>
+
+    <div id="messageDetail_content">
+        <h4><b>Nội dung lỗi:</b></h4>
+        <label>aaaaaaaaaaaaaaaaaaaaa sadsdf sdgdfg sdfgs sd sdfg adfs vadfsvda adgsdadf</label>
+    </div>
+
+    <div id="messageDetail_ex">
+        <h4><b>Nội dung bài tập</b></h4>
+        <label>Số hoàn hảo là số có tổng các ước bằng chính nó. Tìm tất cả các số hoàn hảo bé hơn 100.</label>
+    </div>
+
+{% endblock %}
+
+{% load static %}
+ {% block javascript %}
+     <script type="text/javascript" src="{% static 'elearning_system/moderator/js/errorMessage.js' %}"></script>
+ {% endblock %}

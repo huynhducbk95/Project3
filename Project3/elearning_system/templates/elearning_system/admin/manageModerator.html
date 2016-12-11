@@ -1,0 +1,183 @@
+{% extends 'base_admin.html' %}
+{% block title %} Manage Moderator {% endblock %}
+{#{% load static %}#}
+{# {% block javascript %}#}
+{#     <script type="text/javascript" src="{% static 'elearning_system/admin/js/manageModerator.js' %}"></script>#}
+{# {% endblock %}#}
+
+{% block content-header %} Quản lý Moderator {% endblock %}
+
+{% block main_admin %}
+
+    <div id="example1_filter" class="dataTables_filter" style="float: right;">
+        <label>Search:
+            <input type="search" class="form-control input-sm" placeholder="" aria-controls="example1">
+        </label>
+    </div>
+
+    <div>
+
+        <div class="container">
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalAddModerator" onclick="">
+                Add New Moderator
+            </button>
+
+            <!-- Modal add moderator-->
+            <div class="modal fade" id="modalAddModerator" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="warning-moderator">Add Moderator</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>User Name:</label>
+                                    <input type="text" class="form-control" id="form_add_userName">
+                                </div>
+                                <div class="form-group">
+                                    <label>Họ và tên:</label>
+                                    <input type="text" class="form-control" id="form_add_fullName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="form_add_email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Số điện thoại:</label>
+                                    <input type="number" class="form-control" id="form_add_phoneNumber">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Passwork:</label>
+                                    <input type="password" class="form-control" id="form_add_pass">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Re-Passwork:</label>
+                                    <input type="password" class="form-control" id="form_add_rePass">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="form_add_btn" onclick="">Thêm</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="container">
+            <!-- Modal block and active moderator -->
+            <div class="modal fade" id="modalModerator" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="warning-moderator">Block Moderator?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Họ và tên:</label>
+                                <label id="moderatorFullName">donghm</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <label id="moderator_email">abc@gmail.com</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="btn_moderator" onclick="">Block</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {#    table  #}
+    <div class="row">
+        <div class="col-sm-12">
+            <table id="example1" class="table table-bordered table-striped dataTable" role="grid"
+                   aria-describedby="example1_info">
+                <thead>
+                <tr role="row">
+                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                        aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
+                        aria-sort="ascending">STT
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">User Name
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">Email
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">Họ và tên
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                        aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">ID
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Status
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for moderator in dataModerator %}
+
+                    <tr role="row" class="odd">
+                        <td class="sorting_1"> {{ moderator.STT }}</td>
+                        <td>{{ moderator.userName }}</td>
+                        <td>{{ moderator.email }}</td>
+                        <td>{{ moderator.fullName }}</td>
+                        <td>{{ moderator.ID }}</td>
+                        <td>{{ moderator.status }}</td>
+                        <td>
+                            <div class="row">
+                                {% if moderator.status == 'Active' %}
+
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalModerator"
+                                            onclick="blockModerator('{{ moderator.fullName }}','{{ moderator.email }}')">
+                                        Block
+                                    </button>
+                                {% else %}
+
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalModerator"
+                                            onclick="activeModerator('{{ moderator.fullName }}','{{ moderator.email }}')">
+                                        Active
+                                    </button>
+                                {% endif %}
+                            </div>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% load static %}
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'elearning_system/admin/js/manageModerator.js' %}"></script>
+{% endblock %}

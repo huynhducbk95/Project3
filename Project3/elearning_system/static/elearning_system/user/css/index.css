@@ -37,9 +37,13 @@
         padding-bottom: 12px;
     }
 }
-
+#heade_category{
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
 .subMenu {
-    background: #28a4c9;
+    background: #337ab7;
     text-align: center;
 }
 

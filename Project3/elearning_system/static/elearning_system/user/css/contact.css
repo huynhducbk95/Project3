@@ -1,10 +1,22 @@
-#message_contact{
-    width: 400px;
-    height: 300px;
+.jumbotron {
+    background: #358CCE;
+    color: #FFF;
+    border-radius: 0px;
 }
-.form1{
-    margin-bottom: 40px;
+
+.jumbotron-sm {
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
-.form1 label{
-    margin-bottom: 15px;
+
+.jumbotron small {
+    color: #FFF;
+}
+
+.h1 small {
+    font-size: 24px;
+}
+
+.contact_expert {
+    padding-bottom: 15px;
 }

@@ -1,0 +1,39 @@
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+
+    .sidebar-nav .navbar ul {
+        float: none;
+        display: block;
+    }
+
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+.subMenu {
+    background: #28a4c9;
+    text-align: center;
+}
+
+.subMenu a {
+    pointer-events: none;
+    cursor: default;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
+.info_ex_expert {
+    pointer-events: none;
+    cursor: default;
+}

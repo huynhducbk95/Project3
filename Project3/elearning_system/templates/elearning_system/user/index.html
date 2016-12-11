@@ -1,282 +1,201 @@
-{% extends 'base1.html' %}
+{% extends 'base.html' %}
 {% load static %}
-{% block slide %}
-    <div id="carouselBlk">
-        <div id="myCarousel" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="container">
-                        <a href="register.html"><img style="width:100%"
-                                                     src="{% static 'elearning_system/base1/themes/images/carousel/1.png' %}"
-                                                     alt="special offers"/></a>
-                        <div class="carousel-caption">
-                            <h4>Second Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="container">
-                        <a href="register.html"><img style="width:100%"
-                                                     src="{% static 'elearning_system/base1/themes/images/carousel/2.png' %}"
-                                                     alt=""/></a>
-                        <div class="carousel-caption">
-                            <h4>Second Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="container">
-                        <a href="register.html"><img
-                                src="{% static 'elearning_system/base1/themes/images/carousel/3.png' %}" alt=""/></a>
-                        <div class="carousel-caption">
-                            <h4>Second Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="container">
-                        <a href="register.html"><img
-                                src="{% static 'elearning_system/base1/themes/images/carousel/4.png' %}" alt=""/></a>
-                        <div class="carousel-caption">
-                            <h4>Second Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
+{% block title %}{{ result.title }}{% endblock %}
 
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="container">
-                        <a href="register.html"><img
-                                src="{% static 'elearning_system/base1/themes/images/carousel/5.png' %}" alt=""/></a>
-                        <div class="carousel-caption">
-                            <h4>Second Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="container">
-                        <a href="register.html"><img
-                                src="{% static 'elearning_system/base1/themes/images/carousel/6.png' %}" alt=""/></a>
-                        <div class="carousel-caption">
-                            <h4>Second Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-        </div>
-    </div>
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/user/css/index.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+{% endblock %}
+{% block javascript %}
+
 {% endblock %}
 {% block main %}
-
     <div class="container">
         <div class="row">
-            <div id="sidebar" class="span3">
-                <ul id="sideManu" class="nav nav-tabs nav-stacked">
-                    <li class="subMenu open"><a> CATEGORY</a>
-                        <ul>
-                            <li><a class="active" href="products.html"><i class="icon-chevron-right"></i>Lập trình hướng
-                                đối tượng
-                            </a></li>
-                            <li><a href="products.html"><i class="icon-chevron-right"></i>Kỹ thuật lập trình</a></li>
-                            <li><a href="products.html"><i class="icon-chevron-right"></i>Tin học đại cương</a></li>
-                            <li><a href="products.html"><i class="icon-chevron-right"></i>Java</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <div class="col-sm-3 panel-default">
+                <div class="sidebar-nav">
+                    <div class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target=".sidebar-navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <span class="visible-xs navbar-brand">Sidebar menu</span>
+                        </div>
+                        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="subMenu"><a href="">CATEGORY</a></li>
+                                {% for topic in result.topic_list %}
+                                    <li><a href="#"><span class="glyphicon glyphicon-forward" style="color:#337ab7">
+
+                                    </span>{{ topic }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Subscribe</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"
+                             width="100%">
+                        Click <a href="#"> here</a> to update new exercise
+                    </div>
+                </div>
+
+
             </div>
-            <!-- Sidebar end=============================================== -->
-            <div class="span9">
-                <div class="well well-small">
-                    <h4>Featured Products
-                        <small class="pull-right">200+ featured products</small>
-                    </h4>
-                    <div class="row-fluid">
-                        <div id="featured" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <ul class="thumbnails">
-                                        <li class="span3">
-                                            <div class="thumbnail">
-                                                <i class="tag"></i>
-                                                <a href="product_details.html"><img src="themes/images/products/b1.jpg"
-                                                                                    alt=""></a>
-                                                <div class="caption">
-                                                    <h5>Product name</h5>
-                                                    <h4><a class="btn" href="product_details.html">VIEW</a> <span
-                                                            class="pull-right">$222.00</span></h4>
+            <div class="col-sm-9 ">
+                <div class="well">
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row-fluid">
+                                    {% for user in result.top_user %}
+                                        {% if forloop.counter <= 4 %}
+                                            <div class="col-sm-3">
+                                                <div class="user_name thumbnail">
+                                                    <div class="avatar"><a href="#x"><img
+                                                            src="http://placehold.it/250x200" alt="Image"
+                                                            style="max-width:100%;"/></a></div>
+                                                    <div class="user_name_expert"><h5>{{ user.username }}</h5></div>
+                                                    <div class="user_info_expert">
+                                                <span class="glyphicon glyphicon-ok-circle" style="color:#337ab7"
+                                                      aria-hidden="true"></span> {{ user.passed }}
+                                                        <span class="glyphicon glyphicon-cloud-upload"
+                                                              style="color:#337ab7"
+                                                              aria-hidden="true"></span> {{ user.contributed }}
+                                                        <span class="glyphicon glyphicon-envelope" style="color:#337ab7"
+                                                              aria-hidden="true"></span> {{ user.message }}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="item">
-                                    <ul class="thumbnails">
-                                        <li class="span3">
-                                            <div class="thumbnail">
-                                                <i class="tag"></i>
-                                                <a href="product_details.html"><img src="themes/images/products/5.jpg"
-                                                                                    alt=""></a>
-                                                <div class="caption">
-                                                    <h5>Product name</h5>
-                                                    <h4><a class="btn" href="product_details.html">VIEW</a> <span
-                                                            class="pull-right">$222.00</span></h4>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div><!--/row-fluid-->
+                            </div><!--/item-->
+
+                            <div class="item">
+                                <div class="row-fluid">
+                                    {% for user in result.top_user %}
+                                        {% if forloop.counter > 4 %}
+                                            <div class="col-sm-3">
+                                                <div class="user_name thumbnail">
+                                                    <div class="avatar"><a href="#x"><img
+                                                            src="http://placehold.it/250x200" alt="Image"
+                                                            style="max-width:100%;"/></a></div>
+                                                    <div class="user_name_expert"><h5>{{ user.username }}</h5></div>
+                                                    <div class="user_info_expert">
+                                                <span class="glyphicon glyphicon-ok-circle" style="color:#337ab7"
+                                                      aria-hidden="true"></span> {{ user.passed }}
+                                                        <span class="glyphicon glyphicon-cloud-upload"
+                                                              style="color:#337ab7"
+                                                              aria-hidden="true"></span> {{ user.contributed }}
+                                                        <span class="glyphicon glyphicon-envelope" style="color:#337ab7"
+                                                              aria-hidden="true"></span> {{ user.message }}
+                                                    </div>
                                                 </div>
                                             </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div><!--/row-fluid-->
+                            </div><!--/item-->
+
+                        </div><!--/carousel-inner-->
+
+                        <a class="left carousel-control" href="#myCarousel" data-slide="next"><span
+                                class='glyphicon glyphicon-chevron-left'></span></a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="prev"><span
+                                class='glyphicon glyphicon-chevron-right'></span></a>
+                        </a><!--/myCarousel-->
+
+                    </div>
+                </div><!--/well-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-sm-6"><h4>Top Exercise</h4></div>
+                            <div class="col-sm-6">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle pull-right" type="button"
+                                            id="menu1"
+                                            data-toggle="dropdown">Sắp xếp
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="menu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">View</a>
                                         </li>
-                                    </ul>
-                                </div>
-                                <div class="item">
-                                    <ul class="thumbnails">
-                                        <li class="span3">
-                                            <div class="thumbnail">
-                                                <a href="product_details.html"><img src="themes/images/products/9.jpg"
-                                                                                    alt=""></a>
-                                                <div class="caption">
-                                                    <h5>Product name</h5>
-                                                    <h4><a class="btn" href="product_details.html">VIEW</a> <span
-                                                            class="pull-right">$222.00</span></h4>
-                                                </div>
-                                            </div>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Passed</a>
+                                        </li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                                   href="#">Message</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
-                            <a class="right carousel-control" href="#featured" data-slide="next">›</a>
                         </div>
+                    </div>
+                    <div class="panel-body">
+                        {% for exercise in result.top_exercise %}
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <h4>{{ exercise.name }}</h4>
+                                    <hr class="soft"/>
+                                    <p>
+                                        {{ exercise.description }}
+                                    </p>
+                                    <div class="row list_ex_expert">
+                                        <div class="col-sm-8">
+                                            <ul class="nav nav-pills pull-left" role="tablist">
+                                                <li role="presentation"><a href="#">View <span
+                                                        class="badge">{{ exercise.viewed }}</span></a>
+                                                </li>
+                                                <li role="presentation"><a href="#">Passed <span
+                                                        class="badge">{{ exercise.passed }}</span></a>
+                                                </li>
+                                                <li role="presentation"><a href="#">Message <span
+                                                        class="badge">{{ exercise.messaged }}</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a class="btn btn-small pull-right" href="product_details.html">View
+                                                Details</a>
+                                        </div>
+                                    </div>
+                                    <br class="clr"/>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="disabled pagination_btn">
+                                    <span href="#" aria-label="Previous" style="cursor:not-allowed">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </span>
+                                </li>
+                                <li class="active pagination_btn"><span href="#" style="cursor:pointer">1<span
+                                        class="sr-only">(current)</span></span></li>
+                                <li class="pagination_btn"><span style="cursor:pointer">2</span></li>
+                                <li class="pagination_btn"><span style="cursor:pointer">3</span></li>
+                                <li class="pagination_btn"><span style="cursor:pointer">4</span></li>
+                                <li class="pagination_btn"><span style="cursor:pointer">5</span></li>
+                                <li class="pagination_btn_next">
+                                    <span aria-label="Next" style="cursor:pointer">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-                <h4>Latest Products </h4>
-                <div class="list_exercise_content">
-                    <div class="row">
-                        <div class="span8">
-                            <h4>Exercise 1</h4>
-                            <hr class="soft"/>
-                            <p>
-                                Nowadays the lingerie industry is one of the most successful...
-                            </p>
-                            <div class="row">
-                                <div class="span4">
-                                    <ul class="nav nav-pills pull-left" role="tablist">
-                                        <li role="presentation"><a href="#">View <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Passed <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Message <span class="badge">3</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="span4">
-                                    <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-                                </div>
-                            </div>
-                            <br class="clr"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="span8">
-                            <h4>Exercise 2</h4>
-                            <hr class="soft"/>
-                            <p>
-                                Nowadays the lingerie industry is one of the most successful...
-                            </p>
-                            <div class="row">
-                                <div class="span4">
-                                    <ul class="nav nav-pills pull-left" role="tablist">
-                                        <li role="presentation"><a href="#">View <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Passed <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Message <span class="badge">3</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="span4">
-                                    <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-                                </div>
-                            </div>
-                            <br class="clr"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="span8">
-                            <h4>Exercise 3</h4>
-                            <hr class="soft"/>
-                            <p>
-                                Nowadays the lingerie industry is one of the most successful...
-                            </p>
-                            <div class="row">
-                                <div class="span4">
-                                    <ul class="nav nav-pills pull-left" role="tablist">
-                                        <li role="presentation"><a href="#">View <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Passed <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Message <span class="badge">3</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="span4">
-                                    <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-                                </div>
-                            </div>
-                            <br class="clr"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="span8">
-                            <h4>Exercise 4</h4>
-                            <hr class="soft"/>
-                            <p>
-                                Nowadays the lingerie industry is one of the most successful...
-                            </p>
-                            <div class="row">
-                                <div class="span4">
-                                    <ul class="nav nav-pills pull-left" role="tablist">
-                                        <li role="presentation"><a href="#">View <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Passed <span class="badge">3</span></a>
-                                        </li>
-                                        <li role="presentation"><a href="#">Message <span class="badge">3</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="span4">
-                                    <a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-                                </div>
-                            </div>
-                            <br class="clr"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="pagination">
-                    <ul>
-                        <li><a href="#">&lsaquo;</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">&rsaquo;</a></li>
-                    </ul>
-                </div>
-                <br class="clr"/>
             </div>
         </div>
-    </div>
     </div>
 {% endblock %}

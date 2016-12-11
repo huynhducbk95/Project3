@@ -1,0 +1,78 @@
+{% extends 'code_editor_base.html' %}
+{% load static %}
+{% block title %} HOME PAGE {% endblock %}
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/base/css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'elearning_system/base/css/code_editor.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'elearning_system/base/css/jquery.numberedtextarea.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+{% endblock %}
+{% block main %}
+    <h3>Contribute Exercise</h3>
+    <div class="container">
+        <form class="col-md-8">
+            <div class="form-group">
+                <label for="exercise-name">Exercise Name</label>
+                <input type="text" class="form-control" id="exercise-name" aria-describedby="emailHelp"
+                       placeholder='Input Exercise Name'/>
+            </div>
+            <div class="form-group">
+                <label for="exercise-detail">Exercise Detail</label>
+                <textarea class="form-control" id="exercise-detail" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="code-file-input">Test case</label>
+                <input type="file" class="filestyle" data-buttonText="Upload test case file" id="code-file-input">
+
+            </div>
+            <div class="form-group">
+                <div id="exercise-test-case-header" class="text-danger">
+                    Example test case format
+                </div>
+                <div>
+                    <p>
+                        x1=2;x2=4;x3=6;x4=8 => y=12
+                    </p>
+                    <p>
+                        x1=2;x2=4;x3=6;x4=8 => y=12
+                    </p>
+                    <p>
+                        x1=2;x2=4;x3=6;x4=8 => y=12
+                    </p>
+                    <p>
+                        x1=2;x2=4;x3=6;x4=8 => y=12
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="solution-file-input">Solution</label>
+                <input type="file" class="filestyle" data-buttonText="Upload solution" id="solution-file-input">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" id="check-solution">Check solution</button>
+            </div>
+            <div class="form-group">
+                <label for="solution-language">Solution Language </label>
+                <select class="form-control" id="solution-language">
+                    <option>C#</option>
+                    <option>Java</option>
+                    <option>C++</option>
+                    <option>Python</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery.numberedtextarea.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap-filestyle.js' %}"></script>
+    <script>
+        $('#code-editor').numberedtextarea();
+    </script>
+{% endblock %}

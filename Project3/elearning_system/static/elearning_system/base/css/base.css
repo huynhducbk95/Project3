@@ -6,12 +6,6 @@
 #logo_base_expert{
     font-size: 20px;
 }
-.image_homepage{
-    border-radius: 2px;
-    box-shadow: 5px 10px 10px #D1D1D1;
-    background-image: url("http://placehold.it/250x200");
-    height: 200px;
-}
 
 .custom_navbar a{
     color: white;

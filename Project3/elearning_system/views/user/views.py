@@ -86,7 +86,7 @@ def list_ex_of_topic(request):
 
 def contact(request):
     print('x')
-    return render(request, 'elearning_system/user/contact.html', {'title': 'registry'})
+    return render(request, 'base.html', {'title': 'registry'})
 
 
 def search(request):
@@ -96,4 +96,5 @@ def search(request):
     if (request.method == "GET"):
         search = request.GET.get('search', None)
         result['search'] = search
+
     return render(request, 'elearning_system/user/search.html', result)

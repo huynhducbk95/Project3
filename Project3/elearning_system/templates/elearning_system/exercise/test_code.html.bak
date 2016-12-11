@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} HOME PAGE {% endblock %}
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/base/css/code_editor.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'elearning_system/base/css/jquery.numberedtextarea.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery.numberedtextarea.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap-filestyle.js' %}"></script>
+
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="span4 excercise-section text-justify">
+                <h4 id="exercise-title" class="text-info">Tìm số nhỏ nhất trong 4 số nguyên</h4>
+                <div class="exercise-detail pre-scrollable">
+                    <div id="exercise-content">
+                        We can also divide one number by another.
+                        JavaScript uses the / symbol for division.
+                        You are given two linked lists representing two non-negative numbers.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        We can also divide one number by another.
+                        JavaScript uses the / symbol for division.
+                        You are given two linked lists representing two non-negative numbers.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        We can also divide one number by another.
+                        JavaScript uses the / symbol for division.
+                        You are given two linked lists representing two non-negative numbers.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        We can also divide one number by another.
+                        JavaScript uses the / symbol for division.
+                        You are given two linked lists representing two non-negative numbers.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        We can also divide one number by another.
+                        JavaScript uses the / symbol for division.
+                        You are given two linked lists representing two non-negative numbers.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        We can also divide one number by another.
+                        JavaScript uses the / symbol for division.
+                        You are given two linked lists representing two non-negative numbers.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        We can also divide one number by another.
+                        JavaScript uses the / symbol for division.
+                        You are given two linked lists representing two non-negative numbers.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+
+                    </div>
+                </div>
+                <div id="exercise-instruction">
+                    <h4 id="exercise-instruction-header" class="text-danger">
+                        Gợi ý
+                    </h4>
+                    <div id="exercise-instruction-body" class="pre-scrollable">
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.The digits are stored in reverse order and
+                        each
+                        of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+                        The digits are stored in reverse order and each of their nodes contain a single digit.
+                        Add the two numbers and return it as a linked list.
+
+
+                    </div>
+                </div>
+
+                <div id="exercise-test-case">
+                    <h4 id="exercise-test-case-header" class="text-danger">
+                        Test case example
+                    </h4>
+                    <div id="exercise-test-case-body" class="pre-scrollable">
+                        <p>
+                            x1=2;x2=4;x3=6;x4=8 => y=12
+                        </p>
+                        <p>
+                            x1=2;x2=4;x3=6;x4=8 => y=12
+                        </p>
+                        <p>
+                            x1=2;x2=4;x3=6;x4=8 => y=12
+                        </p>
+                        <p>
+                            x1=2;x2=4;x3=6;x4=8 => y=12
+                        </p>
+
+                        <p>
+                            x1=2;x2=4;x3=6;x4=8 => y=12
+                        </p>
+
+                        <p>
+                            x1=2;x2=4;x3=6;x4=8 => y=12
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="span8 code-editor-field">
+                <div id="code-editor-header" class="row">
+                    <div class="span4">
+                        <h4 class="text-danger">
+                            Giải bài tập
+                        </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary pull-right" id="report-exercise-error-btn">
+                            <span class="glyphicon glyphicon-arrow-right"></span> Report Exercise Error...
+                        </button>
+                        <script>
+                            $('#report-exercise-error-btn').click(function () {
+                                {#                            var property_element = $(this).closest(".property-element");#}
+                                {#                            set_modal_value_list(property_element.data('property-id'),#}
+                                {#                                    property_element.attr('data-property-value-id'));#}
+                                var modal_select_element = $("#modal-report-exercise-error");
+                                modal_select_element.modal();
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div id="code-editor-body" class="row">
+                <textarea cols="60" rows="20" class="form-control" spellcheck="false" id="code-editor"
+                          style="color: #1b6d85"></textarea>
+                    <script>
+                        $('textarea').numberedtextarea();
+                    </script>
+                </div>
+                <div id="code-editor-footer" class="row">
+                    <div class="form-group span5">
+                        <input type="file" class="filestyle" data-buttonText="Upload code file" id="code-file-input">
+                    </div>
+                    <div class="form-group span2 select-language-input form-inline">
+                        <label for="code-language">Language:</label>
+                        <select class="form-control" id="code-language">
+                            <option>C#</option>
+                            <option>Java</option>
+                            <option>C++</option>
+                            <option>Python</option>
+                        </select>
+                    </div>
+                    <div class="form-group span1 form-inline">
+                        <button type="button" class="btn btn-primary pull-right">
+                            <span class="glyphicon glyphicon-arrow-right"></span> Submit
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    {#    <div id="modal-report-exercise-error" class="modal fade" role="dialog">#}
+    {#        <div class="modal-dialog">#}
+    {#            <!-- Modal content-->#}
+    {#            <div class="modal-content">#}
+    {#                <div class="modal-header">#}
+    {#                    <button type="button" class="close" data-dismiss="modal">&times;</button>#}
+    {#                    <h4 id="modal-title" class="text-primary">Report Exercise Error</h4>#}
+    {#                </div>#}
+    {#                <div id="modal-body">#}
+    {#                    <form class="form-horizontal" role="form">#}
+    {#                        <div class="form-group">#}
+    {#                            <label class="col-sm-2 control-label"#}
+    {#                                   for="inputEmail3">Email</label>#}
+    {#                            <div class="col-sm-10">#}
+    {#                                <input type="email" class="form-control"#}
+    {#                                       id="inputEmail3" placeholder="Email"/>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                        <div class="form-group">#}
+    {#                            <label class="col-sm-2 control-label"#}
+    {#                                   for="inputPassword3">Password</label>#}
+    {#                            <div class="col-sm-10">#}
+    {#                                <input type="password" class="form-control"#}
+    {#                                       id="inputPassword3" placeholder="Password"/>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </form>#}
+    {#                </div>#}
+    {#                <div class="modal-footer">#}
+    {#                    <button type="button" class="btn btn-primary" id="btn-modal-save-change">Lưu thay đổi</button>#}
+    {#                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-report-exercise-error" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title text-primary" id="error-exercise-header">
+                        Error Exercise Report
+                    </h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"
+                                   for="error-exercise-id">Error Exercise ID:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" readonly
+                                       id="error-exercise-id"/>
+                                <script>
+                                    $("#error-exercise-id").attr('value', '123456');
+                                </script>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"
+                                   for="error-message-title">Title:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       id="error-message-title"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"
+                                   for="error-message-content">Message:</label>
+                            <div class="col-sm-8">
+                                <textarea id="error-message-content" class="text" style="min-width: 100%" rows="15"
+                                          name="error-message-content"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        Send Report
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

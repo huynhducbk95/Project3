@@ -12,14 +12,15 @@ class User(models.Model):
     email_address = models.CharField(max_length=30, )
     block_status = models.CharField(max_length=10, )
 
-    def __repr__(self):
+    def __str__(self):
         return self.user_name
+
 
 
 class Role(models.Model):
     role_name = models.CharField(max_length=30, )
 
-    def __repr__(self):
+    def __str__(self):
         return self.role_name
 
 
@@ -31,7 +32,7 @@ class ErrorMessage(models.Model):
     reported_exercise_id = models.ForeignKey(ExerciseWebServer,
                                              on_delete=models.CASCADE)
 
-    def __repr__(self):
+    def __str__(self):
         return self.title
 
 
@@ -44,14 +45,14 @@ class ExerciseWebServer(models.Model):
     created_date = models.DateTimeField()
     tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
 
-    def __repr__(self):
+    def __str__(self):
         return self.name
 
 
 class Tag(models.Model):
     tag_name = models.CharField(max_length=30, )
 
-    def __repr__(self):
+    def __str__(self):
         return self.tag_name
 
 
@@ -59,7 +60,7 @@ class UserSolveExercise(models.Model):
     exercise_id = models.ForeignKey(ExerciseWebServer, on_delete=models.CASCADE)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __repr__(self):
+    def __str__(self):
         return self.user_id.user_name + ' : ' + self.exercise_id.exercise_name
 
 
@@ -67,5 +68,5 @@ class UserRole(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     role_id = models.ForeignKey(Role, on_delete=models.CASCADE)
 
-    def __repr__(self):
+    def __str__(self):
         return self.user_id.user_name + ' is ' + self.role_id.role_name

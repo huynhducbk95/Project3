@@ -1,5 +1,8 @@
 # coding=utf-8
 from django.shortcuts import render
+import django
+from django.http import HttpResponse
+import json
 
 def index(request):
     topic = ['Lập trình hướng đối tượng', 'Tin học đại cương', 'Lập trình java', 'Kỹ thuật lập trình',
@@ -98,3 +101,13 @@ def search(request):
         result['search'] = search
 
     return render(request, 'elearning_system/user/search.html', result)
+
+
+class getSearchSuggestion(django.views.generic.TemplateView):
+    def get(self, request, *args, **kwargs):
+        key = request.GET.get('key_search',None)
+        result = {
+            'name':'ex 1',
+            'description':'descript 1'
+        }
+        return HttpResponse(json.dumps(request),content_type='application/json')

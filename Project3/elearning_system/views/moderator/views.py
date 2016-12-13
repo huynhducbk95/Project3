@@ -71,3 +71,7 @@ def exNoTopic(request):
     ]
 
     return render(request, 'elearning_system/moderator/exNoTopic.html', {'exNoTopic': exNoTopic})
+
+def viewExUnapprove_detail(request):
+
+    return  render(request, 'elearning_system/moderator/exUnapprove_detail.html')

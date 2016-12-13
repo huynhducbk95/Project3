@@ -1,3 +1,11 @@
+
+.image_homepage{
+    border-radius: 2px;
+    box-shadow: 5px 10px 10px #D1D1D1;
+    background-image: url("http://www.classifiedwale.com/wp-content/uploads/2016/07/Top-websites-to-learn-coding-online-programming.png");
+    height: 200px;
+}
+
 .user_name{
     text-align: center;
 }
@@ -29,9 +37,13 @@
         padding-bottom: 12px;
     }
 }
-
+#heade_category{
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
 .subMenu {
-    background: #28a4c9;
+    background: #337ab7;
     text-align: center;
 }
 

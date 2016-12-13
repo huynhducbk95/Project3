@@ -21,9 +21,13 @@
           media="all"/>
     <link href="{% static 'elearning_system/base/css/bootstrap.min.css.map' %}" rel="stylesheet" type="text/css"
           media="all"/>
+    <link href="{% static 'elearning_system/base/css/jquery.typeahead.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
     <link href="{% static 'elearning_system/base/css/base.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
     {% block style_sheet %}{% endblock %}
+    <script src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'elearning_system/base/js/jquery.typeahead.js' %}"></script>
 
 </head>
 
@@ -36,24 +40,48 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'list_ex' %}">Ranking</a></li>
                 <li><a href="#">Test code</a></li>
-                <li><a href="#">Contribute</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Ranking</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </li>
             </ul>
-            <form class="navbar-form navbar-left" action="/search">
-                <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Search">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
+            {#            <form class="navbar-form navbar-left" action="/search">#}
+            {#                <div class="input-group" style="display: inline-flex">#}
+            {#                    <input type="text" name="search" class="form-control typeahead" placeholder="Search">#}
+            {#                    <div class="input-group-btn">#}
+            {#                        <button class="btn btn-default" type="submit">#}
+            {#                            <i class="glyphicon glyphicon-search"></i>#}
+            {#                        </button>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </form>#}
+            <form class="navbar-form navbar-left" id="form-hockey_v1" name="form-hockey_v1">
+                <div class="typeahead__container input-group">
+                    <div class="typeahead__field">
+
+                        <span class="typeahead__query">
+                            <input class="js-typeahead-hockey_v1" name="hockey_v1[query]" type="search" placeholder="Search"
+                                   autocomplete="off">
+                        </span>
+                        <span class="typeahead__button">
+                            <button type="submit">
+                                <i class="typeahead__search-icon"></i>
+                            </button>
+                        </span>
+
                     </div>
                 </div>
             </form>
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#logout-modal"><span
-                        class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        class="glyphicon glyphicon-user"></span> Registry</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span
                         class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
@@ -81,12 +109,12 @@
             </div>
         </div>
     </div>
-   <script type="text/javascript">
-{#		$(document).ready(function() {#}
-{#			$().UItoTop({ easingType: 'easeOutQuart' });#}
-{##}
-{#		});#}
-	</script>
+    <script type="text/javascript">
+        {#		$(document).ready(function() {#}
+        {#			$().UItoTop({ easingType: 'easeOutQuart' });#}
+        {##}
+        {#		});#}
+    </script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
 </div>
 
@@ -107,11 +135,6 @@
             </form>
         </div>
     </div>
-</div>
-<div class="container image_homepage">
-</div>
-<div class="container">
-    <hr class="soft">
 </div>
 {% block main %}
 {% endblock %}
@@ -183,7 +206,7 @@
 </footer>
 
 {# load file javascript#}
-<script src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
+
 <script src="{% static 'elearning_system/base/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'elearning_system/base/js/base.js' %}"></script>
 {% block javascript %}{% endblock %}

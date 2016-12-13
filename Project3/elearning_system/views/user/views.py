@@ -1,5 +1,8 @@
 # coding=utf-8
 from django.shortcuts import render
+import django
+from django.http import HttpResponse
+import json
 
 def index(request):
     topic = ['Lập trình hướng đối tượng', 'Tin học đại cương', 'Lập trình java', 'Kỹ thuật lập trình',
@@ -86,7 +89,7 @@ def list_ex_of_topic(request):
 
 def contact(request):
     print('x')
-    return render(request, 'elearning_system/user/contact.html', {'title': 'registry'})
+    return render(request, 'base.html', {'title': 'registry'})
 
 
 def search(request):
@@ -96,4 +99,15 @@ def search(request):
     if (request.method == "GET"):
         search = request.GET.get('search', None)
         result['search'] = search
+
     return render(request, 'elearning_system/user/search.html', result)
+
+
+class getSearchSuggestion(django.views.generic.TemplateView):
+    def get(self, request, *args, **kwargs):
+        key = request.GET.get('key_search',None)
+        result = {
+            'name':'ex 1',
+            'description':'descript 1'
+        }
+        return HttpResponse(json.dumps(request),content_type='application/json')

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-# Create your models here.
+# Create your model here.
 
 class User(models.Model):
     account_name = models.CharField(max_length=20, )
@@ -12,28 +12,22 @@ class User(models.Model):
     email_address = models.CharField(max_length=30, )
     block_status = models.CharField(max_length=10, )
 
-    def __str__(self):
+    def __repr__(self):
         return self.user_name
-
 
 
 class Role(models.Model):
     role_name = models.CharField(max_length=30, )
 
-    def __str__(self):
+    def __repr__(self):
         return self.role_name
 
 
-class ErrorMessage(models.Model):
-    title = models.CharField(max_length=30, )
-    content = models.CharField(max_length=255, )
-    reporter_id = models.ForeignKey(User,
-                                    on_delete=models.CASCADE)
-    reported_exercise_id = models.ForeignKey(ExerciseWebServer,
-                                             on_delete=models.CASCADE)
+class Tag(models.Model):
+    tag_name = models.CharField(max_length=30, )
 
     def __str__(self):
-        return self.title
+        return self.tag_name
 
 
 class ExerciseWebServer(models.Model):
@@ -49,11 +43,16 @@ class ExerciseWebServer(models.Model):
         return self.name
 
 
-class Tag(models.Model):
-    tag_name = models.CharField(max_length=30, )
+class ErrorMessage(models.Model):
+    title = models.CharField(max_length=30, )
+    content = models.CharField(max_length=255, )
+    reporter_id = models.ForeignKey(User,
+                                    on_delete=models.CASCADE)
+    reported_exercise_id = models.ForeignKey(ExerciseWebServer,
+                                             on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.tag_name
+        return self.title
 
 
 class UserSolveExercise(models.Model):

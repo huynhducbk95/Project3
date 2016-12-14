@@ -4,6 +4,7 @@ import django
 from django.http import HttpResponse
 import json
 
+
 def index(request):
     topic = ['Lập trình hướng đối tượng', 'Tin học đại cương', 'Lập trình java', 'Kỹ thuật lập trình',
              'Lập trình song song', ]

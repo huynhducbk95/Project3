@@ -12,15 +12,14 @@ class User(models.Model):
     email_address = models.CharField(max_length=30, )
     block_status = models.CharField(max_length=10, )
 
-    def __str__(self):
+    def __repr__(self):
         return self.user_name
-
 
 
 class Role(models.Model):
     role_name = models.CharField(max_length=30, )
 
-    def __str__(self):
+    def __repr__(self):
         return self.role_name
 
 class Tag(models.Model):

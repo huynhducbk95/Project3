@@ -3,6 +3,7 @@ from django.shortcuts import render
 import django
 from django.http import HttpResponse
 import json
+# from elearning_system.model import User
 
 def index(request):
     topic = ['Lập trình hướng đối tượng', 'Tin học đại cương', 'Lập trình java', 'Kỹ thuật lập trình',

@@ -23,13 +23,11 @@ class Role(models.Model):
     def __repr__(self):
         return self.role_name
 
-
 class Tag(models.Model):
     tag_name = models.CharField(max_length=30, )
 
     def __str__(self):
         return self.tag_name
-
 
 class ExerciseWebServer(models.Model):
     exercise_name = models.CharField(max_length=30,)
@@ -45,7 +43,6 @@ class ExerciseWebServer(models.Model):
     def __str__(self):
         return self.exercise_name
 
-
 class ErrorMessage(models.Model):
     title = models.CharField(max_length=30, )
     content = models.CharField(max_length=255, )
@@ -56,7 +53,6 @@ class ErrorMessage(models.Model):
 
     def __str__(self):
         return self.title
-
 
 class UserSolveExercise(models.Model):
     exercise_id = models.ForeignKey(ExerciseWebServer, on_delete=models.CASCADE)

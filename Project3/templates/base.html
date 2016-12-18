@@ -34,12 +34,11 @@
 <body>
 <div class="header_expert">
     <nav class="navbar navbar-dark bg-primary custom_navbar">
-        <div class="container-fluid" id="top_menu_elearning">
+        <div class="container-fluid row" id="top_menu_elearning">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#" id="logo_base_expert">Coding School</a>
+                <a class="navbar-brand" href="{% url 'index' %}" id="logo_base_expert">Coding School</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">Test code</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
@@ -51,31 +50,13 @@
                     </ul>
                 </li>
             </ul>
-            {#            <form class="navbar-form navbar-left" action="/search">#}
-            {#                <div class="input-group" style="display: inline-flex">#}
-            {#                    <input type="text" name="search" class="form-control typeahead" placeholder="Search">#}
-            {#                    <div class="input-group-btn">#}
-            {#                        <button class="btn btn-default" type="submit">#}
-            {#                            <i class="glyphicon glyphicon-search"></i>#}
-            {#                        </button>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#            </form>#}
-            <form class="navbar-form navbar-left" id="form-hockey_v1" name="form-hockey_v1">
-                <div class="typeahead__container input-group">
-                    <div class="typeahead__field">
-
-                        <span class="typeahead__query">
-                            <input class="js-typeahead-hockey_v1" name="hockey_v1[query]" type="search"
-                                   placeholder="Search"
-                                   autocomplete="off">
-                        </span>
-                        <span class="typeahead__button">
-                            <button type="submit">
-                                <i class="typeahead__search-icon"></i>
-                            </button>
-                        </span>
-
+            <form class="navbar-form navbar-left " action="/search">
+                <div class="input-group" style="display: inline-flex">
+                    <input type="text" name="search" class="form-control typeahead" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -88,7 +69,12 @@
                 </ul>
             {% else %}
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span
+                {% for role in result.role_list %}
+                    {% if role != 'user' %}
+                        <li><a href="#"> {{ role }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                    <li><a href="#" ><span
                             class="glyphicon glyphicon-user"></span> Hi, {{ result.username }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>

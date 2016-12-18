@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^exApproved', views.exApproved, name='exApproved'),
     url(r'^exUnapprove', views.exUnapprove, name='exUnapprove'),
     url(r'^exNoTopic', views.exNoTopic, name='exNoTopic'),
+    url(r'^viewExUnapprove_detail', views.viewExUnapprove_detail, name='viewExUnapprove_detail'),
 ]

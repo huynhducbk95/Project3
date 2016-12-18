@@ -17,6 +17,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="horizon" />
     <orderEntry type="module" module-name="booking-client" />
+    <orderEntry type="module" module-name="AdminLTE-master" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

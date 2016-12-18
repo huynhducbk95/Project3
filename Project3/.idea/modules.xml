@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../project 3/AdminLTE-master/.idea/AdminLTE-master.iml" filepath="$PROJECT_DIR$/../../project 3/AdminLTE-master/.idea/AdminLTE-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Project3.iml" filepath="$PROJECT_DIR$/.idea/Project3.iml" />
       <module fileurl="file://$USER_HOME$/thực tập/booking-client/.idea/booking-client.iml" filepath="$USER_HOME$/thực tập/booking-client/.idea/booking-client.iml" />
     </modules>

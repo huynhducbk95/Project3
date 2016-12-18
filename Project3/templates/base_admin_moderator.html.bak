@@ -15,8 +15,8 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- jvectormap -->
-{#    <link href="{% static 'elearning_system/base_admin/css/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet"#}
-{#          type="text/css" media="all"/>#}
+    <link href="{% static 'elearning_system/base_admin/css/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet"
+          type="text/css" media="all"/>
     <!-- Theme style -->
     <link href="{% static 'elearning_system/base_admin/css/AdminLTE.min.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
@@ -158,14 +158,14 @@
 
 {# add script manage topic #}
 {#<script type="text/javascript" src="{% static 'elearning_system/admin/js/manageTopic.js' %}"></script>#}
-{# add script manageUser #}
+{# add script manage user #}
 {#<script type="text/javascript" src="{% static 'elearning_system/admin/js/manageUser.js' %}"></script>#}
 <!-- jQuery 2.2.3 -->
 <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery-2.2.3.min.js' %}"></script>
 <!-- Bootstrap 3.3.6 -->
 <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/bootstrap.min.js' %}"></script>
 <!-- FastClick -->
-{#<script type="text/javascript" src="{% static 'elearning_system/base_admin/js/fastclick.js' %}"></script>#}
+<script type="text/javascript" src="{% static 'elearning_system/base_admin/js/fastclick.js' %}"></script>
 <!-- AdminLTE App -->
 <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/app.min.js' %}"></script>
 <!-- Sparkline -->

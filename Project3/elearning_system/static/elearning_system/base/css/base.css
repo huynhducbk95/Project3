@@ -1,3 +1,25 @@
+
+.project-jquerytypeahead.page-demo .typeahead__result .name {
+    margin: 0 10px;
+}
+
+.project-jquerytypeahead.page-demo .typeahead__result .division {
+    font-size: 12px;
+    color: #777;
+    font-variant: small-caps;
+}
+
+.project-jquerytypeahead.page-demo .typeahead__result .team-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 2px 4px 0 10px;
+}
+
+.project-jquerytypeahead.page-demo .typeahead__result .team-logo img {
+    height: 26px;
+}
 /*------------ custom menu ------------------*/
 .navbar-custom-menu {
     background: #28a4c9;

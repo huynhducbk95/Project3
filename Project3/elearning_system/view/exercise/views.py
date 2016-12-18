@@ -2,8 +2,8 @@ import string
 from django.shortcuts import render
 from django.http.response import HttpResponse
 import json
-
-from elearning_system.views.exercise import plugin_api
+from elearning_system.central_control import check_role
+from elearning_system.view.exercise import plugin_api
 
 
 def test_code(request):

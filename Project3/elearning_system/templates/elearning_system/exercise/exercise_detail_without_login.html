@@ -1,10 +1,9 @@
-{% extends 'code_editor_base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block title %} HOME PAGE {% endblock %}
 {% block style_sheet %}
     <link href="{% static 'elearning_system/base/css/bootstrap.css' %}" rel="stylesheet"/>
     <link href="{% static 'elearning_system/base/css/code_editor.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{% static 'elearning_system/base/css/jquery.numberedtextarea.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
 {% endblock %}
 {% block main %}
@@ -180,8 +179,6 @@
 {% block javascript %}
     <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery.numberedtextarea.js' %}"></script>
-    <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap-filestyle.js' %}"></script>
     <script>
         $('#report-exercise-error-btn').click(function () {
             {#                            var property_element = $(this).closest(".property-element");#}
@@ -190,7 +187,5 @@
             var modal_select_element = $("#modal-report-exercise-error");
             modal_select_element.modal();
         });
-        $('#code-editor').numberedtextarea();
-        $("#error-exercise-id").attr('value', '123456');
     </script>
 {% endblock %}

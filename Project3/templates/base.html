@@ -29,14 +29,17 @@
 
 <body>
 <div class="header_expert">
-    <nav class="navbar navbar-dark bg-primary custom_navbar">
+    <nav class="navbar navbar-dark bg-primary custom_navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#" id="logo_base_expert">Coding School</a>
+                <a class="navbar-brand" href="#" id="logo_base_expert">
+                    <span class="glyphicon glyphicon-home"></span>
+                    Coding School
+                </a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="#">Test code</a></li>
+                <li><a href="{% url 'test_code' %}">Test code</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
                         <span class="caret"></span></a>
@@ -59,7 +62,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#logout-modal"><span
-                        class="glyphicon glyphicon-user"></span> Registry</a></li>
+                        class="glyphicon glyphicon-user"></span> Register</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#login-modal"><span
                         class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
@@ -102,7 +105,7 @@
     <div class="modal-dialog">
         <div class="loginmodal-container">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h1>Registry</h1>
+            <h1>Register</h1>
             <br>
             <form>
                 <input type="text" name="user" placeholder="Username">

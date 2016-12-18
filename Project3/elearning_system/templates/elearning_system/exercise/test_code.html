@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} HOME PAGE {% endblock %}
+{% block title %} TEST CODE {% endblock %}
 {% block style_sheet %}
-    <link href="{% static 'elearning_system/exercise/css/bootstrap.css' %}" rel="stylesheet"/>
-    <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{% static 'elearning_system/exercise/css/jquery.numberedtextarea.css' %}" rel="stylesheet" type="text/css"
+    <link href="{% static 'elearning_system/exercise/css/bootstrap.css' %}" rel="stylesheet"
+          xmlns="http://www.w3.org/1999/html"/>
+    <link href="{% static 'elearning_system/exercise/css/jquery.numberedtextarea.css' %}" rel="stylesheet"
+          type="text/css"
           media="all"/>
 
 
@@ -14,111 +15,121 @@
     <link href="{% static 'elearning_system/exercise/code_mirror/addon/lint/lint.css' %}" rel="stylesheet"
           type="text/css"
           media="all"/>
+    <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
 {% endblock %}
 {% block main %}
-    <div class="container">
-        <div class="col-md-4 test-cde-instruction-section text-justify">
+    <div class="alert alert-dismissable" style="display: none;" id="popup-message">
+        <a href="#" class="close" id="popup-message-close" aria-label="close">×</a>
+        <span id="error-message-body"></span>
+    </div>
+    <div class="container test-code-view-body">
+        <div class="left-content col-md-4 test-cde-instruction-section text-justify">
             <h4 id="test-code-instruction-title" class="text-info">Test code instruction</h4>
-            <div class="exercise-detail pre-scrollable">
+            <div class="instruction-detail pre-scrollable">
                 <div id="test-code-instruction-body">
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list./home/cong/web/CodeMirror/mode
+                    <p>
+                        To test code, the first thing you need to do is put the code to editor or upload code file
+                    </p>
+                    <p>
+                        if you both upload code file and type to editor, the upload code file will be selected as source
+                        code
+                    </p>
                 </div>
             </div>
-            <div id="exercise-test-case">
-                <h4 id="exercise-test-case-header" class="text-danger">
+            <div id="test-code-test-case">
+                <h4 id="test-code-test-case-header" class="text-danger">
                     Test case file format
                 </h4>
-                <div id="exercise-test-case-body" class="pre-scrollable">
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
+                <div id="test-code-test-case-body" class="pre-scrollable">
+                    <p>1;2;4;8 : 12</p>
+                    <p>1;2;4;8 : 12</p>
+                    <p>1;2;4;8 : 12</p>
+                    <p>1;2;4;8 : 12</p>
+                    <p>1;2;4;8 : 12</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-8 code-editor-field">
-            <div id="code-editor-header" class="row">
-                <div class="col-md-2 form-group form-inline">
-                    <h4>
-                        <label for="code-js" class="text-danger">
-                            Input code
-                        </label>
-                    </h4>
-                </div>
-                <div class="form-group col-md-6 form-inline">
-                    <label for="code-file-input">Or </label>
-                    <input type="file" class="filestyle" data-buttonText="Upload code file" id="code-file-input">
-                </div>
-                <div class="form-group col-md-4 select-language-input form-inline">
-                    <label for="code-language">Language </label>
-                    <select class="form-control" id="code-language">
-                        <option>C#</option>
-                        <option>Java</option>
-                        <option>C++</option>
-                        <option>Python</option>
-                    </select>
-                </div>
-            </div>
-            <div id="code-editor-body" class="row">
-                <input type="hidden" id="exercise-id" value="123">
-                <textarea cols="60" rows="20" class="form-control" spellcheck="false" id="code-js"
-                          style="color: #1b6d85">
-                    var widgets = []
-function updateHints() {
-  editor.operation(function(){
-    for (var i = 0; i < widgets.length; ++i)
-      editor.removeLineWidget(widgets[i]);
-    widgets.length = 0;
+        <div class="col-md-8 right-content">
+            <div class="code-editor-field">
+                <div id="code-editor-header" class="row">
+                    <div class="col-md-2 form-group form-inline">
+                        <h5>
+                            <label for="code-editor" class="text-primary">
+                                Input code
+                            </label>
+                        </h5>
+                    </div>
+                    <div class="form-group col-md-6" style="padding-left: 0;padding-right: 5px;">
+                        <div class="col-xs-9" style="padding-left: 0;padding-right: 5px;">
+                            <input type="file" class="filestyle"
+                                   accept=".txt, .py,.cpp,.java,.js,.p"
+                                   data-buttonText=" Or upload" id="code-file-input">
 
-    JSHINT(editor.getValue());
-    for (var i = 0; i < JSHINT.errors.length; ++i) {
-      var err = JSHINT.errors[i];
-      if (!err) continue;
-      var msg = document.createElement("div");
-      var icon = msg.appendChild(document.createElement("span"));
-      icon.innerHTML = "!!";
-      icon.className = "lint-error-icon";
-      msg.appendChild(document.createTextNode(err.reason));
-      msg.className = "lint-error";
-      widgets.push(editor.addLineWidget(err.line - 1, msg, {coverGutter: false, noHScroll: true}));
+                        </div>
+                        <div class="col-xs-3" style="padding-left: 0;padding-right: 5px;">
+                            <button type="button" id="btn-clear-source-code"
+                                    class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span> Clear
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group form-inline pull-right"
+                         style="padding-left: 0;padding-right: 5px;">
+                        <h5 class="col-xs-6">
+                            <label for="code-language" class="text-primary">
+                                Language
+                            </label>
+                        </h5>
+                        <select class="form-control col-xs-6" id="code-language">
+                            <option value="text/x-pascal">Pascal</option>
+                            <option selected value="text/x-java">Java</option>
+                            <option value="text/x-c++src">C++</option>
+                            <option value="text/x-python">Python2</option>
+                            <option value="text/javascript">Javascript</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="code-editor-body" class="row">
+                    <input type="hidden" id="exercise-id" value="123">
+                    <textarea cols="80" rows="20" class="form-control" spellcheck="false" id="code-editor">
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello World!"); // Display the string.
     }
-  });
-  var info = editor.getScrollInfo();
-  var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
-  if (info.top + info.clientHeight < after)
-    editor.scrollTo(null, after - info.clientHeight + 3);
 }
                 </textarea>
+                </div>
+                <div id="code-editor-footer" class="row">
+                    <div class="form-group col-md-7 form-inline" style="padding-right: 5px;">
+                        <div class="col-xs-9" style="padding-left: 0;padding-right: 5px;">
+                            <input type="file" class="filestyle"
+                                   data-buttonText="Upload test case"
+                                   accept=".txt, .py,.cpp,.java,.js,.p"
+                                   id="test-case-input">
+                        </div>
+                        <div class="col-xs-3" style="padding-left: 0;padding-right: 5px;">
+                            <button type="button" id="btn-clear-test-case"
+                                    class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span> Clear
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-2 select-language-input form-inline pull-right">
+                        <button type="button" id="btn-test-code-submit"
+                                data-submit-url="{% url "test_code" %}"
+                                class="btn btn-primary pull-right">
+                            <span class="glyphicon glyphicon-arrow-right"></span> Submit
+                        </button>
+                    </div>
+                </div>
+
             </div>
-            <div id="code-editor-footer">
-                <div class="form-group col-md-6 form-inline">
-                    <input type="file" class="filestyle" data-buttonText="Upload test case file" id="code-file-input">
-                </div>
-                <div class="form-group col-md-6 select-language-input form-inline">
-                    <button type="button" class="btn btn-primary pull-right">
-                        <span class="glyphicon glyphicon-arrow-right"></span> Submit
-                    </button>
-                </div>
+            <div class="row" id="submit-result-info"
+                 data-test-case-image-fail="{% static 'elearning_system/exercise/images/test_case_fail.png' %}"
+                 data-test-case-image-pass="{% static 'elearning_system/exercise/images/test_case_pass.png' %}">
+
             </div>
         </div>
     </div>
@@ -126,33 +137,242 @@ function updateHints() {
 {% endblock %}
 
 {% block javascript %}
-    <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap.js' %}"></script>
-    {#    <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery.numberedtextarea.js' %}"></script>#}
-    <script type="text/javascript" src="{% static 'elearning_system/exercise/js/bootstrap-filestyle.js' %}"></script>
-    {#    <script>#}
-    {#        $('#code-editor').numberedtextarea();#}
-    {#    </script>#}
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/eclipse.css' %}">
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/ambiance.css' %}">
 
-    <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/exercise/js/bootstrap-filestyle.js' %}"></script>
 
     <script src="{% static 'elearning_system/exercise/code_mirror/lib/codemirror.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/edit/matchbrackets.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/addon/hint/show-hint.css' %}">
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/hint/show-hint.js' %}"></script>
+    {#    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/addon/hint/python-hint.js' %}">#}
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/addon/hint/anyword-hint.js' %}">
+
+    {#code mirror mode#}
     <script src="{% static 'elearning_system/exercise/code_mirror/mode/javascript/javascript.js' %}"></script>
-    <script src="{% static 'elearning_system/exercise/code_mirror/mode/css/css.js' %}"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js"></script>
-    <script src="https://rawgithub.com/zaach/jsonlint/79b553fb65c192add9066da64043458981b3972b/lib/jsonlint.js"></script>
-    <script src="https://rawgithub.com/stubbornella/csslint/master/release/csslint.js"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/python/python.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/clike/clike.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/pascal/pascal.js' %}"></script>
+
+
+    <script src="{% static 'elearning_system/exercise/code_mirror/jshint.js' %}"></script>
     <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/lint.js' %}"></script>
     <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/javascript-lint.js' %}"></script>
     <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/json-lint.js' %}"></script>
     <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/css-lint.js' %}"></script>
 
     <script>
-  var editor = CodeMirror.fromTextArea(document.getElementById("code-js"), {
-    lineNumbers: true,
-    mode: "javascript",
-    gutters: ["CodeMirror-lint-markers"],
-    lint: true
-  });
-</script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            mode: "text/x-java",
+            indentUnit: 4
+        });
+        $("#code-language").on('change', function () {
+            var current_language = $("#code-language").val();
+            editor.setOption("mode", current_language);
+        });
+        editor.setOption("theme", 'eclipse');
+        var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
+        CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
+
+        var alert_message = function (type, content) {
+            var popup_message = $("#popup-message");
+            if (type == 'success') {
+                popup_message.addClass('alert-success')
+            } else if (type == 'error') {
+                popup_message.addClass('alert-danger')
+            }
+            $("#error-message-body").html(content);
+            popup_message.fadeIn();
+            setTimeout(function () {
+                popup_message.fadeOut();
+                if (type == 'success') {
+                    popup_message.removeClass('alert-success');
+                } else if (type == 'error') {
+                    popup_message.removeClass('alert-danger');
+                    $("#error-message-body").html();
+                }
+
+            }, 1500);
+        };
+
+        $('#popup-message-close').click(function () {
+            $("#popup-message").fadeOut();
+        });
+
+        var disable_editor = function () {
+            $("#code-file-input").filestyle('disabled', true);
+            $("#test-case-input").filestyle('disabled', true);
+            $('#btn-test-code-submit').prop("disabled", true);
+            $("#code-language").prop('disabled', true);
+            editor.setOption("readOnly", true);
+
+
+        };
+        var enable_editor = function () {
+            $("#test-case-input").filestyle('disabled', false);
+            $("#code-file-input").filestyle('disabled', false);
+            $('#btn-test-code-submit').prop("disabled", false);
+            $("#code-language").prop('disabled', false);
+            editor.setOption("readOnly", false);
+        };
+
+
+
+
+        $("#btn-clear-source-code").click(function () {
+            $("#code-file-input").filestyle('clear');
+
+        });
+        $("#btn-clear-test-case").click(function () {
+            $("#test-case-input").filestyle('clear');
+
+        });
+
+        $('#btn-test-code-submit').click(function () {
+            var submit_info_element = $("#submit-result-info");
+            submit_info_element.empty();
+            disable_editor();
+            $.when(read_file_input('#code-file-input'), read_file_input('#test-case-input')).done(
+                    function (code_file_data, test_case_data) {
+                        if (code_file_data == 'invalid-type' || test_case_data == 'invalid-type'
+                                || test_case_data == 'none-file-selected') {
+                            var error_message = '';
+                            if (code_file_data == 'invalid-type') {
+                                error_message += 'please upload valid source code file <br/>';
+                            }
+                            if (test_case_data == 'invalid-type' || test_case_data == 'none-file-selected') {
+                                error_message += 'please upload valid test case file';
+                            }
+                            alert_message('error', error_message);
+                            setTimeout(function () {
+                                enable_editor();
+                            }, 1500);
+                        } else {
+                            var submit_info_wait_result = $('<h4></h4>');
+                            submit_info_wait_result.hide();
+                            submit_info_wait_result
+                                    .addClass('text-primary')
+                                    .html('Please wait' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>')
+                                    .appendTo(submit_info_element)
+                                    .fadeIn();
+
+
+                            var source_code_data = $('#code-editor').val();
+                            var code_language_meta = $("#code-language").val();
+                            if (code_file_data != 'none-file-selected') {
+                                source_code_data = code_file_data;
+                            }
+                            var language_list = {};
+                            language_list['text/x-pascal'] = 'pascal';
+                            language_list['text/x-java'] = 'java';
+                            language_list['text/x-c++src'] = 'c_plus_plus';
+                            language_list['text/x-python'] = 'python';
+                            language_list['text/javascript'] = 'javascript';
+                            var code_language = language_list[code_language_meta];
+                            //send data to server
+                            var submit_url = $("#btn-test-code-submit").data('submit-url');
+                            $.post(submit_url,
+                                    {
+                                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                                        language: code_language,
+                                        source_code: source_code_data,
+                                        test_case: test_case_data
+                                    },
+                                    function (data, status) {
+                                        var submit_info_element = $("#submit-result-info");
+                                        submit_info_wait_result = submit_info_element.find('h4');
+                                        submit_info_wait_result.fadeOut('slow');
+                                        setTimeout(function () {
+                                            submit_info_element.empty();
+                                            if (status == 'success') {
+                                                if (data.status == 'success') {
+                                                    alert_message('success', "test code process was succesful!");
+                                                    //show test case list
+                                                    var test_code_result = $(
+                                                            '<div>' +
+                                                            '<h4 class="text-primary">' +
+                                                            '<strong>Test code result:</strong>' +
+                                                            '</h4>' +
+                                                            '</div>');
+                                                    var fail_img_src = submit_info_element.data('test-case-image-fail');
+                                                    var pass_img_src = submit_info_element.data('test-case-image-pass');
+                                                    for (var i = 0; i < data.test_case_list.length; i++) {
+                                                        var test_case = $('<img></img>');
+                                                        var test_case_result = '';
+                                                        test_case.attr('data-index', i + 1);
+                                                        test_case.attr('class', 'test-case-img');
+                                                        test_case_status = data.test_case_list[i];
+                                                        if (test_case_status == 'p') {
+                                                            test_case.attr('src', pass_img_src);
+                                                            test_case_result = 'passed';
+                                                        } else if (test_case_status == 'f') {
+                                                            test_case.attr('src', fail_img_src);
+                                                            test_case_result = 'failed';
+                                                        }
+                                                        var test_case_info = 'Test case ' + (i + 1).toString() + ': ' +
+                                                                test_case_result;
+                                                        test_case.tooltip({title: test_case_info, placement: "top"});
+                                                        test_case.appendTo(test_code_result);
+                                                    }
+                                                    test_code_result.hide();
+                                                    test_code_result
+                                                            .appendTo(submit_info_element)
+                                                            .fadeIn();
+                                                } else if (data.status == 'failed') {
+                                                    alert_message('error', data.message);
+                                                }
+                                            } else {
+                                                alert_message('success', "solve exercise process failed!");
+                                            }
+                                        }, 1500);
+                                        setTimeout(function () {
+                                            enable_editor();
+                                        }, 3000);
+                                    });
+                        }
+                        setTimeout(function () {
+                            $('#btn-test-code-submit').prop("disabled", false);
+                        }, 1000);
+
+                    }
+            );
+        });
+
+        function read_file_input(input_element) {
+            var reader = new FileReader();
+            var filePath = $(input_element)[0];
+            var deferred = $.Deferred();
+            if (filePath.files && filePath.files[0]) {
+                var sFileName = filePath.value;
+                var blnValid = false;
+                var _validFileExtensions = [".txt", ".py", ".cpp", ".java", ".js"];
+                for (var j = 0; j < _validFileExtensions.length; j++) {
+                    var sCurExtension = _validFileExtensions[j];
+                    if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase()
+                            == sCurExtension.toLowerCase()) {
+                        blnValid = true;
+                        break;
+                    }
+                }
+                if (!blnValid) {
+                    deferred.resolve('invalid-type');
+                } else {
+                    reader.onload = function (e) {
+                        deferred.resolve(e.target.result);
+                    };
+                    reader.readAsText(filePath.files[0]);
+                }
+            } else {
+                deferred.resolve('none-file-selected');
+            }
+            return deferred.promise();
+        }
+    </script>
 {% endblock %}

@@ -9,14 +9,16 @@
 {% endblock %}
 {% block javascript %}
 
+    <script src="{% static 'elearning_system/user/js/index.js' %}"></script>
+
 {% endblock %}
 {% block main %}
 
-{#    <div class="container image_homepage">#}
-{#    </div>#}
-{#    <div class="container">#}
-{#        <hr class="soft">#}
-{#    </div>#}
+    {#    <div class="container image_homepage">#}
+    {#    </div>#}
+    {#    <div class="container">#}
+    {#        <hr class="soft">#}
+    {#    </div>#}
     <div class="container">
         <div class="row">
             <div class="col-sm-3 panel-default">
@@ -131,7 +133,7 @@
                             <div class="col-sm-6">
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle pull-right" type="button"
-                                            id="menu1"
+                                            id="menu_compare_elearning"
                                             data-toggle="dropdown">Sắp xếp
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="menu1">
@@ -159,14 +161,15 @@
                                     <div class="row list_ex_expert">
                                         <div class="col-sm-10">
                                             <ul class="nav nav-pills pull-left" role="tablist">
-                                                <li role="presentation"><a href="#">View <span
-                                                        class="badge">{{ exercise.viewed }}</span></a>
+                                                <li role="presentation"><a href="#"><span
+                                                        class="glyphicon glyphicon-user" aria-hidden="true"></span> Contributor
+                                                    </a>
                                                 </li>
                                                 <li role="presentation"><a href="#">Passed <span
                                                         class="badge">{{ exercise.passed }}</span></a>
                                                 </li>
-                                                <li role="presentation"><a href="#">Message <span
-                                                        class="badge">{{ exercise.messaged }}</span></a>
+                                                <li role="presentation"><a href="#">View <span
+                                                        class="badge">{{ exercise.viewed }}</span></a>
                                                 </li>
                                             </ul>
                                         </div>

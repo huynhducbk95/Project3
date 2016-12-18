@@ -11,7 +11,8 @@ class User(models.Model):
     user_name = models.CharField(max_length=30, )
     email_address = models.CharField(max_length=30, )
     block_status = models.CharField(max_length=10, )
-
+    contribute_number = models.IntegerField(default=0)
+    solve_number = models.IntegerField(default=0)
     def __repr__(self):
         return self.user_name
 
@@ -31,16 +32,18 @@ class Tag(models.Model):
 
 
 class ExerciseWebServer(models.Model):
-    exercise_name = models.CharField(max_length=30, )
+    exercise_name = models.CharField(max_length=30,)
+    exercise_description = models.CharField(max_length=255,)
     view_number = models.IntegerField()
     solve_number = models.IntegerField()
     contributer_id = models.IntegerField()
     approver_id = models.IntegerField()
     created_date = models.DateTimeField()
-    tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    tag_id = models.ForeignKey(Tag,
+                               on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.exercise_name
 
 
 class ErrorMessage(models.Model):

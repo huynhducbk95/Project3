@@ -34,7 +34,7 @@
 <body>
 <div class="header_expert">
     <nav class="navbar navbar-dark bg-primary custom_navbar">
-        <div class="container-fluid">
+        <div class="container-fluid" id="top_menu_elearning">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#" id="logo_base_expert">Coding School</a>
             </div>
@@ -66,7 +66,8 @@
                     <div class="typeahead__field">
 
                         <span class="typeahead__query">
-                            <input class="js-typeahead-hockey_v1" name="hockey_v1[query]" type="search" placeholder="Search"
+                            <input class="js-typeahead-hockey_v1" name="hockey_v1[query]" type="search"
+                                   placeholder="Search"
                                    autocomplete="off">
                         </span>
                         <span class="typeahead__button">
@@ -78,13 +79,21 @@
                     </div>
                 </div>
             </form>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#logout-modal"><span
-                        class="glyphicon glyphicon-user"></span> Registry</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#login-modal"><span
-                        class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
+            {% if not result.username %}
+                <ul class="nav navbar-nav navbar-right" id="form_login_logout">
+                    <li><a href="#" data-toggle="modal" data-target="#logout-modal" id="login_elearning"><span
+                            class="glyphicon glyphicon-user"></span> Registry</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal"><span
+                            class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span
+                            class="glyphicon glyphicon-user"></span> Hi, {{ result.username }}</a></li>
+                    <li><a href="{% url 'logout' %}"><span
+                            class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+            {% endif %}
         </div>
     </nav>
 </div>
@@ -93,14 +102,16 @@
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
      style="display: none;">
     <div class="modal-dialog">
-        <div class="loginmodal-container">
+        <div class="loginmodal-container" id="login_popup">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h1>Login to Your Account</h1>
             <br>
-            <form>
-                <input type="text" name="user" placeholder="Username">
-                <input type="password" name="pass" placeholder="Password">
-                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+            <form id="login_form">
+                {% csrf_token %}
+                <input type="text" name="user" placeholder="Username" id="username_login">
+                <input type="password" name="pass" placeholder="Password" id="password_login">
+                <input type="button" name="login" class="login loginmodal-submit" style="width: 100%" value="Login"
+                       id="handle_login">
             </form>
 
             <div class="login-help">
@@ -122,16 +133,19 @@
 <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
      style="display: none;">
     <div class="modal-dialog">
-        <div class="loginmodal-container">
+        <div class="loginmodal-container" id="registry_popup">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h1>Registry</h1>
             <br>
-            <form>
-                <input type="text" name="user" placeholder="Username">
-                <input type="text" name="gmail" placeholder="Gmail">
-                <input type="password" name="pass" placeholder="Password">
-                <input type="password" name="repass" placeholder="Repeat Password">
-                <input type="submit" name="registry" class="login loginmodal-submit" value="Registry">
+            {% csrf_token %}
+            <form id="registry_form">
+                <input type="text" name="user" placeholder="Username" id="username_registry">
+                <input type="text" name="account" placeholder="Account name" id="account_registry">
+                <input type="text" name="gmail" placeholder="Gmail" id="gmail_registry">
+                <input type="password" name="pass" placeholder="Password" id="password_registry">
+                <input type="password" name="repass" placeholder="Repeat Password" id="repass_registry">
+                <input type="button" name="registry" class="login loginmodal-submit" style="width: 100%"
+                       value="Registry" id="handle_registry">
             </form>
         </div>
     </div>

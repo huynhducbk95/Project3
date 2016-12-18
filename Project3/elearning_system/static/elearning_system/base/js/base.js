@@ -86,7 +86,7 @@ $('#handle_login').click(function () {
             console.log(data);
             if (data['result'] == 'successful') {
                 $('#login-modal').modal('hide');
-                change_status(username);
+                change_status(data['account_name']);
 
             } else if (data['result'] == 'error') {
                 $('.error_form_elearning').remove();
@@ -172,7 +172,7 @@ $('#handle_registry').click(function () {
             success: function (data) {
                 if (data['result'] == 'successful') {
                     $('#logout-modal').modal('hide');
-                    change_status(username);
+                    change_status(data['account_name']);
 
                 }
             },

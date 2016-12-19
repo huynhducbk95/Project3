@@ -2,10 +2,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import json
-from elearning_system.models import User, ExerciseWebServer, Tag
+from elearning_system.models import User, ExerciseWebServer, Tag,Role
 
 
 def index(request):
+
     user_list = User.objects.all().order_by('-contribute_number')
     count = 1
     top_user_list = []
@@ -291,5 +292,8 @@ def registry(request):
                     email_address=email,
                     full_name=full_name,
                     block_status=block_status)
+
         user.save()
+        role_user = Role.objects.get(pk=3)
+        role_user.user_list.add(user)
         return redirect(to=index)

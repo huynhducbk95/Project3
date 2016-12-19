@@ -36,7 +36,7 @@ class ExerciseWebServer(models.Model):
     contributer_id = models.ForeignKey(User,null=True, related_name='user_contributer')
     approver_id = models.ForeignKey(User,null=True, related_name='user_approver')
     created_date = models.DateTimeField()
-    tag_id = models.ForeignKey(Tag,
+    tag_id = models.ForeignKey(Tag,null=True,
                                on_delete=models.CASCADE)
     user_list = models.ManyToManyField(User)
 

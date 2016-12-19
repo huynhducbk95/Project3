@@ -1,28 +1,170 @@
-function blockUser(username,email){
+//funtion to call funtion DataTable() of framework jquery.datatable.min.js to
+//add action search and fix size of table
+function dataUserTable() {
+    $('#manageUserTable').DataTable();
+}
+dataUserTable();
+
+function blockUser(username, email, id) {
     $('.warning-user').text("Bạn thực sự muốn Block user này?");
-    $('#btn_user').attr('class','btn btn-danger');
+    $('#btn_user').attr('class', 'btn btn-danger');
     $('#btn_user').text('Block');
     $('#user_name').text(username);
     $('#user_email').text(email);
     $('#btn_user').removeAttr('onclick');
-    $('#btn_user').attr('onclick','blockAction()');
+    $('#btn_user').attr('onclick', 'blockAction("' + username + '","' + email + '",' + id + ')');
 
 }
 
-function blockAction(){
-    alert("Block user!");
+function blockAction(username, email, id) {
+    // alert("Block user! " + id);
+    $.get('change_status_user?user_id=' + id, function (data) {
+        if (data.status == "success") {
+            $('#status' + id).text("Block");
+            $('#' + id).text('Active');
+            $('#' + id).removeAttr('onclick');
+            $('#' + id).removeAttr('class');
+            $('#' + id).attr('class', 'btn btn-primary');
+            $('#' + id).attr('onclick', 'activeUser("' + username + '","' + email + '",' + id + ')');
+        } else {
+            alert("Error!");
+        }
+        $('#modalUser').modal('hide');
+    });
 }
 
-function activeUser(username,email) {
+function activeUser(username, email, id) {
     $('.warning-user').text("Bạn thực sự muốn Active user này?");
-    $('#btn_user').attr('class','btn btn-primary');
+    $('#btn_user').attr('class', 'btn btn-primary');
     $('#btn_user').text('Active');
     $('#user_name').text(username);
     $('#user_email').text(email);
     $('#btn_user').removeAttr('onclick');
-    $('#btn_user').attr('onclick','activeAction()');
+    $('#btn_user').attr('onclick', 'activeAction("' + username + '","' + email + '",' + id + ')');
+    // console.log('activeAction("'+username+'","'+email+'",'+id+')');
 }
 
-function activeAction(){
-    alert("Active user");
+function activeAction(username, email, id) {
+    username = username.toString();
+    email = email.toString();
+    $.get('change_status_user?user_id=' + id, function (data) {
+        console.log(data.status);
+        if (data.status == "success") {
+            $('#status' + id).text("Active");
+            $('#' + id).text('Block');
+            $('#' + id).removeAttr('onclick');
+            $('#' + id).removeAttr('class');
+            $('#' + id).attr('class', 'btn btn-danger');
+            $('#' + id).attr('onclick', 'blockUser("' + username + '","' + email + '",' + id + ')');
+        } else {
+            alert("Error!");
+        }
+        $('#modalUser').modal('hide');
+    })
+}
+
+function addUser() {
+    // alert('them');
+    var userName = $('#form_add_userName').val();
+    userName = userName.trim();
+    if (checkNull('warning_userName', userName)) {
+        return
+    }
+
+    var fullName = $('#form_add_fullName').val();
+    fullName = fullName.trim();
+    if (checkNull('warning_fullName', fullName)) {
+        return
+    }
+
+    var email = $('#form_add_email').val();
+    email = email.trim();
+    if (!checkNull('warning_email', email)) {
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        if (testEmail.test(email)) {
+            $('#warning_email').attr('class', 'hide_warning');
+        } else {
+            $('#warning_email').removeAttr('class');
+            return
+        }
+    } else {
+        return
+    }
+
+    var numberPhone = $('#form_add_phoneNumber').val();
+    numberPhone = numberPhone.trim();
+    if (!checkNull('warning_numberPhone', numberPhone)) {
+
+        if (parseInt(numberPhone) && (numberPhone.length > 9) && (numberPhone.length < 13)) {
+            $('#warning_numberPhone').attr('class', 'hide_warning');
+        } else {
+            $('#warning_numberPhone').removeAttr('class');
+            return
+        }
+    } else {
+        return
+    }
+
+    var pass = $('#form_add_pass').val();
+    pass = pass.trim();
+    if (checkNull('warning_pass', pass)) {
+        return
+    }
+
+    var rePass = $('#form_add_rePass').val();
+    rePass = rePass.trim();
+    if (!checkNull('warning_rePass', rePass)) {
+        if (rePass == pass) {
+            $('#warning_rePass').attr('class', 'hide_warning');
+        } else {
+            $('#warning_rePass').removeAttr('class');
+            return
+        }
+    } else return
+
+    var user = {user_name: userName,password:pass,account_name:fullName,email_address:email
+                ,block_status: 'Active'};
+
+    var token = $('input[name="csrfmiddlewaretoken"]').val();
+    $.ajax({
+        url: 'manageUser',
+        type: 'POST',
+        data: user,
+        beforeSend: function (xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", token);
+            }
+        },
+        success: function (data) {
+            // console.log(data);
+            if (data['status'] == 'success') {
+                alert('add row');
+            } else if(data['status'] == 'error'){
+                alert(data['message']);
+            }
+        },
+        error: function (err) {
+            alert(err);
+        }
+    });
+
+
+
+    $('#modalAddUserd').modal('hide');
+    // console.log('gui xong');
+}
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+function checkNull(id, str) {
+    if (str == null || str == "") {
+        $('#' + id).removeAttr('class');
+        return true;
+    } else {
+        $('#' + id).attr('class', 'hide_warning');
+        return false;
+    }
 }

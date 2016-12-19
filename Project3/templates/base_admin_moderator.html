@@ -11,30 +11,41 @@
     <link href="{% static 'elearning_system/base_admin/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">#}
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">#}
     <!-- jvectormap -->
 {#    <link href="{% static 'elearning_system/base_admin/css/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet"#}
 {#          type="text/css" media="all"/>#}
     <!-- Theme style -->
     <link href="{% static 'elearning_system/base_admin/css/AdminLTE.min.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
+
+     <link href="{% static 'elearning_system/base_admin/css/dataTables.bootstrap.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="{% static 'elearning_system/base_admin/css/_all-skins.min.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
 
-    <link href="{% static 'elearning_system/moderator/css/messageDetail.css' %}" rel="stylesheet" type="text/css" media="all"/>
+{#    <link href="{% static 'elearning_system/moderator/css/messageDetail.css' %}" rel="stylesheet" type="text/css" media="all"/>#}
 
     {% block css_admin %}{% endblock %}
+
+    <!-- jQuery 2.2.3 -->
+    <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery-2.2.3.min.js' %}"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery.dataTables.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/dataTables.bootstrap.min.js' %}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
 
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+{#  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>#}
+{#  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>#}
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -161,9 +172,9 @@
 {# add script manageUser #}
 {#<script type="text/javascript" src="{% static 'elearning_system/admin/js/manageUser.js' %}"></script>#}
 <!-- jQuery 2.2.3 -->
-<script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery-2.2.3.min.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery-2.2.3.min.js' %}"></script>#}
 <!-- Bootstrap 3.3.6 -->
-<script type="text/javascript" src="{% static 'elearning_system/base_admin/js/bootstrap.min.js' %}"></script>
+{#<script type="text/javascript" src="{% static 'elearning_system/base_admin/js/bootstrap.min.js' %}"></script>#}
 <!-- FastClick -->
 {#<script type="text/javascript" src="{% static 'elearning_system/base_admin/js/fastclick.js' %}"></script>#}
 <!-- AdminLTE App -->
@@ -171,10 +182,10 @@
 <!-- Sparkline -->
 <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery.sparkline.min.js' %}"></script>
 <!-- jvectormap -->
-<script type="text/javascript"
-        src="{% static 'elearning_system/base_admin/js/jquery-jvectormap-1.2.2.min.js' %}"></script>
-<script type="text/javascript"
-        src="{% static 'elearning_system/base_admin/js/jquery-jvectormap-world-mill-en.js' %}"></script>
+{#<script type="text/javascript"#}
+{#        src="{% static 'elearning_system/base_admin/js/jquery-jvectormap-1.2.2.min.js' %}"></script>#}
+{#<script type="text/javascript"#}
+{#        src="{% static 'elearning_system/base_admin/js/jquery-jvectormap-world-mill-en.js' %}"></script>#}
 <!-- SlimScroll 1.3.0 -->
 <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery.slimscroll.min.js' %}"></script>
 <!-- ChartJS 1.0.1 -->

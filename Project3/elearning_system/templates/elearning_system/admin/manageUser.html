@@ -1,24 +1,77 @@
 {% extends 'base_admin.html' %}
 {% block title %} Manage User {% endblock %}
 
-
+{% load static %}
+{% block css_admin %}
+    <link href="{% static 'elearning_system/admin/css/manageUser.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+{% endblock %}
 
 {% block content-header %} Quản lý User {% endblock %}
 
 {% block main_admin %}
 
-    <div id="example1_filter" class="dataTables_filter" style="float: right;">
-        <label>Search:
-            <input type="search" class="form-control input-sm" placeholder="" aria-controls="example1">
-        </label>
-    </div>
-
     <div>
         <div class="container">
             <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-lg" onclick="">
-                Add New User
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalAddUserd"
+                    onclick="">
+                Add User
             </button>
+
+            <!-- Modal add user-->
+            <div class="modal fade" id="modalAddUserd" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="warning-moderator">Add User</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form >
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" class="form-control" id="form_add_userName">
+                                    <p style="color: red;" class="hide_warning" id="warning_userName">* Not null</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Họ và tên</label>
+                                    <input type="text" class="form-control" id="form_add_fullName">
+                                    <p style="color: red;" class="hide_warning" id="warning_fullName">* Not valid </p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="form_add_email">
+                                    <p style="color: red;" class="hide_warning" id="warning_email">* Not valid </p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Số điện thoại</label>
+                                    <input type="text" class="form-control" id="form_add_phoneNumber">
+                                    <p style="color: red;" class="hide_warning" id="warning_numberPhone">* Not valid</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Passwork</label>
+                                    <input type="password" class="form-control" id="form_add_pass">
+                                    <p style="color: red;" class="hide_warning" id="warning_pass">* Not valid</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Re-Passwork</label>
+                                    <input type="password" class="form-control" id="form_add_rePass">
+                                    <p style="color: red;" class="hide_warning" id="warning_rePass">* Not valid</p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="form_add_btn" onclick="addUser();">Thêm</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
             <!-- Modal -->
             <div class="modal fade" id="modalUser" role="dialog">
@@ -40,12 +93,6 @@
                                 <label for="email">Email:</label>
                                 <label id="user_email">abc@gmail.com</label>
                             </div>
-{#                            <div class="form-group">#}
-{#                                <label for="pwd">Password:</label>#}
-{#                                <input type="password" class="form-control" id="pwd">#}
-{#                            </div>#}
-                            {#                                <button type="submit" class="btn btn-default">Submit</button>#}
-                            {#                            </form>#}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" id="btn_user" onclick="">Active</button>
@@ -62,79 +109,81 @@
     {#    table  #}
     <div class="row">
         <div class="col-sm-12">
-            <table id="example1" class="table table-bordered table-striped dataTable" role="grid"
-                   aria-describedby="example1_info">
-                <thead>
-                <tr role="row">
-                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
-                        aria-sort="ascending">STT
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">User Name
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">Email
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">ID
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Status
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Đã giải
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Đã đăng
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-
-                {% for user in dataUser %}
-
-                    <tr role="row" class="odd">
-                        <td class="sorting_1"> {{ user.STT }}</td>
-                        <td>{{ user.userName }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.ID }}</td>
-                        <td>{{ user.status }}</td>
-                        <td>{{ user.posted }}</td>
-                        <td>{{ user.resolved }}</td>
-                        <td>
-                            <div class="row">
-                                {% if user.status == 'Active' %}
-
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalUser"
-                                            onclick="blockUser('{{ user.userName }}','{{ user.email }}')">
-                                        Block
-                                    </button>
-                                {% else %}
-
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalUser"
-                                            onclick="activeUser('{{ user.userName }}','{{ user.email }}')">
-                                        Active
-                                    </button>
-                                {% endif %}
-                            </div>
-                        </td>
+            <div class="box-body">
+                <table id="manageUserTable" class="table table-bordered table-striped dataTable" role="grid"
+                       aria-describedby="example1_info">
+                    <thead>
+                    <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
+                            aria-sort="ascending">STT
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">User Name
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">Full Name
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">Email
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Status
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Đã giải
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Đã đăng
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
+                        </th>
                     </tr>
+                    </thead>
+                    <tbody>
 
-                {% endfor %}
+                    {% for user in dataUser %}
+
+                        <tr role="row" class="odd" id="tableUser">
+                            <td class="sorting_1"> {{ user.STT }}</td>
+                            <td>{{ user.userName }}</td>
+                            <td>{{ user.fullname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td id="status{{ user.STT }}">{{ user.status }}</td>
+                            <td>{{ user.posted }}</td>
+                            <td>{{ user.resolved }}</td>
+                            <td>
+                                <div class="row">
+                                    {% if user.status == 'Active' %}
+
+                                        <button class="btn btn-danger" id="{{ user.STT }}" data-toggle="modal" data-target="#modalUser"
+                                                onclick="blockUser('{{ user.userName }}','{{ user.email }}',{{ user.STT }})">
+                                            Block
+                                        </button>
+                                    {% else %}
+
+                                        <button class="btn btn-primary" id="{{ user.STT }}" data-toggle="modal" data-target="#modalUser"
+                                                onclick="activeUser('{{ user.userName }}','{{ user.email }}',{{ user.STT }})">
+                                            Active
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
 {% endblock %}
 
 {% load static %}
- {% block javascript %}
-     <script type="text/javascript" src="{% static 'elearning_system/admin/js/manageUser.js' %}"></script>
- {% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'elearning_system/admin/js/manageUser.js' %}"></script>
+{% endblock %}

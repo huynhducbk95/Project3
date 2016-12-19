@@ -3,8 +3,6 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-# Create your model here.
-
 class User(models.Model):
     full_name = models.CharField(max_length=20, )
     password = models.CharField(max_length=30, )
@@ -34,6 +32,7 @@ class Tag(models.Model):
 
 
 class ExerciseWebServer(models.Model):
+
     view_number = models.IntegerField(default=0)
     solve_number = models.IntegerField(default=0)
     contributer_id = models.ForeignKey(User, null=False, related_name='user_contributer')

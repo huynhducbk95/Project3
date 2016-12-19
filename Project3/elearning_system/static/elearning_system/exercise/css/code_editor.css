@@ -1,10 +1,11 @@
-/*@media (min-width: 1200px) {*/
-  /*.container {*/
-    /*width: 1220px;*/
-  /*}*/
-/*}*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1250px;
+    }
+}
+
 .container {
-    padding-top: 30px;
+    padding-top: 60px;
 
 }
 
@@ -14,22 +15,92 @@
 
 }
 
+#code-language {
+    width: 50%;
+    max-width: 150px;
+}
+
 .exercise-detail {
 
 }
-#exercise-test-case-body{
-    max-height:70px;
+
+#exercise-test-case-body {
+    max-height: 120px;
 }
-#exercise-instruction-body{
+
+#exercise-instruction-body {
     max-height: 100px;
 }
+
 #code-editor-footer {
-    padding-top: 15px;
+    padding-top: 5px;
 }
 
 textarea {
-   resize: none;
+    resize: none;
 }
+
 .modal-body .form-horizontal .col-sm-offset-2 {
     margin-left: 15px;
 }
+
+#code-file-input-form input {
+    max-width: 120px;
+}
+
+#test-code-instruction-body {
+    height: 150px;
+}
+
+#test-code-test-case-body {
+    max-height: 150px;
+}
+
+#popup-message {
+    position: fixed;
+    top: 60px;
+    right: 40px;
+    z-index: 50;
+    text-align: center;
+    min-width: 250px;
+}
+
+.CodeMirror {
+    margin-top: 2px;
+    color: #1a2226;
+    border: 1px solid #999;
+    min-height: 300px;
+}
+
+.form-group {
+    margin-bottom: 2px;
+}
+
+#submit-result-info {
+    min-height: 130px;
+}
+
+.test-case-img {
+    height: 32px;
+    padding-right: 5px;
+}
+
+.tooltip.top .tooltip-inner {
+
+    max-width: 310px;
+
+    padding: 3px 8px;
+
+    color: #fff;
+
+    text-align: center;
+
+    background-color: #245973;
+
+    border-radius: 5px
+
+}
+
+/*#test-code-view-body{*/
+/*position: absolute;*/
+/*}*/

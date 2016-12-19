@@ -96,6 +96,7 @@ def list_ex_of_topic(request):
 
 
 def contact(request):
+
     print('x')
     return render(request, 'elearning_system/user/contact.html', {'title': 'registry'})
 
@@ -218,8 +219,11 @@ def compare_exercise(request):
 
 
 def login(request):
+    context={}
     if request.method == 'GET':
-        return render(request, 'elearning_system/user/login.html', {})
+        if 'next_page' in request.GET:
+            context['redirect_message'] = 'Please login to access!'
+        return render(request, 'elearning_system/user/login.html',context)
     if request.method == 'POST':
         user_name = request.POST.get('user_name', None)
         password = request.POST.get('password', None)
@@ -240,6 +244,7 @@ def login(request):
                 'message': 'Username or password is wrong'
             }
             return render(request, 'elearning_system/user/login.html', result)
+
 
 
 def logout(request):

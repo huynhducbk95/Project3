@@ -1,5 +1,6 @@
 from elearning_system.models import User
-
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import render
 
 
@@ -27,15 +28,25 @@ def check_role(role_needed):
                 for role_name in get_role_list(request.session['user_name']):
                     if role_needed == role_name:
                         is_authorized = True
-            if not is_authorized:
-                return render_template(request, 'elearning_system/central_control/http_403_access_denied.html', {},
-                                       status=403)
+                if not is_authorized:
+                    return render_template(request, 'elearning_system/central_control/http_403_access_denied.html', {},
+                                           status=403)
+                else:
+                    return function(request, *args)
+
             else:
-                return function(*args)
+                return HttpResponseRedirect(reverse('login') + '?next_page=' + request.path)
 
         return new_function
 
     return true_decorator
+
+
+def check_user_is_login(request):
+    if 'user_name' in request.session:
+        return True
+    else:
+        return False
 
 
 def render_template(request, template_name, context, status=200):

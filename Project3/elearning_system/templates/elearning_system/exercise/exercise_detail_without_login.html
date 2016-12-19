@@ -3,8 +3,9 @@
 {% block title %} HOME PAGE {% endblock %}
 {% block style_sheet %}
     <link href="{% static 'elearning_system/base/css/bootstrap.css' %}" rel="stylesheet"/>
-    <link href="{% static 'elearning_system/base/css/code_editor.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
+    media="all"/>
 {% endblock %}
 {% block main %}
     <div class="container">
@@ -50,29 +51,6 @@
 
                 </div>
             </div>
-            <div id="exercise-instruction">
-                <h4 id="exercise-instruction-header" class="text-danger">
-                    Gợi ý
-                </h4>
-                <div id="exercise-instruction-body" class="pre-scrollable">
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.The digits are stored in reverse order and each
-                    of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-
-
-                </div>
-            </div>
 
             <div id="exercise-test-case">
                 <h4 id="exercise-test-case-header" class="text-danger">
@@ -105,9 +83,11 @@
         <div class="col-md-8 code-editor-field">
             <h2 class="text-center text-danger"> To solve this Exercise, you need to login </h2>
             <div id="exercise_login" class="row">
+                <a href="{% url 'login' %} ">
                     <button type="button" class="btn btn-primary center-block">
                         <span class="glyphicon glyphicon-arrow-right"></span> Go to login page
                     </button>
+                </a>
             </div>
         </div>
     </div>
@@ -179,13 +159,4 @@
 {% block javascript %}
     <script type="text/javascript" src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'elearning_system/base/js/bootstrap.js' %}"></script>
-    <script>
-        $('#report-exercise-error-btn').click(function () {
-            {#                            var property_element = $(this).closest(".property-element");#}
-            {#                            set_modal_value_list(property_element.data('property-id'),#}
-            {#                                    property_element.attr('data-property-value-id'));#}
-            var modal_select_element = $("#modal-report-exercise-error");
-            modal_select_element.modal();
-        });
-    </script>
 {% endblock %}

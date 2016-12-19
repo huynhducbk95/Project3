@@ -2,14 +2,14 @@ import string
 from django.shortcuts import render
 from django.http.response import HttpResponse
 import json
-from elearning_system.central_control import check_role
+from elearning_system.central_control import check_role, render_template, check_user_is_login
 from elearning_system.view.exercise import plugin_api
 
 
 def test_code(request):
     if request.method == "GET":
-        return render(request, 'elearning_system/exercise/test_code.html',
-                      {'title': 'Test Code'})
+        return render_template(request, 'elearning_system/exercise/test_code.html',
+                               {'title': 'Test Code'})
     if request.method == "POST":
         return_result = {}
         try:
@@ -57,6 +57,7 @@ def test_code(request):
 #     print ('y')
 #     return render(request, 'elearning_system/exercise/exercise_detail_without_login.html',
 #                   {'title': 'registry'})
+@check_role('user')
 def report_exercise_error(request):
     if request.method == "POST":
         return_result = {}
@@ -71,10 +72,12 @@ def report_exercise_error(request):
 
 
 def exercise_detail(request):
-    print ('x')
-    return render(request, 'elearning_system/exercise/exercise_detail.html',
-                  {'title': 'registry'})
-
+    if check_user_is_login(request) is True:
+        return render(request, 'elearning_system/exercise/exercise_detail.html',
+                          {'title': 'registry'})
+    else:
+        return render(request, 'elearning_system/exercise/exercise_detail_without_login.html',
+                          {'title': 'registry'})
 
 def convert_test_case_string_to_list(test_case_string):
     try:
@@ -96,6 +99,7 @@ def convert_test_case_string_to_list(test_case_string):
         return 'error'
 
 
+@check_role('user')
 def solve_exercise(request):
     if request.method == "POST":
         return_result = {}
@@ -138,6 +142,7 @@ def solve_exercise(request):
             return HttpResponse(json.dumps(return_result), content_type='application/json')
 
 
+@check_role('user')
 def contribute_exercise(request):
     if request.method == "GET":
         return render(request, 'elearning_system/exercise/contribute_exercise.html',

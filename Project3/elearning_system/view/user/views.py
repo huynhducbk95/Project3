@@ -3,14 +3,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import json
 
-from elearning_system.models import User, ExerciseWebServer, Tag, Role
+from elearning_system.models import User, ExerciseWebServer, Tag
 
 
 def index(request):
-    role_moderator = Role.objects.get(pk=2)
-    user_test = User.objects.get(pk=1)
-    role_moderator.user_list.add(user_test)
-
     user_list = User.objects.all().order_by('-contribute_number')
     count = 1
     top_user_list = []
@@ -19,7 +15,7 @@ def index(request):
             break
         else:
             user_top = {
-                'username': user.user_name,
+                'user_name': user.user_name,
                 'passed': user.solve_number,
                 'contributed': user.contribute_number,
             }
@@ -33,8 +29,8 @@ def index(request):
             break
         else:
             exercise_top = {
-                'name': exercise.exercise_name,
-                'description': exercise.exercise_description,
+                'name': 'exercise x',
+                'description': 'description for exercise x',
                 'passed': exercise.solve_number,
                 'contributor': exercise.contributer_id.user_name,
                 'view': exercise.view_number,
@@ -56,22 +52,31 @@ def index(request):
         'top_user': top_user_list,
         'length': len(top_exercise_list),
     }
-    context = {
-        'account_name': 'account_name',
-        'is_login': 'true',
-        'user_role_list': [
-            'admin',
-            'moderator',
-            'user'
-        ]
-    }
-    role_list = []
-    if 'is_login' in context:
-        for role in context['user_role_list']:
-            role_list.append(role)
-        result['username'] = context['account_name']
+
+    # context = {
+    #     'account_name': 'account_name',
+    #     'is_login': 'true',
+    #     'user_role_list':[
+    #         'admin',
+    #         'moderator',
+    #         'user'
+    #     ]
+    # }
+    # role_list = []
+    # if 'is_login' in context:
+    #     for role in context['user_role_list']:
+    #         role_list.append(role)
+    #     result['user_name'] = context['account_name']
+    #     result['role_list'] = role_list
+    if 'account_name' in request.session:
+        result['user_name'] = request.session['account_name']
+        user = User.objects.get(user_name=request.session['account_name'])
+        role_list_db = user.role_set.all()
+        role_list = []
+        for role in role_list_db:
+            role_list.append(role.role_name)
         result['role_list'] = role_list
-    return render(request, 'elearning_system/user/index.html', {'result': result})
+    return render(request, 'elearning_system/user/index.html', result)
 
 
 def list_ex_of_topic(request):
@@ -82,8 +87,8 @@ def list_ex_of_topic(request):
         for exercise in exercises:
             if exercise.tag_id.id == int(tag):
                 exercise_info = {
-                    'name': exercise.exercise_name,
-                    'description': exercise.exercise_description,
+                    'name': 'exercise x',
+                    'description': 'description for exercise xx',
                     'passed': exercise.solve_number,
                     'contributor': exercise.contributer_id.user_name,
                     'view': exercise.view_number,
@@ -104,11 +109,10 @@ def list_ex_of_topic(request):
             'topic_list': tag_list,
             'tag_name': tag_db.tag_name
         }
-        return render(request, 'elearning_system/user/list_ex_of_topic.html', {'result': result})
+        return render(request, 'elearning_system/user/list_ex_of_topic.html', result)
 
 
 def contact(request):
-    print('x')
     return render(request, 'base.html', {'title': 'registry'})
 
 
@@ -133,8 +137,8 @@ def search(request):
             exercise_name = exercise.exercise_name.lower()
             if exercise_name.__contains__(search_keyword):
                 exercise_info = {
-                    'name': exercise.exercise_name,
-                    'description': exercise.exercise_description,
+                    'name': 'exercise xx',
+                    'description': 'description for exercise xx',
                     'passed': exercise.solve_number,
                     'contributor': exercise.contributer_id.user_name,
                     'view': exercise.view_number,
@@ -146,8 +150,8 @@ def search(request):
                 description = exercise.exercise_description.lower()
                 if description.__contains__(search_keyword):
                     exercise_info = {
-                        'name': exercise.exercise_name,
-                        'description': exercise.exercise_description,
+                        'name': 'exercise',
+                        'description': 'description for exercise ',
                         'passed': exercise.solve_number,
                         'contributor': exercise.contributer_id.user_name,
                         'view': exercise.view_number,
@@ -161,7 +165,7 @@ def search(request):
             'exercise_list': exercise_list_result,
             'topic_list': tag_list,
         }
-        return render(request, 'elearning_system/user/search.html', {'result': result})
+        return render(request, 'elearning_system/user/search.html', result)
 
 
 def compare_exercise(request):
@@ -182,8 +186,8 @@ def compare_exercise(request):
         exercise_list_result = []
         for exercise in exercise_list:
             exercise_info = {
-                'name': exercise.exercise_name,
-                'description': exercise.exercise_description,
+                'name': 'exercise',
+                'description': 'description for exercise ',
                 'passed': exercise.solve_number,
                 'contributor': exercise.contributer_id.user_name,
                 'view': exercise.view_number,
@@ -196,70 +200,77 @@ def compare_exercise(request):
 
 
 def login(request):
+    context={}
+    if request.method == 'GET':
+        if 'next_page' in request.GET:
+            context['redirect_message'] = 'Please login to access!'
+        return render(request, 'elearning_system/user/login.html',context)
     if request.method == 'POST':
-        username = request.POST.get('username', None)
+        user_name = request.POST.get('user_name', None)
         password = request.POST.get('password', None)
         user_list = User.objects.all()
-        error = False
-
+        is_valid = False
         for user in user_list:
-            if user.user_name == username and user.password == password:
-                error = True
+            if user.user_name == user_name and user.password == password:
+                is_valid = True
                 break
-        if error:
-            if 'username' in request.session:
-                del request.session['username']
-            request.session['username'] = username
-            user_obj = User.objects.get(user_name=username)
-            result = {
-                'result': 'successful',
-                'account_name': user_obj.account_name,
-            }
+        if is_valid:
+            if 'account_name' in request.session:
+                del request.session['account_name']
+            request.session['account_name'] = user_name
+            if 'next_page' in request.GET:
+                return redirect(to=request.GET['next_page'])
+            else:
+                return redirect(to='index')
         else:
             result = {
-                'result': 'error'
+                'result': 'error',
+                'message': 'Username or password is wrong'
             }
-        return HttpResponse(json.dumps(result), content_type='application/json')
+            return render(request, 'elearning_system/user/login.html', result)
+
 
 
 def logout(request):
     if request.method == 'GET':
-        user = None
-        if 'user_name' in request.session:
-            user = request.session['user_name']
-            del request.session['user_name']
-        user_obj = User.objects.get(account_name=user)
-        result = {
-            'result': 'successful',
-        }
+        if 'account_name' in request.session:
+            del request.session['account_name']
         return redirect(to='index')
 
 
 def registry(request):
+    if request.method == 'GET':
+        return render(request, 'elearning_system/user/registry.html', {})
     if request.method == 'POST':
-        username = request.POST.get('username')
+        user_name = request.POST.get('user_name')
         user_list = User.objects.all()
-        for user in user_list:
-            if user.user_name == username:
-                result = {
-                    'result': 'error'
-                }
-                return HttpResponse(json.dumps(result), content_type='application')
         password = request.POST.get('password')
+        repassword = request.POST.get('repassword')
         email = request.POST.get('email')
         account_name = request.POST.get('account_name')
+        for user in user_list:
+            if user.user_name == user_name:
+                result = {
+                    'result': 'error',
+                    'message': 'Username is already exist'
+                }
+                return render(request, 'elearning_system/user/registry.html', result)
+
+        if password != repassword:
+            result = {
+                'result': 'error',
+                'message': 'Repassword is wrong'
+            }
+            return render(request, 'elearning_system/user/registry.html', result)
+
         block_status = 'Active'
-        user = User(user_name=username,
+        user = User(user_name=user_name,
                     password=password,
                     email_address=email,
                     account_name=account_name,
                     block_status=block_status)
         user.save()
-        if 'user_name' in request.session:
-            del request.session['user_name']
-        request.session['user_name'] = username
-        result = {
-            'result': 'successful',
-            'account_name': account_name,
-        }
-        return HttpResponse(json.dumps(result), content_type='application/json')
+        if 'account_name' in request.session:
+            del request.session['account_name']
+        request.session['account_name'] = user_name
+        return redirect(to=index)

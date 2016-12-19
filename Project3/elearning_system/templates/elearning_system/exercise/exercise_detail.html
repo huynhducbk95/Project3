@@ -20,7 +20,7 @@
 {% block main %}
     <div class="alert alert-dismissable" style="display: none;" id="popup-message">
         <a href="#" class="close" id="popup-message-close" aria-label="close">×</a>
-        <span id="error-message-body"></span>
+        <span id="popup-message-body"></span>
     </div>
     <div class="container">
         <div class="col-md-4 excercise-section text-justify">
@@ -281,6 +281,18 @@
             modal_select_element.modal();
         });
 
+       var show_message = function (type, content) {
+            var popup_message = $("#popup-message");
+            if (type == 'success') {
+                popup_message.addClass('alert-success')
+            } else if (type == 'error') {
+                popup_message.addClass('alert-danger')
+            }
+            $("#popup-message-body").html(content);
+            popup_message.fadeIn();
+        };
+
+
         var alert_message = function (type, content) {
             var popup_message = $("#popup-message");
             if (type == 'success') {
@@ -288,7 +300,7 @@
             } else if (type == 'error') {
                 popup_message.addClass('alert-danger')
             }
-            $("#error-message-body").html(content);
+            $("#popup-message-body").html(content);
             popup_message.fadeIn();
             setTimeout(function () {
                 popup_message.fadeOut();
@@ -296,10 +308,10 @@
                     popup_message.removeClass('alert-success');
                 } else if (type == 'error') {
                     popup_message.removeClass('alert-danger');
-                    $("#error-message-body").html();
+                    $("#popup-message-body").html();
                 }
 
-            }, 1500);
+            }, 3000);
         };
 
         var disable_editor = function () {

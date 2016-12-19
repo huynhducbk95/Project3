@@ -32,8 +32,6 @@ class Tag(models.Model):
 
 
 class ExerciseWebServer(models.Model):
-    exercise_name = models.CharField(max_length=30, )
-    exercise_description = models.CharField(max_length=255, )
     view_number = models.IntegerField()
     solve_number = models.IntegerField()
     contributer_id = models.ForeignKey(User, null=True, related_name='user_contributer')

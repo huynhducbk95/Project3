@@ -61,6 +61,8 @@ textarea {
     top: 60px;
     right: 40px;
     z-index: 50;
+    text-align: center;
+    min-width: 250px;
 }
 
 .CodeMirror {
@@ -73,30 +75,32 @@ textarea {
 .form-group {
     margin-bottom: 2px;
 }
-#submit-result-info{
+
+#submit-result-info {
     min-height: 130px;
 }
-.test-case-img{
+
+.test-case-img {
     height: 32px;
     padding-right: 5px;
 }
 
+.tooltip.top .tooltip-inner {
 
-.tooltip.top .tooltip-inner{
+    max-width: 310px;
 
-max-width:310px;
+    padding: 3px 8px;
 
-padding:3px 8px;
+    color: #fff;
 
-color:#fff;
+    text-align: center;
 
-text-align:center;
+    background-color: #245973;
 
-background-color:#245973;
-
-border-radius:5px
+    border-radius: 5px
 
 }
+
 /*#test-code-view-body{*/
 /*position: absolute;*/
 /*}*/

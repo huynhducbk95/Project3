@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/user/css/registry.css' %}" type="text/css" rel="stylesheet" media="all"/>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'elearning_system/user/js/contact.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-5 col-md-offset-4">
+
+                <div class="account-wall">
+                    <legend style="padding-left: 13px"><a href="http://www.jquery2dotnet.com">
+                        <i class="glyphicon glyphicon-globe"></i></a> Create your account!</legend>
+                    <form class="form-signin" action="registry" method="post">
+                        {% csrf_token %}
+                        {% if result == 'error' %}
+                            <span style="color: red;padding-bottom: 5px">{{ message }}</span>
+                        {% endif %}
+                        <div style="padding-bottom: 10px">
+                            <input type="text" name="user_name" class="form-control" placeholder="Username" required autofocus>
+                        </div>
+                        <div style="padding-bottom: 10px">
+                            <input type="text" name="account_name" class="form-control" placeholder="Account name" required autofocus>
+                        </div>
+                        <div style="padding-bottom: 10px">
+                            <input type="text" name="email" class="form-control" placeholder="Email address" required autofocus>
+                        </div>
+                        <div>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div>
+                            <input type="password" name="repassword" class="form-control" placeholder="Re-password" required>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                            Sign up
+                        </button>
+                        <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                    </form>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+{% endblock %}

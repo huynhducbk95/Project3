@@ -6,6 +6,17 @@ from elearning_system.models import User, ExerciseWebServer, Tag, Role
 
 
 def index(request):
+    # role_admin = Role.objects.get(pk=1)
+    # role_moderator = Role.objects.get(pk=2)
+    # role_user = Role.objects.get(pk=3)
+    #
+    # for user in User.objects.all():
+    #     role_user.user_list.add(user)
+    # user1 = User.objects.get(pk=1)
+    # role_admin.user_list.add(user1)
+    # role_moderator.user_list.add(user1)
+    # user2 = User.objects.get(pk=2)
+    # role_moderator.user_list.add(user2)
     user_list = User.objects.all().order_by('-contribute_number')
     count = 1
     top_user_list = []
@@ -64,11 +75,11 @@ def index(request):
     # if 'is_login' in context:
     #     for role in context['user_role_list']:
     #         role_list.append(role)
-    #     result['user_name'] = context['account_name']
+    #     result['user_name'] = context['full_name']
     #     result['role_list'] = role_list
-    if 'account_name' in request.session:
-        result['user_name'] = request.session['account_name']
-        user = User.objects.get(user_name=request.session['account_name'])
+    if 'full_name' in request.session:
+        result['full_name'] = request.session['full_name']
+        user = User.objects.get(full_name=request.session['full_name'])
         role_list_db = user.role_set.all()
         role_list = []
         for role in role_list_db:
@@ -147,9 +158,9 @@ def typeahead_search(request):
                     exercise_list_result.append(exercise_info)
                     exercise_list_db_result.append(exercise)
         result = {
-            'exercise_list':exercise_list_result,
+            'exercise_list': exercise_list_result,
         }
-        return HttpResponse(json.dumps(result),content_type='application/json')
+        return HttpResponse(json.dumps(result), content_type='application/json')
 
 
 def search(request):
@@ -242,14 +253,16 @@ def login(request):
         password = request.POST.get('password', None)
         user_list = User.objects.all()
         is_valid = False
+        user_obj = None
         for user in user_list:
             if user.user_name == user_name and user.password == password:
                 is_valid = True
+                user_obj = user
                 break
         if is_valid:
-            if 'account_name' in request.session:
-                del request.session['account_name']
-            request.session['account_name'] = user_name
+            if 'full_name' in request.session:
+                del request.session['full_name']
+            request.session['full_name'] = user_obj.full_name
             return redirect(to=index)
         else:
             result = {
@@ -261,8 +274,8 @@ def login(request):
 
 def logout(request):
     if request.method == 'GET':
-        if 'account_name' in request.session:
-            del request.session['account_name']
+        if 'full_name' in request.session:
+            del request.session['full_name']
         return redirect(to='index')
 
 
@@ -275,7 +288,7 @@ def registry(request):
         password = request.POST.get('password')
         repassword = request.POST.get('repassword')
         email = request.POST.get('email')
-        account_name = request.POST.get('account_name')
+        full_name = request.POST.get('full_name')
         for user in user_list:
             if user.user_name == user_name:
                 result = {
@@ -285,8 +298,8 @@ def registry(request):
                 return render(request, 'elearning_system/user/registry.html', result)
             if user.email_address == email:
                 result = {
-                    'result':'error',
-                    'message':'Email is already exist'
+                    'result': 'error',
+                    'message': 'Email is already exist'
                 }
                 return render(request, 'elearning_system/user/registry.html', result)
 
@@ -301,7 +314,7 @@ def registry(request):
         user = User(user_name=user_name,
                     password=password,
                     email_address=email,
-                    account_name=account_name,
+                    full_name=full_name,
                     block_status=block_status)
         user.save()
         return redirect(to=index)

@@ -41,10 +41,12 @@ $('.pagination_btn').click(function () {
         var number_option = undefined;
         if (number_page === '1') {
             $('#first_pagination_elearning').addClass('disable').css('cursor', 'not-allowed');
+            $('#last_pagination_elearning').removeClass('disable').css('cursor', 'pointer');
             self.addClass('active');
             number_option = '1';
         } else if (is_latest === 'true') {
             $('#last_pagination_elearning').addClass('disable').css('cursor', 'not-allowed');
+            $('#first_pagination_elearning').removeClass('disable').css('cursor', 'pointer');
             self.addClass('active');
             number_option = number_page;
         } else if (number_page === '-') {

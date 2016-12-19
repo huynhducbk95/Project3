@@ -32,7 +32,7 @@
 <body>
 
 <div class="header_expert">
-    <nav class="navbar navbar-dark bg-primary custom_navbar">
+    <nav class="navbar navbar-dark bg-primary custom_navbar navbar-fixed-top">
         <div class="container-fluid row" id="top_menu_elearning">
             <div class="navbar-header" style="padding-left: 7px">
                 <a class="navbar-brand" href="{% url 'index' %}" id="logo_base_expert">Coding School</a>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </form>
-            {% if not user_name %}
+            {% if not full_name %}
                 <ul class="nav navbar-nav navbar-right" id="form_login_logout" style="padding-right: 15px">
                     <li><a href="registry"><span
                             class="glyphicon glyphicon-user"></span> Sign up</a></li>
@@ -79,7 +79,7 @@
                         {% endif %}
                     {% endfor %}
                     <li><a href="#"><span
-                            class="glyphicon glyphicon-user"></span> Hi, {{ user_name }}</a></li>
+                            class="glyphicon glyphicon-user"></span> Hi, {{ full_name }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>
@@ -87,7 +87,6 @@
         </div>
     </nav>
 </div>
-
 {% block main %}
 {% endblock %}
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

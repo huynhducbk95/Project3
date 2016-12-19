@@ -2,21 +2,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import json
-from elearning_system.models import User, ExerciseWebServer, Tag, Role
+from elearning_system.models import User, ExerciseWebServer, Tag
 
 
 def index(request):
-    # role_admin = Role.objects.get(pk=1)
-    # role_moderator = Role.objects.get(pk=2)
-    # role_user = Role.objects.get(pk=3)
-    #
-    # for user in User.objects.all():
-    #     role_user.user_list.add(user)
-    # user1 = User.objects.get(pk=1)
-    # role_admin.user_list.add(user1)
-    # role_moderator.user_list.add(user1)
-    # user2 = User.objects.get(pk=2)
-    # role_moderator.user_list.add(user2)
     user_list = User.objects.all().order_by('-contribute_number')
     count = 1
     top_user_list = []
@@ -62,24 +51,9 @@ def index(request):
         'top_user': top_user_list,
         'length': len(top_exercise_list),
     }
-    # context = {
-    #     'account_name': 'account_name',
-    #     'is_login': 'true',
-    #     'user_role_list':[
-    #         'admin',
-    #         'moderator',
-    #         'user'
-    #     ]
-    # }
-    # role_list = []
-    # if 'is_login' in context:
-    #     for role in context['user_role_list']:
-    #         role_list.append(role)
-    #     result['user_name'] = context['full_name']
-    #     result['role_list'] = role_list
-    if 'full_name' in request.session:
-        result['full_name'] = request.session['full_name']
-        user = User.objects.get(full_name=request.session['full_name'])
+    if 'user_name' in request.session:
+        result['user_name'] = request.session['user_name']
+        user = User.objects.get(user_name=request.session['user_name'])
         role_list_db = user.role_set.all()
         role_list = []
         for role in role_list_db:
@@ -91,18 +65,18 @@ def index(request):
 def list_ex_of_topic(request):
     if request.method == 'GET':
         tag = request.GET.get('tag', None)
-        exercises = ExerciseWebServer.objects.all()
+        tag_db = Tag.objects.get(pk=int(tag))
+        exercises = tag_db.exercisewebserver_set.all()
         exercise_list = []
         for exercise in exercises:
-            if exercise.tag_id.id == int(tag):
-                exercise_info = {
-                    'name': 'exercise x',
-                    'description': 'description for exercise xx',
-                    'passed': exercise.solve_number,
-                    'contributor': exercise.contributer_id.user_name,
-                    'view': exercise.view_number,
-                }
-                exercise_list.append(exercise_info)
+            exercise_info = {
+                'name': 'exercise x',
+                'description': 'description for exercise xx',
+                'passed': exercise.solve_number,
+                'contributor': exercise.contributer_id.user_name,
+                'view': exercise.view_number,
+            }
+            exercise_list.append(exercise_info)
         tag_list_db = Tag.objects.all()
         tag_list = []
         tag_db = Tag.objects.get(pk=tag)
@@ -133,7 +107,6 @@ def typeahead_search(request):
         exercise_list_result = []
         exercise_list_db_result = []
         for exercise in exercise_list:
-            # exercise_name = exercise.exercise_name.lower()
             if 'exercise xx'.__contains__(keyword):
                 exercise_info = {
                     'name': 'exercise xx',
@@ -146,7 +119,6 @@ def typeahead_search(request):
                 exercise_list_db_result.append(exercise)
         for exercise in exercise_list:
             if not exercise in exercise_list_db_result:
-                # description = exercise.exercise_description.lower()
                 if 'description for exercise'.__contains__(keyword):
                     exercise_info = {
                         'name': 'exercise',
@@ -253,16 +225,14 @@ def login(request):
         password = request.POST.get('password', None)
         user_list = User.objects.all()
         is_valid = False
-        user_obj = None
         for user in user_list:
             if user.user_name == user_name and user.password == password:
                 is_valid = True
-                user_obj = user
                 break
         if is_valid:
-            if 'full_name' in request.session:
-                del request.session['full_name']
-            request.session['full_name'] = user_obj.full_name
+            if 'user_name' in request.session:
+                del request.session['user_name']
+            request.session['user_name'] = user_name
             return redirect(to=index)
         else:
             result = {
@@ -274,8 +244,8 @@ def login(request):
 
 def logout(request):
     if request.method == 'GET':
-        if 'full_name' in request.session:
-            del request.session['full_name']
+        if 'user_name' in request.session:
+            del request.session['user_name']
         return redirect(to='index')
 
 

@@ -20,10 +20,8 @@ from elearning_system.models import ExerciseWebServer,User
 #     if hasattr(ex.approver_id,'user_name') is False:
 #         print ex.exercise_name
 
-# ex = ExerciseWebServer(exercise_name='Bai tap khong co chu de 5',
-#                        exercise_description='We can also divide one number by another.JavaScript uses the / symbol for division. You  are  giventwo  linked lists representing two non - negative  numbers. The digits arestored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list. We can also divide one number by another. JavaScript uses the / symbol for division.  You are given two linked lists representing two non - negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add  thetwo numbers and return it as a linked  list.We can also divide one number by another. JavaScript uses the / symbol for division.  You are given two linked lists representing two non - negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list. We can also divide one number by another. JavaScript uses the / symbol for division. You are given two linked lists representing two non - negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.',
-#                        view_number=0, solve_number=0, contributer_id = user,
-#                        created_date = '2016-12-12 11:11:11', tag_id = teg)
+# ex = ExerciseWebServer(contributer_id = user,
+#                        created_date = '2016-12-12 11:11:11')
 # ex.save()
 
 # ExerciseWebServer_list = ExerciseWebServer.objects.all()

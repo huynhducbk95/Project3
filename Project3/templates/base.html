@@ -21,17 +21,16 @@
           media="all"/>
     <link href="{% static 'elearning_system/base/css/bootstrap.min.css.map' %}" rel="stylesheet" type="text/css"
           media="all"/>
-    <link href="{% static 'elearning_system/base/css/jquery.typeahead.css' %}" rel="stylesheet" type="text/css"
-          media="all"/>
     <link href="{% static 'elearning_system/base/css/base.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
-    {% block style_sheet %}{% endblock %}
     <script src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'elearning_system/base/js/jquery.typeahead.js' %}"></script>
+    <script src="{% static 'elearning_system/base/js/bootstrap.min.js' %}"></script>
+    {% block style_sheet %}{% endblock %}
 
 </head>
 
 <body>
+
 <div class="header_expert">
     <nav class="navbar navbar-dark bg-primary custom_navbar">
         <div class="container-fluid row" id="top_menu_elearning">
@@ -46,14 +45,19 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">Ranking</a></li>
                         <li><a href="#">Contribute</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact">Contact</a></li>
                     </ul>
                 </li>
             </ul>
             <form class="navbar-form navbar-left " action="/search">
                 <div class="input-group" style="display: inline-flex">
-                    <input type="text" name="search" class="form-control typeahead" placeholder="Search">
                     <div class="input-group-btn">
+                        <div class="btn-group" role="group">
+                            <input id="test_test" type="text" name="search" aria-haspopup="true" aria-expanded="false"
+                                   class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Search">
+                            <ul class="dropdown-menu" id="typeahead_search" style="display:none;">
+                            </ul>
+                        </div>
                         <button class="btn btn-default" type="submit">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
@@ -62,19 +66,19 @@
             </form>
             {% if not user_name %}
                 <ul class="nav navbar-nav navbar-right" id="form_login_logout" style="padding-right: 15px">
-                    <li><a href="registry" ><span
+                    <li><a href="registry"><span
                             class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                    <li ><a href="login" ><span
+                    <li><a href="login"><span
                             class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             {% else %}
                 <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
-                {% for role in role_list %}
-                    {% if role != 'user' %}
-                        <li><a href="#"> {{ role }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                    <li><a href="#" ><span
+                    {% for role in role_list %}
+                        {% if role != 'user' %}
+                            <li><a href="#"> {{ role }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    <li><a href="#"><span
                             class="glyphicon glyphicon-user"></span> Hi, {{ user_name }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -155,7 +159,7 @@
 
 {# load file javascript#}
 
-<script src="{% static 'elearning_system/base/js/bootstrap.min.js' %}"></script>
+
 <script src="{% static 'elearning_system/base/js/base.js' %}"></script>
 {% block javascript %}{% endblock %}
 </body>

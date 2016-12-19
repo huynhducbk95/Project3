@@ -7,7 +7,9 @@
     <link href="{% static 'elearning_system/user/css/list_ex_of_topic.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
 {% endblock %}
-
+{% block javascript %}
+    <script src="{% static 'elearning_system/user/js/list_ex_of_topic.js' %}"></script>
+{% endblock %}
 {% block main %}
     <div class="container">
         <div class="row">
@@ -58,28 +60,23 @@
                         <div class="row">
                             <div class="col-sm-6"><span>Number of exercise: {{ exercise_number }}</span></div>
                             <div class="col-sm-6">
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle pull-right" type="button" id="menu1"
-                                            data-toggle="dropdown">-- Sort --
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="menu1">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">View</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Passed</a>
-                                        </li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Message</a>
-                                        </li>
-                                    </ul>
+                                <div class="form-group pull-right">
+                                    <select class="selectpicker form-control" id="compare_elearning" data-length-exercise="{{ exercise_number }}">
+                                        <option value="compare">---- Sort ----</option>
+                                        <option value="view">View</option>
+                                        <option value="passed" >Passed</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="panel-body">
                         {% for exercise in exercise_list %}
-                            <div class="row">
+                            <div class="row exercise_list_elearning">
                                 <div class="col-sm-12">
-                                    <h4>{{ exercise.name }}</h4>
+                                    <h4 class="exercise_name">{{ exercise.name }}</h4>
                                     <hr class="soft"/>
-                                    <p>
+                                    <p class="exercise_description">
                                         {{ exercise.description }}
                                     </p>
                                     <div class="row list_ex_expert">
@@ -87,11 +84,17 @@
                                             <ul class="nav nav-pills pull-left" role="tablist">
                                                 <li role="presentation"><a href="#"><span
                                                         class="glyphicon glyphicon-user"
-                                                        aria-hidden="true"></span> {{ exercise.contributor }}
+                                                        aria-hidden="true"></span><span class="exercise_contributor">
+                                                    {{ exercise.contributor }}</span>
                                                 </a>
                                                 </li>
                                                 <li role="presentation"><a href="#">Passed <span
-                                                        class="badge">{{ exercise.passed }}</span></a>
+                                                        class="badge"><span
+                                                        class="exercise_passed"> {{ exercise.passed }}</span></span></a>
+                                                </li>
+                                                <li role="presentation"><a>View <span
+                                                        class="badge"><span
+                                                        class="exercise_view"> {{ exercise.view }}</span> </span></a>
                                                 </li>
                                             </ul>
                                         </div>

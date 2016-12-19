@@ -256,6 +256,8 @@ def login(request):
             if 'full_name' in request.session:
                 del request.session['full_name']
             request.session['full_name'] = user_obj.full_name
+            request.session['user_name'] = user_obj.user_name
+
             return redirect(to=index)
         else:
             result = {

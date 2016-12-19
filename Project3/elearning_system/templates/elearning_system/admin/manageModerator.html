@@ -9,17 +9,11 @@
 
 {% block main_admin %}
 
-    <div id="example1_filter" class="dataTables_filter" style="float: right;">
-        <label>Search:
-            <input type="search" class="form-control input-sm" placeholder="" aria-controls="example1">
-        </label>
-    </div>
-
     <div>
-
         <div class="container">
             <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalAddModerator" onclick="">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalAddModerator"
+                    onclick="">
                 Add New Moderator
             </button>
 
@@ -109,69 +103,68 @@
     {#    table  #}
     <div class="row">
         <div class="col-sm-12">
-            <table id="example1" class="table table-bordered table-striped dataTable" role="grid"
-                   aria-describedby="example1_info">
-                <thead>
-                <tr role="row">
-                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
-                        aria-sort="ascending">STT
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">User Name
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">Email
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">Họ và tên
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">ID
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Status
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-
-                {% for moderator in dataModerator %}
-
-                    <tr role="row" class="odd">
-                        <td class="sorting_1"> {{ moderator.STT }}</td>
-                        <td>{{ moderator.userName }}</td>
-                        <td>{{ moderator.email }}</td>
-                        <td>{{ moderator.fullName }}</td>
-                        <td>{{ moderator.ID }}</td>
-                        <td>{{ moderator.status }}</td>
-                        <td>
-                            <div class="row">
-                                {% if moderator.status == 'Active' %}
-
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalModerator"
-                                            onclick="blockModerator('{{ moderator.fullName }}','{{ moderator.email }}')">
-                                        Block
-                                    </button>
-                                {% else %}
-
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalModerator"
-                                            onclick="activeModerator('{{ moderator.fullName }}','{{ moderator.email }}')">
-                                        Active
-                                    </button>
-                                {% endif %}
-                            </div>
-                        </td>
+            <div class="box-body">
+                <table id="manageModeratorTable" class="table table-bordered table-striped dataTable" role="grid"
+                       aria-describedby="example1_info">
+                    <thead>
+                    <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
+                            aria-sort="ascending">STT
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">User Name
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">Email
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">Họ và tên
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Status
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
+                        </th>
                     </tr>
+                    </thead>
+                    <tbody>
 
-                {% endfor %}
+                    {% for moderator in dataModerator %}
+
+                        <tr role="row" class="odd">
+                            <td class="sorting_1"> {{ moderator.STT }}</td>
+                            <td>{{ moderator.userName }}</td>
+                            <td>{{ moderator.email }}</td>
+                            <td>{{ moderator.fullName }}</td>
+                            <td>{{ moderator.status }}</td>
+                            <td>
+                                <div class="row">
+                                    {% if moderator.status == 'Active' %}
+
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#modalModerator"
+                                                onclick="blockModerator('{{ moderator.fullName }}','{{ moderator.email }}')">
+                                            Block
+                                        </button>
+                                    {% else %}
+
+                                        <button class="btn btn-primary" data-toggle="modal"
+                                                data-target="#modalModerator"
+                                                onclick="activeModerator('{{ moderator.fullName }}','{{ moderator.email }}')">
+                                            Active
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -180,4 +173,17 @@
 {% load static %}
 {% block javascript %}
     <script type="text/javascript" src="{% static 'elearning_system/admin/js/manageModerator.js' %}"></script>
+    {#    <script>#}
+    {#        $(function () {#}
+    {#            $("#manageModeratorTable").DataTable();#}
+    {#            $('#example2').DataTable({#}
+    {#                "paging": true,#}
+    {#                "lengthChange": false,#}
+    {#                "searching": false,#}
+    {#                "ordering": true,#}
+    {#                "info": true,#}
+    {#                "autoWidth": false#}
+    {#            });#}
+    {#        });#}
+    {#    </script>#}
 {% endblock %}

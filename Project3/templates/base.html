@@ -39,7 +39,7 @@
                 <a class="navbar-brand" href="{% url 'index' %}" id="logo_base_expert">Coding School</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="#">Test code</a></li>
+                <li><a href="{% url 'test_code' %}">Test code</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
                         <span class="caret"></span></a>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </form>
-            {% if not full_name %}
+            {% if not user_name %}
                 <ul class="nav navbar-nav navbar-right" id="form_login_logout" style="padding-right: 15px">
                     <li><a href="registry"><span
                             class="glyphicon glyphicon-user"></span> Sign up</a></li>
@@ -80,7 +80,7 @@
                         {% endif %}
                     {% endfor %}
                     <li><a href="#"><span
-                            class="glyphicon glyphicon-user"></span> Hi, {{ full_name }}</a></li>
+                            class="glyphicon glyphicon-user"></span> Hi, {{ user_name }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>

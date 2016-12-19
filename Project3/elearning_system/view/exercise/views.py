@@ -6,6 +6,7 @@ from elearning_system.central_control import check_role, render_template, check_
 from elearning_system.view.exercise import plugin_api
 
 
+@check_role('admin')
 def test_code(request):
     if request.method == "GET":
         return render_template(request, 'elearning_system/exercise/test_code.html',
@@ -74,10 +75,11 @@ def report_exercise_error(request):
 def exercise_detail(request):
     if check_user_is_login(request) is True:
         return render(request, 'elearning_system/exercise/exercise_detail.html',
-                          {'title': 'registry'})
+                      {'title': 'registry'})
     else:
         return render(request, 'elearning_system/exercise/exercise_detail_without_login.html',
-                          {'title': 'registry'})
+                      {'title': 'registry'})
+
 
 def convert_test_case_string_to_list(test_case_string):
     try:

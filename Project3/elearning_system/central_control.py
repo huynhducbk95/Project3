@@ -52,14 +52,14 @@ def check_user_is_login(request):
 def render_template(request, template_name, context, status=200):
     is_login = False
     role_list = []
-    account_name = ''
+    full_name = ''
     if 'user_name' in request.session:
         is_login = True
-        account_name = User.objects.filter(user_name=request.session['user_name']).first().account_name
+        full_name = User.objects.filter(user_name=request.session['user_name']).first().full_name
         role_list = get_role_list(request.session['user_name'])
     if is_login is True and 'is_login' not in context:
-        context['account_name'] = account_name
+        context['full_name'] = full_name
         context['is_login'] = True
-    if 'user_role_list' not in context and len(role_list) > 0:
-        context['user_role_list'] = role_list
+    if 'role_list' not in context and len(role_list) > 0:
+        context['role_list'] = role_list
     return render(request, template_name=template_name, context=context, status=status)

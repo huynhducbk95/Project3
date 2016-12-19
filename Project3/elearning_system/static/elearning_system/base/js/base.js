@@ -2,65 +2,57 @@
  * Created by huynhduc on 11/12/2016.
  */
 
-var pagination = $('.pagination_btn');
-pagination.click(function () {
 
-    console.log('dlkjfasldjfasdk');
-    var self = $(this);
-    $('.pagination_btn').removeClass('active');
-    self.addClass('active');
-});
-
-$.typeahead({
-    input: '.js-typeahead-hockey_v1',
-    minLength: 1,
-    maxItem: 8,
-    maxItemPerGroup: 6,
-    order: "asc",
-    hint: true,
-    cache: true,
-    group: {
-        key: "division",
-        template: function (item) {
-
-            var division = item.division;
-            if (~division.toLowerCase().indexOf('north')) {
-                division += " ---> Snow!";
-            } else if (~division.toLowerCase().indexOf('south')) {
-                division += " ---> Beach!";
+$('#test_test').on('input', function () {
+    $('#typeahead_search').empty();
+    $('#typeahead_search').css('display', 'none');
+    console.log($(this).val());// get the current value of the input field.
+    var value = $(this).val();
+    if (value.length > 0) {
+        $.get('typeahead_search?keyword=' + value, function (data) {
+            console.log(data);
+            exercise_list = data['exercise_list'];
+            var count = 0;
+            for (var i = 0; i < exercise_list.length; i++)
+                if (count < 5) {
+                    var li = document.createElement('li');
+                    $(li).attr('id','exercise_search');
+                    var a = document.createElement('a');
+                    $(a).css('color', 'black');
+                    $(a).css('cursor', 'pointer');
+                    var h4 = document.createElement('h4');
+                    var ex_name = document.createTextNode(exercise_list[i]['name']);
+                    h4.appendChild(ex_name);
+                    var span = document.createElement('span');
+                    var ex_description = document.createTextNode(exercise_list[i]['description']);
+                    span.appendChild(ex_description);
+                    a.appendChild(h4);
+                    a.appendChild(span);
+                    li.appendChild(a);
+                    $('#typeahead_search').css('display','');
+                    var ul = document.getElementById('typeahead_search');
+                    ul.appendChild(li);
+                    count += 1;
+                }
+            if (exercise_list.length > 5) {
+                var li = document.createElement('li');
+                $(li).attr('id','exercise_search');
+                var a = document.createElement('a');
+                var h4 = document.createElement('h4');
+                var ex_name = document.createTextNode('See more '+exercise_list.length+' exercise >>');
+                h4.appendChild(ex_name);
+                $(a).attr('id', 'see_more_exercise');
+                a.appendChild(h4);
+                li.appendChild(a);
+                var ul = document.getElementById('typeahead_search');
+                ul.appendChild(li);
             }
+        })
 
-            return division;
-        }
-    },
-    display: ["name", "city", "division"],
-    dropdownFilter: [{
-        key: 'conference',
-        template: '<strong>test</strong> Conference',
-        all: 'All Conferences'
-    }],
-    template: '<span>' +
-    '<span class="name">test</span>' +
-    '<span class="division">test test test</span>' +
-    '<span class="team-logo">' +
-    '<img src="/assets/jquerytypeahead/img/hockey_v1/{{img}}.gif">' +
-    '</span>' +
-    '</span>',
-    correlativeTemplate: true,
-    source: [{
-        id: 1,
-        author: "john",
-        display: "item1"
-    }, {
-        id: 2,
-        author: "eric",
-        display: "item2"
-    }, {
-        id: 3,
-        author: "carter",
-        display: "item3"
-    }]
+    }
+
 });
+
 var PATHNAME = window.location.pathname; // Returns path only
 var URL_LOCATION = window.location.href;     // Returns full URL
 

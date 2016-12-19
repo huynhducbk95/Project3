@@ -1,32 +1,129 @@
 {% extends 'base_moderator.html' %}
-{% block title %} Detail Error Message {% endblock %}
+{% block title %} Exercise Approved Detail{% endblock %}
+{% load static %}
 
-{#{% load static %}#}
-{#{% block css_admin %}#}
-{#    <link  type="text/css" href="{% static 'elearning_system/moderator/css/messageDetail.css' %}" rel="stylesheet"/>#}
-{#{% endblock %}#}
+{% block content-header %} Chi tiết tin nhắn báo lỗi{% endblock %}
 
-{% block content-header %} Chi tiết tin nhắn báo lỗi {% endblock %}
+{% block css_admin %}
+    <link href="{% static 'elearning_system/exercise/css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'elearning_system/moderator/css/exUnapproveDetail.css' %}" rel="stylesheet"/>
+    <link href="{% static 'elearning_system/moderator/css/exApprovedDetail.css' %}" rel="stylesheet"/>
+    <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+    <link href="{% static 'elearning_system/exercise/css/jquery.numberedtextarea.css' %}" rel="stylesheet"
+          type="text/css"
+          media="all"/>
+{% endblock %}
+
 
 {% block main_admin %}
-    <div id="messageDetail_header">
-        <p><b>Tên bài: </b><span>Tìm số hoàn hảo</span></p>
-        <p><b>Tiêu đề: </b><span>Lỗi logic bài tập 1</span></p>
-    </div>
 
-    <div id="messageDetail_content">
-        <h4><b>Nội dung lỗi:</b></h4>
-        <label>aaaaaaaaaaaaaaaaaaaaa sadsdf sdgdfg sdfgs sd sdfg adfs vadfsvda adgsdadf</label>
-    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <label>Nội dung lỗi</label>
+                <p>This is error content. This is error content. This is error content. This is error content.
+                This is error content. This is error content. This is error content. This is error content.
+                This is error content. This is error content. This is error content. This is error content.
+                This is error content. This is error content. This is error content. This is error content.
+                This is error content. This is error content. This is error content. This is error content. </p>
+            </div>
 
-    <div id="messageDetail_ex">
-        <h4><b>Nội dung bài tập</b></h4>
-        <label>Số hoàn hảo là số có tổng các ước bằng chính nó. Tìm tất cả các số hoàn hảo bé hơn 100.</label>
+        </div>
+        <div class="row">
+            <div class="col-md-4 excercise-section text-justify scrollable">
+                {% for ex in exApproved %}
+                    <h4 id="exercise-title-unapprove" class="text-info">{{ ex.exercise_name }}</h4>
+                    <div class="exercise-detail pre-scrollable">
+                        <div id="ad_exerciseContent"
+                             class="content_ExApproved_Detail">{{ ex.exercise_description }}</div>
+                    </div>
+                {% endfor %}
+
+                <div id="exercise-test-case" class="test-case-exUnapprove">
+                    <h4 id="exercise-test-case-header" class="text-danger">
+                        Test case example
+                    </h4>
+                    <div id="exApproved_testCase" class="pre-scrollable">
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                    </div>
+                </div>
+                <div id="exercise-test-case" class="test-case-exUnapprove">
+                    <h4 id="exercise-test-case-header" class="text-danger">
+                        Console
+                    </h4>
+                    <div id="exApproved_console" class="pre-scrollable">
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 code-editor-field">
+                <div id="code-editor-header" class="row">
+                    <div class="">
+                        <h4 class="text-danger">
+                            {% for ex in exApproved %}
+                                Contributer (<span>{{ ex.contributer_id.account_name }}</span>) solution
+                            {% endfor %}
+                        </h4>
+                    </div>
+                </div>
+                <div id="code-editor-body" class="row">
+                    <input type="hidden" id="exercise-id" value="123">
+                    <textarea cols="60" rows="20" class="form-control" spellcheck="false" id="code-editor-exUnaprove"
+                              style="color: #1b6d85"></textarea>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-6">
+                        <label>Chủ đề:</label>
+                        <select class="form-control" id="" style="">
+                            {% for tag in tagList %}
+                                <option>{{ tag.tag_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="code-language" style="">Language:</label>
+                        <select class="form-control" id="" style="">
+                            <option>Java</option>
+                            <option>C</option>
+                            <option>Javascript</option>
+                            <option>Pascal</option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div id="code-editor-footer">
+                    <div class="form-group col-md-8 select-language-input form-inline">
+
+                        <button type="button" class="btn btn-primary" style="float: right;" disabled>
+                            Cập nhật
+                        </button>
+                        <button type="button" class="btn btn-primary " style="float: right;margin-right: 10px;"
+                                onclick="">
+                            Run
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
 
-{% load static %}
- {% block javascript %}
-     <script type="text/javascript" src="{% static 'elearning_system/moderator/js/errorMessage.js' %}"></script>
- {% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'elearning_system/moderator/js/exUnapproveDetail.js' %}"></script>
+{% endblock %}

@@ -7,6 +7,17 @@ from elearning_system.models import User, ExerciseWebServer, Tag
 
 
 def index(request):
+    # role_admin = Role.objects.get(pk=1)
+    # role_moderator = Role.objects.get(pk=2)
+    # role_user = Role.objects.get(pk=3)
+    #
+    # for user in User.objects.all():
+    #     role_user.user_list.add(user)
+    # user1 = User.objects.get(pk=1)
+    # role_admin.user_list.add(user1)
+    # role_moderator.user_list.add(user1)
+    # user2 = User.objects.get(pk=2)
+    # role_moderator.user_list.add(user2)
     user_list = User.objects.all().order_by('-contribute_number')
     count = 1
     top_user_list = []
@@ -25,7 +36,7 @@ def index(request):
     count = 1
     top_exercise_list = []
     for exercise in exercise_list:
-        if count == 5:
+        if count == 10:
             break
         else:
             exercise_top = {
@@ -53,24 +64,10 @@ def index(request):
         'length': len(top_exercise_list),
     }
 
-    # context = {
-    #     'account_name': 'account_name',
-    #     'is_login': 'true',
-    #     'user_role_list':[
-    #         'admin',
-    #         'moderator',
-    #         'user'
-    #     ]
-    # }
-    # role_list = []
-    # if 'is_login' in context:
-    #     for role in context['user_role_list']:
-    #         role_list.append(role)
-    #     result['user_name'] = context['account_name']
-    #     result['role_list'] = role_list
-    if 'account_name' in request.session:
-        result['user_name'] = request.session['account_name']
-        user = User.objects.get(user_name=request.session['account_name'])
+
+    if 'full_name' in request.session:
+        result['full_name'] = request.session['full_name']
+        user = User.objects.get(full_name=request.session['full_name'])
         role_list_db = user.role_set.all()
         role_list = []
         for role in role_list_db:
@@ -113,7 +110,46 @@ def list_ex_of_topic(request):
 
 
 def contact(request):
-    return render(request, 'base.html', {'title': 'registry'})
+
+    print('x')
+    return render(request, 'elearning_system/user/contact.html', {'title': 'registry'})
+
+
+def typeahead_search(request):
+    if request.method == 'GET':
+        keyword = request.GET.get('keyword', None)
+        exercise_list = ExerciseWebServer.objects.all()
+        exercise_list_result = []
+        exercise_list_db_result = []
+        for exercise in exercise_list:
+            # exercise_name = exercise.exercise_name.lower()
+            if 'exercise xx'.__contains__(keyword):
+                exercise_info = {
+                    'name': 'exercise xx',
+                    'description': 'description for exercise xx',
+                    'passed': exercise.solve_number,
+                    'contributor': exercise.contributer_id.user_name,
+                    'view': exercise.view_number,
+                }
+                exercise_list_result.append(exercise_info)
+                exercise_list_db_result.append(exercise)
+        for exercise in exercise_list:
+            if not exercise in exercise_list_db_result:
+                # description = exercise.exercise_description.lower()
+                if 'description for exercise'.__contains__(keyword):
+                    exercise_info = {
+                        'name': 'exercise',
+                        'description': 'description for exercise ',
+                        'passed': exercise.solve_number,
+                        'contributor': exercise.contributer_id.user_name,
+                        'view': exercise.view_number,
+                    }
+                    exercise_list_result.append(exercise_info)
+                    exercise_list_db_result.append(exercise)
+        result = {
+            'exercise_list': exercise_list_result,
+        }
+        return HttpResponse(json.dumps(result), content_type='application/json')
 
 
 def search(request):
@@ -128,10 +164,9 @@ def search(request):
                 'id': tag.id
             }
             tag_list.append(tag_info)
-
-            #     search by keyword
         exercise_list = ExerciseWebServer.objects.all()
         exercise_list_result = []
+
         exercise_list_db_result = []
         for exercise in exercise_list:
             exercise_name = exercise.exercise_name.lower()
@@ -210,18 +245,18 @@ def login(request):
         password = request.POST.get('password', None)
         user_list = User.objects.all()
         is_valid = False
+
+        user_obj = None
         for user in user_list:
             if user.user_name == user_name and user.password == password:
                 is_valid = True
+                user_obj = user
                 break
         if is_valid:
-            if 'account_name' in request.session:
-                del request.session['account_name']
-            request.session['account_name'] = user_name
-            if 'next_page' in request.GET:
-                return redirect(to=request.GET['next_page'])
-            else:
-                return redirect(to='index')
+            if 'full_name' in request.session:
+                del request.session['full_name']
+            request.session['full_name'] = user_obj.full_name
+            return redirect(to=index)
         else:
             result = {
                 'result': 'error',
@@ -233,8 +268,8 @@ def login(request):
 
 def logout(request):
     if request.method == 'GET':
-        if 'account_name' in request.session:
-            del request.session['account_name']
+        if 'full_name' in request.session:
+            del request.session['full_name']
         return redirect(to='index')
 
 
@@ -247,12 +282,18 @@ def registry(request):
         password = request.POST.get('password')
         repassword = request.POST.get('repassword')
         email = request.POST.get('email')
-        account_name = request.POST.get('account_name')
+        full_name = request.POST.get('full_name')
         for user in user_list:
             if user.user_name == user_name:
                 result = {
                     'result': 'error',
                     'message': 'Username is already exist'
+                }
+                return render(request, 'elearning_system/user/registry.html', result)
+            if user.email_address == email:
+                result = {
+                    'result': 'error',
+                    'message': 'Email is already exist'
                 }
                 return render(request, 'elearning_system/user/registry.html', result)
 
@@ -267,10 +308,7 @@ def registry(request):
         user = User(user_name=user_name,
                     password=password,
                     email_address=email,
-                    account_name=account_name,
+                    full_name=full_name,
                     block_status=block_status)
         user.save()
-        if 'account_name' in request.session:
-            del request.session['account_name']
-        request.session['account_name'] = user_name
         return redirect(to=index)

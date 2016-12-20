@@ -20,7 +20,7 @@ from elearning_system.models import ExerciseWebServer,User
 #     if hasattr(ex.approver_id,'user_name') is False:
 #         print ex.exercise_name
 
-# ex = ExerciseWebServer(contributer_id = user,
+# ex = ExerciseWebServer(contributer_id = user,view_number = 0,solve_number = 0,
 #                        created_date = '2016-12-12 11:11:11')
 # ex.save()
 

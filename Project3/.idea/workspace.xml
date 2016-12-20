@@ -24,8 +24,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning_system/view/user/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1830">
-              <caret line="380" column="43" selection-start-line="380" selection-start-column="43" selection-end-line="380" selection-end-column="43" />
+            <state relative-caret-position="165">
+              <caret line="440" column="29" selection-start-line="440" selection-start-column="28" selection-end-line="440" selection-end-column="29" />
               <folding>
                 <element signature="e#15#60#0" expanded="true" />
               </folding>
@@ -1018,8 +1018,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning_system/view/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="380" column="43" selection-start-line="380" selection-start-column="43" selection-end-line="380" selection-end-column="43" />
+        <state relative-caret-position="165">
+          <caret line="440" column="29" selection-start-line="440" selection-start-column="28" selection-end-line="440" selection-end-column="29" />
           <folding>
             <element signature="e#15#60#0" expanded="true" />
           </folding>

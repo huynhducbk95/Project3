@@ -320,6 +320,9 @@ def login(request):
             if 'user_name' in request.session:
                 del request.session['user_name']
             request.session['user_name'] = user_name
+            if 'next_page' in request.GET:
+                next_page = request.GET['next_page']
+                return redirect(to=next_page)
             return redirect(to=index)
         else:
             result = {

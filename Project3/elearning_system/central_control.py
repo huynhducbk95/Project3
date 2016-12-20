@@ -55,10 +55,9 @@ def render_template(request, template_name, context, status=200):
     full_name = ''
     if 'user_name' in request.session:
         is_login = True
-        full_name = User.objects.filter(user_name=request.session['user_name']).first().full_name
         role_list = get_role_list(request.session['user_name'])
     if is_login is True and 'is_login' not in context:
-        context['full_name'] = full_name
+        context['user_name'] = request.session['user_name']
         context['is_login'] = True
     if 'role_list' not in context and len(role_list) > 0:
         context['role_list'] = role_list

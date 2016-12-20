@@ -140,7 +140,7 @@ function addUser() {
         }
     } else return
 
-    var user = {user_name: userName,password:pass,account_name:fullName,email_address:email
+    var user = {user_name: userName,password:pass,full_name:fullName,email_address:email
                 ,block_status: 'Active'};
 
     var token = $('input[name="csrfmiddlewaretoken"]').val();

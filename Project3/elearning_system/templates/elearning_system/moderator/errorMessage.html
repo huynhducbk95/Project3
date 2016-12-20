@@ -8,65 +8,59 @@
     {#    table  #}
     <div class="row">
         <div class="col-sm-12">
-            <table id="example1" class="table table-bordered table-striped dataTable" role="grid"
-                   aria-describedby="example1_info">
-                <thead>
-                <tr role="row">
-                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
-                        aria-sort="ascending">STT
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">ID Tin nhắn
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Browser: activate to sort column ascending" style="width: 208px;">Tiêu Đề
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">Người gửi
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Tên bài tập
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">ID bài tập
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-
-                {% for message in messages %}
-
-                    <tr role="row" class="odd">
-                        <td class="sorting_1"> {{ message.STT }}</td>
-                        <td>{{ message.id }}</td>
-                        <td>{{ message.title }}</td>
-                        <td>{{ message.userSend }}</td>
-                        <td>{{ message.exName }}</td>
-                        <td>{{ message.idEx }}</td>
-                        <td>
-                            <a href="/moderator/messageDetail">
-                            <button class="btn btn-primary" onclick="viewErrorMessage()">
-                               Xem chi tiết
-                             </button>
-                                </a>
-                        </td>
+            <div class="box-body">
+                <table id="errorMessageTable" class="table table-bordered table-striped dataTable" role="grid"
+                       aria-describedby="example1_info">
+                    <thead>
+                    <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
+                            aria-sort="ascending">STT
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">Tiêu Đề
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">Người gửi
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Tên bài tập
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
+                        </th>
                     </tr>
+                    </thead>
+                    <tbody>
 
-                {% endfor %}
+                    {% for message in messages %}
+
+                        <tr role="row" class="odd">
+                            <td class="sorting_1"> {{ message.id }}</td>
+                            <td>{{ message.title }}</td>
+                            <td>{{ message.reporter_id.user_name }}</td>
+                            <td> fake exercise name</td>
+                            <td>
+                                <a href="/moderator/messageDetail">
+                                    <button class="btn btn-primary" onclick="viewErrorMessage()">
+                                        Xem chi tiết
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
 {% endblock %}
 
 {% load static %}
- {% block javascript %}
-     <script type="text/javascript" src="{% static 'elearning_system/moderator/js/errorMessage.js' %}"></script>
- {% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'elearning_system/moderator/js/errorMessage.js' %}"></script>
+{% endblock %}

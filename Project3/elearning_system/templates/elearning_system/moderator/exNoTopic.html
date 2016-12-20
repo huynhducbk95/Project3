@@ -12,11 +12,6 @@
 {% block main_admin %}
 
     <div class="container">
-        <!-- Trigger the modal with a button -->
-        {#        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addTopicForEx"#}
-        {#                onclick="addTopic()">#}
-        {#            Add New Topic#}
-        {#        </button>#}
 
         <!-- Modal -->
         <div class="modal fade" id="addTopicForEx" role="dialog">
@@ -34,16 +29,12 @@
                         </div>
                         <table class="table borderless">
                             <tr>
-                                <td>ID</td>
-                                <td>123</td>
-                            </tr>
-                            <tr>
                                 <td>Tên bài tập</td>
-                                <td>Tìm số hoàn hảo 1</td>
+                                <td id="exNoTopic_name">Tìm số hoàn hảo 1</td>
                             </tr>
                             <tr>
                                 <td>Tác giả</td>
-                                <td>donghm1</td>
+                                <td id="exNoTopic_contributer">donghm1</td>
                             </tr>
                         </table>
                         <div class="form-group">
@@ -51,19 +42,15 @@
                             {#                            <input type="text" class="form-control" id="topicName">#}
                             <select id="selectTopic" name="fieldName" class="overall classes"
                                     data-btn-class="option toggle classes">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
+                                {% for tag in tags %}
+                                <option>{{ tag.tag_name }}</option>
+                                {% endfor %}
+
                             </select>
                         </div>
-
-
-                        {#                        <div class="form-group">#}
-                        {#                            <label for="pwd">Password:</label>#}
-                        {#                            <input type="password" class="form-control" id="pwd">#}
-                        {#                        </div>#}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="addTopicBtn">Add</button>
+                        <button type="button" class="btn btn-primary" id="addTopicBtn" onclick="actionAdd()">Add</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -102,13 +89,13 @@
                     {% for ex in exNoTopic %}
 
                         <tr role="row" class="odd">
-                            <td class="sorting_1"> {{ ex.STT }}</td>
-                            <td>{{ ex.exName }}</td>
-                            <td>{{ ex.exAuthor }}</td>
-                            <td>{{ ex.exViews }}</td>
+                            <td class="sorting_1"> {{ ex.id }}</td>
+                            <td>Fake exercise name</td>
+                            <td>{{ ex.contributer_id.user_name }}</td>
+                            <td>{{ ex.solve_number }}</td>
                             <td>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#addTopicForEx"
-                                        onclick="addTopicForEx()">
+                                        onclick="addTopicForEx('Fake exercise name','{{ ex.contributer_id.user_name  }}')">
                                     Thêm chủ đề
                                 </button>
                             </td>

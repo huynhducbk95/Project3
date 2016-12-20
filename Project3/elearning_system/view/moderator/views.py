@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from elearning_system.models import Tag
-from elearning_system.models import ExerciseWebServer,User
-
+from elearning_system.models import ExerciseWebServer,User,ErrorMessage
+import requests
 # teg = Tag(tag_name='Lap trinh Pascal3')
 # teg.save()
 #
@@ -14,6 +14,7 @@ from elearning_system.models import ExerciseWebServer,User
 #         teg = ex
 #
 # user = User.objects.get(pk=2)
+# user2 = User.objects.get(pk=1)
 
 # ExerciseWebServer_list = ExerciseWebServer.objects.all()
 # for ex in ExerciseWebServer_list:
@@ -21,7 +22,7 @@ from elearning_system.models import ExerciseWebServer,User
 #         print ex.exercise_name
 
 # ex = ExerciseWebServer(contributer_id = user,view_number = 0,solve_number = 0,
-#                        created_date = '2016-12-12 11:11:11')
+#                        approver_id=user2,created_date = '2016-12-12 11:11:11')
 # ex.save()
 
 # ExerciseWebServer_list = ExerciseWebServer.objects.all()
@@ -52,7 +53,15 @@ def errorMessage(request):
 
 
 def messageDetail(request):
-    return render(request, 'elearning_system/moderator/messageDetail.html')
+    if request.method == 'GET':
+        message_id = request.GET.get('message_id',None)
+        # errorMessage = ErrorMessage.objects.get(pk=int(message_id))
+        result ={
+            'exercise_name': 'Exercise name',
+            'title': 'Title message',
+            'content': 'This is content for message'
+        }
+        return render(request, 'elearning_system/moderator/messageDetail.html',result)
 
 
 def exApproved(request):

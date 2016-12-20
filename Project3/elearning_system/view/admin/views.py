@@ -53,7 +53,6 @@ def manageUser(request):
         user = User(account_name=account_name,password=password,user_name=user_name,email_address=email_address,
                     block_status=block_status)
         user.save()
-        print user
         user_temp = {'STT': user.id, 'userName': user.user_name,'fullname': user.account_name, 'email': user.email_address,
                      'status': user.block_status, 'posted': user.contribute_number, 'resolved': user.solve_number}
         demo.append(user_temp);

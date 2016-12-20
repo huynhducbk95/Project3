@@ -43,7 +43,7 @@ class ExerciseWebServer(models.Model):
     user_list = models.ManyToManyField(User)
 
     def __str__(self):
-        return self.exercise_name
+        return self.id
 
 
 class ErrorMessage(models.Model):

@@ -1,35 +1,36 @@
 from django.shortcuts import render
 from elearning_system.models import Tag
-from elearning_system.models import ExerciseWebServer,User
+from elearning_system.models import ExerciseWebServer,User,ErrorMessage
 
-# teg = Tag(tag_name='Lap trinh Pascal3')
-# teg.save()
-#
-# teg2 = Tag(tag_name='Lap trinh Java')
-# teg2.save()
-
-# tag_list = Tag.objects.all()
-# for ex in tag_list:
-#     if(ex.id == 3):
-#         teg = ex
-#
-# user = User.objects.get(pk=2)
-
-# ExerciseWebServer_list = ExerciseWebServer.objects.all()
-# for ex in ExerciseWebServer_list:
-#     if hasattr(ex.approver_id,'user_name') is False:
-#         print ex.exercise_name
-
-# ex = ExerciseWebServer(contributer_id = user,view_number = 0,solve_number = 0,
-#                        created_date = '2016-12-12 11:11:11')
-# ex.save()
 
 # ExerciseWebServer_list = ExerciseWebServer.objects.all()
 # for ex in ExerciseWebServer_list:
 #     print  ex.approver_id.account_name
 
+from random import randint
+#
+# for i in range(20):
+#     eror = ErrorMessage(title='title '+str(i+1),
+#                         content='content for message '+ str(i+1),
+#                         reporter_id=User.objects.get(pk=randint(1,6)),
+#                         reported_exercise_id=ExerciseWebServer.objects.get(pk=randint(1,10)))
+#     eror.save()
+
+# exApproved_list = ExerciseWebServer.objects.all()
+# for ex in exApproved_list:
+#     if hasattr(ex.approver_id, 'user_name'):
+#
+#         ex.tag_id = Tag.objects.get(pk=randint(1,6))
+#         ex.save()
+        # print ex.tag_id.tag_name
 
 def errorMessage(request):
+
+    message_dict = []
+    message_list = ErrorMessage.objects.all()
+    for message in message_list:
+        message_dict.append(message)
+
     messages = [
         {'STT': 1, 'id': 122, 'title': 'Loi logic bai tap 1', 'userSend': 'donghm1', 'exName': 'Tim so hoan hao1',
          'idEx': 30},
@@ -48,7 +49,7 @@ def errorMessage(request):
         {'STT': 8, 'id': 129, 'title': 'Loi logic bai tap 8', 'userSend': 'donghm8', 'exName': 'Tim so hoan hao8',
          'idEx': 37}]
 
-    return render(request, 'elearning_system/moderator/errorMessage.html', {'messages': messages})
+    return render(request, 'elearning_system/moderator/errorMessage.html', {'messages': message_dict})
 
 
 def messageDetail(request):
@@ -61,7 +62,8 @@ def exApproved(request):
 
     exApproved_list = ExerciseWebServer.objects.all()
     for ex in exApproved_list:
-        if hasattr(ex.approver_id, 'user_name'):
+        if ex.approver_id != None:
+        # if hasattr(ex.approver_id, 'user_name'):
             # temp = {'STT': ex.id, 'exName': ex.exercise_name, 'exAuthor': ex.contributer_id.account_name}
             dict_exApproved.append(ex)
 
@@ -86,7 +88,7 @@ def exUnapprove(request):
     exUnapprove_list = ExerciseWebServer.objects.all()
     for ex in exUnapprove_list:
         if hasattr(ex.approver_id,'user_name') is False:
-            temp = {'STT': ex.id, 'exName': ex.exercise_name, 'exAuthor': ex.contributer_id.account_name}
+            temp = {'STT': ex.id, 'exName': 'Fake exercise name', 'exAuthor': ex.contributer_id.user_name}
             dict_exUnapprove.append(temp)
 
     exUnapprove = [
@@ -105,6 +107,21 @@ def exUnapprove(request):
 
 
 def exNoTopic(request):
+    dict_exApproved_noTopic = []
+    exApproved_noTopic_list = ExerciseWebServer.objects.all()
+    for ex in exApproved_noTopic_list:
+        if ex.approver_id != None:
+            if ex.tag_id != None:
+                dict_exApproved_noTopic.append(ex)
+
+    tag_dict = []
+    tag_list = Tag.objects.all()
+    for tag in tag_list:
+        tag_dict.append(tag)
+
+    result = {'exNoTopic': dict_exApproved_noTopic,
+              'tags': tag_dict}
+
     exNoTopic = [
         {'STT': 1, 'id': 122, 'exName': 'Tim so hoan hao1', 'exAuthor': 'donghm1', 'exViews': 30},
         {'STT': 2, 'id': 123, 'exName': 'Tim so hoan hao2', 'exAuthor': 'donghm2', 'exViews': 31},
@@ -117,7 +134,7 @@ def exNoTopic(request):
         {'STT': 9, 'id': 130, 'exName': 'Tim so hoan hao9', 'exAuthor': 'donghm9', 'exViews': 38},
     ]
 
-    return render(request, 'elearning_system/moderator/exNoTopic.html', {'exNoTopic': exNoTopic})
+    return render(request, 'elearning_system/moderator/exNoTopic.html', result)
 
 
 # def exerciseUnapproveDetail(request):
@@ -156,9 +173,6 @@ def detail_exApproved(request):
     for tag in tag_list:
         dict_tag.append(tag);
 
-
-        # context['status'] = 'success'
-    # return HttpResponse(json.dumps(context), content_type='application/json')
     return render(request, 'elearning_system/moderator/Exercise_Approved_Detail.html',
                   {'exApproved': dict_exApproved,'tagList':dict_tag})
 

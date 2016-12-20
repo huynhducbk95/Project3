@@ -23,7 +23,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-6">
                 {% for ex in exApproved %}
-                    <h4>Contributer (<span>{{ ex.contributer_id.account_name }}</span>) solution</h4>
+                    <h4>Contributer (<span>{{ ex.contributer_id.user_name }}</span>) solution</h4>
                 {% endfor %}
             </div>
         </div>
@@ -91,15 +91,6 @@
                 </div>
             </div>
             <div class="col-md-6 code-editor-field">
-                <div id="code-editor-header" class="row">
-                    {#                <div class="">#}
-                    {#                    <h4 class="text-danger">#}
-                    {#                        {% for ex in exApproved %}#}
-                    {#                            Contributer (<span>{{ ex.contributer_id.account_name }}</span>) solution#}
-                    {#                        {% endfor %}#}
-                    {#                    </h4>#}
-                    {#                </div>#}
-                </div>
                 <div id="code-editor-body" class="row">
                     <input type="hidden" id="exercise-id" value="123">
                     <textarea cols="80" rows="25" class="form-control" spellcheck="false" id="code-editor-exUnaprove"

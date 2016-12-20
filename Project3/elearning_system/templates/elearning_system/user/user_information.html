@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/user/css/index.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+{% endblock %}
+{% block javascript %}
+
+    <script src="{% static 'elearning_system/user/js/user_infor.js' %}"></script>
+    {#    <script src="{% static 'elearning_system/user/js/jquery.bootpag.min.js' %}"></script>#}
+
+{% endblock %}
+{% block main %}
+
+    <div class="top_padding_elearning"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 panel-default">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><b>User Information</b></div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#vtab1" data-toggle="tab"
+                                   class="text_machine"><span style="font-size: 14px">Profile</span></a></li>
+                            <li><a href="#vtab2" data-toggle="tab"
+                                   class="text_machine"><span style="font-size: 14px">History</span></a></li>
+                            <li><a href="#vtab3" data-toggle="tab" class="text_machine"><span style="font-size: 14px">Change password</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Subscribe</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"
+                             width="100%">
+                        Click <a href="#"> here</a> to update new exercise
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 ">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a><span class="divider"></span></li>
+                    <li class="active">User information</li>
+                </ul>
+                {% if result == 'successful' %}
+                    <ul class="breadcrumb" id="infor_change">
+                        <li>
+                            <h4 style="color: blue">{{ message }}</h4>
+
+                        </li>
+                    </ul>
+                {% endif %}
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in {{ active_profile }} panel panel-default" id="vtab1">
+                        <div class="panel-body" style="padding-left: 5%">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4><b>User name:</b></h4>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h4>{{ user_name }}</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4><b>Full name:</b></h4>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h4>{{ full_name }}</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4><b>Email:</b></h4>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h4>{{ email }}</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4><b>Solved Exercise: </b></h4>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h4>{{ solved_number }}</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4><b>Contributed Exercise:</b></h4>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h4>{{ contributed_number }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade panel panel-default" id="vtab2">
+                        <div class="panel-body">
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in panel panel-default {{ active_change_pass }}"
+                         id="vtab3">
+                        <div class="panel-body">
+                            {% if active_change_pass == 'active' %}
+                                <h4 style="color: red;">{{ message }}</h4>
+                            {% endif %}
+                            <form class="form-horizontal" action="user_infor" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="pwd">Old Password:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" name="old_pass" id="pwd"
+                                               placeholder="Enter old password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="pwd">New Password:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="new_pass" class="form-control" id="pwd"
+                                               placeholder="Enter new password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="pwd">Repeat New Password:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="re_new_pass" class="form-control" id="pwd"
+                                               placeholder="Enter new password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Change</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

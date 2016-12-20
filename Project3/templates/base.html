@@ -25,6 +25,7 @@
           media="all"/>
     <script src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'elearning_system/base/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'elearning_system/user/js/jquery.bootpag.min.js' %}"></script>
     {% block style_sheet %}{% endblock %}
 
 </head>
@@ -44,9 +45,8 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Ranking</a></li>
+                        <li><a href="ranking">Ranking</a></li>
                         <li><a href="#">Contribute</a></li>
-                        <li><a href="contact">Contact</a></li>
                     </ul>
                 </li>
             </ul>
@@ -79,7 +79,7 @@
                             <li><a href="#"> {{ role }}</a></li>
                         {% endif %}
                     {% endfor %}
-                    <li><a href="#"><span
+                    <li><a href="user_infor?user_name={{ user_name }}"><span
                             class="glyphicon glyphicon-user"></span> Hi, {{ user_name }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>

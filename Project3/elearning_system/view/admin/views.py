@@ -53,7 +53,6 @@ def manageUser(request):
         user = User(account_name=account_name,password=password,user_name=user_name,email_address=email_address,
                     block_status=block_status)
 
-        print user
         context['status'] = 'success'
         return HttpResponse(json.dumps(context), content_type='application/json')
 

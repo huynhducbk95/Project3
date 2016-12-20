@@ -25,6 +25,7 @@
           media="all"/>
     <script src="{% static 'elearning_system/base/js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'elearning_system/base/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'elearning_system/user/js/jquery.bootpag.min.js' %}"></script>
     {% block style_sheet %}{% endblock %}
 
 </head>
@@ -32,20 +33,20 @@
 <body>
 
 <div class="header_expert">
-    <nav class="navbar navbar-dark bg-primary custom_navbar">
+
+    <nav class="navbar navbar-dark bg-primary custom_navbar navbar-fixed-top">
         <div class="container-fluid row" id="top_menu_elearning">
             <div class="navbar-header" style="padding-left: 7px">
                 <a class="navbar-brand" href="{% url 'index' %}" id="logo_base_expert">Coding School</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="#">Test code</a></li>
+                <li><a href="{% url 'test_code' %}">Test code</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Ranking</a></li>
+                        <li><a href="ranking">Ranking</a></li>
                         <li><a href="#">Contribute</a></li>
-                        <li><a href="contact">Contact</a></li>
                     </ul>
                 </li>
             </ul>
@@ -78,7 +79,7 @@
                             <li><a href="#"> {{ role }}</a></li>
                         {% endif %}
                     {% endfor %}
-                    <li><a href="#"><span
+                    <li><a href="user_infor?user_name={{ user_name }}"><span
                             class="glyphicon glyphicon-user"></span> Hi, {{ user_name }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -87,7 +88,6 @@
         </div>
     </nav>
 </div>
-
 {% block main %}
 {% endblock %}
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

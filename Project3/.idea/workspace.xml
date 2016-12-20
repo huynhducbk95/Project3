@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="228afe2f-419d-4000-9551-0482f9aa0440" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Github/OLP-Horizon/openstack_dashboard/dashboards/service_management/container_service/database/service.sqlite" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Documents/horizon/.gitignore" afterPath="$USER_HOME$/Documents/horizon/.gitignore" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Github/OLP-Horizon/openstack_dashboard/dashboards/service_management/container_service/service/views.py" afterPath="$USER_HOME$/Github/OLP-Horizon/openstack_dashboard/dashboards/service_management/container_service/service/views.py" />
-    </list>
+    <list default="true" id="1d756ed6-23ea-4714-bd9b-fba3fdc60327" name="Default" comment="" />
     <ignored path="Project3.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,176 +24,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
-      <file leaf-file-name="manageTopic.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/manageTopic.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manageTopic.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/admin/manageTopic.js">
-=======
-<<<<<<< HEAD
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="test_code.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
+        <entry file="file://$PROJECT_DIR$/elearning_system/view/user/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
+            <state relative-caret-position="243">
+              <caret line="431" column="0" lean-forward="true" selection-start-line="431" selection-start-column="0" selection-end-line="431" selection-end-column="0" />
               <folding>
-                <element signature="e#1162#3971#0#HTML" expanded="false" />
-                <element signature="e#4173#5509#0#HTML" expanded="false" />
-                <element signature="e#7189#7211#0#HTML" expanded="true" />
+                <element signature="e#15#60#0" expanded="true" />
               </folding>
-=======
-      <file leaf-file-name="base1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base1.html">
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-              <folding />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/admin/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="test_code.html" pinned="false" current-in-tab="true">
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="code_editor_base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/code_editor_base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-205">
-              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-              <folding />
-=======
-      <file leaf-file-name="test_code.html" pinned="false" current-in-tab="false">
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
-        <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-              <folding>
-                <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
-              </folding>
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning_system/view/admin/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning_system/view/user/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="code_editor.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/code_editor.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-=======
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-              <folding />
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-<<<<<<< HEAD
         <option value="HTML File" />
         <option value="JavaScript File" />
-=======
-<<<<<<< HEAD
         <option value="CSS File" />
-=======
-        <option value="HTML File" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/Github/OLP-Horizon" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/elearning_system/user/views.py" />
-        <option value="$PROJECT_DIR$/Project3/settings.py" />
-        <option value="$PROJECT_DIR$/elearning_system/user/urls.py" />
-        <option value="$PROJECT_DIR$/elearning_system/models/user.py" />
-        <option value="$PROJECT_DIR$/Project3/urls.py" />
-        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html" />
-        <option value="$PROJECT_DIR$/elearning_system/exercise/urls.py" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/pagination.js" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/jquery.bootpag.min.js" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/list_ex_of_topic.js" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/index.js" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/search.js" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/user/user_information.html" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/user_infor.js" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/css/list_ex_of_topic.css" />
+        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/user/css/ranking.css" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/user/ranking.html" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/user/index.html" />
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/user/search.html" />
+        <option value="$PROJECT_DIR$/elearning_system/view/user/urls.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/elearning_system/urls.py" />
-        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/topic_Form.html" />
-        <option value="$PROJECT_DIR$/elearning_system/admin/views.py" />
-        <option value="$PROJECT_DIR$/elearning_system/admin/urls.py" />
-        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/manageTopic.html" />
-        <option value="$PROJECT_DIR$/templates/base_admin.html" />
-        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/admin/manageTopic.js" />
-=======
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/jquery.numberedtextarea.css" />
-        <option value="$PROJECT_DIR$/templates/code_editor_base.html" />
-        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html" />
-        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/code_editor.css" />
-=======
-        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/themes/bootshop/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/templates/base1.html" />
-        <option value="$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html" />
-        <option value="$PROJECT_DIR$/elearning_system/exercise/views.py" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
+        <option value="$PROJECT_DIR$/elearning_system/templates/elearning_system/user/list_ex_of_topic.html" />
+        <option value="$PROJECT_DIR$/elearning_system/view/user/views.py" />
+        <option value="$PROJECT_DIR$/elearning_system/view/admin/views.py" />
       </list>
     </option>
   </component>
@@ -213,7 +104,6 @@
     <option name="width" value="1301" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -229,14 +119,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
       <pane id="Scope" />
-      <pane id="Scratches" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,6 +174,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -309,54 +214,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
-              <option name="myItemId" value="static" />
-=======
-<<<<<<< HEAD
-              <option name="myItemId" value="user" />
-=======
-<<<<<<< HEAD
-              <option name="myItemId" value="templates" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-<<<<<<< HEAD
               <option name="myItemId" value="admin" />
-=======
-<<<<<<< HEAD
-              <option name="myItemId" value="user" />
-=======
-              <option name="myItemId" value="exercise" />
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -374,11 +236,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
               <option name="myItemId" value="templates" />
-=======
-              <option name="myItemId" value="static" />
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -386,8 +244,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
-              <option name="myItemId" value="exercise" />
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,17 +262,149 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
-              <option name="myItemId" value="admin" />
-=======
-              <option name="myItemId" value="moderator" />
-=======
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning_system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="base" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -433,21 +422,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-=======
               <option name="myItemId" value="static" />
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -455,116 +430,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
-              <option name="myItemId" value="migrations" />
-=======
               <option name="myItemId" value="base" />
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-<<<<<<< HEAD
-=======
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
-              <option name="myItemId" value="exercise" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-              <option name="myItemId" value="Project3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning_system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-<<<<<<< HEAD
       <pane id="Scratches" />
-=======
-<<<<<<< HEAD
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-      <pane id="Scope" />
-      <pane id="Scratches" />
-=======
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../machine_learning" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-<<<<<<< HEAD
-    <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-=======
-<<<<<<< HEAD
     <property name="list.type.of.created.stylesheet" value="CSS" />
-=======
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base1" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-<<<<<<< HEAD
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/images" />
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js" />
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css" />
-=======
-<<<<<<< HEAD
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base/js" />
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/base/css" />
-      <recent name="$PROJECT_DIR$/elearning_system" />
-=======
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/themes" />
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system/themes/images" />
-      <recent name="$PROJECT_DIR$/elearning_system/static/elearning_system" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/templates" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
-    </key>
-  </component>
-  <component name="RunManager" selected="Django server.Project3">
+  <component name="RunManager" selected="Django server.Unnamed">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -583,12 +466,6 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -656,7 +533,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="OLP-Horizon" />
+      <module name="Project3" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
@@ -677,6 +554,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -796,12 +679,12 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Project3" type="Python.DjangoServer" factoryName="Django server">
+    <configuration default="false" name="Unnamed" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="Project3.settings" />
+        <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/bin/python2.7" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -821,7 +704,7 @@
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Django server.Project3" />
+      <item index="0" class="java.lang.String" itemvalue="Django server.Unnamed" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -832,55 +715,36 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="228afe2f-419d-4000-9551-0482f9aa0440" name="Default" comment="" />
-      <created>1480055242389</created>
+      <changelist id="1d756ed6-23ea-4714-bd9b-fba3fdc60327" name="Default" comment="" />
+      <created>1482179403626</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1480055242389</updated>
+      <updated>1482179403626</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-<<<<<<< HEAD
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2804781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25816733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34080717" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3529412" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
-=======
-<<<<<<< HEAD
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28030303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34080717" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2530303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34080717" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3529412" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -900,1077 +764,249 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-<<<<<<< HEAD
-=======
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-<<<<<<< HEAD
-=======
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/elearning_system/exercise/views.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/elearning_system/view/user/views.py</url>
+          <line>147</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/elearning_system/exercise/views.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-<<<<<<< HEAD
-=======
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-    <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/view/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-<<<<<<< HEAD
-          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-=======
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-<<<<<<< HEAD
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-=======
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="45">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-=======
-        <state relative-caret-position="495">
-          <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="75">
-<<<<<<< HEAD
-          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-=======
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-=======
-        <state relative-caret-position="45">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-<<<<<<< HEAD
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-=======
-<<<<<<< HEAD
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-=======
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="285">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="90">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
           <folding>
-            <element signature="e#0#32#0" expanded="false" />
+            <element signature="e#15#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/view/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="45">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/models/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-=======
-        <state relative-caret-position="60">
-          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-          <folding />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-<<<<<<< HEAD
-          <caret line="5" column="60" lean-forward="false" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-        </state>
-      </provider>
-    </entry>
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
-    <entry file="file://$PROJECT_DIR$/static/bootstrap/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="90">
-<<<<<<< HEAD
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-=======
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/forms.py">
-=======
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/core-scripting.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/images/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="30" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-<<<<<<< HEAD
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-=======
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="70" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/jquery-jvectormap-1.2.2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/AdminLTE.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/css/_all-skins.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery-2.2.3.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/fastclick.min.js">
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/css/bootstrap-responsive.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/img/glyphicons-halflings.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/bootstrap/img/glyphicons-halflings-white.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/less.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="75">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/bootshop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="90">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/google-code-prettify/prettify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/jquery.lightbox-0.5.js">
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/app.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery.sparkline.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery-jvectormap-1.2.2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery-jvectormap-world-mill-en.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base_admin/js/jquery.slimscroll.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/css/font-awesome-ie7.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1339814222000" expanded="true" signature="352:419" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="458:525" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="565:632" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="674:741" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="780:847" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="885:952" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="996:1063" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1101:1168" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1206:1273" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1315:1382" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1418:1485" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1526:1593" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1629:1696" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1736:1803" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1844:1911" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="1953:2020" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2057:2124" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2164:2231" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2268:2335" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2374:2441" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2479:2546" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2584:2651" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2689:2756" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2794:2861" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="2907:2974" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3016:3083" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3123:3190" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3229:3296" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3341:3408" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3448:3515" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3556:3623" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3665:3732" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3770:3837" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3875:3942" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="3986:4053" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4097:4164" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4209:4276" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4319:4386" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4426:4493" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4534:4601" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4638:4705" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4743:4810" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4848:4915" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="4957:5024" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5063:5130" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5170:5237" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5275:5342" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5380:5447" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5487:5554" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5599:5666" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5710:5777" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5821:5888" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="5934:6001" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6046:6113" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6160:6227" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6265:6332" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6377:6444" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6490:6557" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6605:6672" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6713:6780" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6820:6887" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="6931:6998" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7038:7105" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7143:7210" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7248:7315" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7354:7421" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7460:7527" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7565:7632" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7679:7746" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7793:7860" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="7902:7969" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8007:8074" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8113:8180" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8218:8285" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8326:8393" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8439:8506" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8552:8619" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8658:8725" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8771:8838" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8885:8952" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="8995:9062" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9106:9173" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9218:9285" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9326:9393" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9440:9507" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9550:9617" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9661:9728" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9775:9842" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9885:9952" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="9996:10063" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10107:10174" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10219:10286" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10328:10395" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10439:10506" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10549:10616" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10661:10728" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10774:10841" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10879:10946" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="10985:11052" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11094:11161" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11211:11278" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11316:11383" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11421:11488" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11526:11593" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11635:11702" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11745:11812" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11858:11925" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="11964:12031" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12073:12140" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12180:12247" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12288:12355" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12395:12462" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12506:12573" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12619:12686" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12727:12794" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12841:12908" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="12954:13021" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13066:13133" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13182:13249" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13300:13367" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13410:13477" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13523:13590" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13637:13704" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13750:13817" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13854:13921" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="13959:14026" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14068:14135" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14178:14245" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14290:14357" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14400:14467" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14512:14579" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14620:14687" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14734:14801" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14842:14909" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="14956:15023" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15063:15130" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15170:15237" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15282:15349" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15393:15460" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15499:15566" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15605:15672" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15717:15784" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15832:15899" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="15943:16010" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16051:16118" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16160:16227" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16267:16334" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16374:16441" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16486:16553" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16590:16657" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16694:16761" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16803:16870" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="16908:16975" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17020:17087" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17131:17198" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17241:17308" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17349:17416" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17459:17526" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17577:17644" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17696:17763" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17812:17879" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="17930:17997" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18036:18103" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18143:18210" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18249:18316" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18356:18423" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18466:18533" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18577:18644" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18683:18750" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18788:18855" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="18894:18961" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19001:19068" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19105:19172" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19210:19277" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19321:19388" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19426:19493" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19537:19604" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19645:19712" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19753:19820" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19861:19928" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="19975:20042" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20085:20152" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20191:20258" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20297:20364" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20403:20470" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20513:20580" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20628:20695" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20745:20812" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20857:20924" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="20963:21030" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21074:21141" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21183:21250" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21294:21361" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21406:21473" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21514:21581" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21619:21686" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21729:21796" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21837:21904" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="21950:22017" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22059:22126" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22164:22231" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22270:22337" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22380:22447" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22492:22559" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22605:22672" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22710:22777" ph="{...}" />
-            <marker date="1339814222000" expanded="true" signature="22818:22885" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/js/google-code-prettify/prettify.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="75">
-          <caret line="6" column="70" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="70" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/jquery.bootpag.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="23" column="213" lean-forward="false" selection-start-line="23" selection-start-column="213" selection-end-line="23" selection-end-column="213" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="56" column="40" lean-forward="false" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/urls.py">
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/jquery-3.1.1.min.js">
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/topic_Form.html">
+    <entry file="file:///usr/lib/python3.4/socketserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="110">
+          <caret line="153" column="0" lean-forward="false" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/exercise/views.py">
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/django/core/servers/basehttp.py" />
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/django/utils/autoreload.py" />
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/list_ex_of_topic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="318">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/urls.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/jquery.numberedtextarea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="152">
+          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/jquery.numberedtextarea.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_8.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/elearning_system/central_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="42" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="246">
-          <caret line="8" column="10958" selection-start-line="8" selection-start-column="10958" selection-end-line="8" selection-end-column="10958" />
-=======
-        <state relative-caret-position="705">
-          <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-90">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base1/themes/bootshop/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="8" column="10958" selection-start-line="8" selection-start-column="10958" selection-end-line="8" selection-end-column="10958" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_7.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_7.jpg" />
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_6.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/img/number_5.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/django/core/handlers/base.py" />
+    <entry file="file:///usr/lib/python3.4/os.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
+        <state relative-caret-position="119">
+          <caret line="819" column="0" lean-forward="false" selection-start-line="819" selection-start-column="0" selection-end-line="819" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/admin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/solve_exercise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-          <folding />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="187">
-          <caret line="262" column="10" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="10" />
-          <folding />
-=======
-        <state relative-caret-position="120">
-          <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding>
-            <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
-          </folding>
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 9265c3c4a2e7fe40303541235a5e9708911fe57f
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/templates/base_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="181" column="27" lean-forward="false" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="27" />
-=======
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/js/bootstrap-filestyle.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/js/user_infor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/templates/code_editor_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/admin/manageTopic.js">
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/user_information.html">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+        <state relative-caret-position="-765">
+          <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="47" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/search.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-=======
-        <state relative-caret-position="259">
-          <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
+          <caret line="43" column="51" lean-forward="false" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/view/user/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#1162#3971#0#HTML" expanded="false" />
-            <element signature="e#4173#5509#0#HTML" expanded="false" />
-            <element signature="e#7189#7211#0#HTML" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/base/css/code_editor.css">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-=======
-        <state relative-caret-position="75">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="68" />
->>>>>>> 32232fb125ca70f0b1c4b287ae289ecd5c3ce9e4
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
+        <state relative-caret-position="203">
+          <caret line="48" column="59" lean-forward="false" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/admin/manageTopic.html">
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/list_ex_of_topic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
-=======
-    <entry file="file://$PROJECT_DIR$/templates/base1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
->>>>>>> 1397db67a53aa1996f5ac83cee542de3c13bfccd
-          <folding />
+        <state relative-caret-position="135">
+          <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/admin/views.py">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/css/ranking.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="690">
+          <caret line="46" column="1" lean-forward="false" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/exercise/test_code.html">
+    <entry file="file://$PROJECT_DIR$/elearning_system/static/elearning_system/user/css/list_ex_of_topic.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="83" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
+        <state relative-caret-position="525">
+          <caret line="35" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/templates/elearning_system/user/ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/view/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="431" column="0" lean-forward="true" selection-start-line="431" selection-start-column="0" selection-end-line="431" selection-end-column="0" />
           <folding>
-            <marker date="1481016731225" expanded="false" signature="1064:1076" ph="..." />
+            <element signature="e#15#60#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning_system/view/admin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

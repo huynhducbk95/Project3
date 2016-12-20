@@ -11,6 +11,7 @@
     <script src="{% static 'elearning_system/user/js/list_ex_of_topic.js' %}"></script>
 {% endblock %}
 {% block main %}
+    <div class="top_padding_elearning"></div>
     <div class="container">
         <div class="row">
             <div class="col-sm-3 panel-primary">
@@ -39,16 +40,16 @@
                         </div><!--/.nav-collapse -->
                     </div>
                 </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Subscribe</h3>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"
-                             width="230">
-                        Click <a href="#"> here</a> to update new exercise
-                    </div>
-                </div>
+{#                <div class="panel panel-primary">#}
+{#                    <div class="panel-heading">#}
+{#                        <h3 class="panel-title">Subscribe</h3>#}
+{#                    </div>#}
+{#                    <div class="panel-body">#}
+{#                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"#}
+{#                             width="100%">#}
+{#                        Click <a href="#"> here</a> to update new exercise#}
+{#                    </div>#}
+{#                </div>#}
             </div>
             <div class="col-sm-9 ">
                 <ul class="breadcrumb">
@@ -61,10 +62,11 @@
                             <div class="col-sm-6"><span>Number of exercise: {{ exercise_number }}</span></div>
                             <div class="col-sm-6">
                                 <div class="form-group pull-right">
-                                    <select class="selectpicker form-control" id="compare_elearning" data-length-exercise="{{ exercise_number }}">
+                                    <select class="selectpicker form-control" id="compare_elearning"
+                                            data-length-exercise="{{ exercise_number }}">
                                         <option value="compare">---- Sort ----</option>
                                         <option value="view">View</option>
-                                        <option value="passed" >Passed</option>
+                                        <option value="passed">Passed</option>
                                     </select>
                                 </div>
                             </div>
@@ -72,60 +74,46 @@
                     </div>
                     <div class="panel-body">
                         {% for exercise in exercise_list %}
-                            <div class="row exercise_list_elearning">
-                                <div class="col-sm-12">
-                                    <h4 class="exercise_name">{{ exercise.name }}</h4>
-                                    <hr class="soft"/>
-                                    <p class="exercise_description">
-                                        {{ exercise.description }}
-                                    </p>
-                                    <div class="row list_ex_expert">
-                                        <div class="col-sm-10">
-                                            <ul class="nav nav-pills pull-left" role="tablist">
-                                                <li role="presentation"><a href="#"><span
-                                                        class="glyphicon glyphicon-user"
-                                                        aria-hidden="true"></span><span class="exercise_contributor">
+                            {% if forloop.counter <= 5 %}
+                                <div class="row exercise_list_elearning">
+                                    <div class="col-sm-12">
+                                        <h4 class="exercise_name"><span class="glyphicon glyphicon-education" style="color: #337ab7" aria-hidden="true"></span>
+                                            {{ exercise.name }}</h4>
+                                        <hr class="soft"/>
+                                        <p class="exercise_description">
+                                            {{ exercise.description }}
+                                        </p>
+                                        <div class="row list_ex_expert">
+                                            <div class="col-sm-10">
+                                                <ul class="nav nav-pills pull-left info_exercise" role="tablist" >
+                                                    <li role="presentation"><a href="#"><span
+                                                            class="glyphicon glyphicon-user"
+                                                            aria-hidden="true"></span><span
+                                                            class="exercise_contributor">
                                                     {{ exercise.contributor }}</span>
-                                                </a>
-                                                </li>
-                                                <li role="presentation"><a href="#">Passed <span
-                                                        class="badge"><span
-                                                        class="exercise_passed"> {{ exercise.passed }}</span></span></a>
-                                                </li>
-                                                <li role="presentation"><a>View <span
-                                                        class="badge"><span
-                                                        class="exercise_view"> {{ exercise.view }}</span> </span></a>
-                                                </li>
-                                            </ul>
+                                                    </a>
+                                                    </li>
+                                                    <li role="presentation"><a href="#">Passed <span
+                                                            class="badge"><span
+                                                            class="exercise_passed"> {{ exercise.passed }}</span></span></a>
+                                                    </li>
+                                                    <li role="presentation"><a>View <span
+                                                            class="badge"><span
+                                                            class="exercise_view"> {{ exercise.view }}</span> </span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a class="btn btn-primary pull-right" href="product_details.html">View
+                                                    Details</a>
+                                            </div>
                                         </div>
-                                        <div class="col-sm-2">
-                                            <a class="btn btn-primary pull-right" href="product_details.html">View
-                                                Details</a>
-                                        </div>
+                                        <br class="clr"/>
                                     </div>
-                                    <br class="clr"/>
                                 </div>
-                            </div>
+                            {% endif %}
                         {% endfor %}
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                                <li class="disabled">
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div id="page-selection" data-value="1"></div>
                     </div>
                 </div>
             </div>

@@ -10,15 +10,12 @@
 {% block javascript %}
 
     <script src="{% static 'elearning_system/user/js/index.js' %}"></script>
+    {#    <script src="{% static 'elearning_system/user/js/jquery.bootpag.min.js' %}"></script>#}
 
 {% endblock %}
 {% block main %}
 
-    {#    <div class="container image_homepage">#}
-    {#    </div>#}
-    {#    <div class="container">#}
-    {#        <hr class="soft">#}
-    {#    </div>#}
+    <div class="top_padding_elearning"></div>
     <div class="container">
         <div class="row">
             <div class="col-sm-3 panel-default">
@@ -47,16 +44,16 @@
                         </div><!--/.nav-collapse -->
                     </div>
                 </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Subscribe</h3>
-                    </div>
-                    <div class="panel-body">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"
-                             width="100%">
-                        Click <a href="#"> here</a> to update new exercise
-                    </div>
-                </div>
+{#                <div class="panel panel-primary">#}
+{#                    <div class="panel-heading">#}
+{#                        <h3 class="panel-title">Subscribe</h3>#}
+{#                    </div>#}
+{#                    <div class="panel-body">#}
+{#                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"#}
+{#                             width="100%">#}
+{#                        Click <a href="#"> here</a> to update new exercise#}
+{#                    </div>#}
+{#                </div>#}
 
 
             </div>
@@ -70,18 +67,25 @@
                                     {% for user in top_user %}
                                         {% if forloop.counter <= 4 %}
                                             <div class="col-sm-3">
-                                                <div class="user_name thumbnail">
-                                                    <div class="avatar"><a href="#x"><img
-                                                            src="http://placehold.it/250x200" alt="Image"
-                                                            style="max-width:100%;"/></a></div>
-                                                    <div class="user_name_expert"><h5>{{ user.user_name }}</h5></div>
-                                                    <div class="user_info_expert">
+                                                <div class="user_name thumbnail" style="background-color: gray">
+                                                    <div class="avatar"><a href="#x">
+                                                        <img height="240px" width="200px"
+                                                             src="static/elearning_system/user/img/number_{{ forloop.counter }}.png"
+                                                             alt="Image"
+                                                             style="max-width:100%;"/></a>
+                                                    </div>
+                                                    <div style="background-color: white">
+                                                        <div class="user_name_expert">
+                                                            <h5>{{ user.user_name }}</h5></div>
+                                                        <div class="user_info_expert">
                                                 <span class="glyphicon glyphicon-ok-circle" style="color:#337ab7"
                                                       aria-hidden="true"></span> {{ user.passed }}
-                                                        <span class="glyphicon glyphicon-cloud-upload"
-                                                              style="color:#337ab7"
-                                                              aria-hidden="true"></span> {{ user.contributed }}
+                                                            <span class="glyphicon glyphicon-cloud-upload"
+                                                                  style="color:#337ab7"
+                                                                  aria-hidden="true"></span> {{ user.contributed }}
+                                                        </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         {% endif %}
@@ -94,17 +98,21 @@
                                     {% for user in top_user %}
                                         {% if forloop.counter > 4 %}
                                             <div class="col-sm-3">
-                                                <div class="user_name thumbnail">
+                                                <div class="user_name thumbnail" style="background-color: gray">
                                                     <div class="avatar"><a href="#x"><img
-                                                            src="http://placehold.it/250x200" alt="Image"
+                                                            src="static/elearning_system/user/img/number_{{ forloop.counter }}.png"
+                                                            alt="Image"
                                                             style="max-width:100%;"/></a></div>
-                                                    <div class="user_name_expert"><h5>{{ user.user_name }}</h5></div>
-                                                    <div class="user_info_expert">
+                                                    <div style="background-color: white">
+                                                        <div class="user_name_expert"><h5>{{ user.user_name }}</h5>
+                                                        </div>
+                                                        <div class="user_info_expert">
                                                 <span class="glyphicon glyphicon-ok-circle" style="color:#337ab7"
                                                       aria-hidden="true"></span> {{ user.passed }}
-                                                        <span class="glyphicon glyphicon-cloud-upload"
-                                                              style="color:#337ab7"
-                                                              aria-hidden="true"></span> {{ user.contributed }}
+                                                            <span class="glyphicon glyphicon-cloud-upload"
+                                                                  style="color:#337ab7"
+                                                                  aria-hidden="true"></span> {{ user.contributed }}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,7 +152,8 @@
                             {% if forloop.counter <= 5 %}
                                 <div class="row exercise_list_elearning">
                                     <div class="col-sm-12">
-                                        <h4 class="exercise_name">{{ exercise.name }}</h4>
+                                        <h4 class="exercise_name"><span class="glyphicon glyphicon-education" style="color: #337ab7" aria-hidden="true"></span>
+                                            {{ exercise.name }}</h4>
                                         <hr class="soft"/>
                                         <p class="exercise_description">
                                             {{ exercise.description }}
@@ -181,22 +190,7 @@
                             {% endif %}
 
                         {% endfor %}
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination" id="pagination_elearning" data-current-page="0">
-                                <li class="pagination_btn" id="first_pagination_elearning" data-value="-">
-                                    <span href="#" style="cursor:not-allowed">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </span>
-                                </li>
-                                <li class="active pagination_btn" data-value="1"><span href="#" style="cursor:pointer">1<span
-                                        class="sr-only">(current)</span></span></li>
-                                <li class="pagination_btn" id="last_pagination_elearning" data-value="+">
-                                    <span style="cursor:not-allowed">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </span>
-                                </li>
-                            </ul>
-                        </nav>
+                        <div id="page-selection" data-value="1"></div>
                     </div>
                 </div>
             </div>

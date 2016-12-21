@@ -17,81 +17,121 @@
 
 {% block main_admin %}
 
-    <div class="container">
-        <div class="col-md-4 excercise-section text-justify">
-            {% for ex in exUnapprove %}
-                <h4 id="exercise-title-unapprove" class="text-info">{{ ex.exercise_name }}</h4>
-                <div class="exercise-detail pre-scrollable">
-                    <div id=" d_exerciseContent">{{ ex.exercise_description }}</div>
-                </div>
-            {% endfor %}
-
-            <div id="exercise-test-case" class="test-case-exUnapprove">
-                <h4 id="exercise-test-case-header" class="text-danger">
-                    Test case example
-                </h4>
-                <div id="exUnapprove_testCase" class="pre-scrollable">
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                    <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                </div>
+    <div class="container" style="padding-top: 0px;">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-6">
+                {% for ex in exUnapprove %}
+                    <h4>Contributer (<span>{{ ex.contributer_id.user_name }}</span>) solution</h4>
+                {% endfor %}
             </div>
         </div>
-        <div class="col-md-6 code-editor-field">
-            <div id="code-editor-header" class="row">
-                <div class="">
-                    <h4 class="text-danger">
-                        {% for ex in exUnapprove %}
-                        Contributer (<span>{{ ex.contributer_id.account_name }}</span>) solution
-                        {% endfor %}
-                    </h4>
+        <div class="row">
+            <div class="col-md-4 excercise-section text-justify scrollable">
+                {% for ex in exUnapprove %}
+                    {# <h4 id="exercise-title-unapprove" class="text-info">{{ ex.exercise_name }}</h4>#}
+                    <div class="panel panel-primary">
+                        <div id="exercise-test-case-header" class="text-danger panel-heading">
+                            <b>Fake Exercise Name</b>
+                        </div>
+                        <div id="exApproved_testCase" class="pre-scrollable panel-body">
+                            FAKE CONTENT
+                            We can also divide one number by another.
+                            JavaScript uses the / symbol for division.
+                            You are given two linked lists representing two non-negative numbers.
+                            The digits are stored in reverse order and each of their nodes contain a single digit.
+                            Add the two numbers and return it as a linked list.
+                            We can also divide one number by another.
+                            JavaScript uses the / symbol for division.
+                            You are given two linked lists representing two non-negative numbers.
+                            The digits are stored in reverse order and each of their nodes contain a single digit.
+                            Add the two numbers and return it as a linked list.
+                            We can also divide one number by another.
+                            JavaScript uses the / symbol for division.
+                            You are given two linked lists representing two non-negative numbers.
+                            The digits are stored in reverse order and each of their nodes contain a single digit.
+                            Add the two numbers and return it as a linked list.
+                            We can also divide one number by another.
+                            JavaScript uses the / symbol for division.
+                            You are given two linked lists representing two non-negative numbers.
+                            The digits are stored in reverse order and each of their nodes contain a single digit.
+                            Add the two numbers and return it as a linked list.
+                            We can also divide one number by another.
+                            JavaScript uses the / symbol for division.
+                            You are given two linked lists representing
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div id="" class="test-case-exUnapprove panel panel-primary">
+                    <div id="exercise-test-case-header" class="text-danger panel-heading">
+                        <b>Test case example</b>
+                    </div>
+                    <div id="exApproved_testCase" class="pre-scrollable panel-body">
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                    </div>
+                </div>
+                <div id="exercise-test-case" class="test-case-exUnapprove panel panel-primary">
+                    <div id="exercise-test-case-header" class="text-danger panel-heading">
+                        <b>Console</b>
+                    </div>
+                    <div id="exApproved_console" class="pre-scrollable panel-body">
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                    </div>
                 </div>
             </div>
-            <div id="code-editor-body" class="row">
-                <input type="hidden" id="exercise-id" value="123">
-                <textarea cols="60" rows="20" class="form-control" spellcheck="false" id="code-editor-exUnaprove"
-                          style="color: #1b6d85" disabled></textarea>
-            </div>
-            <div class="row" style="margin-top: 10px;">
-                <div class="col-md-6">
-                    <label>Chủ đề:</label>
-                    <select class="form-control" id="" style="">
-                        {% for tag in tagList %}
-                        <option>{{ tag.tag_name }}</option>
-                        {% endfor %}
-{#                        <option>Lap trinh Java</option>#}
-{#                        <option>Lap trinh C</option>#}
-{#                        <option>Lap trinh huong doi tuong</option>#}
-{#                        <option>Ky thuat lap trinh</option>#}
-                    </select>
+            <div class="col-md-6 code-editor-field">
+                <div id="code-editor-body" class="row">
+                    <input type="hidden" id="exercise-id" value="123">
+                    <textarea cols="80" rows="25" class="form-control" spellcheck="false" id="code-editor-exUnaprove"
+                              style="color: #1b6d85"></textarea>
                 </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-6">
+                        <label>Chủ đề:</label>
+                        <select class="form-control" id="" style="">
+                            {% for tag in tagList %}
+                                <option>{{ tag.tag_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
 
-                <div class="col-md-6">
-                    <label for="code-language" style="">Language:</label>
-                    <label class="form-control" id="code-language">C</label>
+                    <div class="col-md-6">
+                        <label for="code-language" style="">Language:</label>
+                        <select class="form-control" id="" style="">
+                            <option>Java</option>
+                            <option>C</option>
+                            <option>Javascript</option>
+                            <option>Pascal</option>
+                        </select>
+                    </div>
+
+
                 </div>
+                <div id="code-editor-footer">
+                    <div class="form-group col-md-8 select-language-input form-inline">
+
+                        <button type="button" class="btn " style="float: right;">
+                            Hủy
+                        </button>
+                        <button type="button" class="btn btn-primary " style="float: right;margin-right: 10px;"
+                                onclick="approveEx();">
+                            Duyệt
+                        </button>
+                    </div>
 
 
-            </div>
-            <div id="code-editor-footer">
-                <div class="form-group col-md-8 select-language-input form-inline">
-
-                    <button type="button" class="btn " style="float: right;">
-                        Hủy
-                    </button>
-                    <button type="button" class="btn btn-primary " style="float: right;margin-right: 10px;"
-                            onclick="approveEx();">
-                        Duyệt
-                    </button>
                 </div>
-
-
             </div>
         </div>
     </div>

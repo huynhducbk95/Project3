@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ranking{% endblock %}
+
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/user/css/ranking.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+{% endblock %}
+{% block javascript %}
+{% endblock %}
+{% block main %}
+    <div class="top_padding_elearning"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 panel-primary">
+                <div class="sidebar-nav">
+                    <div class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target=".sidebar-navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <span class="visible-xs navbar-brand">Sidebar menu</span>
+                        </div>
+                        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="subMenu"><a href="" id="heade_category">CATEGORY</a></li>
+                                {% for topic in topic_list %}
+                                    <li><a href="list_ex?tag={{ topic.id }}"><span class="glyphicon glyphicon-forward"
+                                                                                   style="color:#337ab7">
+
+                                    </span>{{ topic.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </div>
+{#                <div class="panel panel-primary">#}
+{#                    <div class="panel-heading">#}
+{#                        <h3 class="panel-title">Subscribe</h3>#}
+{#                    </div>#}
+{#                    <div class="panel-body">#}
+{#                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"#}
+{#                             width="230">#}
+{#                        Click <a href="#"> here</a> to update new exercise#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+            <div class="col-sm-9 ">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a><span class="divider"></span></li>
+                    <li class="active">Ranking</li>
+                </ul>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-sm-6"><h4><b>Top Contribute Exercise</b></h4></div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        {% for user in contributor_list %}
+                            {% if forloop.counter <= 5 %}
+                                <div class="row exercise_list_elearning">
+                                    <div class="col-sm-6">
+                                        <h4 class="exercise_name"><span class="glyphicon glyphicon-user"
+                                                                        style="color: #337ab7"
+                                                                        aria-hidden="true"></span>
+                                            <b>{{ user.user_name }}</b></h4>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4 class="exercise_name">Contributed: <b>{{ user.contribute_number }}</b></h4>
+                                    </div>
+                                </div>
+                                <hr>
+                            {% endif %}
+                        {% endfor %}
+                        <div id="page-selection" data-value="1"></div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-sm-6"><h4><b>Top Solve Exercise</b></h4></div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        {% for user in solve_list %}
+                            {% if forloop.counter <= 5 %}
+                                <div class="row exercise_list_elearning">
+                                    <div class="col-sm-6">
+                                        <h4 class="exercise_name"><span class="glyphicon glyphicon-user"
+                                                                        style="color: #337ab7"
+                                                                        aria-hidden="true"></span>
+                                            <b>{{ user.user_name }}</b></h4>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4 class="exercise_name">Solved: <b>{{ user.solve_number }}</b></h4>
+                                    </div>
+                                </div>
+                                <hr>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -7,6 +7,12 @@ function dataExNoTopicTable() {
 }
 dataExNoTopicTable();
 
-function addTopicForEx() {
+function addTopicForEx(exName,contributer) {
     // alert("Add topic for exercise");
+    $('#exNoTopic_name').text(exName);
+    $('#exNoTopic_contributer').text(contributer);
+}
+
+function actionAdd (){
+    alert('action add tag');
 }

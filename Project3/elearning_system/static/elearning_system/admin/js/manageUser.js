@@ -1,9 +1,27 @@
 //funtion to call funtion DataTable() of framework jquery.datatable.min.js to
 //add action search and fix size of table
+
+var t;
 function dataUserTable() {
-    $('#manageUserTable').DataTable();
+    t = $('#manageUserTable').DataTable();
 }
 dataUserTable();
+
+function showModalAddUser(){
+    $('#form_add_userName').val('');
+    $('#form_add_fullName').val('');
+    $('#form_add_email').val('');
+    $('#form_add_phoneNumber').val('');
+    $('#form_add_pass').val('');
+    $('#form_add_rePass').val('');
+
+    $('#warning_userName').attr('class', 'hide_warning');
+    $('#warning_fullName').attr('class', 'hide_warning');
+    $('#warning_email').attr('class', 'hide_warning');
+    $('#warning_numberPhone').attr('class', 'hide_warning');
+    $('#warning_pass').attr('class', 'hide_warning');
+    $('#warning_rePass').attr('class', 'hide_warning');
+}
 
 function blockUser(username, email, id) {
     $('.warning-user').text("Bạn thực sự muốn Block user này?");
@@ -122,7 +140,7 @@ function addUser() {
         }
     } else return
 
-    var user = {user_name: userName,password:pass,account_name:fullName,email_address:email
+    var user = {user_name: userName,password:pass,full_name:fullName,email_address:email
                 ,block_status: 'Active'};
 
     var token = $('input[name="csrfmiddlewaretoken"]').val();
@@ -138,9 +156,23 @@ function addUser() {
         success: function (data) {
             // console.log(data);
             if (data['status'] == 'success') {
-                alert('add row');
+                // alert('add row');
+
+                t.row.add( [
+                    data['newUserID'],
+                    userName,
+                    fullName,
+                    email,
+                    "Active",
+                    0,
+                    0,
+                    'abc'
+                ] ).draw( false );
+
+                $('#modalAddUserd').modal('hide');
             } else if(data['status'] == 'error'){
                 alert(data['message']);
+                return;
             }
         },
         error: function (err) {
@@ -149,8 +181,17 @@ function addUser() {
     });
 
 
+function addRow(){
+    // var t = $('#example').DataTable();
+    t.row.add( [
+            counter +'.1',
+            counter +'.2',
+            counter +'.3',
+            counter +'.4',
+            counter +'.5'
+        ] ).draw( false );
+}
 
-    $('#modalAddUserd').modal('hide');
     // console.log('gui xong');
 }
 

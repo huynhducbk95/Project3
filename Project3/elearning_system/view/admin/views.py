@@ -27,13 +27,13 @@ def manageUser(request):
     demo = []
     user_list = User.objects.all()
     for user in user_list:
-        temp = {'STT': user.id, 'userName': user.user_name,'fullname': user.account_name, 'email': user.email_address, 'status': user.block_status,
+        temp = {'STT': user.id, 'userName': user.user_name,'fullname': user.full_name, 'email': user.email_address, 'status': user.block_status,
                 'posted': user.contribute_number, 'resolved': user.solve_number}
         demo.append(temp)
 
     if request.method == "POST":
         user_name = request.POST.get('user_name',None)
-        account_name = request.POST.get('account_name',None)
+        full_name = request.POST.get('full_name',None)
         password = request.POST.get('password',None)
         email_address = request.POST.get('email_address',None)
         block_status = request.POST.get('block_status',None)
@@ -42,18 +42,22 @@ def manageUser(request):
 
         for user in user_list:
             if user.user_name == user_name:
-                context['status'] = 'error';
-                context['message'] = 'Username is already exist';
+                context['status'] = 'error'
+                context['message'] = 'Username is already exist'
                 return HttpResponse(json.dumps(context), content_type='application/json')
             if user.email_address == email_address:
                 context['status'] = 'error'
                 context['message'] = 'Email is already exist'
                 return HttpResponse(json.dumps(context), content_type='application/json')
 
-        user = User(account_name=account_name,password=password,user_name=user_name,email_address=email_address,
+        user = User(full_name=full_name,password=password,user_name=user_name,email_address=email_address,
                     block_status=block_status)
-
+        user.save()
         print user
+        user_temp = {'STT': user.id, 'userName': user.user_name,'fullname': user.full_name, 'email': user.email_address,
+                     'status': user.block_status, 'posted': user.contribute_number, 'resolved': user.solve_number}
+        demo.append(user_temp);
+        context['newUserID'] = user.id
         context['status'] = 'success'
         return HttpResponse(json.dumps(context), content_type='application/json')
 

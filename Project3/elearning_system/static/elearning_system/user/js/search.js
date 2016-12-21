@@ -1,6 +1,7 @@
 /**
- * Created by huynhduc on 19/12/2016.
+ * Created by huynhduc on 20/12/2016.
  */
+
 
 var PAGINATION_NUMBER = 1;
 var exercise_length = $('#compare_elearning').data('length-exercise');
@@ -12,12 +13,13 @@ if (add_page > 0) {
 } else {
     page = Math.floor(exercise_length / 5);
 }
+console.log(page);
 var PATHNAME = window.location.href;
 $('#page-selection').bootpag({
     total: page
 }).on("page", function (event, /* page number here */ num) {
     $('.exercise_list_elearning').css('display','');
-    var page_name = 'tag';
+    var page_name = 'search';
     var page_option = PATHNAME.split('=')[1];
     var page_compare = $('#compare_elearning').val();
     $.get('get_exercise_pagination?page_name=' + page_name +
@@ -53,7 +55,7 @@ $('#compare_elearning').change(function () {
     var page_option = PATHNAME.split('=')[1];
     console.log(page_option);
     $.get('get_exercise_pagination?page_compare=' + value
-        + '&page_name=tag'
+        + '&page_name=search'
         + '&page_option=' + page_option
         + '&pagination_number=' + PAGINATION_NUMBER, function (data) {
         var count = 0;

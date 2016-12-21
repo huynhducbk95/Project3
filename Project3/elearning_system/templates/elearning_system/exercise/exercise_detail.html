@@ -103,12 +103,24 @@
                             </label>
                         </h5>
                     </div>
-                    <div class="col-md-6  pull-right">
-                        <button type="button" class="btn btn-warning pull-right" id="report-exercise-error-btn">
-                            <span class="glyphicon glyphicon-alert"></span> Report Exercise Error...
-                        </button>
-                    </div>
+                    <div class="col-md-7 pull-right">
+                        {% for role in role_list %}
+                            {% if role == 'moderator' %}
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-success pull-right" id="edit-exercise-btn">
+                                        <span class="glyphicon glyphicon-arrow-up"></span> Edit this exercise ...
+                                    </button>
+                                </div>
+                            {% endif %}
 
+                        {% endfor %}
+                        <div class="col-md-6 pull-right">
+
+                            <button type="button" class="btn btn-warning   pull-right" id="report-exercise-error-btn">
+                                <span class="glyphicon glyphicon-alert"></span> Report Exercise Error...
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div id="code-editor-body" class="row">
                     <input type="hidden" id="exercise-id" value="12333224">
@@ -229,6 +241,80 @@
             </div>
         </div>
     </div>
+
+
+
+
+    <div class="modal fade" id="modal-edit-exercise" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h3 class="modal-title text-success" id="error-exercise-header">
+                        <span class="glyphicon glyphicon-arrow-right"></span> Edit Exercise
+                    </h3>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"
+                                   for="edit-exercise-id">Exercise ID:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" readonly
+                                       id="edit-exercise-id"/>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"
+                                   for='edit-exercise-name'>Exercise Name:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       id="edit-exercise-name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"
+                                   for="edit-exercise-description">Exercise Description:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"
+                                       id="edit-exercise-description"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"
+                                   for="edit-exercise-content">Message:</label>
+                            <div class="col-sm-8">
+                                <textarea id="edit-exercise-content" class="text" style="min-width: 100%" rows="15"
+                                          name="edit-exercise-content"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="send-exercise-report-btn"
+                            data-send-exercise-report-url={% url 'report_exercise_error' %}>
+                        Send Report
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascript %}
@@ -270,18 +356,9 @@
             $("#code-file-input").filestyle('clear');
 
         });
-        $('#report-exercise-error-btn').click(function () {
-            {#                            var property_element = $(this).closest(".property-element");#}
-            {#                            set_modal_value_list(property_element.data('property-id'),#}
-            {#                                    property_element.attr('data-property-value-id'));#}
-            var exercise_id = $("#exercise-id").val();
-            console.log(exercise_id);
-            $("#error-exercise-id").val(exercise_id);
-            var modal_select_element = $("#modal-report-exercise-error");
-            modal_select_element.modal();
-        });
 
-       var show_message = function (type, content) {
+
+        var show_message = function (type, content) {
             var popup_message = $("#popup-message");
             if (type == 'success') {
                 popup_message.addClass('alert-success')
@@ -445,6 +522,28 @@
     </script>
 
     <script>
+
+        $('#report-exercise-error-btn').click(function () {
+            {#                            var property_element = $(this).closest(".property-element");#}
+            {#                            set_modal_value_list(property_element.data('property-id'),#}
+            {#                                    property_element.attr('data-property-value-id'));#}
+            var exercise_id = $("#exercise-id").val();
+            console.log(exercise_id);
+            $("#error-exercise-id").val(exercise_id);
+            var modal_select_element = $("#modal-report-exercise-error");
+            modal_select_element.modal();
+        });
+
+        $('#edit-exercise-btn').click(function () {
+            {#                            var property_element = $(this).closest(".property-element");#}
+            {#                            set_modal_value_list(property_element.data('property-id'),#}
+            {#                                    property_element.attr('data-property-value-id'));#}
+            var exercise_id = $("#exercise-id").val();
+            $("#edit-exercise-id").val(exercise_id);
+            var modal_select_element = $("#modal-edit-exercise");
+            modal_select_element.modal();
+        });
+
         $("#send-exercise-report-btn").click(function () {
             var exercise_id = $('#error-exercise-id').val();
             var message_title = $("#error-message-title").val();

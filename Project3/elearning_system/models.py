@@ -35,8 +35,8 @@ class ExerciseWebServer(models.Model):
 
     view_number = models.IntegerField(default=0)
     solve_number = models.IntegerField(default=0)
-    contributor = models.ForeignKey(User, null=False, related_name='contributor')
-    approver = models.ForeignKey(User, null=True, related_name='approver',on_delete=models.SET_NULL)
+    contributor = models.ForeignKey(User, null=False, related_name='exercise_contribute')
+    approver = models.ForeignKey(User, null=True, related_name='exercise_approve',on_delete=models.SET_NULL)
     date_created = models.DateTimeField()
     tag = models.ForeignKey(Tag, null=True,on_delete=models.SET_NULL)
     user_list = models.ManyToManyField(User)

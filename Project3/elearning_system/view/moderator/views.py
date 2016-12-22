@@ -58,7 +58,7 @@ def messageDetail(request):
         message_id = request.GET.get('message_id', None)
         errorMessage = ErrorMessage.objects.get(pk=int(message_id))
         result = {
-            'exercise_id': errorMessage.exercise_report.id,
+            'exercise_id': errorMessage.exercise_reported.id,
             'exercise_name': 'Exercise name',
             'title': errorMessage.title,
             'content': errorMessage.content,

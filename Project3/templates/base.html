@@ -75,8 +75,10 @@
             {% else %}
                 <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
                     {% for role in role_list %}
-                        {% if role != 'user' %}
-                            <li><a href="#"> {{ role }}</a></li>
+                        {% if role == 'moderator' %}
+                            <li><a href="moderator/errorMessage"> {{ role }}</a></li>
+                        {% elif role == 'admin' %}
+                            <li><a href="moderator/errorMessage"> {{ role }}</a></li>
                         {% endif %}
                     {% endfor %}
                     <li><a href="user_infor?user_name={{ user_name }}"><span

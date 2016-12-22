@@ -7,13 +7,6 @@ from elearning_system.models import User,Tag
 
 
 def manageTopic(request):
-    # dict = [{'STT': 1, 'topicName': 'Java1','numberOfEx':20},
-    #         {'STT': 2, 'topicName': 'Java2', 'numberOfEx': 20},
-    #         {'STT': 3, 'topicName': 'Java3', 'numberOfEx': 20},
-    #         {'STT': 4, 'topicName': 'Java4', 'numberOfEx': 20},
-    #         {'STT': 5, 'topicName': 'Java5', 'numberOfEx': 20},
-    #         {'STT': 6, 'topicName': 'Java6', 'numberOfEx': 20},
-    #         {'STT': 7, 'topicName': 'Java7', 'numberOfEx': 20}]
 
     dict_tag = []
     tag_list = Tag.objects.all()

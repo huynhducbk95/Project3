@@ -3,9 +3,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import json
 from elearning_system.models import User, ExerciseWebServer, Tag, Role
+import re
 
 
 def index(request):
+    # ex = ExerciseWebServer.objects.get(pk=3)
+    # ex.approver = User.objects.get(pk=4)
+    # ex.save()
     user_list = User.objects.all().order_by('-contribute_number')
     count = 1
     top_user_list = []
@@ -31,7 +35,7 @@ def index(request):
                 'name': 'exercise x',
                 'description': 'description for exercise x',
                 'passed': exercise.solve_number,
-                'contributor': exercise.contributer_id.user_name,
+                'contributor': exercise.contributor.user_name,
                 'view': exercise.view_number,
             }
             top_exercise_list.append(exercise_top)
@@ -73,7 +77,7 @@ def list_ex_of_topic(request):
                 'name': 'exercise x',
                 'description': 'description for exercise xx',
                 'passed': exercise.solve_number,
-                'contributor': exercise.contributer_id.user_name,
+                'contributor': exercise.contributor.user_name,
                 'view': exercise.view_number,
             }
             exercise_list.append(exercise_info)
@@ -101,7 +105,6 @@ def list_ex_of_topic(request):
                 role_list.append(role.role_name)
             result['role_list'] = role_list
         return render(request, 'elearning_system/user/list_ex_of_topic.html', result)
-
 
 
 def ranking(request):
@@ -134,7 +137,7 @@ def ranking(request):
             tag_list.append(tag_info)
         result = {
             'contributor_list': user_contribute_list,
-            'solve_list':user_solve_list,
+            'solve_list': user_solve_list,
             'topic_list': tag_list,
         }
         if 'user_name' in request.session:
@@ -160,7 +163,7 @@ def typeahead_search(request):
                     'name': 'exercise xx',
                     'description': 'description for exercise xx',
                     'passed': exercise.solve_number,
-                    'contributor': exercise.contributer_id.user_name,
+                    'contributor': exercise.contributor.user_name,
                     'view': exercise.view_number,
                 }
                 exercise_list_result.append(exercise_info)
@@ -172,7 +175,7 @@ def typeahead_search(request):
                         'name': 'exercise',
                         'description': 'description for exercise ',
                         'passed': exercise.solve_number,
-                        'contributor': exercise.contributer_id.user_name,
+                        'contributor': exercise.contributor.user_name,
                         'view': exercise.view_number,
                     }
                     exercise_list_result.append(exercise_info)
@@ -226,7 +229,7 @@ def search_action(exercise_list, search_keyword, option):
             'name': 'exercise xx',
             'description': 'description for exercise xx',
             'passed': exercise.solve_number,
-            'contributor': exercise.contributer_id.user_name,
+            'contributor': exercise.contributor.user_name,
             'view': exercise.view_number,
         }
         exercise_list_result.append(exercise_info)
@@ -239,7 +242,7 @@ def search_action(exercise_list, search_keyword, option):
                 'name': 'exercise',
                 'description': 'description for exercise ',
                 'passed': exercise.solve_number,
-                'contributor': exercise.contributer_id.user_name,
+                'contributor': exercise.contributor.user_name,
                 'view': exercise.view_number,
             }
             exercise_list_result.append(exercise_info)
@@ -291,7 +294,7 @@ def get_exercise_pagination(request):
                     'name': 'exercise',
                     'description': 'description for exercise ',
                     'passed': exercise_list[start_index + i].solve_number,
-                    'contributor': exercise_list[start_index + i].contributer_id.user_name,
+                    'contributor': exercise_list[start_index + i].contributor.user_name,
                     'view': exercise_list[start_index + i].view_number,
                 }
                 exercise_list_result.append(exercise_info)
@@ -410,33 +413,24 @@ def registry(request):
     if request.method == 'GET':
         return render(request, 'elearning_system/user/registry.html', {})
     if request.method == 'POST':
-        user_name = request.POST.get('user_name')
+        user_name = request.POST.get('user_name', None)
         user_list = User.objects.all()
-        password = request.POST.get('password')
-        repassword = request.POST.get('repassword')
-        email = request.POST.get('email')
-        full_name = request.POST.get('full_name')
+        password = request.POST.get('password',None)
+        email = request.POST.get('email',None)
+        full_name = request.POST.get('full_name',None)
         for user in user_list:
             if user.user_name == user_name:
                 result = {
                     'result': 'error',
                     'message': 'Username is already exist'
                 }
-                return render(request, 'elearning_system/user/registry.html', result)
+                return HttpResponse(json.dumps(result),content_type='application/json')
             if user.email_address == email:
                 result = {
                     'result': 'error',
-                    'message': 'Email is already exist'
+                    'message': 'Email address is already exist'
                 }
-                return render(request, 'elearning_system/user/registry.html', result)
-
-        if password != repassword:
-            result = {
-                'result': 'error',
-                'message': 'Repassword is wrong'
-            }
-            return render(request, 'elearning_system/user/registry.html', result)
-
+                return HttpResponse(json.dumps(result), content_type='application/json')
         block_status = 'Active'
         user = User(user_name=user_name,
                     password=password,
@@ -447,4 +441,7 @@ def registry(request):
         user.save()
         role_user = Role.objects.get(pk=3)
         role_user.user_list.add(user)
-        return redirect(to=index)
+        result = {
+            'result': 'successful',
+        }
+        return HttpResponse(json.dumps(result), content_type='application/json')

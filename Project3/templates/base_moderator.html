@@ -3,29 +3,37 @@
 {% block sidebar_menu %}
     <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="active treeview menu_modertor">
             <a href="/moderator/errorMessage">
                 <i class="fa fa-dashboard"></i> <span>Tin nhắn báo lỗi</span>
+                <span class="pull-right-container">
+              <small class="label pull-right bg-red">{{ error_message_number }}</small>
+            </span>
             </a>
         </li>
         <li class="treeview">
             <a href="/moderator/exApproved">
                 <i class="fa fa-edit"></i> <span>Bài tập đã duyệt</span>
+                <span class="pull-right-container">
+              <small class="label pull-right bg-red">{{ exercise_approved_number }}</small>
+            </span>
             </a>
         </li>
         <li>
             <a href="/moderator/exUnapprove">
                 <i class="fa fa-calendar"></i> <span>Bài tập chưa duyệt</span>
+                <span class="pull-right-container">
+              <small class="label pull-right bg-red">{{ exercise_unapprove_number }}</small>
+            </span>
             </a>
         </li>
         <li>
             <a href="/moderator/exNoTopic">
                 <i class="fa fa-envelope"></i> <span>Bài tập chưa có chủ đề</span>
                 <span class="pull-right-container">
-              <small class="label pull-right bg-red">5</small>
+              <small class="label pull-right bg-red">{{ exercise_notag_number }}</small>
             </span>
             </a>
         </li>
     </ul>
-
 {% endblock %}

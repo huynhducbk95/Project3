@@ -36,12 +36,12 @@
                     {% for message in messages %}
 
                         <tr role="row" class="odd">
-                            <td class="sorting_1"> {{ message.id }}</td>
+                            <td class="sorting_1"> {{ forloop.counter }}</td>
                             <td>{{ message.title }}</td>
-                            <td>{{ message.reporter_id.user_name }}</td>
-                            <td> fake exercise name</td>
+                            <td>{{ message.reporter }}</td>
+                            <td>{{ message.content }}</td>
                             <td>
-                                <a href="/moderator/messageDetail">
+                                <a href="/moderator/messageDetail?message_id={{ message.id }}">
                                     <button class="btn btn-primary" onclick="viewErrorMessage()">
                                         Xem chi tiết
                                     </button>

@@ -8,7 +8,7 @@ class User(models.Model):
     password = models.CharField(max_length=30, )
     user_name = models.CharField(max_length=30, )
     email_address = models.CharField(max_length=50, )
-    block_status = models.CharField(max_length=10, )
+    block_status = models.CharField(max_length=10,default='')
     contribute_number = models.IntegerField(default=0)
     solve_number = models.IntegerField(default=0)
 
@@ -32,14 +32,13 @@ class Tag(models.Model):
 
 
 class ExerciseWebServer(models.Model):
-
     view_number = models.IntegerField(default=0)
     solve_number = models.IntegerField(default=0)
-    contributor = models.ForeignKey(User, null=False, related_name='exercise_contribute')
-    approver = models.ForeignKey(User, null=True, related_name='exercise_approve',on_delete=models.SET_NULL)
+    contributor = models.ForeignKey(User, null=False, related_name='exercise_contributed_list')
+    approver = models.ForeignKey(User, null=True, related_name='exercise_approved_list', on_delete=models.SET_NULL)
     date_created = models.DateTimeField()
-    tag = models.ForeignKey(Tag, null=True,on_delete=models.SET_NULL)
-    user_list = models.ManyToManyField(User)
+    tag = models.ForeignKey(Tag, null=True, on_delete=models.SET_NULL)
+    user_solved_list = models.ManyToManyField(User)
 
     def __str__(self):
         return self.id
@@ -49,9 +48,9 @@ class ErrorMessage(models.Model):
     title = models.CharField(max_length=30, )
     content = models.CharField(max_length=255, )
     reporter = models.ForeignKey(User,
-                                    on_delete=models.CASCADE)
-    exercise_report = models.ForeignKey(ExerciseWebServer,
-                                             on_delete=models.CASCADE)
+                                 on_delete=models.CASCADE)
+    exercise_reported = models.ForeignKey(ExerciseWebServer,
+                                          on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

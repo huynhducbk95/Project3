@@ -18,12 +18,17 @@
             <div class="form-group">
                 <label for="exercise-name">Exercise Name</label>
                 <input type="text" class="form-control" id="exercise-name" aria-describedby="emailHelp"
-                       placeholder='Exercise Name (20-60 character)'/>
+                       placeholder='Exercise Name (10-60 character)'/>
             </div>
             <div class="form-group">
-                <label for="exercise-detail">Exercise Detail</label>
-                <textarea class="form-control" id="exercise-detail"
-                          placeholder="Write exercise detail (>100 character)" rows="10" cols="80"></textarea>
+                <label for="exercise-description">Exercise Description</label>
+                <input type="text" class="form-control" id="exercise-description"
+                       placeholder='Exercise Description (>20 character)'/>
+            </div>
+            <div class="form-group">
+                <label for="exercise-content">Exercise Content</label>
+                <textarea class="form-control" id="exercise-content"
+                          placeholder="Write exercise content (>50 character)" rows="10" cols="80"></textarea>
             </div>
             <div class="form-group">
                 <label for="input-test-case">Test case</label>
@@ -88,8 +93,8 @@
             </div>
             <div class="form-group" style="padding-top: 60px">
                 <button type="button" class="btn btn-primary btn-lg"
-                        data-submit-contribute-exercise-url = {% url 'contribute_exercise' %}
-                        id="btn-contribute-exercise">Contribute Exercise
+                        data-submit-contribute-exercise-url={% url 'contribute_exercise' %}
+                                id="btn-contribute-exercise">Contribute Exercise
                 </button>
             </div>
         </form>
@@ -114,7 +119,7 @@
 
         var disable_editor = function () {
             $("#exercise-name").prop('disabled', true);
-            $("#exercise-detail").prop('disabled', true);
+            $("#exercise-content").prop('disabled', true);
             $('#input-test-case').filestyle("disabled", true);
             $("#input-solution").filestyle('disabled', true);
             $("#input-solution-language").prop('disabled', true);
@@ -124,7 +129,7 @@
 
         var enable_editor = function () {
             $("#exercise-name").prop('disabled', false);
-            $("#exercise-detail").prop('disabled', false);
+            $("#exercise-content").prop('disabled', false);
             $('#input-test-case').filestyle("disabled", false);
             $("#input-solution").filestyle('disabled', false);
             $("#input-solution-language").prop('disabled', false);
@@ -163,6 +168,7 @@
             disable_editor();
             $.when(read_file_input('#input-solution'), read_file_input('#input-test-case')).done(
                     function (code_file_data, test_case_data) {
+                        console.log(code_file_data);
                         if (code_file_data == 'invalid-type' || test_case_data == 'invalid-type'
                                 || test_case_data == 'none-file-selected' || code_file_data == 'none-file-selected') {
                             var error_message = '';
@@ -291,16 +297,17 @@
 
         $("#btn-contribute-exercise").click(function () {
             var exercise_name = $("#exercise-name").val();
-            var exercise_detail = $("#exercise-detail").val();
+            var exercise_description = $("#exercise-description").val();
+            var exercise_content = $("#exercise-content").val();
             var error_message = '';
             console.log(exercise_name.length);
-            console.log(exercise_detail.length);
-            if (20 > exercise_name.length || 60 < exercise_name.length) {
+            console.log(exercise_content.length);
+            if (10 > exercise_name.length || 60 < exercise_name.length) {
 
-                error_message += 'exercise name must be between 20 and 60<br/>';
+                error_message += 'exercise name must be between 10 and 60<br/>';
             }
-            if (100 > exercise_detail.length) {
-                error_message += 'exercise detail must be lager than 100 characters <br/>';
+            if (40 > exercise_content.length) {
+                error_message += 'exercise content must be lager than 40 characters <br/>';
             }
             $.when(read_file_input('#input-solution'), read_file_input('#input-test-case')).done(
                     function (code_file_data, test_case_data) {
@@ -342,8 +349,9 @@
                             $.post(submit_url,
                                     {
                                         csrfmiddlewaretoken: '{{ csrf_token }}',
-                                        exercise_name:exercise_name,
-                                        exercise_detail:exercise_detail,
+                                        exercise_name: exercise_name,
+                                        exercise_description: exercise_description,
+                                        exercise_content: exercise_content,
                                         solution_language: code_language,
                                         solution: source_code_data,
                                         test_case: test_case_input
@@ -374,7 +382,7 @@
                                                     }
                                                     var test_result = test_case_pass_number.toString() + " pass / " +
                                                             total_test_case.toString() + ' total';
-                                                    var test_result_element = $('<span class="text-primary"></span>')
+                                                    $('<span class="text-primary"></span>')
                                                             .html(test_result)
                                                             .appendTo(test_code_result);
                                                     test_code_result.hide();
@@ -391,7 +399,12 @@
                                         setTimeout(function () {
                                             enable_editor();
                                         }, 3000);
-                                    });
+                                    }).fail(function (xhr, status, error) {
+                                alert_message('error', "Failed to Connect to the server. Please try again later.");
+                                setTimeout(function () {
+                                    enable_editor();
+                                }, 3000);
+                            });
                         }
                     }
             );

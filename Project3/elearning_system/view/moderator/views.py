@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from elearning_system.models import Tag
 from elearning_system.models import ExerciseWebServer, User, ErrorMessage
+from elearning_system.central_control import check_role, render_template, check_user_is_login
 from django.http import HttpResponse
 import json
+import databaseService as db
 
-
+@check_role('moderator')
 def errorMessage(request):
     message_dict = []
-    message_list = ErrorMessage.objects.all()
+    message_list = db.get_message_list()
     for message in message_list:
         message_dict.append({
             'id': message.id,
@@ -20,7 +22,7 @@ def errorMessage(request):
         'messages': message_dict,
     }
     infor_menu_moderator(result, request)
-    return render(request, 'elearning_system/moderator/errorMessage.html', result)
+    return render_template(request, 'elearning_system/moderator/errorMessage.html', result)
 
 
 def infor_menu_moderator(result, request):
@@ -52,7 +54,7 @@ def infor_menu_moderator(result, request):
     result['error_message_number'] = len(error_message_list)
     return result
 
-
+@check_role('moderator')
 def messageDetail(request):
     if request.method == 'GET':
         message_id = request.GET.get('message_id', None)
@@ -64,9 +66,9 @@ def messageDetail(request):
             'content': errorMessage.content,
         }
         infor_menu_moderator(result, request)
-        return render(request, 'elearning_system/moderator/messageDetail.html', result)
+        return render_template(request, 'elearning_system/moderator/messageDetail.html', result)
 
-
+@check_role('moderator')
 def exApproved(request):
     dict_exApproved = []
 
@@ -89,9 +91,9 @@ def exApproved(request):
         'exApproved': dict_exApproved,
     }
     infor_menu_moderator(result, request)
-    return render(request, 'elearning_system/moderator/exApproved.html', result)
+    return render_template(request, 'elearning_system/moderator/exApproved.html', result)
 
-
+@check_role('moderator')
 def exUnapprove(request):
     dict_exUnApproved = []
 
@@ -108,9 +110,9 @@ def exUnapprove(request):
         'exUnapprove': dict_exUnApproved,
     }
     infor_menu_moderator(result, request)
-    return render(request, 'elearning_system/moderator/exUnapprove.html', result)
+    return render_template(request, 'elearning_system/moderator/exUnapprove.html', result)
 
-
+@check_role('moderator')
 def exNoTopic(request):
     dict_exApproved_noTopic = []
     exercise_list = ExerciseWebServer.objects.all()
@@ -135,15 +137,17 @@ def exNoTopic(request):
         'tags': tag_list
     }
     infor_menu_moderator(result, request)
-    return render(request, 'elearning_system/moderator/exNoTopic.html', result)
+    return render_template(request, 'elearning_system/moderator/exNoTopic.html', result)
 
-
+@check_role('moderator')
 def detail_exUnapprove(request):
     user_name = request.session['user_name']
     moderator = User.objects.get(user_name=user_name)
     exUnapproveID = request.GET.get('exid', None)
     exUnapprove = ExerciseWebServer.objects.get(pk=exUnapproveID)
-
+    tag_dict = []
+    for tag in Tag.objects.all():
+        tag_dict.append(tag)
     result = {
         'exercise_id': exUnapprove.id,
         'exercise_name': 'exercise_name',
@@ -151,11 +155,12 @@ def detail_exUnapprove(request):
         'exercise_testcase': ['testcase 1 of exercise', 'testcase 2 of exercise', 'testcase 3 of exercise',
                               'testcase 4 of exercise'],
         'moderator_id': moderator.id,
+        'tagList': tag_dict
     }
     infor_menu_moderator(result, request)
-    return render(request, 'elearning_system/moderator/Exercise_Unapprove_Detail.html', result)
+    return render_template(request, 'elearning_system/moderator/Exercise_Unapprove_Detail.html', result)
 
-
+@check_role('moderator')
 def upprove_exercise_status(request):
     if request.method == 'GET':
         moderator_id = request.GET.get('moderator_id', None)
@@ -170,10 +175,10 @@ def upprove_exercise_status(request):
             'exercise_name': 'exercise name',
         }
         infor_menu_moderator(result, request)
-        return render(request, 'elearning_system/moderator/upprove_exercise_status.html', result)
+        return render_template(request, 'elearning_system/moderator/upprove_exercise_status.html', result)
 
-
-def detail_exApproved(request):
+@check_role('moderator')
+def edit_exercise(request):
     user_name = request.session['user_name']
     moderator = User.objects.get(user_name=user_name)
     exapproveID = request.GET.get('exApproved_id', None)
@@ -194,8 +199,7 @@ def detail_exApproved(request):
         'tag_list': tag_list,
     }
     infor_menu_moderator(result, request)
-    return render(request, 'elearning_system/moderator/Exercise_Approved_Detail.html', result)
-
+    return render_template(request, 'elearning_system/moderator/Exercise_Approved_Detail.html', result)
 
 def add_tag(request):
     if request.method == 'POST':

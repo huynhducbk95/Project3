@@ -7,9 +7,7 @@ import re
 
 
 def index(request):
-    # ex = ExerciseWebServer.objects.get(pk=3)
-    # ex.approver = User.objects.get(pk=4)
-    # ex.save()
+
     user_list = User.objects.all().order_by('-contribute_number')
     count = 1
     top_user_list = []

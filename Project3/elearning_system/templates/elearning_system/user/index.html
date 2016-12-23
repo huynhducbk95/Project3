@@ -44,112 +44,70 @@
                         </div><!--/.nav-collapse -->
                     </div>
                 </div>
-{#                <div class="panel panel-primary">#}
-{#                    <div class="panel-heading">#}
-{#                        <h3 class="panel-title">Subscribe</h3>#}
-{#                    </div>#}
-{#                    <div class="panel-body">#}
-{#                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"#}
-{#                             width="100%">#}
-{#                        Click <a href="#"> here</a> to update new exercise#}
-{#                    </div>#}
-{#                </div>#}
-
-
             </div>
             <div class="col-sm-9 ">
-                <div class="well">
-                    <div id="myCarousel" class="carousel slide">
-                        <!-- Carousel items -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="row-fluid">
-                                    {% for user in top_user %}
-                                        {% if forloop.counter <= 4 %}
-                                            <div class="col-sm-3">
-                                                <div class="user_name thumbnail" style="background-color: gray">
-                                                    <div class="avatar"><a href="#x">
-                                                        <img height="240px" width="200px"
-                                                             src="static/elearning_system/user/img/number_{{ forloop.counter }}.png"
-                                                             alt="Image"
-                                                             style="max-width:100%;"/></a>
-                                                    </div>
-                                                    <div style="background-color: white">
-                                                        <div class="user_name_expert">
-                                                            <h5>{{ user.user_name }}</h5></div>
-                                                        <div class="user_info_expert">
-                                                <span class="glyphicon glyphicon-ok-circle" style="color:#337ab7"
-                                                      aria-hidden="true"></span> {{ user.passed }}
-                                                            <span class="glyphicon glyphicon-cloud-upload"
-                                                                  style="color:#337ab7"
-                                                                  aria-hidden="true"></span> {{ user.contributed }}
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        {% endif %}
-                                    {% endfor %}
-                                </div><!--/row-fluid-->
-                            </div><!--/item-->
-
-                            <div class="item">
-                                <div class="row-fluid">
-                                    {% for user in top_user %}
-                                        {% if forloop.counter > 4 %}
-                                            <div class="col-sm-3">
-                                                <div class="user_name thumbnail" style="background-color: gray">
-                                                    <div class="avatar"><a href="#x"><img
-                                                            src="static/elearning_system/user/img/number_{{ forloop.counter }}.png"
-                                                            alt="Image"
-                                                            style="max-width:100%;"/></a></div>
-                                                    <div style="background-color: white">
-                                                        <div class="user_name_expert"><h5>{{ user.user_name }}</h5>
-                                                        </div>
-                                                        <div class="user_info_expert">
-                                                <span class="glyphicon glyphicon-ok-circle" style="color:#337ab7"
-                                                      aria-hidden="true"></span> {{ user.passed }}
-                                                            <span class="glyphicon glyphicon-cloud-upload"
-                                                                  style="color:#337ab7"
-                                                                  aria-hidden="true"></span> {{ user.contributed }}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endif %}
-                                    {% endfor %}
-                                </div><!--/row-fluid-->
-                            </div><!--/item-->
-
-                        </div><!--/carousel-inner-->
-
-                        <a class="left carousel-control" href="#myCarousel" data-slide="next"><span
-                                class='glyphicon glyphicon-chevron-left'></span></a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="prev"><span
-                                class='glyphicon glyphicon-chevron-right'></span></a>
-                        </a><!--/myCarousel-->
-
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-sm-6"><h4>New Exercise</h4></div>
+                        </div>
                     </div>
-                </div><!--/well-->
+                    <div class="panel-body">
+                        {% for exercise in top_new_exercise %}
+                            {% if forloop.counter <= 4 %}
+                                <div class="row new_exercise_list_elearning">
+                                    <div class="col-sm-12">
+                                        <h4 class="new_exercise_name"><span class="glyphicon glyphicon-education" style="color: #337ab7" aria-hidden="true"></span>
+                                            {{ exercise.name }}</h4>
+                                        <hr class="soft"/>
+                                        <p class="new_exercise_description">
+                                            {{ exercise.description }}
+                                        </p>
+                                        <div class="row list_ex_expert">
+                                            <div class="col-sm-10">
+                                                <ul class="nav nav-pills pull-left" role="tablist">
+                                                    <li role="presentation"><a><span
+                                                            class="glyphicon glyphicon-user "
+                                                            aria-hidden="true"></span> <span
+                                                            class="new_exercise_contributor">
+                                                    {{ exercise.contributor }}</span>
+                                                    </a>
+                                                    </li>
+                                                    <li role="presentation"><a>Date created <span
+                                                            class="badge"><span
+                                                            class="new_exercise_date"> {{ exercise.date_created|date:"d-m-Y H:i" }}</span></span></a>
+                                                    </li>
+                                                    <li role="presentation"><a>View <span
+                                                            class="badge"><span
+                                                            class="new_exercise_view"> {{ exercise.view }}</span> </span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a class="btn btn-primary pull-right new_exercise_detail_btn"
+                                                   href="product_details.html">View
+                                                    Details</a>
+                                            </div>
+                                        </div>
+                                        <br class="clr"/>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+                        <div id="new_page-selection" data-value="1" data-num_of_new_exercise="{{ length_new_exercise_list }}"></div>
+                    </div>
+                </div>
+{#            panel for top view exercise #}
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-sm-6"><h4>Top Exercise</h4></div>
-                            <div class="col-sm-6">
-                                <div class="form-group pull-right">
-                                    <select class="selectpicker form-control" id="compare_elearning"
-                                            data-length-exercise="{{ length }}">
-                                        <option value="compare">---- Sort ----</option>
-                                        <option value="view">View</option>
-                                        <option value="passed">Passed</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="panel-body">
-                        {% for exercise in top_exercise %}
-                            {% if forloop.counter <= 5 %}
+                        {% for exercise in top_view_exercise %}
+                            {% if forloop.counter <= 4 %}
                                 <div class="row exercise_list_elearning">
                                     <div class="col-sm-12">
                                         <h4 class="exercise_name"><span class="glyphicon glyphicon-education" style="color: #337ab7" aria-hidden="true"></span>
@@ -168,9 +126,9 @@
                                                     {{ exercise.contributor }}</span>
                                                     </a>
                                                     </li>
-                                                    <li role="presentation"><a>Passed <span
+                                                    <li role="presentation"><a>Date created <span
                                                             class="badge"><span
-                                                            class="exercise_passed"> {{ exercise.passed }}</span></span></a>
+                                                            class="exercise_date"> {{ exercise.date_created|date:"d-m-Y H:i" }}</span></span></a>
                                                     </li>
                                                     <li role="presentation"><a>View <span
                                                             class="badge"><span
@@ -190,7 +148,7 @@
                             {% endif %}
 
                         {% endfor %}
-                        <div id="page-selection" data-value="1"></div>
+                        <div id="page-selection" data-num_of_view_exercise="{{ length_view_exercise_list }}"></div>
                     </div>
                 </div>
             </div>

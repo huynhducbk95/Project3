@@ -29,7 +29,8 @@
                         </div>
                         <div class="navbar-collapse collapse sidebar-navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li class="subMenu"><a href="" id="heade_category">CATEGORY</a></li>
+                                <li class="subMenu"><a href="" id="heade_category"
+                                                       data-length-exercise="{{ exercise_number }}">CATEGORY</a></li>
                                 {% for topic in topic_list %}
                                     <li><a href="list_ex?tag={{ topic.id }}"><span class="glyphicon glyphicon-forward"
                                                                                    style="color:#337ab7">
@@ -40,16 +41,6 @@
                         </div><!--/.nav-collapse -->
                     </div>
                 </div>
-{#                <div class="panel panel-primary">#}
-{#                    <div class="panel-heading">#}
-{#                        <h3 class="panel-title">Subscribe</h3>#}
-{#                    </div>#}
-{#                    <div class="panel-body">#}
-{#                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf1q8HZiODubNf-kqas2MKJu1IcqUg3IN5YnpEnoPXE-vTnvD"#}
-{#                             width="100%">#}
-{#                        Click <a href="#"> here</a> to update new exercise#}
-{#                    </div>#}
-{#                </div>#}
             </div>
             <div class="col-sm-9 ">
                 <ul class="breadcrumb">
@@ -60,18 +51,18 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-sm-6">
-                                <span>Có <b> {{ exercise_number }}</b> kết quả cho tìm kiểm: <b>{{ keyword }}</b></span>
+                                <span>Có <b> {{ exercise_number }}</b> kết quả cho tìm kiếm: <b>{{ keyword }}</b></span>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group pull-right">
-                                    <select class="selectpicker form-control" id="compare_elearning"
-                                            data-length-exercise="{{ exercise_number }}">
-                                        <option value="compare">---- Sort ----</option>
-                                        <option value="view">View</option>
-                                        <option value="passed">Passed</option>
-                                    </select>
-                                </div>
-                            </div>
+                            {#                            <div class="col-sm-6">#}
+                            {#                                <div class="form-group pull-right">#}
+                            {#                                    <select class="selectpicker form-control" id="compare_elearning"#}
+                            {#                                            data-length-exercise="{{ exercise_number }}">#}
+                            {#                                        <option value="compare">---- Sort ----</option>#}
+                            {#                                        <option value="view">View</option>#}
+                            {#                                        <option value="date">Date created</option>#}
+                            {#                                    </select>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
                         </div>
                     </div>
                     <div class="panel-body">
@@ -79,7 +70,9 @@
                             {% if forloop.counter <= 5 %}
                                 <div class="row exercise_list_elearning">
                                     <div class="col-sm-12">
-                                        <h4 class="exercise_name"><span class="glyphicon glyphicon-education" style="color: #337ab7" aria-hidden="true"></span>
+                                        <h4 class="exercise_name"><span class="glyphicon glyphicon-education"
+                                                                        style="color: #337ab7"
+                                                                        aria-hidden="true"></span>
                                             {{ exercise.name }}</h4>
                                         <hr class="soft"/>
                                         <p class="exercise_description">
@@ -88,18 +81,18 @@
                                         <div class="row list_ex_expert">
                                             <div class="col-sm-10">
                                                 <ul class="nav nav-pills pull-left info_exercise" role="tablist">
-                                                    <li role="presentation"><a href="#"><span
+                                                    <li role="presentation"><a style="cursor: default"><span
                                                             class="glyphicon glyphicon-user"
                                                             aria-hidden="true"></span><span
                                                             class="exercise_contributor">
                                                     {{ exercise.contributor }}</span>
                                                     </a>
                                                     </li>
-                                                    <li role="presentation"><a href="#">Passed <span
+                                                    <li role="presentation"><a style="cursor: default">Date created <span
                                                             class="badge"><span
-                                                            class="exercise_passed"> {{ exercise.passed }}</span></span></a>
+                                                            class="exercise_passed"> {{ exercise.date_created }}</span></span></a>
                                                     </li>
-                                                    <li role="presentation"><a>View <span
+                                                    <li role="presentation"><a style="cursor: default">View <span
                                                             class="badge"><span
                                                             class="exercise_view"> {{ exercise.view }}</span> </span></a>
                                                     </li>

@@ -66,7 +66,7 @@
                                             data-length-exercise="{{ exercise_number }}">
                                         <option value="compare">---- Sort ----</option>
                                         <option value="view">View</option>
-                                        <option value="passed">Passed</option>
+                                        <option value="date">Date created</option>
                                     </select>
                                 </div>
                             </div>
@@ -86,18 +86,18 @@
                                         <div class="row list_ex_expert">
                                             <div class="col-sm-10">
                                                 <ul class="nav nav-pills pull-left info_exercise" role="tablist" >
-                                                    <li role="presentation"><a href="#"><span
+                                                    <li role="presentation"><a  style="cursor: default"><span
                                                             class="glyphicon glyphicon-user"
                                                             aria-hidden="true"></span><span
                                                             class="exercise_contributor">
                                                     {{ exercise.contributor }}</span>
                                                     </a>
                                                     </li>
-                                                    <li role="presentation"><a href="#">Passed <span
+                                                    <li role="presentation" ><a  style="cursor: default">Date created <span
                                                             class="badge"><span
-                                                            class="exercise_passed"> {{ exercise.passed }}</span></span></a>
+                                                            class="exercise_date"> {{ exercise.date_created }}</span></span></a>
                                                     </li>
-                                                    <li role="presentation"><a>View <span
+                                                    <li role="presentation"><a  style="cursor: default">View <span
                                                             class="badge"><span
                                                             class="exercise_view"> {{ exercise.view }}</span> </span></a>
                                                     </li>

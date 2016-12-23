@@ -1,23 +1,32 @@
 
-#see_more_exercise{
+#see_more_exercise {
     color: white;
     cursor: pointer;
     text-align: center;
     background-color: #337ab7
 }
-#see_more_exercise:hover{
+
+#see_more_exercise:hover {
     color: black;
 }
-#exercise_search{
+
+#exercise_search {
     color: black;
     cursor: pointer;
     background-color: white;
 }
-#typeahead_search{
+
+#typeahead_search {
 
     width: 350px;
     background-color: #337ab7
 }
+
+.li_search_option {
+    color: black;
+    cursor: pointer;
+}
+
 /*------------ custom menu ------------------*/
 .navbar-custom-menu {
     background: #28a4c9;
@@ -29,14 +38,14 @@
 
 .custom_navbar a {
     color: white;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
 }
 
 .custom_navbar a:hover {
     color: #28a4c9;
     background-color: #f8f8f8;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
 }
 

@@ -1,7 +1,10 @@
 /**
  * Created by huynhduc on 11/12/2016.
  */
-
+$('.li_search_option').click(function () {
+    var option = $(this).data('value');
+    $('#search_concept').html(option);
+});
 
 $('#test_test').on('input', function () {
     $('#typeahead_search').empty();
@@ -9,14 +12,14 @@ $('#test_test').on('input', function () {
     console.log($(this).val());// get the current value of the input field.
     var value = $(this).val();
     if (value.length > 0) {
-        $.get('typeahead_search?keyword=' + value, function (data) {
+        $.get('quick_search?keyword=' + value, function (data) {
             console.log(data);
             exercise_list = data['exercise_list'];
             var count = 0;
             for (var i = 0; i < exercise_list.length; i++)
                 if (count < 5) {
                     var li = document.createElement('li');
-                    $(li).attr('id','exercise_search');
+                    $(li).attr('id', 'exercise_search');
                     var a = document.createElement('a');
                     $(a).css('color', 'black');
                     $(a).css('cursor', 'pointer');
@@ -29,17 +32,17 @@ $('#test_test').on('input', function () {
                     a.appendChild(h4);
                     a.appendChild(span);
                     li.appendChild(a);
-                    $('#typeahead_search').css('display','');
+                    $('#typeahead_search').css('display', '');
                     var ul = document.getElementById('typeahead_search');
                     ul.appendChild(li);
                     count += 1;
                 }
             if (exercise_list.length > 5) {
                 var li = document.createElement('li');
-                $(li).attr('id','exercise_search');
+                $(li).attr('id', 'exercise_search');
                 var a = document.createElement('a');
                 var h4 = document.createElement('h4');
-                var ex_name = document.createTextNode('See more '+exercise_list.length+' exercise >>');
+                var ex_name = document.createTextNode('See more ' + exercise_list.length + ' exercise >>');
                 h4.appendChild(ex_name);
                 $(a).attr('id', 'see_more_exercise');
                 a.appendChild(h4);
@@ -52,7 +55,21 @@ $('#test_test').on('input', function () {
     }
 
 });
-
+$('#search_handle').click(function () {
+    var search_option = $('#search_concept').text();
+    if (search_option == 'Filter by') {
+        search_option = 'All'
+    }
+    var input = document.createElement('input');
+    $(input).attr({
+        type: 'hidden',
+        id: 'foo',
+        name: 'search_option'
+    });
+    $(input).val(search_option);
+    var form = document.getElementById('form_search');
+    form.appendChild(input);
+});
 var PATHNAME = window.location.pathname; // Returns path only
 var URL_LOCATION = window.location.href;     // Returns full URL
 

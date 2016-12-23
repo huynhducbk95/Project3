@@ -33,7 +33,7 @@ $('#page-selection').bootpag({
                     $(this).find('.exercise_name').html(exercise_list[count]['name']);
                     $(this).find('.exercise_description').html(exercise_list[count]['description']);
                     $(this).find('.exercise_contributor').html(exercise_list[count]['contributor']);
-                    $(this).find('.exercise_passed').html(exercise_list[count]['passed']);
+                    $(this).find('.exercise_date').html(exercise_list[count]['date_created']);
                     $(this).find('.exercise_view').html(exercise_list[count]['view']);
                     count += 1;
                 }else{
@@ -62,7 +62,7 @@ $('#compare_elearning').change(function () {
             var exercise_name = $(this).find('.exercise_name').html(data['exercise_list'][count]['name']);
             var exercise_description = $(this).find('.exercise_description').html(data['exercise_list'][count]['description']);
             var exercise_contributor = $(this).find('.exercise_contributor').html(data['exercise_list'][count]['contributor']);
-            var exercise_passed = $(this).find('.exercise_passed').html(data['exercise_list'][count]['passed']);
+            var exercise_passed = $(this).find('.exercise_date').html(data['exercise_list'][count]['date_created']);
             var exercise_view = $(this).find('.exercise_view').html(data['exercise_list'][count]['view']);
             count += 1;
         })

@@ -1,5 +1,4 @@
-from elearning_system.models import User, Role, ExerciseWebServer, ErrorMessage, Tag
-import datetime
+from elearning_system.models import User, Role, ExerciseWebServer, Tag
 from elearning_system.view.user import plugin_services
 from django.utils import formats
 
@@ -197,11 +196,17 @@ def get_exercise_list_info(exercise_list_plugin_response, search_option):
 
 
 def sort_by_option(page_compare_option, page_exercise_option, page_name, page_number):
-    tag = Tag.objects.get(pk=int(page_exercise_option))
-    if page_compare_option == 'view':
-        exercise_list = tag.exercisewebserver_set.all().order_by('-view_number')
+    if page_name == 'tag':
+        tag = Tag.objects.get(pk=int(page_exercise_option))
+        if page_compare_option == 'view':
+            exercise_list = tag.exercisewebserver_set.all().order_by('-view_number')
+        else:
+            exercise_list = tag.exercisewebserver_set.all().order_by('-date_created')
     else:
-        exercise_list = tag.exercisewebserver_set.all().order_by('-date_created')
+        if page_compare_option == 'date':
+            exercise_list = ExerciseWebServer.objects.all().order_by('-date_created')
+        if page_compare_option == 'view':
+            exercise_list = ExerciseWebServer.objects.all().order_by('-view_number')
     start_index = (int(page_number) - 1) * 5
     exercise_list_result = []
     for i in range(5):

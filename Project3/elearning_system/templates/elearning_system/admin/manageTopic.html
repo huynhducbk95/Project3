@@ -65,8 +65,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" id="addTopicBtn" onclick="deleteTopic()">
-                                Delete
+                            <button type="button" class="btn btn-danger" id="btn_ok_delete">
+                                OK
                             </button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
@@ -106,7 +106,7 @@
 
                     {% for tag in data_tag %}
 
-                        <tr role="row" class="odd">
+                        <tr role="row" class="odd" id="rowTag{{ tag.id }}">
                             <td class="sorting_1"> {{ tag.id }}</td>
                             <td id="tagName{{ tag.id }}">{{ tag.tag_name }}</td>
                             <td>{{ tag.numberOfEx }}</td>
@@ -115,7 +115,8 @@
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#addTopicModal"
                                             onclick="editTopic('{{ tag.tag_name }}',{{ tag.id }})">Edit
                                     </button>
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">Delete
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalDelete"
+                                    onclick="deleteTopic('{{ tag.tag_name }}',{{ tag.id }})">Delete
                                     </button>
                                 </div>
                             </td>

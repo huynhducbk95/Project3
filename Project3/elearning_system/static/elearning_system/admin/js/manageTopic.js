@@ -38,17 +38,17 @@ function addTopicAction() {
         success: function (data) {
             // console.log(data);
             if (data['status'] == 'success') {
-                var edit_function = "editTopic('"+topicName+"',"+data['tagID']+")";
+                var edit_function = "editTopic('" + topicName + "'," + data['tagID'] + ")";
                 topicTable.row.add([
                     data['tagID'],
                     topicName,
                     0,
-                    '<div class="row">'+
-                    '<button class = "btn btn-primary" data-toggle = "modal" data-target = "#addTopicModal"'+
-                    'onclick = "'+edit_function+'"> Edit'+
-                    '</button >'+
-                    '<button class = "btn btn-danger" data-toggle = "modal" data-target = "#modalDelete"> Delete'+
-                     '</button > </div > '
+                    '<div class="row">' +
+                    '<button class = "btn btn-primary" data-toggle = "modal" data-target = "#addTopicModal"' +
+                    'onclick = "' + edit_function + '"> Edit' +
+                    '</button >' +
+                    '<button class = "btn btn-danger" data-toggle = "modal" data-target = "#modalDelete"> Delete' +
+                    '</button > </div > '
                 ]).draw(false);
 
                 $('#addTopicModal').modal('hide');
@@ -106,8 +106,41 @@ function editTopicAction(old_topicName, tagID) {
     }
 }
 
-function deleteTopic() {
-    alert('Action delete topic');
+function deleteTopic(tag_name, tag_id) {
+    $('#topicNameDelete').text(tag_name);
+    $('#btn_ok_delete').attr('onclick', 'deleteTopicAction("' + tag_name + '",' + tag_id + ')');
+}
+
+function deleteTopicAction(tag_name, tag_id) {
+    // alert('Delete '+tag_name +' - ' + tag_id);
+    var token = $('input[name="csrfmiddlewaretoken"]').val();
+    $.ajax({
+        url: 'manageTopic',
+        type: 'POST',
+        data: {topicName: tag_name, action: 'delete'},
+        beforeSend: function (xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", token);
+            }
+        },
+        success: function (data) {
+            // console.log(data);
+            if (data['status'] == 'success') {
+
+                topicTable.row($('#rowTag'+tag_id))
+                    .remove()
+                    .draw();
+
+                $('#modalDelete').modal('hide');
+            } else if (data['status'] == 'error') {
+                console.log('error');
+                return;
+            }
+        },
+        error: function (err) {
+            console.log(error);
+        }
+    });
 }
 
 function checkNull(id, str) {

@@ -1,8 +1,8 @@
 {% extends 'base_moderator.html' %}
-{% block title %} Exercise Approved Detail{% endblock %}
+{% block title %} Edit xercise Approved Detail{% endblock %}
 {% load static %}
 
-{% block content-header %} Chi tiết bài tập đã duyệt {% endblock %}
+{% block content-header %} Sửa bài tập {% endblock %}
 
 {% block css_admin %}
     <link href="{% static 'elearning_system/exercise/css/bootstrap.css' %}" rel="stylesheet"/>
@@ -22,9 +22,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-6">
-                {% for ex in exApproved %}
-                    <h4>Contributer (<span>{{ ex.contributer_id.user_name }}</span>) solution</h4>
-                {% endfor %}
+                    <h4>Contributer solution</h4>
             </div>
         </div>
         <div class="row">
@@ -34,20 +32,33 @@
                     <div id="exercise-test-case-header" class="text-danger panel-heading">
                         <b>{{ exercise_name }}</b>
                     </div>
-                    <div id="exApproved_testCase" class="pre-scrollable panel-body">
-                        {{ exercise_content }}
-                    </div>
+                    {#                    <div id="exApproved_testCase" class="pre-scrollable panel-body">#}
+                    <textarea class="pre-scrollable panel-body" id="exApproved_testCase"
+                              style="width: 100%; !important; border:none;">{{ exercise_content }}</textarea>
+
+                    {#                    </div>#}
+                </div>
+
+                <div>
+
                 </div>
 
                 <div id="" class="test-case-exUnapprove panel panel-primary">
                     <div id="exercise-test-case-header" class="text-danger panel-heading">
                         <b>Test case example</b>
                     </div>
-                    <div id="exApproved_testCase" class="pre-scrollable panel-body">
-                        {% for test_case in exercise_testcase %}
-                            <p>{{ test_case }}</p>
-                        {% endfor %}
-                    </div>
+{#                    <div id="exApproved_testCase" class="pre-scrollable panel-body">#}
+{#                        {% for test_case in exercise_testcase %}#}
+{#                            <p>{{ test_case }}</p>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+
+                    <textarea class="panel-body" id="exApproved_testCase"
+                              style="width: 100%; border:none;">{% for test_case in exercise_testcase %}
+                            {{ test_case }}{% endfor %}
+                    </textarea>
+
+
                 </div>
                 <div id="exercise-test-case" class="test-case-exUnapprove panel panel-primary">
                     <div id="exercise-test-case-header" class="text-danger panel-heading">

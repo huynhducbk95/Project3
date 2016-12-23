@@ -157,16 +157,21 @@ function addUser() {
             // console.log(data);
             if (data['status'] == 'success') {
                 // alert('add row');
-
+                var moderatorID = data['newUserID'];
+                var text = "blockUser('"+fullName+"','"+email+"',"+moderatorID+")";
                 t.row.add( [
-                    data['newUserID'],
+                    moderatorID,
                     userName,
                     fullName,
                     email,
                     "Active",
                     0,
                     0,
-                    'abc'
+                    '<div class="row">' +
+                    '<button class="btn btn-danger" data-toggle="modal" data-target="#modalModerator"' +
+                    'onclick="'+text+
+                    '>Block</button>' +
+                    '</div>'
                 ] ).draw( false );
 
                 $('#modalAddUserd').modal('hide');
@@ -176,7 +181,7 @@ function addUser() {
             }
         },
         error: function (err) {
-            alert(err);
+            alert('Error!');
         }
     });
 

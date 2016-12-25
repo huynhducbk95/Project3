@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Access Denied {% endblock %}
+{% block style_sheet %}
+    <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+{% endblock %}
+{% block main %}
+    <div class="container">
+        <img src="{% static 'elearning_system/central_control/403-acces-denied.png' %}">
+        <h1 style=" color:#bb1111; text-shadow: 2px 2px 4px #000000;">
+            You are not allowed to access this page!
+        </h1>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

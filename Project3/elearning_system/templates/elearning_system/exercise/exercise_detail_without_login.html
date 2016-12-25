@@ -9,78 +9,48 @@
 {% endblock %}
 {% block main %}
     <div class="container">
-        <div class="col-md-4 excercise-section text-justify">
-            <h4 id="exercise-title" class="text-info">Tìm số nhỏ nhất trong 4 số nguyên</h4>
-            <div class="exercise-detail pre-scrollable">
-                <div id="exercise-content">
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-                    We can also divide one number by another.
-                    JavaScript uses the / symbol for division.
-                    You are given two linked lists representing two non-negative numbers.
-                    The digits are stored in reverse order and each of their nodes contain a single digit.
-                    Add the two numbers and return it as a linked list.
-
+        <div class="col-md-6 excercise-section text-justify">
+            <h4 id="exercise-title" class="text-info">{{ exercise_detail.name }}</h4>
+            <div class="exercise-description">
+                <div id="exercise-description">
+                    {{ exercise_detail.description }}
                 </div>
             </div>
-
+            <h4 class="text-info"><strong>Content</strong></h4>
+            <div class="exercise-content pre-scrollable">
+                <div id="exercise-content">
+                    {{ exercise_detail.content }}
+                </div>
+            </div>
             <div id="exercise-test-case">
                 <h4 id="exercise-test-case-header" class="text-danger">
-                    Test case example
+                    <strong>Test case example</strong>
                 </h4>
-                <div id="exercise-test-case-body" class="pre-scrollable">
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
-
-                    <p>
-                        x1=2;x2=4;x3=6;x4=8 => y=12
-                    </p>
+                <div id="exercise-test-case-body">
+                    {% for test_case in exercise_detail.test_case_list %}
+                        <p>
+                            {{ test_case }}
+                        </p>
+                    {% endfor %}
                 </div>
             </div>
+            <div id="exercise-more-info">
+                <p>
+                    <span class="text-success"><strong>Contributor:</strong></span>
+                    {{ exercise_detail.contributor.full_name }}
+                </p>
+                <p>
+                    <span class="text-primary"><strong>View number:</strong></span>
+                    {{ exercise_detail.view_number }}
+                </p>
+                <p>
+                    <span class="text-danger"><strong>Solve number:</strong></span>
+                    {{ exercise_detail.solve_number }}
+                </p>
+            </div>
         </div>
-        <div class="col-md-8 code-editor-field">
+
+        <div class="col-md-6 code-editor-field">
             <h2 class="text-center text-danger"> To solve this Exercise, you need to login </h2>
             <div id="exercise_login" class="row">
                 <a href="{% url 'login' %} ">

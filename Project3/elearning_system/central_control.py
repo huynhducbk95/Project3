@@ -22,7 +22,7 @@ def get_role_list(user_name):
 
 def check_role(role_needed):
     def true_decorator(function):
-        def new_function(request, *args):
+        def new_function(request, *args, **kwargs):
             is_authorized = False
             if 'user_name' in request.session:
                 for role_name in get_role_list(request.session['user_name']):
@@ -32,7 +32,7 @@ def check_role(role_needed):
                     return render_template(request, 'elearning_system/central_control/http_403_access_denied.html', {},
                                            status=403)
                 else:
-                    return function(request, *args)
+                    return function(request, *args, **kwargs)
 
             else:
                 return HttpResponseRedirect(reverse('login') + '?next_page=' + request.path)
@@ -47,6 +47,17 @@ def check_user_is_login(request):
         return True
     else:
         return False
+
+
+def get_user_name(request):
+    try:
+        return request.session['user_name']
+    except Exception:
+        return False
+
+
+def check_user_is_block(user_name):
+    return False
 
 
 def render_template(request, template_name, context, status=200):

@@ -7,6 +7,7 @@ from elearning_system.models import User, Role
 
 
 def index(request):
+
     top_new_list = database_services.get_lastest_exercise_list()
     top_view_exercise_list = database_services.get_top_view_exercise_list()
     tag_list = database_services.get_tag_list()

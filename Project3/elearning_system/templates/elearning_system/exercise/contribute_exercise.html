@@ -3,6 +3,13 @@
 {% block title %} HOME PAGE {% endblock %}
 {% block style_sheet %}
     <link href="{% static 'elearning_system/base/css/bootstrap.css' %}" rel="stylesheet"/>
+
+    <link href="{% static 'elearning_system/exercise/code_mirror/lib/codemirror.css' %}" rel="stylesheet"
+          type="text/css"
+          media="all"/>
+    <link href="{% static 'elearning_system/exercise/code_mirror/addon/lint/lint.css' %}" rel="stylesheet"
+          type="text/css"
+          media="all"/>
     <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
 {% endblock %}
@@ -14,7 +21,7 @@
 
     <div class="container">
         <h3 class="text-primary"><strong>Contribute Exercise</strong></h3>
-        <form class="col-md-11">
+        <div class="col-md-11">
             <div class="form-group">
                 <label for="exercise-name">Exercise Name</label>
                 <input type="text" class="form-control" id="exercise-name" aria-describedby="emailHelp"
@@ -30,11 +37,22 @@
                 <textarea class="form-control" id="exercise-content"
                           placeholder="Write exercise content (>50 character)" rows="10" cols="80"></textarea>
             </div>
-            <div class="form-group">
-                <label for="input-test-case">Test case</label>
-                <input type="file" class="filestyle form-control" data-buttonText="Upload test case file"
-                       id="input-test-case">
+            <div class="row" style="margin-left: 0">
+                <div class="form-group col-md-6" style="margin-left: 0; padding-left: 0">
+                    <label for="input-test-case">Test case</label>
+                    <div class="form-inline">
+                        <div class="col-md-8" style="margin-left: 0; padding-left: 0;">
+                            <input type="file" class="filestyle form-control" data-buttonText="Upload test case file"
+                                   id="input-test-case">
 
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary"
+                                    id="btn-view-test-case-file"> View test case file
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <div id="exercise-test-case-header" class="text-danger">
@@ -50,56 +68,103 @@
                     <p>
                         1;2;4;8 : 12
                     </p>
-                    <p>
-                        1;2;4;8 : 12
-                    </p>
-
                 </div>
             </div>
-            <div class="form-group">
-                <label for="input-solution">Solution </label>
-                <div class="form-inline">
-                    <div class="col-md-4" style="padding-left: 0;padding-right: 5px;">
-                        <input type="file" class="filestyle form-control"
-                               data-buttonText="Upload solution"
-                               accept=".txt, .py,.cpp,.java,.js,.p"
-                               id="input-solution">
-                    </div>
-                    <div class="col-md-3" style="padding-left: 0;padding-right: 5px;">
-                        <label for="input-solution-language">Language </label>
-                        <select class="form-control" id="input-solution-language">
-                            <option value="text/x-pascal">Pascal</option>
-                            <option selected value="text/x-java">Java</option>
-                            <option value="text/x-c++src">C++</option>
-                            <option value="text/x-python">Python2</option>
-                            <option value="text/javascript">Javascript</option>
-                        </select>
-                    </div>
-                    <div class="col-md-5" style="padding-left: 0;padding-right: 5px;">
-                        <div class="col-md-5" style="padding-left: 5px;padding-right: 5px;">
-                            <button type="button" class="btn btn-success"
-                                    data-submit-url="{% url "test_code" %}"
-                                    id="btn-check-solution">Check solution
+            <div class="row" style="margin-left: 0">
+                <div class="form-group col-md-6" style="margin-left: 0; padding-left: 0">
+                    <label for="input-solution">Solution </label>
+                    <div class="form-inline">
+                        <div class="col-md-8" style="margin-left: 0; padding-left: 0;">
+                            <input type="file" class="filestyle form-control"
+                                   data-buttonText="Upload solution"
+                                   accept=".txt, .py,.cpp,.java,.js,.p"
+                                   id="input-solution">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary"
+                                    id="btn-view-solution-file"> View solution file
                             </button>
                         </div>
-                        <div class="col-md-7 form-control" style="padding-left: 0;padding-right: 5px; border: none">
-                            <div id="submit-result-info"
-                                 data-test-case-image-fail="{% static 'elearning_system/exercise/images/test_case_fail.png' %}"
-                                 data-test-case-image-pass="{% static 'elearning_system/exercise/images/test_case_pass.png' %}">
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-2" style="margin-left: 0; padding-left: 0">
+                    <label for="input-solution-language">Solution Language </label>
+                    <select class="form-control" id="input-solution-language">
+                        <option value="text/x-pascal">Pascal</option>
+                        <option selected value="text/x-java">Java</option>
+                        <option value="text/x-c++src">C++</option>
+                        <option value="text/x-python">Python2</option>
+                        <option value="text/javascript">Javascript</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row" style="margin-left: 0; padding-top: 10px">
+                <div class="col-md-2" style="padding-left: 0; padding-right: 5px;">
+                    <button type="button" class="btn btn-success"
+                            data-submit-url="{% url "test_code" %}"
+                            id="btn-check-solution">Check solution
+                    </button>
+                </div>
+                <div class="col-md-4" style="padding-left: 0; padding-right: 5px;height: 40px">
+                    <div id="check-solution-result-info"
+                         data-test-case-image-fail="{% static 'elearning_system/exercise/images/test_case_fail.png' %}"
+                         data-test-case-image-pass="{% static 'elearning_system/exercise/images/test_case_pass.png' %}">
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="padding-top: 60px">
-                <button type="button" class="btn btn-primary btn-lg"
-                        data-submit-contribute-exercise-url={% url 'contribute_exercise' %}
-                                id="btn-contribute-exercise">Contribute Exercise
-                </button>
+            <div class="form-group row" style="padding-top: 40px;margin-left: 0">
+                <div class="col-md-3" style="padding-left: 0; padding-right: 5px;">
+                    <button type="button" class="btn btn-primary btn-lg"
+                            data-submit-contribute-exercise-url={% url 'contribute_exercise' %}
+                                    id="btn-contribute-exercise">Contribute Exercise
+                    </button>
+                </div>
+                <div class="col-md-4" style="padding-left: 0; padding-right: 5px;height: 40px">
+                    <div id="contribute-exercise-result-info"
+                         data-test-case-image-fail="{% static 'elearning_system/exercise/images/test_case_fail.png' %}"
+                         data-test-case-image-pass="{% static 'elearning_system/exercise/images/test_case_pass.png' %}">
+                    </div>
+                </div>
+
             </div>
-        </form>
+        </div>
+
     </div>
 
+
+
+    <!--  View File Modal -->
+    <div class="modal fade" id="modal-view-file-content" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title text-primary" id="view-file-modal-header">
+                        File name: <span id="input-file-name"></span>
+                    </h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <label for="input-file-content"></label>
+                    <textarea cols="60" rows="25" class="form-control" spellcheck="false" id="input-file-content">
+                    </textarea>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-close-file-view">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascript %}
@@ -109,16 +174,37 @@
     <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/ambiance.css' %}">
 
     <script type="text/javascript" src="{% static 'elearning_system/exercise/js/bootstrap-filestyle.js' %}"></script>
-
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/eclipse.css' %}">
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/ambiance.css' %}">
     <script src="{% static 'elearning_system/exercise/code_mirror/lib/codemirror.js' %}"></script>
     <script src="{% static 'elearning_system/exercise/code_mirror/addon/edit/matchbrackets.js' %}"></script>
     <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/addon/hint/show-hint.css' %}">
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/hint/anyword-hint.js' %}"></script>
     <script src="{% static 'elearning_system/exercise/code_mirror/addon/hint/show-hint.js' %}"></script>
+    {#code mirror mode#}
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/javascript/javascript.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/python/python.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/clike/clike.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/pascal/pascal.js' %}"></script>
+
+
+    <script src="{% static 'elearning_system/exercise/code_mirror/jshint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/lint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/javascript-lint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/json-lint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/css-lint.js' %}"></script>
 
     <script>
+        var file_content_view = CodeMirror.fromTextArea(document.getElementById("input-file-content"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            mode: "text/x-java",
+            indentUnit: 4
+        });
 
         var disable_editor = function () {
             $("#exercise-name").prop('disabled', true);
+            $("#exercise-description").prop('disable', true);
             $("#exercise-content").prop('disabled', true);
             $('#input-test-case').filestyle("disabled", true);
             $("#input-solution").filestyle('disabled', true);
@@ -127,8 +213,17 @@
             $("#btn-check-solution").prop('disabled', true);
         };
 
+        var clear_editor = function () {
+            $("#exercise-name").val('');
+            $("#exercise-description").val('');
+            $("#exercise-content").val('');
+            $('#input-test-case').filestyle("clear");
+            $("#input-solution").filestyle('clear');
+        };
+
         var enable_editor = function () {
             $("#exercise-name").prop('disabled', false);
+            $("#exercise-description").prop('disable', false);
             $("#exercise-content").prop('disabled', false);
             $('#input-test-case').filestyle("disabled", false);
             $("#input-solution").filestyle('disabled', false);
@@ -155,20 +250,68 @@
                     $("#error-message-body").html();
                 }
                 popup_message.fadeOut();
-            }, 3000);
+            }, 2000);
         };
 
         $('#popup-message-close').click(function () {
             $("#popup-message").fadeOut();
         });
 
+        $('#btn-close-file-view').click(function () {
+            file_content_view.setValue('');
+            $("#modal-view-file-content").modal('toggle');
+        });
+
+        $("#btn-view-solution-file").click(function () {
+
+            var modal_view_file_content = $("#modal-view-file-content");
+            $.when(read_file_input('#input-solution')).done(function (code_file_data) {
+                if (code_file_data == 'invalid-type' || code_file_data == 'none-file-selected') {
+                    alert_message('error', 'You must chose valid solution file !');
+                } else {
+
+                    var input_solution_file_name = $("#input-solution").val();
+                    $('#input-file-name').text(input_solution_file_name);
+                    file_content_view.setValue(code_file_data);
+                    var current_language = $("#input-solution-language").val();
+                    file_content_view.setOption("mode", current_language);
+                    file_content_view.setOption("theme", 'eclipse');
+                    file_content_view.setOption("readOnly", 'true');
+                    setTimeout(function () {
+                        file_content_view.refresh();
+                    }, 500);
+                    var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
+                    CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
+                    modal_view_file_content.modal();
+                }
+            });
+        });
+
+        $("#btn-view-test-case-file").click(function () {
+            var modal_view_file_content = $("#modal-view-file-content");
+            $.when(read_file_input('#input-test-case')).done(function (test_file_data) {
+                if (test_file_data == 'invalid-type' || test_file_data == 'none-file-selected') {
+                    alert_message('error', 'You must chose valid test case file !');
+                } else {
+                    var input_solution_file_name = $("#input-solution").val();
+                    $('#input-file-name').text(input_solution_file_name);
+                    file_content_view.setValue(test_file_data);
+                    file_content_view.setOption("mode", 'text/x-textile');
+                    file_content_view.setOption("theme", 'eclipse');
+                    file_content_view.setOption("readOnly", 'true');
+                    setTimeout(function () {
+                        file_content_view.refresh();
+                    }, 500);
+                    $('#input-file-content').val(test_file_data);
+                    modal_view_file_content.modal();
+                }
+            });
+        });
+
         $("#btn-check-solution").click(function () {
-            var submit_info_element = $("#submit-result-info");
-            submit_info_element.empty();
             disable_editor();
             $.when(read_file_input('#input-solution'), read_file_input('#input-test-case')).done(
                     function (code_file_data, test_case_data) {
-                        console.log(code_file_data);
                         if (code_file_data == 'invalid-type' || test_case_data == 'invalid-type'
                                 || test_case_data == 'none-file-selected' || code_file_data == 'none-file-selected') {
                             var error_message = '';
@@ -181,8 +324,10 @@
                             alert_message('error', error_message);
                             setTimeout(function () {
                                 enable_editor();
-                            }, 3000);
+                            }, 2000);
                         } else {
+                            var submit_info_element = $("#check-solution-result-info");
+                            submit_info_element.empty();
                             var submit_info_wait_result = $('<h5></h5>');
                             submit_info_wait_result.hide();
                             submit_info_wait_result
@@ -216,7 +361,6 @@
                                         test_case: test_case_input
                                     },
                                     function (data, status) {
-                                        var submit_info_element = $("#submit-result-info");
                                         submit_info_wait_result = submit_info_element.find('h4');
                                         submit_info_wait_result.fadeOut('slow');
                                         setTimeout(function () {
@@ -227,11 +371,11 @@
                                                     var total_test_case = data.test_case_list.length;
                                                     //show test case list
                                                     var test_code_result = $(
-                                                            '<div>' +
+                                                            '<h5>' +
                                                             '<span class="text-danger">' +
                                                             '<strong>Test code result: </strong>' +
                                                             '</span>' +
-                                                            '</div>');
+                                                            '</h5>');
                                                     var test_case_pass_number = 0;
                                                     for (var i = 0; i < total_test_case; i++) {
                                                         var test_case_status = data.test_case_list[i];
@@ -257,8 +401,18 @@
                                         }, 1500);
                                         setTimeout(function () {
                                             enable_editor();
-                                        }, 3000);
-                                    });
+                                        }, 2000);
+                                    }
+                            ).fail(function (xhr, status, error) {
+                                alert_message('error', "Failed to Connect to the server. Please try again later.");
+                                var submit_info_element = $("#check-solution-result-info");
+                                submit_info_wait_result = submit_info_element.find('h4');
+                                submit_info_wait_result.fadeOut('slow');
+                                submit_info_element.empty();
+                                setTimeout(function () {
+                                    enable_editor();
+                                }, 2000);
+                            });
                         }
                     }
             );
@@ -296,12 +450,11 @@
 
 
         $("#btn-contribute-exercise").click(function () {
+            disable_editor();
             var exercise_name = $("#exercise-name").val();
             var exercise_description = $("#exercise-description").val();
             var exercise_content = $("#exercise-content").val();
             var error_message = '';
-            console.log(exercise_name.length);
-            console.log(exercise_content.length);
             if (10 > exercise_name.length || 60 < exercise_name.length) {
 
                 error_message += 'exercise name must be between 10 and 60<br/>';
@@ -320,15 +473,13 @@
                             if (test_case_data == 'invalid-type' || test_case_data == 'none-file-selected') {
                                 error_message += 'please upload valid test case file';
                             }
-
                         }
-
                         //if have error message when check input
                         if (error_message.length > 0) {
                             alert_message('error', error_message);
                             setTimeout(function () {
                                 enable_editor();
-                            }, 3000);
+                            }, 2000);
                         }
 
                         //if not
@@ -344,6 +495,22 @@
                             language_list['text/javascript'] = 'javascript';
                             var code_language = language_list[code_language_meta];
 
+
+                            //show waiting result popup
+                            var submit_info_element = $("#contribute-exercise-result-info");
+                            submit_info_element.empty();
+                            var submit_info_wait_result = $('<h4></h4>');
+                            submit_info_wait_result.hide();
+                            submit_info_wait_result
+                                    .addClass('text-primary')
+                                    .html('Please wait' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                                            '<span class="glyphicon glyphicon-arrow-right"></span>')
+                                    .appendTo(submit_info_element)
+                                    .fadeIn();
+
                             //send data to server
                             var submit_url = $("#btn-contribute-exercise").data('submit-contribute-exercise-url');
                             $.post(submit_url,
@@ -357,58 +524,40 @@
                                         test_case: test_case_input
                                     },
                                     function (data, status) {
-                                        var submit_info_element = $("#submit-result-info");
                                         submit_info_wait_result = submit_info_element.find('h4');
                                         submit_info_wait_result.fadeOut('slow');
+                                        submit_info_element.empty();
                                         setTimeout(function () {
-                                            submit_info_element.empty();
                                             if (status == 'success') {
                                                 if (data.status == 'success') {
-                                                    alert_message('success', "test code process was succesful!");
-                                                    var total_test_case = data.test_case_list.length;
-                                                    //show test case list
-                                                    var test_code_result = $(
-                                                            '<div>' +
-                                                            '<span class="text-danger">' +
-                                                            '<strong>Test code result: </strong>' +
-                                                            '</span>' +
-                                                            '</div>');
-                                                    var test_case_pass_number = 0;
-                                                    for (var i = 0; i < total_test_case; i++) {
-                                                        var test_case_status = data.test_case_list[i];
-                                                        if (test_case_status == 'p') {
-                                                            test_case_pass_number += 1;
-                                                        }
-                                                    }
-                                                    var test_result = test_case_pass_number.toString() + " pass / " +
-                                                            total_test_case.toString() + ' total';
-                                                    $('<span class="text-primary"></span>')
-                                                            .html(test_result)
-                                                            .appendTo(test_code_result);
-                                                    test_code_result.hide();
-                                                    test_code_result
-                                                            .appendTo(submit_info_element)
-                                                            .fadeIn();
+                                                    alert_message('success', "Your exercise has ben uploaded to server" +
+                                                            " and will be wait for moderator approve!");
+                                                    clear_editor();
+
                                                 } else if (data.status == 'failed') {
                                                     alert_message('error', data.message);
                                                 }
                                             } else {
-                                                alert_message('success', "solve exercise process failed!");
+                                                alert_message('error', data.message);
                                             }
                                         }, 1500);
                                         setTimeout(function () {
                                             enable_editor();
-                                        }, 3000);
-                                    }).fail(function (xhr, status, error) {
+                                        }, 2000);
+                                    }
+                            ).fail(function (xhr, status, error) {
                                 alert_message('error', "Failed to Connect to the server. Please try again later.");
+                                submit_info_wait_result = submit_info_element.find('h4');
+                                submit_info_wait_result.fadeOut('slow');
+                                submit_info_element.empty();
+                                console.log(error);
                                 setTimeout(function () {
                                     enable_editor();
-                                }, 3000);
+                                }, 2000);
                             });
                         }
                     }
             );
-            disable_editor();
         });
 
     </script>

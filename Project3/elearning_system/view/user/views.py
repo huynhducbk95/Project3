@@ -31,7 +31,7 @@ def index(request):
                 'name': 'exercise x',
                 'description': 'description for exercise x',
                 'passed': exercise.solve_number,
-                'contributor': exercise.contributer_id.user_name,
+                'contributor': exercise.contributor.user_name,
                 'view': exercise.view_number,
             }
             top_exercise_list.append(exercise_top)

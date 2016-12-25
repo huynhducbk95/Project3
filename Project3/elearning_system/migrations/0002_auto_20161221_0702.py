@@ -19,12 +19,18 @@ def load_user_role(apps, schema_editor):
 
     admin_user = User(user_name='admin', password='admin', full_name='administrator',
                       email_address='amdin@elearning_system.com')
+    admin_user.save()
+
     admin_user.role_set.add(admin_role, moderator_role, user_role)
     moderator_user = User(user_name='moderator', password='moderator', full_name='moderator',
                           email_address='moderator@elearning_system.com')
-    moderator_user.role_set.add(moderator_role, user_role)
-    admin_user.save()
     moderator_user.save()
+    moderator_user.role_set.add(moderator_role, user_role)
+
+
+    moderator_user.save()
+
+    admin_user.save()
 
 
 class Migration(migrations.Migration):

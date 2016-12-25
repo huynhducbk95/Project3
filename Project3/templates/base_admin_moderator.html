@@ -11,17 +11,18 @@
     <link href="{% static 'elearning_system/base_admin/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
     <!-- Font Awesome -->
-{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">#}
+    {#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">#}
     <!-- Ionicons -->
-{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">#}
+    {#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">#}
     <!-- jvectormap -->
-{#    <link href="{% static 'elearning_system/base_admin/css/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet"#}
-{#          type="text/css" media="all"/>#}
+    {#    <link href="{% static 'elearning_system/base_admin/css/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet"#}
+    {#          type="text/css" media="all"/>#}
     <!-- Theme style -->
     <link href="{% static 'elearning_system/base_admin/css/AdminLTE.min.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
 
-     <link href="{% static 'elearning_system/base_admin/css/dataTables.bootstrap.css' %}" rel="stylesheet" type="text/css"
+    <link href="{% static 'elearning_system/base_admin/css/dataTables.bootstrap.css' %}" rel="stylesheet"
+          type="text/css"
           media="all"/>
 
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -29,7 +30,7 @@
     <link href="{% static 'elearning_system/base_admin/css/_all-skins.min.css' %}" rel="stylesheet" type="text/css"
           media="all"/>
 
-{#    <link href="{% static 'elearning_system/moderator/css/messageDetail.css' %}" rel="stylesheet" type="text/css" media="all"/>#}
+    {#    <link href="{% static 'elearning_system/moderator/css/messageDetail.css' %}" rel="stylesheet" type="text/css" media="all"/>#}
 
     {% block css_admin %}{% endblock %}
 
@@ -37,8 +38,10 @@
     <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery-2.2.3.min.js' %}"></script>
     <!-- Bootstrap 3.3.6 -->
     <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/jquery.dataTables.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'elearning_system/base_admin/js/dataTables.bootstrap.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'elearning_system/base_admin/js/jquery.dataTables.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'elearning_system/base_admin/js/dataTables.bootstrap.min.js' %}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,13 +57,12 @@
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{% block href_home %}{% endblock %}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>Admin</b>LTE</span>
         </a>
-
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
@@ -69,37 +71,26 @@
             </a>
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav user user-menu">
                     <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{% static 'elearning_system/base_admin/images/user3-128x128.jpg' %}" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="{% static 'elearning_system/base_admin/images/user3-128x128.jpg' %}" class="img-circle" alt="User Image">
+                    {% for role in role_list %}
+                        {% if role == 'admin' %}
+                            <li>
+                                <a href="moderator/errorMessage"> Admin</a>
+                            </li>
 
-                                <p>
-                                    Alexander Pierce - Web Developer
-                                    <small>Member since Nov. 2012</small>
-                                </p>
+                        {% elif role == 'moderator' %}
+                            <li class="active">
+                                <a href="errorMessage">
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Moderator
+                                </a>
                             </li>
-                            <!-- Menu Body -->
-                            <li class="user-body">
+                        {% elif role == 'user' %}
+                            <li>
+                                <a href="{% url 'index' %}"> User</a>
                             </li>
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
 
@@ -112,10 +103,11 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="{% static 'elearning_system/base_admin/images/user3-128x128.jpg' %}" class="img-circle" alt="User Image">
+                    <img src="{% static 'elearning_system/base_admin/images/user3-128x128.jpg' %}" class="img-circle"
+                         alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>Moderator: <b>{{ user_name }}</b></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>

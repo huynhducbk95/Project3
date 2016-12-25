@@ -19,9 +19,9 @@
                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                             aria-label="Browser: activate to sort column ascending" style="width: 208px;">Tên bài tập
                         </th>
-{#                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"#}
-{#                            aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">Chủ đề#}
-{#                        </th>#}
+                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                            aria-label="Platform(s): activate to sort column ascending" style="width: 300px;">Mô tả
+                        </th>
                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                             aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Tác giả
                         </th>
@@ -35,12 +35,13 @@
                     {% for ex in exUnapprove %}
 
                         <tr role="row" class="odd">
-                            <td class="sorting_1"> {{ ex.STT }}</td>
-                            <td>{{ ex.exName }}</td>
-                            <td>{{ ex.exAuthor }}</td>
+                            <td class="sorting_1"> {{ forloop.counter }}</td>
+                            <td>{{ ex.exercise_name }}</td>
+                            <td>{{ ex.exercise_description }}</td>
+                            <td>{{ ex.contributor }}</td>
                             <td>
-                                <a href="detail_exUnapprove?exid={{ ex.STT }}">
-                                    <button class="btn btn-primary" onclick="viewExUnapproved({{ ex.STT }} )">
+                                <a href="detail_exUnapprove?exid={{ ex.id }}">
+                                    <button class="btn btn-primary" onclick="viewExUnapproved({{ ex.id }} )">
                                         View Detail
                                     </button>
                                 </a>

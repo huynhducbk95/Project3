@@ -13,26 +13,26 @@
                     <thead>
                     <tr role="row" class="">
                         <th class="sorting_asc "  aria-controls="example1"
-                            aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
+                            aria-label="Rendering engine: activate to sort column descending" style="width: 100px;"
                             aria-sort="ascending">STT
                         </th>
                         <th class="sorting " aria-controls="example1"
-                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">Tên bài tập
+                            aria-label="Browser: activate to sort column ascending" style="width: 170px;">Tên bài tập
                         </th>
                         <th class="sorting " aria-controls="example1"
-                            aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">Chủ đề
+                            aria-label="Platform(s): activate to sort column ascending" style="width: 300px;">Mô tả
                         </th>
                         <th class="sorting " taria-controls="example1"
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 200px;">Chủ đề
+                        </th>
+                        <th class="sorting " aria-controls="example1"
                             aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Tác giả
                         </th>
                         <th class="sorting " aria-controls="example1"
-                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Số views
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Approver
                         </th>
                         <th class="sorting " aria-controls="example1"
-                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Đã giải
-                        </th>
-                        <th class="sorting " aria-controls="example1"
-                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 70px;">Action
                         </th>
                     </tr>
                     </thead>
@@ -41,14 +41,14 @@
                     {% for ex in exApproved %}
 
                         <tr role="row" class="odd">
-                            <td class=""> {{ ex.id }}</td>
-                            <td class="">fake exercise name (get from plugin)</td>
-                            <td class="">{{ ex.tag_id.tag_name }}</td>
-                            <td class="">{{ ex.contributer_id.user_name }}</td>
-                            <td class="">{{ ex.view_number }}</td>
-                            <td class="">{{ ex.solve_number }}</td>
+                            <td class=""> {{ forloop.counter }}</td>
+                            <td class="">{{ ex.exercise_name }}</td>
+                            <td class="">{{ ex.exercise_description }}</td>
+                            <td class="">{{ ex.tag_name }}</td>
+                            <td class="">{{ ex.contributor }}</td>
+                            <td class="">{{ ex.approver }}</td>
                             <td class="">
-                                <a href="detail_exApproved?exApproved_id={{ ex.id }}">
+                                <a href="edit_exercise?exApproved_id={{ ex.id }}">
                                     <button class="btn btn-primary" onclick="viewExApproved()">
                                         Edit
                                     </button>

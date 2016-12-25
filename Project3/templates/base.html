@@ -50,16 +50,31 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left " action="/search">
-                <div class="input-group" style="display: inline-flex">
+            <form class="navbar-form navbar-left " id="form_search" action="/search">
+
+                <div class="input-group" style="display: inline-flex;">
+                    <div class="input-group-btn search_panel_elearing">
+                        <button type="button" style="width: 80px"
+                                class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span id="search_concept" >Filter by</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" id="filter_search">
+                            <li data-value="View" class="li_search_option"><a>View</a></li>
+                            <li data-value="Solve" class="li_search_option"><a>Solve</a></li>
+                            <li data-value="Date" class="li_search_option"><a>Date created</a></li>
+                            <li class="divider"></li>
+                            <li data-value="All" class="li_search_option"><a>All</a></li>
+                        </ul>
+                    </div>
                     <div class="input-group-btn">
                         <div class="btn-group" role="group">
                             <input id="test_test" type="text" name="search" aria-haspopup="true" aria-expanded="false"
-                                   class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Search">
+                                   class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Search"
+                                   style="width: 150px">
                             <ul class="dropdown-menu" id="typeahead_search" style="display:none;">
                             </ul>
                         </div>
-                        <button class="btn btn-default" type="submit">
+                        <button class="btn btn-default" type="submit" id="search_handle">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
@@ -75,8 +90,10 @@
             {% else %}
                 <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
                     {% for role in role_list %}
-                        {% if role != 'user' %}
-                            <li><a href="#"> {{ role }}</a></li>
+                        {% if role == 'moderator' %}
+                            <li><a href="moderator/errorMessage"> {{ role }}</a></li>
+                        {% elif role == 'admin' %}
+                            <li><a href="moderator/errorMessage"> {{ role }}</a></li>
                         {% endif %}
                     {% endfor %}
                     <li><a href="user_infor?user_name={{ user_name }}"><span

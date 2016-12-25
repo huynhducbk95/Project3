@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block javascript %}
-    <script src="{% static 'elearning_system/user/js/contact.js' %}"></script>
+    <script src="{% static 'elearning_system/user/js/registry.js' %}"></script>
 {% endblock %}
 
 {% block main %}
@@ -17,30 +17,38 @@
 
                 <div class="account-wall">
                     <legend style="padding-left: 13px"><a href="http://www.jquery2dotnet.com">
-                        <i class="glyphicon glyphicon-globe"></i></a> Create your account!</legend>
-                    <form class="form-signin" action="registry" method="post">
+                        <i class="glyphicon glyphicon-globe"></i></a> Create your account!
+                    </legend>
+                    <form class="form-signin">
                         {% csrf_token %}
-                        {% if result == 'error' %}
-                            <span style="color: red;padding-bottom: 5px">{{ message }}</span>
-                        {% endif %}
+                        <span style="color: red;padding-bottom: 5px" id="message_signup"></span>
                         <div style="padding-bottom: 10px">
-                            <input type="text" name="user_name" class="form-control" placeholder="User name" required autofocus>
+                            <input type="text" name="user_name" id="user_name_signup" class="form-control"
+                                   placeholder="User name" required autofocus>
                         </div>
                         <div style="padding-bottom: 10px">
-                            <input type="text" name="full_name" class="form-control" placeholder="Full name" required autofocus>
+                            <input type="text" name="full_name" id="full_name_signup"
+                                   class="form-control" placeholder="Full name" required
+                                   autofocus>
                         </div>
                         <div style="padding-bottom: 10px">
-                            <input type="text" name="email" class="form-control" placeholder="Email address" required autofocus>
+                            <input type="text" name="email" id="email_signup" class="form-control"
+                                   placeholder="Email address" required
+                                   autofocus>
                         </div>
                         <div>
-                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            <input type="password" name="password" id="password_signup" class="form-control"
+                                   placeholder="Password" required>
                         </div>
                         <div>
-                            <input type="password" name="repassword" class="form-control" placeholder="Re-password" required>
+                            <input type="password" name="repassword" id="repassword_signup" class="form-control"
+                                   placeholder="Re-password"
+                                   required>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                        <button class="btn btn-lg btn-primary btn-block" type="button" id="btn_sign_up_elearning">
                             Sign up
                         </button>
+                        <a href="{% url 'index' %}" id="redirect_to_index"></a>
                         <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
                     </form>
                 </div>

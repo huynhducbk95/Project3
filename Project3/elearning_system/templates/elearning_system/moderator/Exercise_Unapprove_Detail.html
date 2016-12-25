@@ -21,56 +21,29 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-6">
-                {% for ex in exUnapprove %}
-                    <h4>Contributer (<span>{{ ex.contributer_id.user_name }}</span>) solution</h4>
-                {% endfor %}
+                    <h4>Contributer solution</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 excercise-section text-justify scrollable">
-                {% for ex in exUnapprove %}
-                    {# <h4 id="exercise-title-unapprove" class="text-info">{{ ex.exercise_name }}</h4>#}
-                    <div class="panel panel-primary">
-                        <div id="exercise-test-case-header" class="text-danger panel-heading">
-                            <b>Fake Exercise Name</b>
-                        </div>
-                        <div id="exApproved_testCase" class="pre-scrollable panel-body">
-                            FAKE CONTENT
-                            We can also divide one number by another.
-                            JavaScript uses the / symbol for division.
-                            You are given two linked lists representing two non-negative numbers.
-                            The digits are stored in reverse order and each of their nodes contain a single digit.
-                            Add the two numbers and return it as a linked list.
-                            We can also divide one number by another.
-                            JavaScript uses the / symbol for division.
-                            You are given two linked lists representing two non-negative numbers.
-                            The digits are stored in reverse order and each of their nodes contain a single digit.
-                            Add the two numbers and return it as a linked list.
-                            We can also divide one number by another.
-                            JavaScript uses the / symbol for division.
-                            You are given two linked lists representing two non-negative numbers.
-                            The digits are stored in reverse order and each of their nodes contain a single digit.
-                            Add the two numbers and return it as a linked list.
-                            We can also divide one number by another.
-                            JavaScript uses the / symbol for division.
-                            You are given two linked lists representing two non-negative numbers.
-                            The digits are stored in reverse order and each of their nodes contain a single digit.
-                            Add the two numbers and return it as a linked list.
-                            We can also divide one number by another.
-                            JavaScript uses the / symbol for division.
-                            You are given two linked lists representing
-                        </div>
+                {# <h4 id="exercise-title-unapprove" class="text-info">{{ ex.exercise_name }}</h4>#}
+                <div class="panel panel-primary">
+                    <div id="exercise-test-case-header" class="text-danger panel-heading">
+                        <b>{{ exercise_name }}</b>
                     </div>
-                {% endfor %}
+                    <div id="exApproved_testCase" class="pre-scrollable panel-body">
+                        {{ exercise_content }}
+                    </div>
+                </div>
 
                 <div id="" class="test-case-exUnapprove panel panel-primary">
                     <div id="exercise-test-case-header" class="text-danger panel-heading">
                         <b>Test case example</b>
                     </div>
                     <div id="exApproved_testCase" class="pre-scrollable panel-body">
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
+                        {% for test_case in exercise_testcase %}
+                            <p>{{ test_case }}</p>
+                        {% endfor %}
                     </div>
                 </div>
                 <div id="exercise-test-case" class="test-case-exUnapprove panel panel-primary">
@@ -120,14 +93,16 @@
                 </div>
                 <div id="code-editor-footer">
                     <div class="form-group col-md-8 select-language-input form-inline">
+                        {% csrf_token %}
 
                         <button type="button" class="btn " style="float: right;">
                             Hủy
                         </button>
-                        <button type="button" class="btn btn-primary " style="float: right;margin-right: 10px;"
-                                onclick="approveEx();">
+                        <a href="upprove_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}"
+                           type="button" class="btn btn-primary " style="float: right;margin-right: 10px;"
+                        >
                             Duyệt
-                        </button>
+                        </a>
                     </div>
 
 

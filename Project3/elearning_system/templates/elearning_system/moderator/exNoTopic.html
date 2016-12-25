@@ -38,19 +38,19 @@
                             </tr>
                         </table>
                         <div class="form-group">
+                            {% csrf_token %}
                             <label for="topic">Tên chủ đề:</label> <br/>
-                            {#                            <input type="text" class="form-control" id="topicName">#}
                             <select id="selectTopic" name="fieldName" class="overall classes"
                                     data-btn-class="option toggle classes">
                                 {% for tag in tags %}
-                                <option>{{ tag.tag_name }}</option>
+                                    <option value="{{ tag.id }}">{{ tag.tag_name }}</option>
                                 {% endfor %}
-
                             </select>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="addTopicBtn" onclick="actionAdd()">Add</button>
+                        <button type="button" class="btn btn-primary" id="addTopicBtn" onclick="actionAdd()">Add
+                        </button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -61,23 +61,28 @@
 
     <div class="row">
         <div class="col-sm-12">
+            <ul class="breadcrumb" id="infor_change" style="background-color: #c3e8ec; display: none">
+                <li>
+                    <h5 style="color: blue" id="message_add"></h5>
+                </li>
+            </ul>
             <div class="box-body">
                 <table id="exNoTopicTable" class="table table-bordered table-striped dataTable" role="grid"
                        aria-describedby="example1_info">
                     <thead>
                     <tr role="row">
                         <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                            aria-label="Rendering engine: activate to sort column descending" style="width: 168px;"
+                            aria-label="Rendering engine: activate to sort column descending" style="width:50px;"
                             aria-sort="ascending">STT
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                            aria-label="Browser: activate to sort column ascending" style="width: 208px;">Tên bài tập
+                            aria-label="Browser: activate to sort column ascending" style="width: 150px;">Tên bài tập
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Tác giả
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 200px;">Mô tả
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                            aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Số views
+                            aria-label="CSS grade: activate to sort column ascending" style="width: 300px">Nội dung
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                             aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
@@ -88,14 +93,14 @@
 
                     {% for ex in exNoTopic %}
 
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"> {{ ex.id }}</td>
-                            <td>Fake exercise name</td>
-                            <td>{{ ex.contributer_id.user_name }}</td>
-                            <td>{{ ex.solve_number }}</td>
+                        <tr role="row" class="odd" id="exercise_{{ ex.id }}">
+                            <td class="sorting_1"> {{ forloop.counter }}</td>
+                            <td>{{ ex.exercise_name }}</td>
+                            <td>{{ ex.exercise_description }}</td>
+                            <td>{{ ex.exercise_content }}</td>
                             <td>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#addTopicForEx"
-                                        onclick="addTopicForEx('Fake exercise name','{{ ex.contributer_id.user_name  }}')">
+                                        onclick="addTopicForEx('{{ ex.id }}','{{ ex.exercise_name }}','{{ ex.contributor }}')">
                                     Thêm chủ đề
                                 </button>
                             </td>

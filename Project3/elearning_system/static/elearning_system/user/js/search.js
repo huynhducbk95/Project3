@@ -4,7 +4,7 @@
 
 
 var PAGINATION_NUMBER = 1;
-var exercise_length = $('#compare_elearning').data('length-exercise');
+var exercise_length = $('#heade_category').data('length-exercise');
 console.log(exercise_length);
 var add_page = exercise_length % 5;
 var page = 0;

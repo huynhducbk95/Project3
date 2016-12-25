@@ -1,23 +1,21 @@
 /**
  * Created by huynhduc on 16/12/2016.
  */
-var PAGINATION_NUMBER = 1;
-var exercise_length = $('#compare_elearning').data('length-exercise');
-console.log(exercise_length);
-var add_page = exercise_length % 5;
-var page = 0;
-if (add_page > 0) {
-    page = Math.floor(exercise_length / 5) + 1;
+var view_exercise_length = $('#page-selection').data('num_of_view_exercise');
+var add_view_page = view_exercise_length % 4;
+var page_view = 0;
+if (add_view_page > 0) {
+    page_view = Math.floor(view_exercise_length / 4) + 1;
 } else {
-    page = Math.floor(exercise_length / 5);
+    page_view = Math.floor(view_exercise_length / 4);
 }
 $('#page-selection').bootpag({
-    total: page
+    total: page_view
 }).on("page", function (event, /* page number here */ num) {
     $('.exercise_list_elearning').css('display', '');
     var page_name = 'index';
     var page_option = 'all';
-    var page_compare = $('#compare_elearning').val();
+    var page_compare = 'view';
     $.get('get_exercise_pagination?page_name=' + page_name +
         '&page_option=' + page_option +
         '&page_compare=' + page_compare +
@@ -31,7 +29,7 @@ $('#page-selection').bootpag({
                     $(this).find('.exercise_name').html(exercise_list[count]['name']);
                     $(this).find('.exercise_description').html(exercise_list[count]['description']);
                     $(this).find('.exercise_contributor').html(exercise_list[count]['contributor']);
-                    $(this).find('.exercise_passed').html(exercise_list[count]['passed']);
+                    $(this).find('.exercise_date').html(exercise_list[count]['date_created']);
                     $(this).find('.exercise_view').html(exercise_list[count]['view']);
                     count += 1;
                 } else {
@@ -42,25 +40,45 @@ $('#page-selection').bootpag({
             })
         });
     $('#page-selection').attr('data-value', num);
-    PAGINATION_NUMBER = num;
 });
 
+var new_exercise_length = $('#new_page-selection').data('num_of_new_exercise');
+var add_new_page = new_exercise_length % 4;
+var page_new = 0;
+if (add_new_page > 0) {
+    page_new = Math.floor(new_exercise_length / 4) + 1;
+} else {
+    page_new = Math.floor(new_exercise_length / 4);
+}
+$('#new_page-selection').bootpag({
+    total: page_new
+}).on("page", function (event, /* page number here */ num) {
+    $('.new_exercise_list_elearning').css('display', '');
+    var page_name = 'index';
+    var page_option = 'all';
+    var page_compare = 'date';
+    $.get('get_exercise_pagination?page_name=' + page_name +
+        '&page_option=' + page_option +
+        '&page_compare=' + page_compare +
+        '&pagination_number=' + num
+        , function (data) {
+            console.log(data);
+            var exercise_list = data['exercise_list'];
+            var count = 0;
+            $('.new_exercise_list_elearning').each(function () {
+                if (count < exercise_list.length) {
+                    $(this).find('.new_exercise_name').html(exercise_list[count]['name']);
+                    $(this).find('.new_exercise_description').html(exercise_list[count]['description']);
+                    $(this).find('.new_exercise_contributor').html(exercise_list[count]['contributor']);
+                    $(this).find('.new_exercise_date').html(exercise_list[count]['date_created']);
+                    $(this).find('.new_exercise_view').html(exercise_list[count]['view']);
+                    count += 1;
+                } else {
+                    $(this).css('display', 'none');
+                    count += 1;
+                }
 
-$('#compare_elearning').change(function () {
-    var value = $(this).val();
-    $.get('get_exercise_pagination?page_compare=' + value
-        + '&page_name=index'
-        + '&page_option=all'
-        + '&pagination_number=' + PAGINATION_NUMBER, function (data) {
-        var count = 0;
-        $('.exercise_list_elearning').each(function () {
-            var self = $(this);
-            var exercise_name = $(this).find('.exercise_name').html(data['exercise_list'][count]['name']);
-            var exercise_description = $(this).find('.exercise_description').html(data['exercise_list'][count]['description']);
-            var exercise_contributor = $(this).find('.exercise_contributor').html(data['exercise_list'][count]['contributor']);
-            var exercise_passed = $(this).find('.exercise_passed').html(data['exercise_list'][count]['passed']);
-            var exercise_view = $(this).find('.exercise_view').html(data['exercise_list'][count]['view']);
-            count += 1;
-        })
-    })
+            })
+        });
+    $('#page-selection').attr('data-value', num);
 });

@@ -171,3 +171,17 @@ def change_status_user(request):
         db.change_user_status(user_id)
         context['status'] = 'success'
     return HttpResponse(json.dumps(context),content_type='application/json')
+
+def delete_moderator(request):
+    context = {}
+    if request.method == "GET":
+        moderator_id = request.GET.get('moderator_id',None)
+        moderator = db.get_moderator(moderator_id)
+        # moderator_role_list = db.get_moderator_list()
+        # moderator_role_list.remove(moderator)
+        moderator.delete()
+        context['status'] = 'success'
+        return HttpResponse(json.dumps(context), content_type='application/json')
+
+
+

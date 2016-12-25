@@ -29,6 +29,9 @@ def create_user(userName,fullName,password,email,status):
     user.save()
     return user
 
+def get_user(user_id):
+    return User.objects.get(pk=user_id)
+
 #  moderator database serviec
 
 def get_moderator_list():
@@ -46,3 +49,6 @@ def change_user_status(userID):
     else:
         user.block_status = 'Active'
     user.save()
+
+def get_moderator(moderator_id):
+    return Role.objects.get(role_name='moderator').user_list.get(pk=moderator_id)

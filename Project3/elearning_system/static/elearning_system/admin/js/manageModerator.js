@@ -1,8 +1,12 @@
+$('#sidebar_manageTag').removeAttr('class');
+$('#sidebar_manageUser').removeAttr('class');
+$('#sidebar_manageModerator').attr('class','active');
+
 //funtion to call funtion DataTable() of framework jquery.datatable.min.js to
 //add action search and fix size of table
-var tableModerator;
+var moderatorTable;
 function dataModeratorTable() {
-    tableModerator = $('#manageModeratorTable').DataTable();
+    moderatorTable = $('#manageModeratorTable').DataTable();
 }
 dataModeratorTable();
 
@@ -24,26 +28,23 @@ function showModalAddModerator(){
 
 function blockModerator(moderatorFullName, email,id) {
     console.log(moderatorFullName + " - " + email);
-    $('.warning-moderator').text("Bạn thực sự muốn Block moderator này?");
+    $('.warning-moderator').text("Are you really want to Delete this moderator?");
     $('#btn_moderator').attr('class', 'btn btn-danger');
-    $('#btn_moderator').text('Block');
+    $('#btn_moderator').text('Ok');
     $('#moderatorFullName').text(moderatorFullName);
     $('#moderator_email').text(email);
     $('#btn_moderator').removeAttr('onclick');
-    $('#btn_moderator').attr('onclick', 'blockAction("' + moderatorFullName + '","' + email + '",' + id + ')');
+    $('#btn_moderator').attr('onclick', 'deleteAction("' + moderatorFullName + '","' + email + '",' + id + ')');
 
 }
 
-function blockAction(username,email,id) {
+function deleteAction(username,email,id) {
     // alert("Block moderator!");
-    $.get('change_status_user?user_id=' + id, function (data) {
+    $.get('delete_moderator?moderator_id=' + id, function (data) {
         if (data.status == "success") {
-            $('#status' + id).text("Block");
-            $('#' + id).text('Active');
-            $('#' + id).removeAttr('onclick');
-            $('#' + id).removeAttr('class');
-            $('#' + id).attr('class', 'btn btn-primary');
-            $('#' + id).attr('onclick', 'activeUser("' + username + '","' + email + '",' + id + ')');
+            moderatorTable.row($('#rowModerator'+id))
+                    .remove()
+                    .draw();
         } else {
             alert("Error!");
         }
@@ -159,7 +160,7 @@ function addModerator() {
                 // alert('add row');
                 var text = "blockModerator('"+fullName+"','"+email+"',"+data['newModaretorID']+")";
                 // console.log("text: " + text);
-                tableModerator.row.add( [
+                moderatorTable.row.add( [
                     data['newModaretorID'],
                     userName,
                     fullName,

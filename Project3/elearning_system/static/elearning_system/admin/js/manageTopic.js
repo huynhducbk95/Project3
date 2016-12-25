@@ -1,6 +1,10 @@
 //funtion to call funtion DataTable() of framework jquery.datatable.min.js to
 //add action search and fix size of table
 
+$('#sidebar_manageTag').attr('class','active');
+$('#sidebar_manageUser').removeAttr('class');
+$('#sidebar_manageModerator').removeAttr('class');
+
 var topicTable;
 function dataTopicTable() {
     topicTable = $('#manageTopicTable').DataTable();
@@ -138,7 +142,7 @@ function deleteTopicAction(tag_name, tag_id) {
             }
         },
         error: function (err) {
-            console.log(error);
+            console.log("Error!");
         }
     });
 }

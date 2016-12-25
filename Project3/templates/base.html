@@ -93,7 +93,7 @@
                         {% if role == 'moderator' %}
                             <li><a href="moderator/errorMessage"> {{ role }}</a></li>
                         {% elif role == 'admin' %}
-                            <li><a href="moderator/errorMessage"> {{ role }}</a></li>
+                            <li><a href="admin/manageTopic"> {{ role }}</a></li>
                         {% endif %}
                     {% endfor %}
                     <li><a href="user_infor?user_name={{ user_name }}"><span

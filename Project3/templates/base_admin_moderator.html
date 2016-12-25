@@ -75,11 +75,19 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     {% for role in role_list %}
                         {% if role == 'admin' %}
-                            <li>
-                                <a href="moderator/errorMessage"> Admin</a>
+                            <li >
+                                <a href="{% url 'index' %}"> User</a>
+                            </li>
+                            <li class="active">
+                                <a href="/admin/manageTopic">
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Admin
+                                </a>
                             </li>
 
                         {% elif role == 'moderator' %}
+                            <li>
+                                <a href="{% url 'index' %}"> User</a>
+                            </li>
                             <li class="active">
                                 <a href="errorMessage">
                                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Moderator

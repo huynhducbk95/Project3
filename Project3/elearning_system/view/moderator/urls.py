@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^edit_exercise', views.edit_exercise, name='edit_exercise'),
     url(r'^add_tag', views.add_tag, name='add_tag'),
     url(r'^upprove_exercise_status', views.upprove_exercise_status, name='upprove_exercise_status'),
+    url(r'^cancel_exercise_status', views.cancel_exercise_status, name='cancel_exercise_status'),
 ]

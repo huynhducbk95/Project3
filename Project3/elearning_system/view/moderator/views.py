@@ -178,6 +178,24 @@ def upprove_exercise_status(request):
         return render_template(request, 'elearning_system/moderator/upprove_exercise_status.html', result)
 
 @check_role('moderator')
+def cancel_exercise_status(request):
+    if request.method == 'GET':
+        moderator_id = request.GET.get('moderator_id', None)
+        exercise_id = request.GET.get('exercise_id', None)
+        exercise = ExerciseWebServer.objects.get(pk=int(exercise_id))
+        moderator = User.objects.get(pk=int(moderator_id))
+        # request to delete exercise at plugin here ...
+        #
+        exercise.delete()
+        result = {
+            'result': 'successful',
+            'moderator_name': moderator.user_name,
+            'exercise_name': 'exercise name',
+        }
+        infor_menu_moderator(result, request)
+        return render_template(request, 'elearning_system/moderator/cancel_exercise_status.html', result)
+
+@check_role('moderator')
 def edit_exercise(request):
     user_name = request.session['user_name']
     moderator = User.objects.get(user_name=user_name)

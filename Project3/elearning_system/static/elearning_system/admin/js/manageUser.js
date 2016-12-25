@@ -1,6 +1,12 @@
 //funtion to call funtion DataTable() of framework jquery.datatable.min.js to
 //add action search and fix size of table
 
+
+
+$('#sidebar_manageTag').removeAttr('class');
+$('#sidebar_manageUser').attr('class','active');
+$('#sidebar_manageModerator').removeAttr('class');
+
 var t;
 function dataUserTable() {
     t = $('#manageUserTable').DataTable();

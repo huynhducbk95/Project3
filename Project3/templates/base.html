@@ -45,7 +45,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="ranking">Ranking</a></li>
+                        <li><a href="{% url 'ranking' %}">Ranking</a></li>
                         <li><a href="#">Contribute</a></li>
                     </ul>
                 </li>
@@ -56,7 +56,7 @@
                     <div class="input-group-btn search_panel_elearing">
                         <button type="button" style="width: 80px"
                                 class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <span id="search_concept" >Filter by</span> <span class="caret"></span>
+                            <span id="search_concept" >Sort by</span> <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" id="filter_search">
                             <li data-value="View" class="li_search_option"><a>View</a></li>
@@ -70,7 +70,7 @@
                         <div class="btn-group" role="group">
                             <input id="test_test" type="text" name="search" aria-haspopup="true" aria-expanded="false"
                                    class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Search"
-                                   style="width: 150px">
+                                   style="width: 150px" onkeyup="doDelayedSearch(this.value)">
                             <ul class="dropdown-menu" id="typeahead_search" style="display:none;">
                             </ul>
                         </div>
@@ -91,9 +91,9 @@
                 <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
                     {% for role in role_list %}
                         {% if role == 'moderator' %}
-                            <li><a href="moderator/errorMessage"> {{ role }}</a></li>
+                            <li><a href="moderator/errorMessage"> Moderator</a></li>
                         {% elif role == 'admin' %}
-                            <li><a href="moderator/errorMessage"> {{ role }}</a></li>
+                            <li><a href="admin/manageTopic"> Admin</a></li>
                         {% endif %}
                     {% endfor %}
                     <li><a href="user_infor?user_name={{ user_name }}"><span

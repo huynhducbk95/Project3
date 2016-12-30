@@ -5,7 +5,7 @@ urlpatterns = [
     # url(r'^moderator/', include('elearning_system.moderator.urls')),
     # url(r'^user/', include('elearning_system.user.urls')),
     # url(r'^exercise/', include('elearning_system.exercise.urls'),name='exercise'),
-    url(r'^admin/', include('elearning_system.view.admin.urls')),
+    url(r'^admin/', include('elearning_system.view.admin.urls'),name='admin'),
     url(r'^moderator/', include('elearning_system.view.moderator.urls')),
     url(r'^', include('elearning_system.view.user.urls')),
     url(r'^exercise/', include('elearning_system.view.exercise.urls'), name='exercise'),

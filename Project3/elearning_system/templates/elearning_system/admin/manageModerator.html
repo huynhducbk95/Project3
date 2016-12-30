@@ -142,7 +142,7 @@
 
                     {% for moderator in dataModerator %}
 
-                        <tr role="row" class="odd">
+                        <tr role="row" class="odd" id="rowModerator{{ moderator.id }}">
                             <td class="sorting_1"> {{ moderator.id }}</td>
                             <td>{{ moderator.user_name }}</td>
                             <td>{{ moderator.email_address }}</td>
@@ -150,20 +150,20 @@
                             <td>{{ moderator.block_status }}</td>
                             <td>
                                 <div class="row">
-                                    {% if moderator.block_status == 'Active' %}
+{#                                    {% if moderator.block_status == 'Active' %}#}
 
                                         <button class="btn btn-danger" id="{{ moderator.id }}" data-toggle="modal" data-target="#modalModerator"
                                                 onclick="blockModerator('{{ moderator.full_name }}','{{ moderator.email_address }}',{{ moderator.id }})">
-                                            Block
+                                            Delete
                                         </button>
-                                    {% else %}
+{#                                    {% else %}#}
 
-                                        <button class="btn btn-primary" id="{{ moderator.id }}" data-toggle="modal"
-                                                data-target="#modalModerator"
-                                                onclick="activeModerator('{{ moderator.full_name }}','{{ moderator.email_address }}',{{ moderator.id }})">
-                                            Active
-                                        </button>
-                                    {% endif %}
+{#                                        <button class="btn btn-primary" id="{{ moderator.id }}" data-toggle="modal"#}
+{#                                                data-target="#modalModerator"#}
+{#                                                onclick="activeModerator('{{ moderator.full_name }}','{{ moderator.email_address }}',{{ moderator.id }})">#}
+{#                                            Active#}
+{#                                        </button>#}
+{#                                    {% endif %}#}
                                 </div>
                             </td>
                         </tr>
@@ -182,17 +182,4 @@
 {% load static %}
 {% block javascript %}
     <script type="text/javascript" src="{% static 'elearning_system/admin/js/manageModerator.js' %}"></script>
-    {#    <script>#}
-    {#        $(function () {#}
-    {#            $("#manageModeratorTable").DataTable();#}
-    {#            $('#example2').DataTable({#}
-    {#                "paging": true,#}
-    {#                "lengthChange": false,#}
-    {#                "searching": false,#}
-    {#                "ordering": true,#}
-    {#                "info": true,#}
-    {#                "autoWidth": false#}
-    {#            });#}
-    {#        });#}
-    {#    </script>#}
 {% endblock %}

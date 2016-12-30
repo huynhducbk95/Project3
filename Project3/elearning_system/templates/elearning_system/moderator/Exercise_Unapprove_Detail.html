@@ -96,7 +96,9 @@
                         {% csrf_token %}
 
                         <button type="button" class="btn " style="float: right;">
-                            Hủy
+                            <a href="cancel_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}">
+                                Hủy
+                            </a>
                         </button>
                         <a href="upprove_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}"
                            type="button" class="btn btn-primary " style="float: right;margin-right: 10px;"

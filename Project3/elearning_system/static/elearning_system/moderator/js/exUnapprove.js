@@ -2,6 +2,11 @@
  * Created by ha on 10/12/2016.
  */
 
+$('#sidebar_manageErrorMessage').removeAttr('class');
+$('#sidebar_manageExApproved').removeAttr('class');
+$('#sidebar_manageExUnapprove').attr('class','active');
+$('#sidebar_manageExNoTopic').removeAttr('class');
+
 function dataExUnapproveTable() {
     $('#exUnapproveTable').DataTable();
 }

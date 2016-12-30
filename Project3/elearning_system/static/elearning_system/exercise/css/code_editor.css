@@ -2,17 +2,20 @@
     .container {
         width: 1250px;
     }
+    .exercise-detail-action{
+        max-width: 350px;
+    }
 }
 
 .container {
     padding-top: 60px;
 
 }
-
+#exercise-content{
+    height: 180px;
+}
 .pre-scrollable {
-    max-height: 200px;
     padding-right: 5px;
-
 }
 
 #code-language {
@@ -61,8 +64,9 @@ textarea {
     top: 60px;
     right: 40px;
     z-index: 50;
-    text-align: center;
+    text-align: justify;
     min-width: 250px;
+    max-width: 400px;
 }
 
 .CodeMirror {

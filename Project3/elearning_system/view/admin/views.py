@@ -17,20 +17,31 @@ def manageTopic(request):
 
     context = {}
     if request.method == "POST":
-        topicName = request.POST.get('topicName', None)
-        topic_list = db.get_tag_list()
-        for tag in topic_list:
-            if tag.tag_name.lower() == topicName.lower():
-                context['status'] = 'error'
-                context['message'] = 'Topic name already existed!'
-                return HttpResponse(json.dumps(context), content_type='application/json')
 
-        # tag = Tag(tag_name=topicName)
-        # tag.save()
-        tagID = db.create_tag(topicName)
-        context['tagID'] = tagID
-        context['status'] = 'success'
-        return HttpResponse(json.dumps(context), content_type='application/json')
+        if 'action' in request.POST:
+            topicName = request.POST.get('topicName', None)
+            tag = Tag.objects.get(tag_name=topicName)
+            tag.delete()
+            context['status'] = 'success'
+            return HttpResponse(json.dumps(context), content_type='application/json')
+
+        else:
+            topicName = request.POST.get('topicName', None)
+            topic_list = db.get_tag_list()
+            for tag in topic_list:
+                if tag.tag_name.lower() == topicName.lower():
+                    context['status'] = 'error'
+                    context['message'] = 'Topic name already existed!'
+                    return HttpResponse(json.dumps(context), content_type='application/json')
+
+            # tag = Tag(tag_name=topicName)
+            # tag.save()
+            tagID = db.create_tag(topicName)
+            context['tagID'] = tagID
+            context['status'] = 'success'
+            return HttpResponse(json.dumps(context), content_type='application/json')
+
+
 
     if request.method == "GET":
         new_tagName = request.GET.get('topicName', None)
@@ -160,3 +171,17 @@ def change_status_user(request):
         db.change_user_status(user_id)
         context['status'] = 'success'
     return HttpResponse(json.dumps(context),content_type='application/json')
+
+def delete_moderator(request):
+    context = {}
+    if request.method == "GET":
+        moderator_id = request.GET.get('moderator_id',None)
+        moderator = db.get_moderator(moderator_id)
+        # moderator_role_list = db.get_moderator_list()
+        # moderator_role_list.remove(moderator)
+        moderator.delete()
+        context['status'] = 'success'
+        return HttpResponse(json.dumps(context), content_type='application/json')
+
+
+

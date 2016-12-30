@@ -94,4 +94,4 @@ class Migration(migrations.Migration):
             name='reporter_id',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='elearning_system.User'),
         ),
-    ]
+]

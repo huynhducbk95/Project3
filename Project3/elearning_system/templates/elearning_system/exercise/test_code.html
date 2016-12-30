@@ -220,8 +220,6 @@ class HelloWorldApp {
         };
 
 
-
-
         $("#btn-clear-source-code").click(function () {
             $("#code-file-input").filestyle('clear');
 
@@ -264,7 +262,7 @@ class HelloWorldApp {
                                     .fadeIn();
 
 
-                            var source_code_data = $('#code-editor').val();
+                            var source_code_data = editor.getValue();
                             var code_language_meta = $("#code-language").val();
                             if (code_file_data != 'none-file-selected') {
                                 source_code_data = code_file_data;
@@ -334,8 +332,18 @@ class HelloWorldApp {
                                         }, 1500);
                                         setTimeout(function () {
                                             enable_editor();
-                                        }, 3000);
-                                    });
+                                        }, 2000);
+                                    }
+                            ).fail(function (xhr, status, error) {
+                                alert_message('error', "Failed to Connect to the server. Please try again later.");
+                                var submit_info_element = $("#submit-result-info");
+                                submit_info_wait_result = submit_info_element.find('h4');
+                                submit_info_wait_result.fadeOut('slow');
+                                submit_info_element.empty();
+                                setTimeout(function () {
+                                    enable_editor();
+                                }, 2000);
+                            });;
                         }
                         setTimeout(function () {
                             $('#btn-test-code-submit').prop("disabled", false);

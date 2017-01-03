@@ -137,11 +137,12 @@ def add_new_user(user_name, password, email, full_name):
                     block_status=block_status)
 
         user.save()
-        role_user = Role.objects.get(pk=3)
+        role_user = Role.objects.get(role_name='user')
         role_user.user_list.add(user)
         result = {
             'result': 'success'
         }
+        role_user.save()
     except Exception:
         result = {
             'result': 'error'

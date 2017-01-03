@@ -7,6 +7,19 @@ from elearning_system.models import User, Role
 
 
 def index(request):
+    # admin = Role(role_name='admin')
+    # mod = Role(role_name='moderator')
+    # user = Role(role_name='user')
+    # admin.save()
+    # mod.save()
+    # user.save()
+    # admin = Role.objects.get(role_name='admin')
+    # admin.user_list.add(User.objects.get(user_name='admin'))
+    # admin.save()
+    # mod = Role.objects.get(role_name='moderator')
+    # mod.user_list.add(User.objects.get(user_name='moderator'))
+    # mod.save()
+
     top_new_list = database_services.get_lastest_exercise_list()
     top_view_exercise_list = database_services.get_top_view_exercise_list()
     tag_list = database_services.get_tag_list()

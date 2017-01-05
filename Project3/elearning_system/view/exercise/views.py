@@ -1,5 +1,5 @@
+# from django.shortcuts import render
 import string
-from django.shortcuts import render
 from django.http.response import HttpResponse
 import json
 import datetime
@@ -104,14 +104,9 @@ def test_code(request):
             return HttpResponse(json.dumps(return_result), content_type='application/json')
 
 
-# def exercise_detail_without_login(request):
-#     print ('y')
-#     return render(request, 'elearning_system/exercise/exercise_detail_without_login.html',
-#                   {'title': 'registry'})
 @check_role('user')
 def report_exercise_error(request):
     if request.method == "POST":
-        return_result = {}
         try:
             user_name = request.session['user_name']
             reporter = User.objects.filter(user_name=user_name).first()
@@ -144,7 +139,8 @@ def exercise_detail(request, exercise_id):
             )
         create_date = exercise_web_server_detail.date_created
         create_date_view_format = str(create_date.day) + ' - ' + \
-                                  str(create_date.month) + ' - ' + str(create_date.year)
+                                  str(create_date.month) + ' - ' + \
+                                  str(create_date.year)
         exercise_web_server_detail.view_number += 1
         exercise_web_server_detail.save()
         contributor = {
@@ -178,10 +174,16 @@ def exercise_detail(request, exercise_id):
                                    {'exercise_detail': exercise_detail_view_model})
 
 
+def _check_user_is_in_user_solved_list(user_id, user_solved_list):
+    for user in user_solved_list:
+        if user.id == user_id:
+            return True
+    return False
+
+
 @check_role('user')
 def solve_exercise(request):
     if request.method == "POST":
-        return_result = {}
         try:
             solution_code = request.POST['source_code']
             language = request.POST['language']
@@ -190,22 +192,46 @@ def solve_exercise(request):
             return_result = {'status': 'failed', 'message': 'invalid parameter', 'test_case_list': []}
             return HttpResponse(json.dumps(return_result), content_type='application/json')
         try:
-            exercise_solve = plugin_api.solve_exercise(
+            exercise_solve_result = plugin_api.solve_exercise(
                 exercise_id,
                 Solution(solution_code=solution_code, solution_language=language)
             )
-            return_result = {'status': 'success', 'message': 'You solve this exercise successful', 'test_case_list': []}
+            if exercise_solve_result['status'] == 'success':
+                test_case_result_list = exercise_solve_result['result']
+                total_test_case = len(test_case_result_list)
+                total_test_case_pass = 0
+                for test_case_result in test_case_result_list:
+                    if test_case_result == 'pass':
+                        total_test_case_pass += 1
+                if total_test_case == total_test_case_pass:
+                    exercise_solved = ExerciseWebServer.objects.filter(id=exercise_id).first()
+                    user_solved_list = exercise_solved.user_solved_list.all()
+                    user_solver = User.objects.filter(user_name=request.session['user_name']).first()
+                    if _check_user_is_in_user_solved_list(user_solver.id, user_solved_list) is False:
+                        exercise_solved.user_solved_list.add(user_solver)
+                        exercise_solved.save()
+                    return_result = {'status': 'success', 'is_solved': 'true',
+                                     'message': 'You solve this exercise successful',
+                                     'test_case_list': test_case_result_list}
+                else:
+                    return_result = {'status': 'success', 'is_solved': 'false',
+                                     'message': 'Failed to solve this exercise. You did not pass all test cases',
+                                     'test_case_list': test_case_result_list}
+            else:
+                return_result = {'status': 'failed', 'is_solved': 'false', 'message': exercise_solve_result['message'],
+                                 'test_case_list': []}
             return HttpResponse(json.dumps(return_result), content_type='application/json')
         except Exception as e:
-            return_result = {'status': 'failed', 'message': 'Failed to solve exercise', 'test_case_list': []}
+            return_result = {'status': 'failed', 'is_solved': 'false', 'message': 'Failed to solve exercise',
+                             'test_case_list': []}
             return HttpResponse(json.dumps(return_result), content_type='application/json')
 
 
 @check_role('user')
 def contribute_exercise(request):
     if request.method == "GET":
-        return render(request, 'elearning_system/exercise/contribute_exercise.html',
-                      {'title': 'registry'})
+        return render_template(request, 'elearning_system/exercise/contribute_exercise.html',
+                               {'title': 'registry'})
 
     if request.method == "POST":
         return_result = {}
@@ -294,7 +320,6 @@ def contribute_exercise(request):
 @check_role('moderator')
 def edit_exercise(request):
     if request.method == "POST":
-        return_result = {}
         try:
             exercise_id = request.POST['exercise_id']
             name = request.POST['name']

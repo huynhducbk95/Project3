@@ -32,7 +32,7 @@
             <h4 class="text-info"><strong>Content</strong></h4>
             <div class="exercise-content pre-scrollable">
                 <div id="exercise-content">
-                    {{ exercise_detail.content }}
+                    {{exercise_detail.content|linebreaksbr}}
                 </div>
             </div>
             <div id="exercise-test-case">
@@ -118,10 +118,10 @@
                         </label>
                     </h5>
                     <select class="form-control col-xs-7" id="code-language">
-                        <option value="text/x-pascal">Pascal</option>
                         <option selected value="text/x-java">Java</option>
-                        <option value="text/x-c++src">C++</option>
                         <option value="text/x-python">Python2</option>
+                        <option value="text/x-c++src">C++</option>
+                        <option value="text/x-pascal">Pascal</option>
                         <option value="text/javascript">Javascript</option>
                     </select>
                 </div>
@@ -411,9 +411,9 @@
                             var language_list = {};
                             language_list['text/x-pascal'] = 'pascal';
                             language_list['text/x-java'] = 'java';
-                            language_list['text/x-c++src'] = 'c_plus_plus';
+                            language_list['text/x-c++src'] = 'cpp';
                             language_list['text/x-python'] = 'python';
-                            language_list['text/javascript'] = 'javascript';
+                            language_list['text/javascript'] = 'js';
                             var code_language = language_list[code_language_meta];
 
                             //send data to server
@@ -495,9 +495,6 @@
     <script>
 
         $('#report-exercise-error-btn').click(function () {
-            {#                            var property_element = $(this).closest(".property-element");#}
-            {#                            set_modal_value_list(property_element.data('property-id'),#}
-            {#                                    property_element.attr('data-property-value-id'));#}
             var exercise_id = $("#exercise-id").val();
             console.log(exercise_id);
             $("#error-exercise-id").val(exercise_id);

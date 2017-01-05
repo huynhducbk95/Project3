@@ -382,7 +382,7 @@ def exercise_detail_data(request, exercise_id):
             solve_number=exercise_web_server_detail.solve_number,
             view_number=exercise_web_server_detail.view_number,
             create_date=create_date_view_format,
-            tag=exercise_web_server_detail.tag
+            tag=exercise_web_server_detail.tag.tag_name
         )
         return HttpResponse(json.dumps({'status': 'success',
                                         'message': 'exercise data retrieve success',

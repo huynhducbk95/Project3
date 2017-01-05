@@ -2,7 +2,8 @@ import requests
 # import json
 from requests.adapters import ConnectionError
 import datetime
-from elearning_system.view.exercise.process_models import PluginExercise, TestCase
+from elearning_system.view.exercise.process_models import TestCase
+from process_models import PluginExercise
 
 MAX_URI_LEN = 8192
 USER_AGENT = 'exercise_web_server'
@@ -23,7 +24,8 @@ def get_exercise_plugin_detail(exercise_plugin_id):
                 description=data['description'],
                 content=data['content'],
                 test_case_list=_convert_test_case_plugin_to_standard_test_case(data['testcases']),
-                solution='solution'
+                solution=data['solution']['code'],
+                language=data['solution']['language']
             )
             return {
                 'status': 'success',
@@ -48,20 +50,3 @@ def _convert_test_case_plugin_to_standard_test_case(plugin_test_case_list):
         value = test_case['result']
         converted_test_case_list.append(TestCase(param_arr=param_arr, value=value))
     return converted_test_case_list
-
-def remove_exercise_plugin(exercise_plugin_id):
-    endpoint = u'http://' + PLUGIN_IP + '/plugin/remove?exid=' + str(exercise_plugin_id)
-    try:
-        response = requests.get(endpoint)
-        data = response.json()
-
-        if data['status'] == 'success':
-            return {
-                'status': 'success',
-            }
-        else:
-            return {
-                'status': 'failed', 'message': 'Failed remove exercise detail from plugin',
-            }
-    except Exception as e:
-        return {'status': 'failed', 'message': 'Failed remove exercise detail. Try again later'}

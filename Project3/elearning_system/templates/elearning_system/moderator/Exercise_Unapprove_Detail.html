@@ -5,56 +5,58 @@
 {% block content-header %} Chi tiết bài tập chưa duyệt {% endblock %}
 
 {% block css_admin %}
-    <link href="{% static 'elearning_system/exercise/css/bootstrap.css' %}" rel="stylesheet"/>
-    <link href="{% static 'elearning_system/moderator/css/exUnapproveDetail.css' %}" rel="stylesheet"/>
-    <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css"
-          media="all"/>
-    <link href="{% static 'elearning_system/exercise/css/jquery.numberedtextarea.css' %}" rel="stylesheet"
-          type="text/css"
-          media="all"/>
+ <link href="{% static 'elearning_system/moderator/css/exUnapproveDetail.css' %}" rel="stylesheet"/>
 {% endblock %}
-
 
 {% block main_admin %}
 
-    <div class="container" style="padding-top: 0px;">
+    <div class="">
         <div class="row">
-            <div class="col-md-4">
-                 <h4>{{ exercise_name }}</h4>
-            </div>
             <div class="col-md-6">
-                <h4>Contributer solution</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 excercise-section text-justify scrollable">
-                <div class="panel panel-primary">
-                    <div id="exercise-test-case-header" class="text-danger panel-heading">
-                        <b>Exercise content:</b>
-                    </div>
-                    <div id="exUnapprove_content" class="pre-scrollable panel-body">
-                        {{ exercise_content }}
-                    </div>
+                <div class="wrapper_header">
+                    <h4>{{ exercise_name }}</h4>
                 </div>
 
-                <div id="" class="test-case-exUnapprove panel panel-primary">
-                    <div id="exercise-test-case-header" class="text-danger panel-heading">
-                        <b>Test case example:</b>
+                <div class="wrapper_content">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <b>Exercise content:</b>
+                        </div>
+                        <div id="exUnapprove_content" class="pre-scrollable panel-body">
+                            {{ exercise_content }}
+                        </div>
                     </div>
-                    <div id="exUnapprove_testCase" class="pre-scrollable panel-body">
-                        {% for test_case in exercise_testcase %}
-                            <p>{{ test_case }}</p>
-                        {% endfor %}
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <b>Test case example:</b>
+                        </div>
+                        <div id="exUnapprove_content" class="pre-scrollable panel-body">
+                            test case
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 code-editor-field">
-                <div id="code-editor-body" class="row">
-                    <input type="hidden" id="exercise-id" value="123">
-                    <textarea cols="80" rows="25" class="form-control" spellcheck="false" id="code-editor-exUnaprove"
-                              style="color: #1b6d85"> {{ exercise_solution }} </textarea>
+            <div class="col-md-6">
+                <div class="wrapper_header">
+                    <h4>Contributer solution</h4>
                 </div>
-                <div class="row" style="margin-top: 10px;">
+                <div class="wrapper_content">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <b>Solution</b>
+                        </div>
+                        <div class="pre-scrollable panel-body">
+                            <textarea cols="80" rows="30" class="form-control" spellcheck="false"
+                                      style="color: #1b6d85"> {{ exercise_solution }} </textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
                     <div class="col-md-12">
                         <label>Chủ đề:</label>
                         <select class="form-control" id="exercise_topic"
@@ -66,22 +68,10 @@
                         </select>
                     </div>
 
-{#                    <div class="col-md-6">#}
-{#                        <label for="code-language" style="">Language:</label>#}
-{#                        <select class="form-control" id="" style="">#}
-{#                            <option>Java</option>#}
-{#                            <option>C</option>#}
-{#                            <option>Javascript</option>#}
-{#                            <option>Pascal</option>#}
-{#                        </select>#}
-{#                    </div>#}
-
-
                 </div>
                 <div id="code-editor-footer">
                     <div class="form-group col-md-8 select-language-input form-inline">
                         {% csrf_token %}
-
                         <button type="button" class="btn " style="float: right;">
                             <a href="cancel_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}">
                                 Hủy
@@ -89,15 +79,13 @@
                         </button>
                         <button class="btn btn-primary " style="float: right;margin-right: 10px;"
                                 onclick="approve_ex({{ moderator_id }},{{ exercise_id }})">
-{#                        <a href="upprove_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}"#}
-{#                           type="button" class="btn btn-primary " style="float: right;margin-right: 10px;">#}
                             Duyệt
-{#                        </a>#}
                         </button>
                     </div>
 
 
                 </div>
+
             </div>
         </div>
     </div>

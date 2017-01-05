@@ -183,6 +183,7 @@ def detail_exUnapprove(request):
         'exercise_content': exercise_plugin_respone.content,
         'exercise_testcase': 'test case list',
         'exercise_solution': exercise_plugin_respone.solution,
+        'exercise_language': exercise_plugin_respone.language,
         'moderator_id': moderator.id,
         'tagList': tag_dict
     }

@@ -238,13 +238,13 @@ def sort_by_option(page_compare_option, page_exercise_option, page_name, page_nu
         else:
             date_joined = exercise_list[start_index + i].date_created
             formatted_datetime = formats.date_format(date_joined, "d-m-Y H:i")
-            exercise_data_from_plugin = plugin_services.exercise_detail(exercise_list[start_index+i])
+            exercise_data_from_plugin = plugin_services.exercise_detail(exercise_list[start_index+i].id)
             if exercise_data_from_plugin['status'] != 'success':
                 continue
             exercise_info = {
                 'id': exercise_list[start_index + i].id,
-                'name': exercise_data_from_plugin['name'],
-                'description': exercise_data_from_plugin['description'],
+                'name': exercise_data_from_plugin['exercise']['name'],
+                'description': exercise_data_from_plugin['exercise']['description'],
                 'date_created': str(formatted_datetime),
                 'contributor': exercise_list[start_index + i].contributor.user_name,
                 'view': exercise_list[start_index + i].view_number,

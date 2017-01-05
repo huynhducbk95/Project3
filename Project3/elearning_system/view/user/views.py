@@ -7,7 +7,6 @@ from elearning_system.models import User, Role
 
 
 def index(request):
-
     top_new_list = database_services.get_lastest_exercise_list()
     top_view_exercise_list = database_services.get_top_view_exercise_list()
     tag_list = database_services.get_tag_list()
@@ -140,16 +139,26 @@ def login(request):
         is_valid = False
         for user in user_list:
             if user.user_name == user_name and user.password == password:
+                is_block = False
+                if user.block_status == 'Block':
+                    is_block = True
                 is_valid = True
                 break
         if is_valid:
-            if 'user_name' in request.session:
-                del request.session['user_name']
-            request.session['user_name'] = user_name
-            if 'next_page' in request.GET:
-                next_page = request.GET['next_page']
-                return redirect(to=next_page)
-            return redirect(to=index)
+            if is_block:
+                result = {
+                    'result': 'error',
+                    'message': 'This account was blocked'
+                }
+                return render(request, 'elearning_system/user/login.html', result)
+            else:
+                if 'user_name' in request.session:
+                    del request.session['user_name']
+                request.session['user_name'] = user_name
+                if 'next_page' in request.GET:
+                    next_page = request.GET['next_page']
+                    return redirect(to=next_page)
+                return redirect(to=index)
         else:
             result = {
                 'result': 'error',

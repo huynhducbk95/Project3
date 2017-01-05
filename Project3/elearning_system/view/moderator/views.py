@@ -67,6 +67,7 @@ def messageDetail(request):
             'title': errorMessage.title,
             'content': errorMessage.content,
         }
+        errorMessage.delete()
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/messageDetail.html', result)
 
@@ -202,10 +203,13 @@ def upprove_exercise_status(request):
         exercise.tag = tag
         exercise.contributor.contribute_number += 1
         exercise.save()
+        result_from_plugin = plugin_api.get_exercise_plugin_detail(exercise_id)
+        if (result_from_plugin['status'] == 'success'):
+            exercise_plugin_respone = result_from_plugin['plugin_exercise']
         result = {
             'result': 'successful',
             'moderator_name': moderator.user_name,
-            'exercise_name': 'exercise name',
+            'exercise_name': exercise_plugin_respone.name,
         }
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/upprove_exercise_status.html', result)
@@ -219,6 +223,7 @@ def cancel_exercise_status(request):
         exercise = ExerciseWebServer.objects.get(pk=int(exercise_id))
         moderator = User.objects.get(pk=int(moderator_id))
         # request to delete exercise at plugin here ...
+        plugin_api.remove_exercise_plugin(exercise_id)
         #
         exercise.delete()
         result = {

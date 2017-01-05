@@ -80,6 +80,7 @@ def quick_search(request):
             if database_services.check_exercise_is_approved(exercise['id']) == False:
                 continue
             exercise_info = {
+                'id':exercise['id'],
                 'name': exercise['name'],
                 'description': exercise['description']
             }

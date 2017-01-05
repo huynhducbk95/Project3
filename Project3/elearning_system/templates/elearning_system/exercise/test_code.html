@@ -82,10 +82,10 @@
                             </label>
                         </h5>
                         <select class="form-control col-xs-6" id="code-language">
-                            <option value="text/x-pascal">Pascal</option>
                             <option selected value="text/x-java">Java</option>
-                            <option value="text/x-c++src">C++</option>
                             <option value="text/x-python">Python2</option>
+                            <option value="text/x-c++src">C++</option>
+                            <option value="text/x-pascal">Pascal</option>
                             <option value="text/javascript">Javascript</option>
                         </select>
                     </div>
@@ -93,12 +93,7 @@
                 <div id="code-editor-body" class="row">
                     <input type="hidden" id="exercise-id" value="123">
                     <textarea cols="80" rows="20" class="form-control" spellcheck="false" id="code-editor">
-class HelloWorldApp {
-    public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
-    }
-}
-                </textarea>
+                    </textarea>
                 </div>
                 <div id="code-editor-footer" class="row">
                     <div class="form-group col-md-7 form-inline" style="padding-right: 5px;">
@@ -270,9 +265,9 @@ class HelloWorldApp {
                             var language_list = {};
                             language_list['text/x-pascal'] = 'pascal';
                             language_list['text/x-java'] = 'java';
-                            language_list['text/x-c++src'] = 'c_plus_plus';
+                            language_list['text/x-c++src'] = 'cpp';
                             language_list['text/x-python'] = 'python';
-                            language_list['text/javascript'] = 'javascript';
+                            language_list['text/javascript'] = 'js';
                             var code_language = language_list[code_language_meta];
                             //send data to server
                             var submit_url = $("#btn-test-code-submit").data('submit-url');
@@ -343,7 +338,8 @@ class HelloWorldApp {
                                 setTimeout(function () {
                                     enable_editor();
                                 }, 2000);
-                            });;
+                            });
+                            ;
                         }
                         setTimeout(function () {
                             $('#btn-test-code-submit').prop("disabled", false);

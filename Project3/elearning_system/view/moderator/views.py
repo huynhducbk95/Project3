@@ -4,7 +4,7 @@ from elearning_system.models import ExerciseWebServer, User, ErrorMessage
 from elearning_system.central_control import check_role, render_template, check_user_is_login
 from django.http import HttpResponse
 import json
-import plugin_api
+from elearning_system.view.moderator import  plugin_api
 import elearning_system.view.moderator.databaseService as db
 
 @check_role('moderator')
@@ -93,7 +93,7 @@ def exApproved(request):
                     'contributor': ex.contributor.user_name
                 })
             else :
-                print "Can't get exercise detail"
+                print("Can't get exercise detail")
 
     result = {
         'exApproved': dict_exApproved,
@@ -120,7 +120,7 @@ def exUnapprove(request):
                     'contributor': ex.contributor.user_name
                 })
             else:
-                print "Can't get exercise detail"
+                print("Can't get exercise detail")
     result = {
         'exUnapprove': dict_exUnApproved,
     }
@@ -145,7 +145,7 @@ def exNoTopic(request):
                     'contributor': exercise.contributor.user_name,
                 })
             else:
-                print "Can't get exercise detail"
+                print("Can't get exercise detail")
 
     tags = Tag.objects.all()
     tag_list = []
@@ -172,7 +172,7 @@ def detail_exUnapprove(request):
     if (result_from_plugin['status'] == 'success'):
         exercise_plugin_respone = result_from_plugin['plugin_exercise']
     else:
-        print "Can't get exercise detail"
+        print("Can't get exercise detail")
 
     tag_dict = []
     for tag in Tag.objects.all():

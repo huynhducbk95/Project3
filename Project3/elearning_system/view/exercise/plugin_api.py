@@ -2,7 +2,7 @@ import requests
 # import json
 from requests.adapters import ConnectionError
 import datetime
-from process_models import PluginExercise, TestCase
+from elearning_system.view.exercise.process_models import PluginExercise, TestCase
 
 MAX_URI_LEN = 8192
 USER_AGENT = 'exercise_web_server'
@@ -194,7 +194,7 @@ def solve_exercise(exercise_id,solution):
     try:
         endpoint = u'http://' + PLUGIN_IP + '/plugin/solve'
         api_body = {
-            'exid':14,
+            'exid':exercise_id,
             'language': solution.solution_language,
             'sourceCode': solution.solution_code,
         }
@@ -204,17 +204,24 @@ def solve_exercise(exercise_id,solution):
     try:
         response = requests.post(endpoint, json=api_body)
         data = response.json()
-        if data['status'] == 'success':
+        if data['solveStatus'] == 'success':
+            test_case_result_list = []
+            for test_case in data['result']:
+                if test_case == 'pass':
+                    test_case_result_list.append('p')
+                elif test_case == 'fail':
+                    test_case_result_list.append('f')
+
             return {
-                'status': 'success', 'message': 'Add exercise to plugin successful',
-                'exercise_plugin_id': data['exid']
+                'status': 'success', 'message': 'Solve exercise successful',
+                'test_case_result': test_case_result_list
             }
         else:
             return {
-                'status': 'failed', 'message': 'Failed to add exercise',
+                'status': 'failed', 'message': 'Failed to solve Exercise. '+data['message'],
             }
     except Exception:
-        return {'status': 'failed', 'message': 'Failed to add exercise. Try again later'}
+        return {'status': 'failed', 'message': 'Failed to solve Exercise. Try again later'}
 
 
 def update_exercise(plugin_exercise_id,plugin_exercise):

@@ -197,6 +197,8 @@ def get_exercise_list_info(exercise_list_plugin_response, search_option):
         exercise_list = ExerciseWebServer.objects.all().order_by('-date_created')
     exercise_info_list = []
     for exercise in exercise_list:
+        if exercise.approver == None:
+            continue
         if exercise.id in id_list:
             for ex_plugin in exercise_list_plugin_response:
                 if ex_plugin['id'] == exercise.id:
@@ -205,6 +207,7 @@ def get_exercise_list_info(exercise_list_plugin_response, search_option):
             date_joined = exercise.date_created
             formatted_datetime = formats.date_format(date_joined, "d-m-Y H:i")
             exercise_info = {
+                'id':exercise.id,
                 'name': exercise_plugin['name'],
                 'description': exercise_plugin['description'],
                 'date_created': formatted_datetime,
@@ -235,11 +238,13 @@ def sort_by_option(page_compare_option, page_exercise_option, page_name, page_nu
         else:
             date_joined = exercise_list[start_index + i].date_created
             formatted_datetime = formats.date_format(date_joined, "d-m-Y H:i")
-            exercise_data_from_plugin = plugin_services.exercise_detail(exercise_list[start_index+i])
+            exercise_data_from_plugin = plugin_services.exercise_detail(exercise_list[start_index+i].id)
+            if exercise_data_from_plugin['status'] != 'success':
+                continue
             exercise_info = {
                 'id': exercise_list[start_index + i].id,
-                'name': exercise_data_from_plugin['name'],
-                'description': exercise_data_from_plugin['description'],
+                'name': exercise_data_from_plugin['exercise']['name'],
+                'description': exercise_data_from_plugin['exercise']['description'],
                 'date_created': str(formatted_datetime),
                 'contributor': exercise_list[start_index + i].contributor.user_name,
                 'view': exercise_list[start_index + i].view_number,

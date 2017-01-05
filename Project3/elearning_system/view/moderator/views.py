@@ -4,9 +4,8 @@ from elearning_system.models import ExerciseWebServer, User, ErrorMessage
 from elearning_system.central_control import check_role, render_template, check_user_is_login
 from django.http import HttpResponse
 import json
-import databaseService as db
 import plugin_api
-
+import elearning_system.view.moderator.databaseService as db
 
 @check_role('moderator')
 def errorMessage(request):

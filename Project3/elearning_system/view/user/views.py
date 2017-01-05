@@ -7,19 +7,6 @@ from elearning_system.models import User, Role
 
 
 def index(request):
-    # admin = Role(role_name='admin')
-    # mod = Role(role_name='moderator')
-    # user = Role(role_name='user')
-    # admin.save()
-    # mod.save()
-    # user.save()
-    # admin = Role.objects.get(role_name='admin')
-    # admin.user_list.add(User.objects.get(user_name='admin'))
-    # admin.save()
-    # mod = Role.objects.get(role_name='moderator')
-    # mod.user_list.add(User.objects.get(user_name='moderator'))
-    # mod.save()
-
     top_new_list = database_services.get_lastest_exercise_list()
     top_view_exercise_list = database_services.get_top_view_exercise_list()
     tag_list = database_services.get_tag_list()
@@ -90,6 +77,8 @@ def quick_search(request):
         exercise_list_result = []
         exercise_list = response['exercise_list']
         for exercise in exercise_list:
+            if database_services.check_exercise_is_approved(exercise['id']) == False:
+                continue
             exercise_info = {
                 'name': exercise['name'],
                 'description': exercise['description']
@@ -152,16 +141,26 @@ def login(request):
         is_valid = False
         for user in user_list:
             if user.user_name == user_name and user.password == password:
+                is_block = False
+                if user.block_status == 'Block':
+                    is_block = True
                 is_valid = True
                 break
         if is_valid:
-            if 'user_name' in request.session:
-                del request.session['user_name']
-            request.session['user_name'] = user_name
-            if 'next_page' in request.GET:
-                next_page = request.GET['next_page']
-                return redirect(to=next_page)
-            return redirect(to=index)
+            if is_block:
+                result = {
+                    'result': 'error',
+                    'message': 'This account was blocked'
+                }
+                return render(request, 'elearning_system/user/login.html', result)
+            else:
+                if 'user_name' in request.session:
+                    del request.session['user_name']
+                request.session['user_name'] = user_name
+                if 'next_page' in request.GET:
+                    next_page = request.GET['next_page']
+                    return redirect(to=next_page)
+                return redirect(to=index)
         else:
             result = {
                 'result': 'error',

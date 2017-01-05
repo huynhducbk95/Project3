@@ -5,7 +5,7 @@ import json
 from elearning_system.central_control import check_role, render_template, check_user_is_login
 
 from elearning_system.models import User,Tag,Role
-import admin_databaseService as db
+import elearning_system.view.admin.admin_databaseService as db
 
 @check_role('admin')
 def manageTopic(request):
@@ -98,7 +98,6 @@ def manageUser(request):
         #             block_status=block_status)
         # user.save()
         user = db.create_user(user_name,full_name,password,email_address,block_status)
-        print user
         user_temp = {'STT': user.id, 'userName': user.user_name,'fullname': user.full_name, 'email': user.email_address,
                      'status': user.block_status, 'posted': user.contribute_number, 'resolved': user.solve_number}
         user_dict.append(user_temp)
@@ -176,10 +175,14 @@ def delete_moderator(request):
     context = {}
     if request.method == "GET":
         moderator_id = request.GET.get('moderator_id',None)
-        moderator = db.get_moderator(moderator_id)
+        role_moderator = Role.objects.get(role_name='moderator')
+        user = User.objects.get(pk=int(moderator_id))
+        role_moderator.user_list.remove(user)
+        role_moderator.save()
+        # moderator = db.get_moderator(moderator_id)
         # moderator_role_list = db.get_moderator_list()
         # moderator_role_list.remove(moderator)
-        moderator.delete()
+        # moderator.delete()
         context['status'] = 'success'
         return HttpResponse(json.dumps(context), content_type='application/json')
 

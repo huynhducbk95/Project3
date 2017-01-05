@@ -93,12 +93,7 @@
                 <div id="code-editor-body" class="row">
                     <input type="hidden" id="exercise-id" value="123">
                     <textarea cols="80" rows="20" class="form-control" spellcheck="false" id="code-editor">
-class HelloWorldApp {
-    public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
-    }
-}
-                </textarea>
+                    </textarea>
                 </div>
                 <div id="code-editor-footer" class="row">
                     <div class="form-group col-md-7 form-inline" style="padding-right: 5px;">
@@ -343,7 +338,8 @@ class HelloWorldApp {
                                 setTimeout(function () {
                                     enable_editor();
                                 }, 2000);
-                            });;
+                            });
+                            ;
                         }
                         setTimeout(function () {
                             $('#btn-test-code-submit').prop("disabled", false);

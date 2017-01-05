@@ -205,9 +205,16 @@ def solve_exercise(exercise_id,solution):
         response = requests.post(endpoint, json=api_body)
         data = response.json()
         if data['solveStatus'] == 'success':
+            test_case_result_list = []
+            for test_case in data['result']:
+                if test_case == 'pass':
+                    test_case_result_list.append('p')
+                elif test_case == 'fail':
+                    test_case_result_list.append('f')
+
             return {
                 'status': 'success', 'message': 'Solve exercise successful',
-                'result': data['result']
+                'test_case_result': test_case_result_list
             }
         else:
             return {

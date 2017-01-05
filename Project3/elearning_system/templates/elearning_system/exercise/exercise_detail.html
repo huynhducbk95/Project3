@@ -32,7 +32,7 @@
             <h4 class="text-info"><strong>Content</strong></h4>
             <div class="exercise-content pre-scrollable">
                 <div id="exercise-content">
-                    {{exercise_detail.content|linebreaksbr}}
+                    {{ exercise_detail.content|linebreaksbr }}
                 </div>
             </div>
             <div id="exercise-test-case">
@@ -133,8 +133,9 @@
                     </button>
                 </div>
             </div>
-            <div class="row" id="submit-result-info">
-
+            <div class="row" id="submit-result-info"
+                 data-test-case-image-fail="{% static 'elearning_system/exercise/images/test_case_fail.png' %}"
+                 data-test-case-image-pass="{% static 'elearning_system/exercise/images/test_case_pass.png' %}">
             </div>
         </div>
     </div>
@@ -349,7 +350,7 @@
                     $("#popup-message-body").html();
                 }
 
-            }, 3000);
+            }, 5000);
         };
 
         var disable_editor = function () {
@@ -433,14 +434,50 @@
                                         submit_info_wait_result.fadeOut('slow');
                                         setTimeout(function () {
                                             if (status == 'success') {
+                                                console.log(data)
                                                 if (data.status == 'success') {
-                                                    alert_message('success', "You are solved this exercise!");
+                                                    if (data.is_solved == 'true') {
+                                                        alert_message('success', "Congratulations! You solved this exercise!");
+                                                    } else {
+                                                        alert_message('error', data.message);
+                                                    }
+                                                    //show test case list
+                                                    var test_code_result = $(
+                                                            '<div>' +
+                                                            '<h4 class="text-primary">' +
+                                                            '<strong>Solve exercise result:</strong>' +
+                                                            '</h4>' +
+                                                            '</div>');
+                                                    var fail_img_src = submit_info_element.data('test-case-image-fail');
+                                                    var pass_img_src = submit_info_element.data('test-case-image-pass');
+                                                    for (var i = 0; i < data.test_case_list.length; i++) {
+                                                        var test_case = $('<img></img>');
+                                                        var test_case_result = '';
+                                                        test_case.attr('data-index', i + 1);
+                                                        test_case.attr('class', 'test-case-img');
+                                                        test_case_status = data.test_case_list[i];
+                                                        if (test_case_status == 'p') {
+                                                            test_case.attr('src', pass_img_src);
+                                                            test_case_result = 'passed';
+                                                        } else if (test_case_status == 'f') {
+                                                            test_case.attr('src', fail_img_src);
+                                                            test_case_result = 'failed';
+                                                        }
+                                                        var test_case_info = 'Test case ' + (i + 1).toString() + ': ' +
+                                                                test_case_result;
+                                                        test_case.tooltip({title: test_case_info, placement: "top"});
+                                                        test_case.appendTo(test_code_result);
+                                                    }
+                                                    test_code_result.hide();
+                                                    test_code_result
+                                                            .appendTo(submit_info_element)
+                                                            .fadeIn();
                                                     //show test case list
                                                 } else if (data.status == 'failed') {
                                                     alert_message('error', data.message);
                                                 }
                                             } else {
-                                                alert_message('success', "solve exercise process failed!");
+                                                alert_message('error', "solve exercise process failed!");
                                             }
                                         }, 1500);
                                         setTimeout(function () {
@@ -568,8 +605,8 @@
                         csrfmiddlewaretoken: '{{ csrf_token }}',
                         exercise_id: exercise_id,
                         name: name,
-                        description:description,
-                        content:content
+                        description: description,
+                        content: content
                     },
                     function (data, status) {
                         setTimeout(function () {

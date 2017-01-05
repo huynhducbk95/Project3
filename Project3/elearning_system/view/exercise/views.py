@@ -197,11 +197,11 @@ def solve_exercise(request):
                 Solution(solution_code=solution_code, solution_language=language)
             )
             if exercise_solve_result['status'] == 'success':
-                test_case_result_list = exercise_solve_result['result']
+                test_case_result_list = exercise_solve_result['test_case_result']
                 total_test_case = len(test_case_result_list)
                 total_test_case_pass = 0
                 for test_case_result in test_case_result_list:
-                    if test_case_result == 'pass':
+                    if test_case_result == 'p':
                         total_test_case_pass += 1
                 if total_test_case == total_test_case_pass:
                     exercise_solved = ExerciseWebServer.objects.filter(id=exercise_id).first()
@@ -209,7 +209,10 @@ def solve_exercise(request):
                     user_solver = User.objects.filter(user_name=request.session['user_name']).first()
                     if _check_user_is_in_user_solved_list(user_solver.id, user_solved_list) is False:
                         exercise_solved.user_solved_list.add(user_solver)
+                        exercise_solved.solve_number+=1
                         exercise_solved.save()
+                        user_solver.solve_number+=1
+                        user_solver.save()
                     return_result = {'status': 'success', 'is_solved': 'true',
                                      'message': 'You solve this exercise successful',
                                      'test_case_list': test_case_result_list}

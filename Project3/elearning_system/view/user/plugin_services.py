@@ -7,7 +7,6 @@ PLUGIN_URL = 'http://45.63.50.197/plugin/'
 def exercise_detail(exercise_id):
     try:
         response = requests.get(url=PLUGIN_URL + 'detail?exid=' + str(exercise_id))
-        # response_data = json.loads(response.content)
         response_data = response.json()
         if response_data['status'] == 'fail':
             result = {
@@ -23,6 +22,7 @@ def exercise_detail(exercise_id):
             'status': 'error_request'
         }
     return result
+
 def search_exercise(search_keyword):
     try:
         response = requests.get(url=PLUGIN_URL + 'search?keyword=' + search_keyword)
@@ -41,12 +41,6 @@ def search_exercise(search_keyword):
             'status': 'error_request',
         }
     return result
-    # result = {
-    #     'status':'yes',
-    #     'exercise_list':[{"id":3,"name":"java programming language","description":"balsl","content":"ahaha"},
-    #                      {"id":2,"name":"test code","description":"multiple java programming thread","content":"nothing"}]
-    # }
-    # return result
 
 def remove_exercise(exercise_id):
     try:

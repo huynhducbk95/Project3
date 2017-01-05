@@ -77,6 +77,8 @@ def quick_search(request):
         exercise_list_result = []
         exercise_list = response['exercise_list']
         for exercise in exercise_list:
+            if database_services.check_exercise_is_approved(exercise['id']) == False:
+                continue
             exercise_info = {
                 'name': exercise['name'],
                 'description': exercise['description']

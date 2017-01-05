@@ -82,18 +82,18 @@
             </form>
             {% if not user_name %}
                 <ul class="nav navbar-nav navbar-right" id="form_login_logout" style="padding-right: 15px">
-                    <li><a href="registry"><span
+                    <li><a href="{% url 'registry' %}"><span
                             class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                    <li><a href="login"><span
+                    <li><a href="{% url 'login' %}"><span
                             class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             {% else %}
                 <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
                     {% for role in role_list %}
                         {% if role == 'moderator' %}
-                            <li><a href="moderator/errorMessage"> Moderator</a></li>
+                            <li><a href="{% url 'errorMessage' %}"> Moderator</a></li>
                         {% elif role == 'admin' %}
-                            <li><a href="admin/manageTopic"> Admin</a></li>
+                            <li><a href="{% url 'manageTopic' %}"> Admin</a></li>
                         {% endif %}
                     {% endfor %}
                     <li><a href="user_infor?user_name={{ user_name }}"><span

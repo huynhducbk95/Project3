@@ -30,8 +30,6 @@ def get_top_view_exercise_list():
 
 def get_lastest_exercise_list():
     exercise_list = ExerciseWebServer.objects.all().order_by('-date_created')
-    for ex in exercise_list:
-        exx = ex
     count = 1
     top_last_exercise_list = []
     for exercise in exercise_list:
@@ -72,11 +70,14 @@ def get_exercise_by_tag(tag_id):
     exercises = tag_db.exercisewebserver_set.all().order_by('-date_created')
     exercise_list = []
     for exercise in exercises:
+        if exercise.approver == None:
+            continue
         date_joined = exercise.date_created
         formatted_datetime = formats.date_format(date_joined, "d-m-Y H:i")
         response = plugin_services.exercise_detail(exercise.id)
         if response['status'] == 'success':
             exercise_info = {
+                'id':exercise.id,
                 'name': response['exercise']['name'],
                 'description': response['exercise']['description'],
                 'date_created': formatted_datetime,
@@ -172,6 +173,16 @@ def change_password_user(user_name, password):
     user.save()
 
 
+def check_exercise_is_approved(exercise_id):
+    try:
+        exercise = ExerciseWebServer.objects.get(pk=exercise_id)
+        if exercise.approver == None:
+            return False
+        return True
+    except Exception as e:
+        return False
+
+
 def get_exercise_list_info(exercise_list_plugin_response, search_option):
     id_list = []
     for exercise in exercise_list_plugin_response:
@@ -224,9 +235,11 @@ def sort_by_option(page_compare_option, page_exercise_option, page_name, page_nu
         else:
             date_joined = exercise_list[start_index + i].date_created
             formatted_datetime = formats.date_format(date_joined, "d-m-Y H:i")
+            exercise_data_from_plugin = plugin_services.exercise_detail(exercise_list[start_index+i])
             exercise_info = {
-                'name': 'exercise',
-                'description': 'description for exercise ',
+                'id': exercise_list[start_index + i].id,
+                'name': exercise_data_from_plugin['name'],
+                'description': exercise_data_from_plugin['description'],
                 'date_created': str(formatted_datetime),
                 'contributor': exercise_list[start_index + i].contributor.user_name,
                 'view': exercise_list[start_index + i].view_number,

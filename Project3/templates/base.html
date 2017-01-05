@@ -97,7 +97,7 @@
                             <li><a href="{% url 'manageTopic' %}"> Admin</a></li>
                         {% endif %}
                     {% endfor %}
-                    <li><a href="user_infor?user_name={{ user_name }}"><span
+                    <li><a href="{% url 'user_infor' %}?user_name={{ user_name }}"><span
                             class="glyphicon glyphicon-user"></span> Hi, {{ user_name }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>

@@ -19,8 +19,9 @@ function doDelayedSearch(val) {
 function doSearch(value) {
     $('#typeahead_search').empty();
     $('#typeahead_search').css('display', 'none');
+    var quick_search_url = $('#test_test').data('quicksearch');
     if (value.length > 0) {
-        $.get('quick_search?keyword=' + value, function (data) {
+        $.get(quick_search_url+'?keyword=' + value, function (data) {
             console.log(data);
             exercise_list = data['exercise_list'];
             var count = 0;
@@ -31,6 +32,7 @@ function doSearch(value) {
                     var a = document.createElement('a');
                     $(a).css('color', 'black');
                     $(a).css('cursor', 'pointer');
+                    $(a).attr('href',"/exercise/exercise_detail/"+exercise_list[i]['id']);
                     var h4 = document.createElement('h4');
                     var ex_name = document.createTextNode(exercise_list[i]['name']);
                     h4.appendChild(ex_name);

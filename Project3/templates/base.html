@@ -68,7 +68,8 @@
                     </div>
                     <div class="input-group-btn">
                         <div class="btn-group" role="group">
-                            <input id="test_test" type="text" name="search" aria-haspopup="true" aria-expanded="false"
+                            <input id="test_test" data-quicksearch = '{% url 'quick_search' %}'
+                            type="text" name="search" aria-haspopup="true" aria-expanded="false"
                                    class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Search"
                                    style="width: 150px" onkeyup="doDelayedSearch(this.value)">
                             <ul class="dropdown-menu" id="typeahead_search" style="display:none;">

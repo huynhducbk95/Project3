@@ -9,7 +9,7 @@ from elearning_system.view.exercise import plugin_api
 from elearning_system.view.exercise.process_models import TestCase, CheckCodeData, Solution, PluginExercise, \
     ExerciseDetailViewModel
 from elearning_system.models import User, ErrorMessage, ExerciseWebServer
-from database_service import DatabaseService
+from elearning_system.view.exercise.database_service import DatabaseService
 
 
 def check_test_case_list_is_pass(test_case_result_list):

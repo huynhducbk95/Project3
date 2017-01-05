@@ -195,30 +195,6 @@ def cancel_exercise_status(request):
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/cancel_exercise_status.html', result)
 
-@check_role('moderator')
-def edit_exercise(request):
-    user_name = request.session['user_name']
-    moderator = User.objects.get(user_name=user_name)
-    exapproveID = request.GET.get('exApproved_id', None)
-    exapprove = ExerciseWebServer.objects.get(pk=exapproveID)
-    tag_list = []
-    for tag in Tag.objects.all():
-        tag_list.append({
-            'id': tag.id,
-            'tag_name': tag.tag_name
-        })
-    result = {
-        'id': exapprove.id,
-        'exercise_name': 'exercise_name',
-        'exercise_content': 'content of exercise has id ' + str(exapprove.id),
-        'exercise_testcase': ['testcase 1 of exercise', 'testcase 2 of exercise', 'testcase 3 of exercise',
-                              'testcase 4 of exercise'],
-        'moderator_id': moderator.id,
-        'tag_list': tag_list,
-    }
-    infor_menu_moderator(result, request)
-    return render_template(request, 'elearning_system/moderator/Exercise_Approved_Detail.html', result)
-
 def add_tag(request):
     if request.method == 'POST':
         tag_id = request.POST.get('tag_id', None)

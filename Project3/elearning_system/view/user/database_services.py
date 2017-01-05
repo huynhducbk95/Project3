@@ -10,6 +10,8 @@ def get_top_view_exercise_list():
     for exercise in exercise_list:
         if count == 18:
             break
+        elif exercise.approver == None:
+            continue
         else:
             response = plugin_services.exercise_detail(exercise.id)
             if response['status'] == 'success':
@@ -28,11 +30,15 @@ def get_top_view_exercise_list():
 
 def get_lastest_exercise_list():
     exercise_list = ExerciseWebServer.objects.all().order_by('-date_created')
+    for ex in exercise_list:
+        exx = ex
     count = 1
     top_last_exercise_list = []
     for exercise in exercise_list:
         if count == 18:
             break
+        elif exercise.approver == None:
+            continue
         else:
             response = plugin_services.exercise_detail(exercise.id)
             if response['status'] == 'success':
@@ -139,11 +145,12 @@ def add_new_user(user_name, password, email, full_name):
                     block_status=block_status)
 
         user.save()
-        role_user = Role.objects.get(pk=3)
+        role_user = Role.objects.get(role_name='user')
         role_user.user_list.add(user)
         result = {
             'result': 'success'
         }
+        role_user.save()
     except Exception:
         result = {
             'result': 'error'

@@ -168,7 +168,7 @@ def detail_exUnapprove(request):
     moderator = User.objects.get(user_name=user_name)
     exUnapproveID = request.GET.get('exid', None)
 
-    result_from_plugin = plugin_api.get_exercise_plugin_detail(exUnapproveID)
+    result_from_plugin = plugin_api.get_exercise_plugin_detail(int(exUnapproveID))
     if (result_from_plugin['status'] == 'success'):
         exercise_plugin_respone = result_from_plugin['plugin_exercise']
     else:

@@ -48,38 +48,38 @@
                             <b>Solution</b>
                         </div>
                         <div class="pre-scrollable panel-body">
-                            <textarea cols="80" rows="30" class="form-control" spellcheck="false"
-                                      style="color: #1b6d85"> {{ exercise_solution }} </textarea>
+{#                            <textarea cols="80" rows="30" class="form-control" spellcheck="false"#}
+{#                                      style="color: #1b6d85"> {{ exercise_solution }} </textarea>#}
                         </div>
                     </div>
                 </div>
 
-                <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
-                    <div class="col-md-12">
-                        <label>Chủ đề:</label>
-                        <select class="form-control" id="exercise_topic"
-                                style="">
-                            <option value="" disabled selected hidden>--Select topic--</option>
-                            {% for tag in tagList %}
-                                <option value={{ tag.id }}>{{ tag.tag_name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-                <div id="code-editor-footer">
-                    <div class="form-group col-md-8 select-language-input form-inline">
-                        {% csrf_token %}
-                        <button type="button" class="btn " style="float: right;">
-                            <a href="cancel_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}">
-                                Hủy
-                            </a>
-                        </button>
-                        <button class="btn btn-primary " style="float: right;margin-right: 10px;"
-                                onclick="approve_ex({{ moderator_id }},{{ exercise_id }})">
-                            Duyệt
-                        </button>
-                    </div>
-                </div>
+{#                <div class="row" style="margin-top: 10px; margin-bottom: 10px;">#}
+{#                    <div class="col-md-12">#}
+{#                        <label>Chủ đề:</label>#}
+{#                        <select class="form-control" id="exercise_topic"#}
+{#                                style="">#}
+{#                            <option value="" disabled selected hidden>--Select topic--</option>#}
+{#                            {% for tag in tagList %}#}
+{#                                <option value={{ tag.id }}>{{ tag.tag_name }}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div id="code-editor-footer">#}
+{#                    <div class="form-group col-md-8 select-language-input form-inline">#}
+{#                        {% csrf_token %}#}
+{#                        <button type="button" class="btn " style="float: right;">#}
+{#                            <a href="cancel_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}">#}
+{#                                Hủy#}
+{#                            </a>#}
+{#                        </button>#}
+{#                        <button class="btn btn-primary " style="float: right;margin-right: 10px;"#}
+{#                                onclick="approve_ex({{ moderator_id }},{{ exercise_id }})">#}
+{#                            Duyệt#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
 
             </div>
         </div>

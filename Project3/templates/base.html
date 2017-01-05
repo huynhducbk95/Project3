@@ -36,7 +36,7 @@
 
     <nav class="navbar navbar-dark bg-primary custom_navbar navbar-fixed-top">
         <div class="container-fluid row" id="top_menu_elearning">
-            <div class="navbar-header" style="padding-left: 7px">
+            <div class="navbar-header" style="padding-left: 7px;">
                 <a class="navbar-brand" href="{% url 'index' %}" id="logo_base_expert">Coding School</a>
             </div>
             <ul class="nav navbar-nav">
@@ -97,7 +97,7 @@
                             <li><a href="{% url 'manageTopic' %}"> Admin</a></li>
                         {% endif %}
                     {% endfor %}
-                    <li><a href="user_infor?user_name={{ user_name }}"><span
+                    <li><a href="{% url 'user_infor' %}?user_name={{ user_name }}"><span
                             class="glyphicon glyphicon-user"></span> Hi, {{ user_name }}</a></li>
                     <li><a href="{% url 'logout' %}"><span
                             class="glyphicon glyphicon-log-out"></span> Logout</a></li>

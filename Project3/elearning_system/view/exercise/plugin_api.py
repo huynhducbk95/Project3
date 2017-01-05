@@ -2,7 +2,7 @@ import requests
 # import json
 from requests.adapters import ConnectionError
 import datetime
-from process_models import PluginExercise, TestCase
+from elearning_system.view.exercise.process_models import PluginExercise, TestCase
 
 MAX_URI_LEN = 8192
 USER_AGENT = 'exercise_web_server'

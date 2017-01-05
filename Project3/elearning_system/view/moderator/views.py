@@ -5,6 +5,8 @@ from elearning_system.central_control import check_role, render_template, check_
 from django.http import HttpResponse
 import json
 import databaseService as db
+import plugin_api
+
 
 @check_role('moderator')
 def errorMessage(request):
@@ -42,7 +44,7 @@ def infor_menu_moderator(result, request):
             exercise_notag_number += 1
     exercise_approved_number = 0
     for ex in exercise_list:
-        if ex.approver != None:
+        if ex.approver != None and ex.tag != None:
             exercise_approved_number += 1
     exercise_unapprove_number = 0
     for ex in exercise_list:
@@ -53,6 +55,7 @@ def infor_menu_moderator(result, request):
     result['exercise_approved_number'] = exercise_approved_number
     result['error_message_number'] = len(error_message_list)
     return result
+
 
 @check_role('moderator')
 def messageDetail(request):
@@ -68,30 +71,36 @@ def messageDetail(request):
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/messageDetail.html', result)
 
+
 @check_role('moderator')
 def exApproved(request):
     dict_exApproved = []
 
     exercise_list = ExerciseWebServer.objects.all()
     for ex in exercise_list:
-        if ex.approver != None:
-            if ex.tag == None:
-                tag = 'No tag'
-            else:
-                tag = ex.tag.tag_name
-            dict_exApproved.append({
-                'id': ex.id,
-                'approver': ex.approver.user_name,
-                'exercise_name': 'exercise name',
-                'exercise_description': 'description of exercise',
-                'tag_name': tag,
-                'contributor': ex.contributor.user_name
-            })
+        if ex.approver != None and ex.tag != None:
+
+            result_from_plugin = plugin_api.get_exercise_plugin_detail(ex.id)
+            if (result_from_plugin['status'] == 'success'):
+                exercise_plugin_respone = result_from_plugin['plugin_exercise']
+
+                dict_exApproved.append({
+                    'id': ex.id,
+                    'approver': ex.approver.user_name,
+                    'exercise_name': exercise_plugin_respone.name,
+                    'exercise_description': exercise_plugin_respone.description,
+                    'tag_name': ex.tag.tag_name,
+                    'contributor': ex.contributor.user_name
+                })
+            else :
+                print "Can't get exercise detail"
+
     result = {
         'exApproved': dict_exApproved,
     }
     infor_menu_moderator(result, request)
     return render_template(request, 'elearning_system/moderator/exApproved.html', result)
+
 
 @check_role('moderator')
 def exUnapprove(request):
@@ -100,17 +109,24 @@ def exUnapprove(request):
     exercise_list = ExerciseWebServer.objects.all()
     for ex in exercise_list:
         if ex.approver == None:
-            dict_exUnApproved.append({
-                'id': ex.id,
-                'exercise_name': 'exercise name',
-                'exercise_description': ' description for exercise',
-                'contributor': ex.contributor.user_name
-            })
+
+            result_from_plugin = plugin_api.get_exercise_plugin_detail(ex.id)
+            if (result_from_plugin['status'] == 'success'):
+                exercise_plugin_respone = result_from_plugin['plugin_exercise']
+                dict_exUnApproved.append({
+                    'id': ex.id,
+                    'exercise_name': exercise_plugin_respone.name,
+                    'exercise_description': exercise_plugin_respone.description,
+                    'contributor': ex.contributor.user_name
+                })
+            else:
+                print "Can't get exercise detail"
     result = {
         'exUnapprove': dict_exUnApproved,
     }
     infor_menu_moderator(result, request)
     return render_template(request, 'elearning_system/moderator/exUnapprove.html', result)
+
 
 @check_role('moderator')
 def exNoTopic(request):
@@ -118,13 +134,19 @@ def exNoTopic(request):
     exercise_list = ExerciseWebServer.objects.all()
     for exercise in exercise_list:
         if exercise.approver != None and exercise.tag == None:
-            dict_exApproved_noTopic.append({
-                'id': exercise.id,
-                'exercise_name': 'exercise name',
-                'exercise_content': 'content of exercise',
-                'exercise_description': 'description of exercise',
-                'contributor': exercise.contributor.user_name,
-            })
+
+            result_from_plugin = plugin_api.get_exercise_plugin_detail(exercise.id)
+            if (result_from_plugin['status'] == 'success'):
+                exercise_plugin_respone = result_from_plugin['plugin_exercise']
+                dict_exApproved_noTopic.append({
+                    'id': exercise.id,
+                    'exercise_name': exercise_plugin_respone.name,
+                    'exercise_description': exercise_plugin_respone.description,
+                    'contributor': exercise.contributor.user_name,
+                })
+            else:
+                print "Can't get exercise detail"
+
     tags = Tag.objects.all()
     tag_list = []
     for tag in tags:
@@ -139,35 +161,47 @@ def exNoTopic(request):
     infor_menu_moderator(result, request)
     return render_template(request, 'elearning_system/moderator/exNoTopic.html', result)
 
+
 @check_role('moderator')
 def detail_exUnapprove(request):
     user_name = request.session['user_name']
     moderator = User.objects.get(user_name=user_name)
     exUnapproveID = request.GET.get('exid', None)
-    exUnapprove = ExerciseWebServer.objects.get(pk=exUnapproveID)
+
+    result_from_plugin = plugin_api.get_exercise_plugin_detail(exUnapproveID)
+    if (result_from_plugin['status'] == 'success'):
+        exercise_plugin_respone = result_from_plugin['plugin_exercise']
+    else:
+        print "Can't get exercise detail"
+
     tag_dict = []
     for tag in Tag.objects.all():
         tag_dict.append(tag)
     result = {
-        'exercise_id': exUnapprove.id,
-        'exercise_name': 'exercise_name',
-        'exercise_content': 'content of exercise has id ' + str(exUnapprove.id),
-        'exercise_testcase': ['testcase 1 of exercise', 'testcase 2 of exercise', 'testcase 3 of exercise',
-                              'testcase 4 of exercise'],
+        'exercise_id': exUnapproveID,
+        'exercise_name': exercise_plugin_respone.name,
+        'exercise_content': exercise_plugin_respone.content,
+        'exercise_testcase': 'test case list',
+        'exercise_solution': exercise_plugin_respone.solution,
         'moderator_id': moderator.id,
         'tagList': tag_dict
     }
     infor_menu_moderator(result, request)
     return render_template(request, 'elearning_system/moderator/Exercise_Unapprove_Detail.html', result)
 
+
 @check_role('moderator')
 def upprove_exercise_status(request):
     if request.method == 'GET':
         moderator_id = request.GET.get('moderator_id', None)
         exercise_id = request.GET.get('exercise_id', None)
+        tag_id = request.GET.get('tag_id', None)
         exercise = ExerciseWebServer.objects.get(pk=int(exercise_id))
         moderator = User.objects.get(pk=int(moderator_id))
+        tag = Tag.objects.get(pk=int(tag_id))
         exercise.approver = moderator
+        exercise.tag = tag
+        exercise.contributor.contribute_number += 1
         exercise.save()
         result = {
             'result': 'successful',
@@ -176,6 +210,7 @@ def upprove_exercise_status(request):
         }
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/upprove_exercise_status.html', result)
+
 
 @check_role('moderator')
 def cancel_exercise_status(request):
@@ -194,6 +229,7 @@ def cancel_exercise_status(request):
         }
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/cancel_exercise_status.html', result)
+
 
 def add_tag(request):
     if request.method == 'POST':

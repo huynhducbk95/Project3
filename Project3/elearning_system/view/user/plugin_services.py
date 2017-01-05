@@ -8,7 +8,7 @@ def exercise_detail(exercise_id):
     try:
         response = requests.get(url=PLUGIN_URL + 'detail?exid=' + str(exercise_id))
         response_data = json.loads(response.content)
-        if response_data['status'] == 'error':
+        if response_data['status'] == 'fail':
             result = {
                 'status': 'error'
             }

@@ -48,3 +48,5 @@ def _convert_test_case_plugin_to_standard_test_case(plugin_test_case_list):
         value = test_case['result']
         converted_test_case_list.append(TestCase(param_arr=param_arr, value=value))
     return converted_test_case_list
+
+# def _convert_exercise_solution(solution):

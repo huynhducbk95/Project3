@@ -23,7 +23,7 @@ def get_exercise_plugin_detail(exercise_plugin_id):
                 description=data['description'],
                 content=data['content'],
                 test_case_list=_convert_test_case_plugin_to_standard_test_case(data['testcases']),
-                solution='solution'
+                solution=data['solution']['code']
             )
             return {
                 'status': 'success',

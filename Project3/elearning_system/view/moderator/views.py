@@ -4,8 +4,9 @@ from elearning_system.models import ExerciseWebServer, User, ErrorMessage
 from elearning_system.central_control import check_role, render_template, check_user_is_login
 from django.http import HttpResponse
 import json
-from elearning_system.view.moderator import  plugin_api
+from elearning_system.view.moderator import plugin_api
 import elearning_system.view.moderator.databaseService as db
+
 
 @check_role('moderator')
 def errorMessage(request):
@@ -92,7 +93,7 @@ def exApproved(request):
                     'tag_name': ex.tag.tag_name,
                     'contributor': ex.contributor.user_name
                 })
-            else :
+            else:
                 print("Can't get exercise detail")
 
     result = {
@@ -167,9 +168,9 @@ def detail_exUnapprove(request):
     user_name = request.session['user_name']
     moderator = User.objects.get(user_name=user_name)
     exUnapproveID = request.GET.get('exid', None)
-
+    exercise_plugin_respone = ''
     result_from_plugin = plugin_api.get_exercise_plugin_detail(exUnapproveID)
-    if (result_from_plugin['status'] == 'success'):
+    if result_from_plugin['status'] == 'success':
         exercise_plugin_respone = result_from_plugin['plugin_exercise']
     else:
         print("Can't get exercise detail")
@@ -180,7 +181,7 @@ def detail_exUnapprove(request):
     result = {
         'exercise_id': exUnapproveID,
         'exercise_name': exercise_plugin_respone.name,
-        'exercise_content': exercise_plugin_respone.content,
+        'exercise_content': exercise_plugin_respone.content.replace('<br/>', '\n'),
         'exercise_testcase': 'test case list',
         'exercise_solution': exercise_plugin_respone.solution,
         'moderator_id': moderator.id,

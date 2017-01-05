@@ -82,10 +82,10 @@
                             </label>
                         </h5>
                         <select class="form-control col-xs-6" id="code-language">
-                            <option value="text/x-pascal">Pascal</option>
                             <option selected value="text/x-java">Java</option>
-                            <option value="text/x-c++src">C++</option>
                             <option value="text/x-python">Python2</option>
+                            <option value="text/x-c++src">C++</option>
+                            <option value="text/x-pascal">Pascal</option>
                             <option value="text/javascript">Javascript</option>
                         </select>
                     </div>
@@ -270,9 +270,9 @@ class HelloWorldApp {
                             var language_list = {};
                             language_list['text/x-pascal'] = 'pascal';
                             language_list['text/x-java'] = 'java';
-                            language_list['text/x-c++src'] = 'c_plus_plus';
+                            language_list['text/x-c++src'] = 'cpp';
                             language_list['text/x-python'] = 'python';
-                            language_list['text/javascript'] = 'javascript';
+                            language_list['text/javascript'] = 'js';
                             var code_language = language_list[code_language_meta];
                             //send data to server
                             var submit_url = $("#btn-test-code-submit").data('submit-url');

@@ -3,15 +3,11 @@
 }
 
 #exUnapprove_testCase {
-    max-height: 150px;
+    max-height: 200px;
 }
 
-#exApproved_testCase{
-    height: 150px;
-}
-
-#exApproved_console{
-    height: 150px;
+#exUnapprove_content{
+    height: 200px;
 }
 
 .content_ExApproved_Detail {

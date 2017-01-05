@@ -48,3 +48,20 @@ def _convert_test_case_plugin_to_standard_test_case(plugin_test_case_list):
         value = test_case['result']
         converted_test_case_list.append(TestCase(param_arr=param_arr, value=value))
     return converted_test_case_list
+
+def remove_exercise_plugin(exercise_plugin_id):
+    endpoint = u'http://' + PLUGIN_IP + '/plugin/remove?exid=' + str(exercise_plugin_id)
+    try:
+        response = requests.get(endpoint)
+        data = response.json()
+
+        if data['status'] == 'success':
+            return {
+                'status': 'success',
+            }
+        else:
+            return {
+                'status': 'failed', 'message': 'Failed remove exercise detail from plugin',
+            }
+    except Exception as e:
+        return {'status': 'failed', 'message': 'Failed remove exercise detail. Try again later'}

@@ -194,7 +194,7 @@ def solve_exercise(exercise_id,solution):
     try:
         endpoint = u'http://' + PLUGIN_IP + '/plugin/solve'
         api_body = {
-            'exid':14,
+            'exid':exercise_id,
             'language': solution.solution_language,
             'sourceCode': solution.solution_code,
         }
@@ -204,17 +204,17 @@ def solve_exercise(exercise_id,solution):
     try:
         response = requests.post(endpoint, json=api_body)
         data = response.json()
-        if data['status'] == 'success':
+        if data['solveStatus'] == 'success':
             return {
-                'status': 'success', 'message': 'Add exercise to plugin successful',
-                'exercise_plugin_id': data['exid']
+                'status': 'success', 'message': 'Solve exercise successful',
+                'result': data['result']
             }
         else:
             return {
-                'status': 'failed', 'message': 'Failed to add exercise',
+                'status': 'failed', 'message': 'Failed to solve Exercise. '+data['message'],
             }
     except Exception:
-        return {'status': 'failed', 'message': 'Failed to add exercise. Try again later'}
+        return {'status': 'failed', 'message': 'Failed to solve Exercise. Try again later'}
 
 
 def update_exercise(plugin_exercise_id,plugin_exercise):

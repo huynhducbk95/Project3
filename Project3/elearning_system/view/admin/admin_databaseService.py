@@ -26,7 +26,14 @@ def get_all_user_list():
 
 
 def get_normal_user_list():
-    return Role.objects.get(role_name='user').user_list.all()
+    all_user =  Role.objects.get(role_name='user').user_list.all()
+    moderator_list =  Role.objects.get(role_name='moderator').user_list.all()
+    admin_list =  Role.objects.get(role_name='admin').user_list.all()
+    user_list = []
+    for user in all_user:
+        if user not in moderator_list and user not in admin_list:
+            user_list.append(user)
+    return user_list
 
 
 def create_user(userName, fullName, password, email, status):

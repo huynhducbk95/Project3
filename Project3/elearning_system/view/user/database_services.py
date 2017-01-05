@@ -16,7 +16,7 @@ def get_top_view_exercise_list():
             response = plugin_services.exercise_detail(exercise.id)
             if response['status'] == 'success':
                 exercise_top = {
-                    'id': response['exercise']['id'],
+                    'id': exercise.id,
                     'name': response['exercise']['name'],
                     'description': response['exercise']['description'],
                     'date_created': exercise.date_created,
@@ -41,7 +41,7 @@ def get_lastest_exercise_list():
             response = plugin_services.exercise_detail(exercise.id)
             if response['status'] == 'success':
                 exercise_top = {
-                    'id': response['exercise']['id'],
+                    'id': exercise.id,
                     'name': response['exercise']['name'],
                     'description': response['exercise']['description'],
                     'date_created': exercise.date_created,

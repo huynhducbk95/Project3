@@ -82,9 +82,6 @@
                             aria-label="CSS grade: activate to sort column ascending" style="width: 200px;">Mô tả
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                            aria-label="CSS grade: activate to sort column ascending" style="width: 300px">Nội dung
-                        </th>
-                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                             aria-label="CSS grade: activate to sort column ascending" style="width: 103px;">Action
                         </th>
                     </tr>
@@ -97,7 +94,6 @@
                             <td class="sorting_1"> {{ forloop.counter }}</td>
                             <td>{{ ex.exercise_name }}</td>
                             <td>{{ ex.exercise_description }}</td>
-                            <td>{{ ex.exercise_content }}</td>
                             <td>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#addTopicForEx"
                                         onclick="addTopicForEx('{{ ex.id }}','{{ ex.exercise_name }}','{{ ex.contributor }}')">

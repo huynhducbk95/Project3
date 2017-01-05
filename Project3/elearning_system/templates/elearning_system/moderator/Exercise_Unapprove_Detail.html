@@ -19,47 +19,32 @@
 
     <div class="container" style="padding-top: 0px;">
         <div class="row">
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                 <h4>{{ exercise_name }}</h4>
+            </div>
             <div class="col-md-6">
-                    <h4>Contributer solution</h4>
+                <h4>Contributer solution</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 excercise-section text-justify scrollable">
-                {# <h4 id="exercise-title-unapprove" class="text-info">{{ ex.exercise_name }}</h4>#}
                 <div class="panel panel-primary">
                     <div id="exercise-test-case-header" class="text-danger panel-heading">
-                        <b>{{ exercise_name }}</b>
+                        <b>Exercise content:</b>
                     </div>
-                    <div id="exApproved_testCase" class="pre-scrollable panel-body">
+                    <div id="exUnapprove_content" class="pre-scrollable panel-body">
                         {{ exercise_content }}
                     </div>
                 </div>
 
                 <div id="" class="test-case-exUnapprove panel panel-primary">
                     <div id="exercise-test-case-header" class="text-danger panel-heading">
-                        <b>Test case example</b>
+                        <b>Test case example:</b>
                     </div>
-                    <div id="exApproved_testCase" class="pre-scrollable panel-body">
+                    <div id="exUnapprove_testCase" class="pre-scrollable panel-body">
                         {% for test_case in exercise_testcase %}
                             <p>{{ test_case }}</p>
                         {% endfor %}
-                    </div>
-                </div>
-                <div id="exercise-test-case" class="test-case-exUnapprove panel panel-primary">
-                    <div id="exercise-test-case-header" class="text-danger panel-heading">
-                        <b>Console</b>
-                    </div>
-                    <div id="exApproved_console" class="pre-scrollable panel-body">
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
-                        <p>x1=2;x2=4;x3=6;x4=8 => y=12</p>
                     </div>
                 </div>
             </div>
@@ -67,27 +52,29 @@
                 <div id="code-editor-body" class="row">
                     <input type="hidden" id="exercise-id" value="123">
                     <textarea cols="80" rows="25" class="form-control" spellcheck="false" id="code-editor-exUnaprove"
-                              style="color: #1b6d85"></textarea>
+                              style="color: #1b6d85"> {{ exercise_solution }} </textarea>
                 </div>
                 <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <label>Chủ đề:</label>
-                        <select class="form-control" id="" style="">
+                        <select class="form-control" id="exercise_topic"
+                                style="">
+                            <option value="" disabled selected hidden>--Select topic--</option>
                             {% for tag in tagList %}
-                                <option>{{ tag.tag_name }}</option>
+                                <option value={{ tag.id }}>{{ tag.tag_name }}</option>
                             {% endfor %}
                         </select>
                     </div>
 
-                    <div class="col-md-6">
-                        <label for="code-language" style="">Language:</label>
-                        <select class="form-control" id="" style="">
-                            <option>Java</option>
-                            <option>C</option>
-                            <option>Javascript</option>
-                            <option>Pascal</option>
-                        </select>
-                    </div>
+{#                    <div class="col-md-6">#}
+{#                        <label for="code-language" style="">Language:</label>#}
+{#                        <select class="form-control" id="" style="">#}
+{#                            <option>Java</option>#}
+{#                            <option>C</option>#}
+{#                            <option>Javascript</option>#}
+{#                            <option>Pascal</option>#}
+{#                        </select>#}
+{#                    </div>#}
 
 
                 </div>
@@ -100,11 +87,13 @@
                                 Hủy
                             </a>
                         </button>
-                        <a href="upprove_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}"
-                           type="button" class="btn btn-primary " style="float: right;margin-right: 10px;"
-                        >
+                        <button class="btn btn-primary " style="float: right;margin-right: 10px;"
+                                onclick="approve_ex({{ moderator_id }},{{ exercise_id }})">
+{#                        <a href="upprove_exercise_status?moderator_id={{ moderator_id }}&exercise_id={{ exercise_id }}"#}
+{#                           type="button" class="btn btn-primary " style="float: right;margin-right: 10px;">#}
                             Duyệt
-                        </a>
+{#                        </a>#}
+                        </button>
                     </div>
 
 

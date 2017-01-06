@@ -4,8 +4,9 @@ from elearning_system.models import ExerciseWebServer, User, ErrorMessage
 from elearning_system.central_control import check_role, render_template, check_user_is_login
 from django.http import HttpResponse
 import json
-from elearning_system.view.moderator import  plugin_api
+from elearning_system.view.moderator import plugin_api
 import elearning_system.view.moderator.databaseService as db
+
 
 @check_role('moderator')
 def errorMessage(request):
@@ -92,7 +93,7 @@ def exApproved(request):
                     'tag_name': ex.tag.tag_name,
                     'contributor': ex.contributor.user_name
                 })
-            else :
+            else:
                 print("Can't get exercise detail")
 
     result = {
@@ -167,23 +168,33 @@ def detail_exUnapprove(request):
     user_name = request.session['user_name']
     moderator = User.objects.get(user_name=user_name)
     exUnapproveID = request.GET.get('exid', None)
-
+    exercise_plugin_response = ''
     result_from_plugin = plugin_api.get_exercise_plugin_detail(int(exUnapproveID))
-    if (result_from_plugin['status'] == 'success'):
-        exercise_plugin_respone = result_from_plugin['plugin_exercise']
+    if result_from_plugin['status'] == 'success':
+        exercise_plugin_response = result_from_plugin['plugin_exercise']
     else:
         print("Can't get exercise detail")
 
     tag_dict = []
     for tag in Tag.objects.all():
         tag_dict.append(tag)
+
+    exercise_testcases = []
+    for testcase in exercise_plugin_response.test_case_list:
+        temp = {'param': '', 'value': 0}
+        for t in testcase.param_arr:
+            temp['param'] += str(t) + ', '
+        temp['value'] = testcase.value
+        temp['param'] = temp['param'][:-2]
+        exercise_testcases.append(temp)
+
     result = {
         'exercise_id': exUnapproveID,
-        'exercise_name': exercise_plugin_respone.name,
-        'exercise_content': exercise_plugin_respone.content,
-        'exercise_testcase': 'test case list',
-        'exercise_solution': exercise_plugin_respone.solution,
-        'exercise_language': exercise_plugin_respone.language,
+        'exercise_name': exercise_plugin_response.name,
+        'exercise_content': exercise_plugin_response.content.replace('<br/>', '\n'),
+        'exercise_testcases': exercise_testcases,
+        'exercise_solution': exercise_plugin_response.solution,
+        'exercise_language': exercise_plugin_response.language,
         'moderator_id': moderator.id,
         'tagList': tag_dict
     }
@@ -202,19 +213,33 @@ def upprove_exercise_status(request):
         tag = Tag.objects.get(pk=int(tag_id))
         exercise.approver = moderator
         exercise.tag = tag
-        exercise.contributor.contribute_number += 1
+        contributor = exercise.contributor
+        contributor.contribute_number += 1
+        contributor.save()
         exercise.save()
         result_from_plugin = plugin_api.get_exercise_plugin_detail(exercise_id)
         if (result_from_plugin['status'] == 'success'):
-            exercise_plugin_respone = result_from_plugin['plugin_exercise']
+            exercise_plugin_response = result_from_plugin['plugin_exercise']
         result = {
             'result': 'successful',
             'moderator_name': moderator.user_name,
-            'exercise_name': exercise_plugin_respone.name,
+            'exercise_name': exercise_plugin_response.name,
+        }
+        infor_menu_moderator(result, request)
+        return HttpResponse(json.dumps(result), content_type='application/json')
+        # return render_template(request, 'elearning_system/moderator/upprove_exercise_status.html', result)
+
+@check_role('moderator')
+def redirect_status_approved(request):
+    if request.method == 'GET':
+        moderator_id = request.GET.get('moderator_id', None)
+        moderator = User.objects.get(pk=int(moderator_id))
+        result = {
+            'result': 'successful',
+            'moderator_name': moderator.user_name,
         }
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/upprove_exercise_status.html', result)
-
 
 @check_role('moderator')
 def cancel_exercise_status(request):

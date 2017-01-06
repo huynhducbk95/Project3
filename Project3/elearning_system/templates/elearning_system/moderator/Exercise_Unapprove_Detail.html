@@ -6,6 +6,14 @@
 
 {% block css_admin %}
     <link href="{% static 'elearning_system/moderator/css/exUnapproveDetail.css' %}" rel="stylesheet"/>
+    <link href="{% static 'elearning_system/exercise/code_mirror/lib/codemirror.css' %}" rel="stylesheet"
+          type="text/css"
+          media="all"/>
+    <link href="{% static 'elearning_system/exercise/code_mirror/addon/lint/lint.css' %}" rel="stylesheet"
+          type="text/css"
+          media="all"/>
+    <link href="{% static 'elearning_system/exercise/css/code_editor.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
 {% endblock %}
 
 {% block main_admin %}
@@ -23,7 +31,7 @@
                             <b>Exercise content:</b>
                         </div>
                         <div id="exUnapprove_content" class="pre-scrollable panel-body">
-                            {{ exercise_content }}
+                            {{ exercise_content|linebreaksbr }}
                         </div>
                     </div>
 
@@ -32,7 +40,10 @@
                             <b>Test case example:</b>
                         </div>
                         <div id="exUnapprove_content" class="pre-scrollable panel-body">
-                            test case
+                            {% for testcase in exercise_testcases %}
+{#                                <p> {% for t in testcase.param_arr %} {{ t }},{% endfor %} : {{ testcase.value }}</p>#}
+                                <p>{{ testcase.param }} : {{ testcase.value }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -47,9 +58,11 @@
                         <div class="panel-heading">
                             <b>Solution</b>
                         </div>
-                        <div class="pre-scrollable panel-body">
+                        <div class="pre-scrollable panel-body" id="exercise-solution"
+                             data-solution-language="{{ exercise_language }}">
                             <textarea cols="80" rows="30" class="form-control" spellcheck="false"
-                                      style="color: #1b6d85"> {{ exercise_solution }} </textarea>
+                                      id="exercise-solution-content"> {{ exercise_solution }}</textarea>
+
                         </div>
                     </div>
                 </div>
@@ -74,10 +87,13 @@
                                 Hủy
                             </a>
                         </button>
+{#                        <a href="/moderator/upprove_exercise_status.html">#}
                         <button class="btn btn-primary " style="float: right;margin-right: 10px;"
                                 onclick="approve_ex({{ moderator_id }},{{ exercise_id }})">
                             Duyệt
                         </button>
+                        <a id="ddd_redirect_to_index"></a>
+{#                        </a>#}
                     </div>
                 </div>
 
@@ -89,4 +105,60 @@
 
 {% block javascript %}
     <script type="text/javascript" src="{% static 'elearning_system/moderator/js/exUnapproveDetail.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/eclipse.css' %}">
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/ambiance.css' %}">
+
+    <script type="text/javascript" src="{% static 'elearning_system/exercise/js/bootstrap-filestyle.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/eclipse.css' %}">
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/theme/ambiance.css' %}">
+    <script src="{% static 'elearning_system/exercise/code_mirror/lib/codemirror.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/edit/matchbrackets.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'elearning_system/exercise/code_mirror/addon/hint/show-hint.css' %}">
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/hint/anyword-hint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/hint/show-hint.js' %}"></script>
+    {#code mirror mode#}
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/javascript/javascript.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/python/python.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/clike/clike.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/mode/pascal/pascal.js' %}"></script>
+
+
+    <script src="{% static 'elearning_system/exercise/code_mirror/jshint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/lint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/javascript-lint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/json-lint.js' %}"></script>
+    <script src="{% static 'elearning_system/exercise/code_mirror/addon/lint/css-lint.js' %}"></script>
+    <script>
+        var solution_content_view = CodeMirror
+                .fromTextArea(document.getElementById("exercise-solution-content"), {
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    mode: "text/x-java",
+                    indentUnit: 4
+                });
+        var current_language = '';
+        var solution_language = $("#exercise-solution").data('solution-language');
+        if (solution_language == 'java') {
+            current_language = "text/x-java";
+        } else if (solution_language == 'python') {
+            current_language = "text/x-python";
+
+        } else if (solution_language == 'js') {
+            current_language = "text/javascript";
+
+        } else {
+            current_language = "text/x-c++src";
+
+        }
+        solution_content_view.setOption("mode", current_language);
+        solution_content_view.setOption("theme", 'eclipse');
+        solution_content_view.setOption("readOnly", 'true');
+        setTimeout(function () {
+            solution_content_view.refresh();
+        }, 500);
+        var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
+        CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
+    </script>
+
 {% endblock %}

@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^add_tag', views.add_tag, name='add_tag'),
     url(r'^upprove_exercise_status', views.upprove_exercise_status, name='upprove_exercise_status'),
     url(r'^cancel_exercise_status', views.cancel_exercise_status, name='cancel_exercise_status'),
+    url(r'^delete_exercise_status', views.delete_exercise_status, name='delete_exercise_status'),
+    url(r'^redirect_status_approved', views.redirect_status_approved, name='redirect_status_approved'),
 ]

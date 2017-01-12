@@ -18,7 +18,7 @@
 
 {% block main_admin %}
 
-    <div class="">
+    <div>
         <div class="row">
             <div class="col-md-6">
                 <div class="wrapper_header">
@@ -40,7 +40,10 @@
                             <b>Test case example:</b>
                         </div>
                         <div id="exUnapprove_content" class="pre-scrollable panel-body">
-                            test case
+                            {% for testcase in exercise_testcases %}
+{#                                <p> {% for t in testcase.param_arr %} {{ t }},{% endfor %} : {{ testcase.value }}</p>#}
+                                <p>{{ testcase.param }} : {{ testcase.value }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -62,9 +65,7 @@
 
                         </div>
                     </div>
-
                 </div>
-
 
                 <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
                     <div class="col-md-12">
@@ -77,7 +78,6 @@
                             {% endfor %}
                         </select>
                     </div>
-
                 </div>
                 <div id="code-editor-footer">
                     <div class="form-group col-md-8 select-language-input form-inline">
@@ -87,13 +87,14 @@
                                 Hủy
                             </a>
                         </button>
+{#                        <a href="/moderator/upprove_exercise_status.html">#}
                         <button class="btn btn-primary " style="float: right;margin-right: 10px;"
                                 onclick="approve_ex({{ moderator_id }},{{ exercise_id }})">
                             Duyệt
                         </button>
+                        <a id="ddd_redirect_to_index"></a>
+{#                        </a>#}
                     </div>
-
-
                 </div>
 
             </div>

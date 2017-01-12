@@ -260,6 +260,21 @@ def cancel_exercise_status(request):
         infor_menu_moderator(result, request)
         return render_template(request, 'elearning_system/moderator/cancel_exercise_status.html', result)
 
+@check_role('moderator')
+def delete_exercise_status(request):
+    if request.method == 'GET':
+        exercise_id = request.GET.get('exercise_id', None)
+        exercise = ExerciseWebServer.objects.get(pk=int(exercise_id))
+        # request to delete exercise at plugin here ...
+        plugin_api.remove_exercise_plugin(exercise_id)
+        #
+        exercise.delete()
+        result = {
+            'result': 'successful'
+        }
+        infor_menu_moderator(result, request)
+        return render_template(request, 'elearning_system/moderator/delete_exercise_status.html', result)
+
 
 def add_tag(request):
     if request.method == 'POST':

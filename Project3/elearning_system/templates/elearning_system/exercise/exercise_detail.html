@@ -79,7 +79,7 @@
                                         data-exercise-detail-url={% url 'data_exercise_detail' exercise_id=exercise_detail.exercise_id %}>
                                     <span class="glyphicon glyphicon-pencil"></span> Edit...
                                 </button>
-                                <button type="button" class="btn btn-danger" id="edit-exercise-btn">
+                                <button type="button" class="btn btn-danger" id="delete-exercise-btn">
                                     <span class="glyphicon glyphicon-remove"></span> Delete...
                                 </button>
                             {% endif %}
@@ -195,6 +195,44 @@
                             data-send-exercise-report-url={% url 'report_exercise_error' %}>
                         Send Report
                     </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal delete exercise -->
+    <div class="modal fade" id="modal-delete-exercise" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h3 class="modal-title text-danger" id="error-exercise-header">
+                        <span class="glyphicon glyphicon-alert"></span> Delete Exercise
+                    </h3>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        Are you really want to delete this exercise?
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer" >
+                    <a type="button" class="btn btn-danger" href="" id="action-delete-exercise-btn">
+                        Delete
+                    </a>
                     <button type="button" class="btn btn-default"
                             data-dismiss="modal">
                         Cancel
@@ -384,117 +422,117 @@
             var submit_info_wait_result = $('<h4></h4>');
             submit_info_wait_result.hide();
             submit_info_wait_result
-                    .addClass('text-primary')
-                    .html('<strong>Please wait</strong>' +
-                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
-                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
-                            '<span class="glyphicon glyphicon-arrow-right"></span>' +
-                            '<span class="glyphicon glyphicon-arrow-right"></span>')
-                    .appendTo(submit_info_element)
-                    .fadeIn();
+                .addClass('text-primary')
+                .html('<strong>Please wait</strong>' +
+                    '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                    '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                    '<span class="glyphicon glyphicon-arrow-right"></span>' +
+                    '<span class="glyphicon glyphicon-arrow-right"></span>')
+                .appendTo(submit_info_element)
+                .fadeIn();
 
             $.when(read_file_input('#code-file-input')).done(
-                    function (code_file_data) {
+                function (code_file_data) {
+                    if (code_file_data == 'invalid-type') {
+                        var error_message = '';
                         if (code_file_data == 'invalid-type') {
-                            var error_message = '';
-                            if (code_file_data == 'invalid-type') {
-                                error_message += 'please upload valid source code file <br/>';
-                            }
-                            alert_message('error', error_message);
+                            error_message += 'please upload valid source code file <br/>';
+                        }
+                        alert_message('error', error_message);
 
-                        } else {
-                            var exercise_id = $("#exercise-id").val();
-                            var source_code_data = editor.getValue();
-                            var code_language_meta = $("#code-language").val();
-                            if (code_file_data != 'none-file-selected') {
-                                source_code_data = code_file_data;
-                            }
-                            var language_list = {};
-                            language_list['text/x-pascal'] = 'pascal';
-                            language_list['text/x-java'] = 'java';
-                            language_list['text/x-c++src'] = 'cpp';
-                            language_list['text/x-python'] = 'python';
-                            language_list['text/javascript'] = 'js';
-                            var code_language = language_list[code_language_meta];
+                    } else {
+                        var exercise_id = $("#exercise-id").val();
+                        var source_code_data = editor.getValue();
+                        var code_language_meta = $("#code-language").val();
+                        if (code_file_data != 'none-file-selected') {
+                            source_code_data = code_file_data;
+                        }
+                        var language_list = {};
+                        language_list['text/x-pascal'] = 'pascal';
+                        language_list['text/x-java'] = 'java';
+                        language_list['text/x-c++src'] = 'cpp';
+                        language_list['text/x-python'] = 'python';
+                        language_list['text/javascript'] = 'js';
+                        var code_language = language_list[code_language_meta];
 
-                            //send data to server
-                            var submit_url = $("#btn-solve-exercise-submit").data('submit-url');
-                            console.log(submit_url);
-                            $.post(submit_url,
-                                    {
-                                        csrfmiddlewaretoken: '{{ csrf_token }}',
-                                        language: code_language,
-                                        source_code: source_code_data,
-                                        exercise_id: exercise_id
-                                    },
-                                    function (data, status) {
-                                        console.log(status);
-                                        var submit_info_element = $("#submit-result-info");
-                                        submit_info_wait_result = submit_info_element.find('h4');
-                                        submit_info_wait_result.fadeOut('slow');
-                                        setTimeout(function () {
-                                            if (status == 'success') {
-                                                console.log(data)
-                                                if (data.status == 'success') {
-                                                    if (data.is_solved == 'true') {
-                                                        alert_message('success', "Congratulations! You solved this exercise!");
-                                                    } else {
-                                                        alert_message('error', data.message);
-                                                    }
-                                                    //show test case list
-                                                    var test_code_result = $(
-                                                            '<div>' +
-                                                            '<h4 class="text-primary">' +
-                                                            '<strong>Solve exercise result:</strong>' +
-                                                            '</h4>' +
-                                                            '</div>');
-                                                    var fail_img_src = submit_info_element.data('test-case-image-fail');
-                                                    var pass_img_src = submit_info_element.data('test-case-image-pass');
-                                                    for (var i = 0; i < data.test_case_list.length; i++) {
-                                                        var test_case = $('<img></img>');
-                                                        var test_case_result = '';
-                                                        test_case.attr('data-index', i + 1);
-                                                        test_case.attr('class', 'test-case-img');
-                                                        test_case_status = data.test_case_list[i];
-                                                        if (test_case_status == 'p') {
-                                                            test_case.attr('src', pass_img_src);
-                                                            test_case_result = 'passed';
-                                                        } else if (test_case_status == 'f') {
-                                                            test_case.attr('src', fail_img_src);
-                                                            test_case_result = 'failed';
-                                                        }
-                                                        var test_case_info = 'Test case ' + (i + 1).toString() + ': ' +
-                                                                test_case_result;
-                                                        test_case.tooltip({title: test_case_info, placement: "top"});
-                                                        test_case.appendTo(test_code_result);
-                                                    }
-                                                    test_code_result.hide();
-                                                    test_code_result
-                                                            .appendTo(submit_info_element)
-                                                            .fadeIn();
-                                                    //show test case list
-                                                } else if (data.status == 'failed') {
-                                                    alert_message('error', data.message);
-                                                }
-                                            } else {
-                                                alert_message('error', "solve exercise process failed!");
-                                            }
-                                        }, 1500);
-                                        setTimeout(function () {
-                                            enable_editor();
-                                        }, 4500);
-                                    }
-                            ).fail(function (xhr, status, error) {
-                                alert_message('error', "Failed to Connect to the server. Please try again later.");
+                        //send data to server
+                        var submit_url = $("#btn-solve-exercise-submit").data('submit-url');
+                        console.log(submit_url);
+                        $.post(submit_url,
+                            {
+                                csrfmiddlewaretoken: '{{ csrf_token }}',
+                                language: code_language,
+                                source_code: source_code_data,
+                                exercise_id: exercise_id
+                            },
+                            function (data, status) {
+                                console.log(status);
+                                var submit_info_element = $("#submit-result-info");
                                 submit_info_wait_result = submit_info_element.find('h4');
                                 submit_info_wait_result.fadeOut('slow');
-                                submit_info_element.empty();
+                                setTimeout(function () {
+                                    if (status == 'success') {
+                                        console.log(data)
+                                        if (data.status == 'success') {
+                                            if (data.is_solved == 'true') {
+                                                alert_message('success', "Congratulations! You solved this exercise!");
+                                            } else {
+                                                alert_message('error', data.message);
+                                            }
+                                            //show test case list
+                                            var test_code_result = $(
+                                                '<div>' +
+                                                '<h4 class="text-primary">' +
+                                                '<strong>Solve exercise result:</strong>' +
+                                                '</h4>' +
+                                                '</div>');
+                                            var fail_img_src = submit_info_element.data('test-case-image-fail');
+                                            var pass_img_src = submit_info_element.data('test-case-image-pass');
+                                            for (var i = 0; i < data.test_case_list.length; i++) {
+                                                var test_case = $('<img></img>');
+                                                var test_case_result = '';
+                                                test_case.attr('data-index', i + 1);
+                                                test_case.attr('class', 'test-case-img');
+                                                test_case_status = data.test_case_list[i];
+                                                if (test_case_status == 'p') {
+                                                    test_case.attr('src', pass_img_src);
+                                                    test_case_result = 'passed';
+                                                } else if (test_case_status == 'f') {
+                                                    test_case.attr('src', fail_img_src);
+                                                    test_case_result = 'failed';
+                                                }
+                                                var test_case_info = 'Test case ' + (i + 1).toString() + ': ' +
+                                                    test_case_result;
+                                                test_case.tooltip({title: test_case_info, placement: "top"});
+                                                test_case.appendTo(test_code_result);
+                                            }
+                                            test_code_result.hide();
+                                            test_code_result
+                                                .appendTo(submit_info_element)
+                                                .fadeIn();
+                                            //show test case list
+                                        } else if (data.status == 'failed') {
+                                            alert_message('error', data.message);
+                                        }
+                                    } else {
+                                        alert_message('error', "solve exercise process failed!");
+                                    }
+                                }, 1500);
                                 setTimeout(function () {
                                     enable_editor();
-                                }, 2000);
-                            });
-                        }
+                                }, 4500);
+                            }
+                        ).fail(function (xhr, status, error) {
+                            alert_message('error', "Failed to Connect to the server. Please try again later.");
+                            submit_info_wait_result = submit_info_element.find('h4');
+                            submit_info_wait_result.fadeOut('slow');
+                            submit_info_element.empty();
+                            setTimeout(function () {
+                                enable_editor();
+                            }, 2000);
+                        });
                     }
+                }
             );
         });
 
@@ -509,7 +547,7 @@
                 for (var j = 0; j < _validFileExtensions.length; j++) {
                     var sCurExtension = _validFileExtensions[j];
                     if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase()
-                            == sCurExtension.toLowerCase()) {
+                        == sCurExtension.toLowerCase()) {
                         blnValid = true;
                         break;
                     }
@@ -542,21 +580,21 @@
         $('#edit-exercise-btn').click(function () {
             var exercise_detail_url = $(this).data('exercise-detail-url');
             $.get(exercise_detail_url, function (data, status) {
-                        if (data.status == 'success') {
-                            var exercise_id = $("#exercise-id").val();
-                            $("#edit-exercise-name").val(data.exercise_detail.name);
-                            $("#edit-exercise-description").val(data.exercise_detail.description);
-                            $("#edit-exercise-content").val(data.exercise_detail.content);
-                            $("#edit-exercise-id").val(exercise_id);
-                            var modal_select_element = $("#modal-edit-exercise");
-                            modal_select_element.modal();
-                        } else {
-                            alert_message(
-                                    'error',
-                                    "Failed to retrieve exercise information from server. Try again later!"
-                            );
-                        }
+                    if (data.status == 'success') {
+                        var exercise_id = $("#exercise-id").val();
+                        $("#edit-exercise-name").val(data.exercise_detail.name);
+                        $("#edit-exercise-description").val(data.exercise_detail.description);
+                        $("#edit-exercise-content").val(data.exercise_detail.content);
+                        $("#edit-exercise-id").val(exercise_id);
+                        var modal_select_element = $("#modal-edit-exercise");
+                        modal_select_element.modal();
+                    } else {
+                        alert_message(
+                            'error',
+                            "Failed to retrieve exercise information from server. Try again later!"
+                        );
                     }
+                }
             ).fail(function () {
                 alert_message('error', "Failed to connect to server. Try again later!");
 
@@ -571,26 +609,26 @@
             var modal_select_element = $("#modal-report-exercise-error");
             modal_select_element.modal('toggle');
             $.post($("#send-exercise-report-btn").data('send-exercise-report-url'),
-                    {
-                        csrfmiddlewaretoken: '{{ csrf_token }}',
-                        exercise_id: exercise_id,
-                        message_title: message_title,
-                        message_content: message_content
-                    },
-                    function (data, status) {
-                        setTimeout(function () {
-                            if (status == 'success') {
-                                if (data.status == 'success') {
-                                    alert_message('success', "Report message was sent!");
-                                    //show test case list
-                                } else if (data.status == 'failed') {
-                                    alert_message('error', 'fail to send report message');
-                                }
-                            } else {
-                                alert_message('success', "Fail to send report message!");
+                {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    exercise_id: exercise_id,
+                    message_title: message_title,
+                    message_content: message_content
+                },
+                function (data, status) {
+                    setTimeout(function () {
+                        if (status == 'success') {
+                            if (data.status == 'success') {
+                                alert_message('success', "Report message was sent!");
+                                //show test case list
+                            } else if (data.status == 'failed') {
+                                alert_message('error', 'fail to send report message');
                             }
-                        }, 500);
-                    });
+                        } else {
+                            alert_message('success', "Fail to send report message!");
+                        }
+                    }, 500);
+                });
         });
 
         $('#send-exercise-edit-btn').click(function () {
@@ -601,28 +639,42 @@
             var modal_edit_exercise = $("#modal-edit-exercise");
             modal_edit_exercise.modal('toggle');
             $.post($("#send-exercise-edit-btn").data('edit-exercise-url'),
-                    {
-                        csrfmiddlewaretoken: '{{ csrf_token }}',
-                        exercise_id: exercise_id,
-                        name: name,
-                        description: description,
-                        content: content
-                    },
-                    function (data, status) {
-                        setTimeout(function () {
-                            if (status == 'success') {
-                                if (data.status == 'success') {
-                                    alert_message('success', "Edit exercise success!");
-                                    //show test case list
-                                } else if (data.status == 'failed') {
-                                    alert_message('error', 'failed to edit this exercise, try again later');
-                                }
-                            } else {
-                                alert_message('success', "Fail to connect to server!");
+                {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    exercise_id: exercise_id,
+                    name: name,
+                    description: description,
+                    content: content
+                },
+                function (data, status) {
+                    setTimeout(function () {
+                        if (status == 'success') {
+                            if (data.status == 'success') {
+                                alert_message('success', "Edit exercise success!");
+                                //show test case list
+                            } else if (data.status == 'failed') {
+                                alert_message('error', 'failed to edit this exercise, try again later');
                             }
-                        }, 500);
-                    });
+                        } else {
+                            alert_message('success', "Fail to connect to server!");
+                        }
+                    }, 500);
+                });
 
         });
+
+        $('#delete-exercise-btn').click(function () {
+            var modal_select_element = $("#modal-delete-exercise");
+            modal_select_element.modal();
+            var exercise_id = $("#exercise-id").val();
+            $('#action-delete-exercise-btn').attr('href','/moderator/delete_exercise_status?exercise_id='+exercise_id);
+        });
+
+{#        $('#action-delete-exercise-btn').click(function () {#}
+{#            var exercise_id = $("#exercise-id").val();#}
+{#            alert(exercise_id);#}
+{#        });#}
+
+
     </script>
 {% endblock %}

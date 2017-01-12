@@ -50,10 +50,11 @@ class InputError(Exception):
 
 
 class TestCodeResult:
-    def __init__(self, status, test_case_result, message):
+    def __init__(self, status, test_case_result, message, error_output=None,execute_output=None):
         self.status = status
         self.test_case_result_list = test_case_result
         self.message = message
+        self.error_output = error_output
 
 
 def _convert_test_case_list(test_case_list_input):
@@ -62,7 +63,7 @@ def _convert_test_case_list(test_case_list_input):
         param_arr = test_case.param_arr
         param_converted_string = ''
         for param in param_arr:
-            param_converted_string = param_converted_string + str(param)+ '\n'
+            param_converted_string = param_converted_string + str(param) + '\n'
         if len(param_converted_string) > 2:
             param_converted_string = param_converted_string[:-1]
         value = test_case.value
@@ -87,7 +88,6 @@ def test_code(check_code_data):
     try:
         endpoint = u'http://' + PLUGIN_IP + '/plugin/testcode'
         source_code = check_code_data.solution.solution_code
-        print(source_code)
         language = check_code_data.solution.solution_language
         test_case_list = _convert_test_case_list(check_code_data.test_case)
         api_body = {
@@ -113,13 +113,17 @@ def test_code(check_code_data):
             return TestCodeResult('success', test_case_result_list, 'no error')
         else:
             error_message = ''
+            error_output = ''
             if compile_error != 'null':
+                error_output = compile_error + '\n'
                 error_message += ' Failed to compile solution code. Check your solution again.'
             if execute_error != 'null':
+                error_output = execute_error + '\n'
                 error_message += ' Failed to execute solution code. Check your solution again.'
             if test_code_error != 'null':
-                error_message += ' Test code is not valid.'
-            return TestCodeResult('failed', [], error_message)
+                error_output = test_code_error + '\n'
+                error_message += ' Failed to excute solution code. Test code is not valid.'
+            return TestCodeResult('failed', [], error_message,error_output=error_output)
 
     except Exception as e:
         return TestCodeResult('failed', [], 'Failed to execute solution code. Please try again later')
@@ -180,7 +184,7 @@ def get_exercise_plugin_detail(exercise_plugin_id):
             )
             return {
                 'status': 'success',
-                'plugin_exercise':plugin_exercise_response
+                'plugin_exercise': plugin_exercise_response
             }
         else:
             return {
@@ -190,11 +194,11 @@ def get_exercise_plugin_detail(exercise_plugin_id):
         return {'status': 'failed', 'message': 'Failed get exercise detail. Try again later'}
 
 
-def solve_exercise(exercise_id,solution):
+def solve_exercise(exercise_id, solution):
     try:
         endpoint = u'http://' + PLUGIN_IP + '/plugin/solve'
         api_body = {
-            'exid':exercise_id,
+            'exid': exercise_id,
             'language': solution.solution_language,
             'sourceCode': solution.solution_code,
         }
@@ -217,22 +221,37 @@ def solve_exercise(exercise_id,solution):
                 'test_case_result': test_case_result_list
             }
         else:
+            compile_error = data['compileErr']
+            execute_error = data['executeErr']
+            test_code_error = data['testcaseErr']
+            error_message = ''
+            error_output = ''
+            if compile_error != 'null':
+                error_output = compile_error + '\n'
+                error_message += ' Failed to compile solution code. Check your solution again.'
+            if execute_error != 'null':
+                error_output = execute_error + '\n'
+                error_message += ' Failed to execute solution code. Check your solution again.'
+            if test_code_error != 'null':
+                error_output = test_code_error + '\n'
+                error_message += ' Failed to excute solution code. Test code is not valid.'
             return {
-                'status': 'failed', 'message': 'Failed to solve Exercise. '+data['message'],
+                'status': 'failed', 'message': 'Failed to solve Exercise. ' + data['message'],
+                'error_output':error_output
             }
-    except Exception:
+    except Exception as e:
         return {'status': 'failed', 'message': 'Failed to solve Exercise. Try again later'}
 
 
-def update_exercise(plugin_exercise_id,plugin_exercise):
+def update_exercise(plugin_exercise_id, plugin_exercise):
     try:
         endpoint = u'http://' + PLUGIN_IP + '/plugin/update'
         api_body = {
-            'id':plugin_exercise_id,
+            'id': plugin_exercise_id,
             'name': plugin_exercise.name,
             'description': plugin_exercise.description,
-            'content':plugin_exercise.content,
-            'testcases':_convert_test_case_list(plugin_exercise.test_case_list)
+            'content': plugin_exercise.content,
+            'testcases': _convert_test_case_list(plugin_exercise.test_case_list)
         }
     except Exception as e:
         return {'status': 'failed', 'message': 'Input format is not valid'}

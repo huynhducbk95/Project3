@@ -2,7 +2,8 @@
     .container {
         width: 1250px;
     }
-    .exercise-detail-action{
+
+    .exercise-detail-action {
         max-width: 350px;
     }
 }
@@ -11,17 +12,15 @@
     padding-top: 60px;
 
 }
-#exercise-content{
+
+#exercise-content {
     height: 180px;
 }
+
 .pre-scrollable {
     padding-right: 5px;
 }
 
-#code-language {
-    width: 50%;
-    max-width: 150px;
-}
 
 .exercise-detail {
 
@@ -37,6 +36,9 @@
 
 #code-editor-footer {
     padding-top: 5px;
+    overflow: hidden;
+    position: relative;
+
 }
 
 textarea {
@@ -52,11 +54,11 @@ textarea {
 }
 
 #test-code-instruction-body {
-    height: 150px;
+    height: 200px;
 }
 
 #test-code-test-case-body {
-    max-height: 150px;
+    max-height: 100px;
 }
 
 #popup-message {
@@ -81,7 +83,7 @@ textarea {
 }
 
 #submit-result-info {
-    min-height: 130px;
+    min-height: 30px;
 }
 
 .test-case-img {

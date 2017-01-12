@@ -41,6 +41,7 @@ def convert_test_case_string_to_list(test_case_string):
         test_case_input_list = string.split(test_case_string, '\n')
         for test_case_input in test_case_input_list:
             if len(test_case_input) > 3:
+                test_case_input = string.split(test_case_input, '|')[1]
                 test_case_split = string.split(test_case_input, ':')
                 test_case_input_param_list = string.split(test_case_split[0], ';')
                 test_case_input_value = test_case_split[1].replace(" ", "")
@@ -90,7 +91,8 @@ def test_code(request):
                         return_result = {
                             'status': 'failed',
                             'test_case_list': [],
-                            'message': test_code_result.message
+                            'message': test_code_result.message,
+                            'output_message':test_code_result.error_output
                         }
             else:
                 return_result = {
@@ -126,12 +128,12 @@ def report_exercise_error(request):
 def exercise_detail(request, exercise_id):
     exercise_plugin_input = plugin_api.get_exercise_plugin_detail(exercise_id)
     exercise_web_server_detail = DatabaseService.get_exercise_web_server_detail(exercise_id)
-    exercise_plugin = exercise_plugin_input['plugin_exercise']
     if exercise_web_server_detail == 'not_found' or exercise_web_server_detail == 'error' \
             or exercise_plugin_input['status'] == 'failed' or exercise_web_server_detail.approver is None:
         return render_template(request, 'elearning_system/exercise/exercise_detail_not_found.html',
                                {'title': 'Access Denied'})
     else:
+        exercise_plugin = exercise_plugin_input['plugin_exercise']
         exercise_test_case_list_view = []
         for i in range(0, 3):
             exercise_test_case_list_view.append(
@@ -221,7 +223,9 @@ def solve_exercise(request):
                                      'message': 'Failed to solve this exercise. You did not pass all test cases',
                                      'test_case_list': test_case_result_list}
             else:
-                return_result = {'status': 'failed', 'is_solved': 'false', 'message': exercise_solve_result['message'],
+                return_result = {'status': 'failed', 'is_solved': 'false',
+                                 'message': exercise_solve_result['message'],
+                                 'output_message': exercise_solve_result['error_output'],
                                  'test_case_list': []}
             return HttpResponse(json.dumps(return_result), content_type='application/json')
         except Exception as e:
@@ -306,6 +310,7 @@ def contribute_exercise(request):
                             'status': 'failed',
                             'test_case_list': [],
                             'message': test_code_result.message
+
                         }
                 return HttpResponse(json.dumps(return_result), content_type='application/json')
             else:

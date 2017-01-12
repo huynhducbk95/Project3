@@ -65,12 +65,17 @@
         <div class="col-md-7 right-content">
             <div class="code-editor-field">
                 <div id="code-editor-header" class="row">
-                    <div class="col-md-2 form-group form-inline">
+                    <div class="col-md-2 form-group form-inline" style="padding-left: 0;padding-right: 5px;">
                         <h5>
                             <label for="code-editor" class="text-primary">
                                 Input code
                             </label>
                         </h5>
+                    </div>
+                    <div class="col-md-2 form-group form-inline" style="padding-left: 0;padding-right: 5px;">
+                        <button class="btn btn-danger" id="code-instruction">
+                            Instruction
+                        </button>
                     </div>
                     <div class="col-md-8 pull-right exercise-detail-action">
                         {% for role in role_list %}
@@ -95,47 +100,66 @@
                 <input type="hidden" id="exercise-id" value="{{ exercise_detail.exercise_id }}">
                 <textarea cols="60" rows="25" class="form-control" spellcheck="false" id="code-editor"></textarea>
             </div>
-            <div id="code-editor-footer" class="row">
-                <div class="form-group col-md-6" style="padding-left: 0;padding-right: 5px;">
-                    <div class="col-xs-9" style="padding-left: 0;padding-right: 5px;">
-                        <input type="file" class="filestyle"
-                               accept=".txt, .py,.cpp,.java,.js,.p"
-                               data-buttonText=" Or upload" id="code-file-input">
 
+
+            <div id="code-editor-footer" class="row">
+                <div class="col-md-9" style="padding-left: 0;padding-right: 5px;">
+                    <div class="form-group row">
+                        <h5 class="col-xs-3" style=" padding-left: 0;padding-right: 5px;text-align:right">
+                            <label for="code-file-input" class="text-primary">
+                                Upload code
+                            </label>
+                        </h5>
+                        <div class="col-xs-7">
+                            <input type="file" class="filestyle"
+                                   accept=".txt, .py,.cpp,.java,.js,.p"
+                                   data-buttonText="Upload..." id="code-file-input">
+
+                        </div>
                     </div>
-                    <div class="col-xs-3" style="padding-left: 0;padding-right: 5px;">
-                        <button type="button" id="btn-clear-source-code"
-                                class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Clear
-                        </button>
+
+                    <div class="form-group row">
+                        <h5 class="col-xs-3" style="padding-left: 0;padding-right: 5px;text-align:right">
+                            <label for="code-language" class="text-primary">
+                                Language
+                            </label>
+                        </h5>
+                        <div class="col-xs-7">
+                            <select class="form-control" id="code-language">
+                                <option selected value="text/x-java">Java</option>
+                                <option value="text/x-python">Python2</option>
+                                <option value="text/x-c++src">C++</option>
+                                <option value="text/x-pascal">Pascal</option>
+                                <option value="text/javascript">Javascript</option>
+                            </select>
+                        </div>
                     </div>
+
                 </div>
-                <div class="col-md-4 form-group form-inline"
-                     style="padding-left: 0;padding-right: 5px;">
-                    <h5 class="col-xs-5" style="padding-left: 0;padding-right: 5px; text-align:right">
-                        <label for="code-language" class="text-primary">
-                            Language
-                        </label>
-                    </h5>
-                    <select class="form-control col-xs-7" id="code-language">
-                        <option selected value="text/x-java">Java</option>
-                        <option value="text/x-python">Python2</option>
-                        <option value="text/x-c++src">C++</option>
-                        <option value="text/x-pascal">Pascal</option>
-                        <option value="text/javascript">Javascript</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-2 select-language-input form-inline pull-right">
+
+                <div class="form-group col-md-3 select-language-input form-inline pull-right"
+                     style="height:80px;padding-left: 5px; padding-right: 5px;">
                     <button type="button" id="btn-solve-exercise-submit"
                             data-submit-url="{% url "solve_exercise" %}"
-                            class="btn btn-primary pull-right">
+                            class="btn btn-primary pull-right"
+                            style="height:60%;width:80%; margin-top: 15px;">
                         <span class="glyphicon glyphicon-arrow-right"></span> Submit
                     </button>
                 </div>
             </div>
+
             <div class="row" id="submit-result-info"
                  data-test-case-image-fail="{% static 'elearning_system/exercise/images/test_case_fail.png' %}"
                  data-test-case-image-pass="{% static 'elearning_system/exercise/images/test_case_pass.png' %}">
+            </div>
+            <div class="row" id='output-result' style="display: none">
+                <h3 class="text-primary">
+                    Output
+                </h3>
+                <textarea id="error-result" rows="10" readonly style="width: 100%">
+
+                </textarea>
+                <div id="execute-output-result"></div>
             </div>
         </div>
     </div>
@@ -277,6 +301,112 @@
             </div>
         </div>
     </div>
+
+
+
+    <!--  Instruction Modal -->
+    <div class="modal fade" id="modal-view-instruction" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title text-primary" id="view-file-modal-header">
+                        Write Source Code Instruction
+                    </h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <h3 class="text-danger">Step by step Instruction</h3>
+
+                    To write source code for testing, you must follow this instruction.<br/><br/>
+                    First, determine number of parameter in your test case.<br/>
+                    Example:
+                    <textarea cols="60" rows="3" class="form-control text-info" spellcheck="false">
+                        |1;2;4;8 : 12|
+                    </textarea>
+                    <p>
+                        This mean you have four parameters : x1 = 1; x2 = 2; x3 = 4; x4 = 8. And result is 12<br/>
+                        Then, you will write your program into text field. Your program must be follow syntax definec by
+                        language. Example, with java, your excute code must be in <strong>main</strong> method:
+                    </p>
+                    <textarea cols="60" rows="6" class="form-control text-info " spellcheck="false"
+                              id="example-main-method">public class Example {
+    public static void main(String[] args) {
+                        //excute code is placed in here...
+    }
+}
+                    </textarea>
+                    Next, in your source code, you must convert these parameter to variable in your program.You will
+                    need some libary for some language to convert it. Example with java:
+                    <textarea cols="60" rows="5" class="form-control text-info" spellcheck="false"
+                              id="example-main-method">import java.util.Scanner;
+                        ....
+int a = in.nextInt();
+                    </textarea>
+                    Finnaly, you need print result by print method defined in language. Example with java:
+                    <textarea cols="60" rows="5" class="form-control text-info" spellcheck="false"
+                              id="example-main-method">System.out.println(//your result);
+                    </textarea>
+                    Next is some example.
+
+
+                    <h3 class="text-info">Example with language</h3>
+                    The test case is:
+                    <textarea cols="60" rows="3" class="form-control" spellcheck="false">
+                        |1;2;4;8 : 64|
+                    </textarea>
+                    Solution with java:
+                    <textarea cols="60" rows="20" class="form-control" id="example-main-java" spellcheck="false">import java.util.Scanner;
+public class ExampleJava {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        int d = in.nextInt();
+        System.out.println((a * b * c * d));
+    }
+}
+                    </textarea>
+                    Solution with python:
+                    <textarea cols="60" rows="10" class="form-control" id="example-main-python" spellcheck="false">import sys
+x = sys.stdin.readline()
+y = sys.stdin.realdline()
+z = sys.stdin.realdline()
+t = sys.stdin.realdline()
+print(int(x)*int(y)*int(z)*int(t))
+                    </textarea>
+                    Solution with C++:
+                    <textarea cols="60" rows="10" class="form-control" id="example-main-c-plus-plus" spellcheck="false">#include "iostream"
+int main(void)
+{
+    int x,y,z,t;
+    std::cin >> x;
+    std::cin >> y;
+    std::cin >> z;
+    std::cin >> z;
+    std::cout << x*y*z*t;
+    return 0;
+}
+                    </textarea>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-close-file-view">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascript %}
@@ -313,6 +443,29 @@
         var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
         CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
 
+        // For instruction
+        var java_editor = CodeMirror.fromTextArea(document.getElementById("example-main-java"), {
+            lineNumbers: true,
+            mode: "text/x-java",
+            indentUnit: 4
+        });
+        java_editor.setOption("theme", 'eclipse');
+
+        var python_editor = CodeMirror.fromTextArea(document.getElementById("example-main-python"), {
+            lineNumbers: true,
+            mode: "text/x-python",
+            indentUnit: 4
+        });
+        python_editor.setOption("theme", 'eclipse');
+
+        var c_editor = CodeMirror.fromTextArea(document.getElementById("example-main-c-plus-plus"), {
+            lineNumbers: true,
+            mode: "text/x-c++src",
+            indentUnit: 4
+        });
+        c_editor.setOption("theme", 'eclipse');
+
+        //end instruction
 
         $("#btn-clear-source-code").click(function () {
             $("#code-file-input").filestyle('clear');
@@ -380,6 +533,8 @@
         $('#btn-solve-exercise-submit').click(function () {
             var submit_info_element = $("#submit-result-info");
             submit_info_element.empty();
+            var output_result = $("#output-result");
+            output_result.hide();
             disable_editor();
             var submit_info_wait_result = $('<h4></h4>');
             submit_info_wait_result.hide();
@@ -395,6 +550,7 @@
 
             $.when(read_file_input('#code-file-input')).done(
                     function (code_file_data) {
+                        var source_code_data = editor.getValue();
                         if (code_file_data == 'invalid-type') {
                             var error_message = '';
                             if (code_file_data == 'invalid-type') {
@@ -402,13 +558,12 @@
                             }
                             alert_message('error', error_message);
 
-                        } else {
+                        } else if (source_code_data.length == 0) {
+                            alert_message('error', 'Code editor field must not empty!');
+                        }
+                        else {
                             var exercise_id = $("#exercise-id").val();
-                            var source_code_data = editor.getValue();
                             var code_language_meta = $("#code-language").val();
-                            if (code_file_data != 'none-file-selected') {
-                                source_code_data = code_file_data;
-                            }
                             var language_list = {};
                             language_list['text/x-pascal'] = 'pascal';
                             language_list['text/x-java'] = 'java';
@@ -475,6 +630,18 @@
                                                     //show test case list
                                                 } else if (data.status == 'failed') {
                                                     alert_message('error', data.message);
+                                                    test_code_result = $(
+                                                            '<div>' +
+                                                            '<h4 class="text-danger">' +
+                                                            '<strong>Test code result: Error</strong>' +
+                                                            '</h4>' +
+                                                            '</div>');
+                                                    test_code_result.hide();
+                                                    test_code_result
+                                                            .appendTo(submit_info_element)
+                                                            .fadeIn();
+                                                    $('#error-result').val(data.output_message);
+                                                    output_result.fadeIn();
                                                 }
                                             } else {
                                                 alert_message('error', "solve exercise process failed!");
@@ -624,5 +791,39 @@
                     });
 
         });
+
+        $("#code-file-input").change(function () {
+            $.when(read_file_input('#code-file-input')).done(
+                    function (code_file_data) {
+                        if (code_file_data == 'invalid-type') {
+                            var error_message = '';
+                            if (code_file_data == 'invalid-type') {
+                                error_message += 'This file type is not supported. <br/> Please upload valid file';
+                            }
+                            alert_message('error', error_message);
+                            $("#code-file-input").filestyle('clear');
+
+
+                        } else {
+                            editor.setValue(code_file_data);
+                            setTimeout(function () {
+                                editor.refresh();
+                            }, 500);
+                        }
+                    }
+            )
+        });
+
+
+        $("#code-instruction").click(function () {
+            var modal_view_file_content = $("#modal-view-instruction");
+            setTimeout(function () {
+                c_editor.refresh();
+                python_editor.refresh();
+                java_editor.refresh();
+            }, 1000);
+            modal_view_file_content.modal();
+        });
     </script>
+
 {% endblock %}

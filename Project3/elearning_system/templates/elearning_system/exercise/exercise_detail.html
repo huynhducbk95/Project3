@@ -84,7 +84,7 @@
                                         data-exercise-detail-url={% url 'data_exercise_detail' exercise_id=exercise_detail.exercise_id %}>
                                     <span class="glyphicon glyphicon-pencil"></span> Edit...
                                 </button>
-                                <button type="button" class="btn btn-danger" id="edit-exercise-btn">
+                                <button type="button" class="btn btn-danger" id="delete-exercise-btn">
                                     <span class="glyphicon glyphicon-remove"></span> Delete...
                                 </button>
                             {% endif %}
@@ -301,6 +301,46 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Modal delete exercise -->
+    <div class="modal fade" id="modal-delete-exercise" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h3 class="modal-title text-danger" id="error-exercise-header">
+                        <span class="glyphicon glyphicon-alert"></span> Delete Exercise
+                    </h3>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        Are you really want to delete this exercise?
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer" >
+                    <a type="button" class="btn btn-danger" href="" id="action-delete-exercise-btn">
+                        Delete
+                    </a>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -824,6 +864,16 @@ int main(void)
             }, 1000);
             modal_view_file_content.modal();
         });
+
+        $('#delete-exercise-btn').click(function () {
+             var modal_select_element = $("#modal-delete-exercise");
+             modal_select_element.modal();
+             var exercise_id = $("#exercise-id").val();
+             $('#action-delete-exercise-btn').attr('href','/moderator/delete_exercise_status?exercise_id='+exercise_id);
+         });
+
+
+
     </script>
 
 {% endblock %}

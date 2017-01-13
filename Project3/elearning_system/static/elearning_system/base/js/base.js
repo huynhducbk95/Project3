@@ -48,9 +48,11 @@ function doSearch(value) {
                     count += 1;
                 }
             if (exercise_list.length > 5) {
+                console.log('vao di ma');
                 var li = document.createElement('li');
                 $(li).attr('id', 'exercise_search');
                 var a = document.createElement('a');
+                $(a).attr('href',"/search?search="+value+"&search_option=All");
                 var h4 = document.createElement('h4');
                 var ex_name = document.createTextNode('See more ' + exercise_list.length + ' exercise >>');
                 h4.appendChild(ex_name);

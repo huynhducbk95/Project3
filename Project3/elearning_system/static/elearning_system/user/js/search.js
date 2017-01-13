@@ -21,7 +21,9 @@ $('#page-selection').bootpag({
     $('.exercise_list_elearning').css('display','');
     var page_name = 'search';
     var page_option = PATHNAME.split('=')[1];
-    var page_compare = $('#compare_elearning').val();
+    // var page_compare = $('#compare_elearning').val();
+    var page_compare = $('#compare_option_search').data('option_compare');
+    console.log('xxx:'+ page_compare);
     $.get('get_exercise_pagination?page_name=' + page_name +
         '&page_option=' + page_option +
         '&page_compare=' + page_compare +

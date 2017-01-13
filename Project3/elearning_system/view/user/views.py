@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import json
 from elearning_system.view.user import database_services, plugin_services
-from elearning_system.models import User, Role
+from elearning_system.models import User
 
 
 def index(request):
@@ -107,6 +107,7 @@ def search(request):
             'exercise_number': len(exercise_list_result),
             'title': 'Search',
             'keyword': search_keyword,
+            'option_compare': search_option,
             'exercise_list': exercise_list_result,
             'topic_list': tag_list,
         }
